@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React Native初探 | Luuman&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+<meta name="keywords" content="ReactNative">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native初探">
+<meta property="og:url" content="http://luuman.github.io/2016/12/25/FrontFrame/ReactNative/RN/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.th7.cn/d/file/p/2016/08/30/532c0a8f1bc8b3d4037a61d7efc61d36.jpg">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native初探">
+<meta name="twitter:description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+<meta name="twitter:image" content="http://www.th7.cn/d/file/p/2016/08/30/532c0a8f1bc8b3d4037a61d7efc61d36.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Luuman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">世平阜康</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 11.67px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Development/" style="font-size: 10px;">Development</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/Hack/" style="font-size: 10px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 13.33px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/Video/" style="font-size: 10px;">Video</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/WeChatSDK/" style="font-size: 10px;">WeChatSDK</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.waydrow.com/">waydrow</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.tangbc.com">TANGBC</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.w3ctrain.com/">Helkyle</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">世平阜康</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">世平阜康</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-FrontFrame/ReactNative/RN" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/25/FrontFrame/ReactNative/RN/" class="article-date">
+      <time datetime="2016-12-25T01:29:00.000Z" itemprop="datePublished">2016-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React Native初探
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/FrontFrame/">FrontFrame</a>
+    </div>
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ReactNative/">ReactNative</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<strong>自用笔记：</strong>本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why<br><a id="more"></a></p>
+<h2 id="React-Native初探"><a href="#React-Native初探" class="headerlink" title="React Native初探"></a>React Native初探</h2><!-- learn once,write everywhere! -->
+<p>ReactNative是Facebook在2015年React开发者大会上公开的应用开发框架，一个可以用React开发原生应用的框架。</p>
+<h3 id="技术背景"><a href="#技术背景" class="headerlink" title="技术背景"></a>技术背景</h3><p>FaceBook =&gt; HTML5、NativeApp<br>HybridApp =&gt; Native + Web 混合模式</p>
+<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><p>JSX语法（扩展的JS语法）、组件化模式、Virtual Dom、DataBinding单向数据流、可以实现Chrome的调试</p>
+<h3 id="基本模式："><a href="#基本模式：" class="headerlink" title="基本模式："></a>基本模式：</h3><p>每个React应用可视为组件的组合，而每个React组件由属性（Property）和状态（state）来配置，当状态发生变化时更新UI，组件的结构是由虚拟的DOM来维护，确保了实际更新的DOM只包括真正产生了状态变化的部分。</p>
+<h3 id="同类型的代码："><a href="#同类型的代码：" class="headerlink" title="同类型的代码："></a>同类型的代码：</h3><p>GoogleSky、Titanium、NativeScript（太重）、鸟巢（支付宝）、BeeFrameWork<br>综合起来：强大的社区，简单的学习，简单的开发、简单的应用。</p>
+<h3 id="跨平台开发框架"><a href="#跨平台开发框架" class="headerlink" title="跨平台开发框架"></a>跨平台开发框架</h3><p>优点；</p>
+<ol>
+<li>跨平台、兼容web、ios、android三大主流平台</li>
+<li>React调用原生控件，性能优于H5框架</li>
+<li>更好的手势识别</li>
+<li>实时部署更新，再也不用担心应用市场审核缓慢</li>
+</ol>
+<p>设计理念：既拥有Native的用户体验，又保留React的开发效率！</p>
+<p>Facebook官方使用React Native开发的应用：Groups、Ads Manager、F8、Adverts Manger、天猫IPad、Chinese Flashcards</p>
+<h3 id="ReactNative提供了那些能力"><a href="#ReactNative提供了那些能力" class="headerlink" title="ReactNative提供了那些能力"></a>ReactNative提供了那些能力</h3><ol>
+<li>基于原生UI组件</li>
+<li>手势识别</li>
+<li>基于FlexBox的CSS布局模式</li>
+<li>跨平台开发</li>
+<li>基于React、jsx组件化开发模式</li>
+</ol>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ReactNative     (项目名称)</div><div class="line"><span class="string">|–node_modules                  node模块</span></div><div class="line">    <span class="string">|–react-native              ReactNative引用工程文件</span></div><div class="line"><span class="string">|–app                           app页面</span></div><div class="line">    <span class="string">|–index.android.js          android工程备份</span></div><div class="line">    <span class="string">|–index.ios.js              ios工程备份</span></div><div class="line"><span class="string">|–index.android.js              android工程（开发文件）</span></div><div class="line"><span class="string">|–index.ios.js                  ios工程（开发文件）</span></div><div class="line"><span class="string">|–android              android项目</span></div><div class="line"><span class="string">|–ios                  ios项目</span></div><div class="line">    <span class="string">|–*.xcodeproj               Xcode启动文件</span></div><div class="line"><span class="string">|–package.json         工程信息数据</span></div></pre></td></tr></table></figure>
+<p>注：android与ios有什么区别？<br>关于android与ios开发，大部分只要将开发好的文件相互拷贝，修改android与ios独有的部分控件即可。整体的逻辑思路保持一致即可。</p>
+<h3 id="设备调试工具"><a href="#设备调试工具" class="headerlink" title="设备调试工具"></a>设备调试工具</h3><p>摇晃设备或按Menu键</p>
+<table>
+<thead>
+<tr>
+<th>chance</th>
+<th>选项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reload</td>
+<td>刷新</td>
+</tr>
+<tr>
+<td>Debug Js Remotely</td>
+<td>远程调试js</td>
+</tr>
+<tr>
+<td>Enable Live Reload</td>
+<td>启动实时刷新</td>
+</tr>
+<tr>
+<td>Enable Hot Reloading</td>
+<td>启动热刷新</td>
+</tr>
+<tr>
+<td>Toggle Inspector</td>
+<td>标签调试</td>
+</tr>
+<tr>
+<td>Show Perf Monitor</td>
+<td>显示性能监视器</td>
+</tr>
+<tr>
+<td>Capture Heap</td>
+<td></td>
+</tr>
+<tr>
+<td>Start/Stop Sampling Profiler</td>
+<td>启动/停止检测器</td>
+</tr>
+<tr>
+<td>Dev Settings</td>
+<td>设备设置</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Debug-Js-Remotely-js远程调试"><a href="#Debug-Js-Remotely-js远程调试" class="headerlink" title="Debug Js Remotely   js远程调试"></a>Debug Js Remotely   js远程调试</h4><p>此时，会打开页面调试Tab页面<a href="http://localhost:8081/debugger-ui" target="_blank" rel="external">Tab页面</a>，可以用浏览器访问<a href="http://localhost:8081/index.android.bundle?platform=android" title="link" target="_blank" rel="external">android</a>看看是否可以看到打包后的脚本（看到很长的js代码就对了）。第一次访问通常需要十几秒，并且在packager的命令行可以看到形如[====]的进度条。</p>
+<p>如果你遇到了ERROR Watcher took too long to load的报错，请尝试修改node_modules/react-native/packager/react-packager/src/FileWatcher/index.js，将其中的MAX_WAIT_TIME 从25000改为更大的值（单位是毫秒）</p>
+<h4 id="Enable-Live-Reload-启动实时刷新"><a href="#Enable-Live-Reload-启动实时刷新" class="headerlink" title="Enable Live Reload   启动实时刷新"></a>Enable Live Reload   启动实时刷新</h4><h4 id="Enable-Hot-Reloading-启动热刷新"><a href="#Enable-Hot-Reloading-启动热刷新" class="headerlink" title="Enable Hot Reloading   启动热刷新"></a>Enable Hot Reloading   启动热刷新</h4><p><a href="http://mp.weixin.qq.com/s?__biz=MzAwMTYwNzE2Mg==&amp;mid=2651036597&amp;idx=1&amp;sn=8169e1d806ebece54403ff6902b05e36#rd&amp;utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">React Native 热加载（Hot Reload）原理简介</a></p>
+<h4 id="Toggle-Inspector-标签调试"><a href="#Toggle-Inspector-标签调试" class="headerlink" title="Toggle Inspector   标签调试"></a>Toggle Inspector   标签调试</h4><h4 id="Show-Perf-Monitor-显示性能监视器"><a href="#Show-Perf-Monitor-显示性能监视器" class="headerlink" title="Show Perf Monitor   显示性能监视器"></a>Show Perf Monitor   显示性能监视器</h4><h4 id="Capture-Heap"><a href="#Capture-Heap" class="headerlink" title="Capture Heap"></a>Capture Heap</h4><h4 id="Start-Stop-Sampling-Profiler-启动-停止检测器"><a href="#Start-Stop-Sampling-Profiler-启动-停止检测器" class="headerlink" title="Start/Stop Sampling Profiler   启动/停止检测器"></a>Start/Stop Sampling Profiler   启动/停止检测器</h4><h4 id="Dev-Settings-设备设置"><a href="#Dev-Settings-设备设置" class="headerlink" title="Dev Settings   设备设置"></a>Dev Settings   设备设置</h4><p><a href="&quot;&quot;"></a><br>Bebugging 调试<br>Debug server host &amp; port for device 调试服务器主机和端口</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">adb</span> <span class="selector-tag">devices</span> 查询设备<span class="selector-tag">ID</span></div><div class="line"></div><div class="line"><span class="selector-tag">adb</span> <span class="selector-tag">reverse</span> <span class="selector-tag">tcp</span><span class="selector-pseudo">:8081</span> <span class="selector-tag">tcp</span><span class="selector-pseudo">:8081</span></div></pre></td></tr></table></figure>
+<h4 id="提示信息"><a href="#提示信息" class="headerlink" title="提示信息"></a>提示信息</h4><p>应用内的错误与警告提示（红屏和黄屏）#红屏或黄屏提示都只会在开发版本中显示，正式的离线包中是不会显示的。</p>
+<p><a href="http://blog.csdn.net/quanqinyang/article/details/52215652" target="_blank" rel="external">React Native调试技巧与心得</a></p>
+<h4 id="简单的列表Demo"><a href="#简单的列表Demo" class="headerlink" title="简单的列表Demo"></a>简单的列表Demo</h4><figure class="highlight dust"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"><span class="xml">import React, </span><span class="template-variable">&#123; Component &#125;</span><span class="xml"> from 'react';</span></div><div class="line">import <span class="template-variable">&#123;</span></div><div class="line">  AppRegistry,</div><div class="line">  StyleSheet,</div><div class="line">  Text,</div><div class="line">  View,</div><div class="line">  ScrollView,</div><div class="line">  Image,</div><div class="line">&#125;<span class="xml"> from 'react-native';</span></div><div class="line"></div><div class="line">export default class luumans extends Component <span class="template-variable">&#123;</span></div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;ScrollView style=&#123;styles.container&#125;<span class="xml">&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">Image</span></span></div><div class="line">          <span class="attr">source</span>=<span class="template-variable">&#123;&#123;uri: 'http://jiuye-res.jikexueyuan.com/zhiye/showcase/attach-/20161013/2a7bf0a0-d94d-40d4-a244-20e5a5e359e6.jpg'&#125;</span><span class="xml"><span class="tag">&#125;</span></span></div><div class="line">          <span class="attr">style</span>=<span class="template-variable">&#123;styles.images&#125;</span><span class="xml"><span class="tag"></span></span></div><div class="line">        /&gt;</div><div class="line">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=</span><span class="template-variable">&#123;styles.title&#125;</span><span class="xml"><span class="tag">&gt;</span>『微信小程序』从基础到实战<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=</span><span class="template-variable">&#123;styles.teacher&#125;</span><span class="xml"><span class="tag">&gt;</span>勾股<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=</span><span class="template-variable">&#123;styles.time&#125;</span><span class="xml"><span class="tag">&gt;</span>2013-07-11<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Image</span></span></div><div class="line">          <span class="attr">source</span>=<span class="template-variable">&#123;&#123;uri: 'http://jiuye-res.jikexueyuan.com/zhiye/showcase/attach-59b4a27d-e431-4f49-aa25-6b94cccd8229.jpg'&#125;</span><span class="xml"><span class="tag">&#125;</span></span></div><div class="line">          <span class="attr">style</span>=<span class="template-variable">&#123;styles.images&#125;</span><span class="xml"><span class="tag"></span></span></div><div class="line">        /&gt;</div><div class="line">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=</span><span class="template-variable">&#123;styles.title&#125;</span><span class="xml"><span class="tag">&gt;</span>基于Go语言的短链接服务实战<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=</span><span class="template-variable">&#123;styles.teacher&#125;</span><span class="xml"><span class="tag">&gt;</span>小鱼<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=</span><span class="template-variable">&#123;styles.time&#125;</span><span class="xml"><span class="tag">&gt;</span>2013-07-11<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Image</span></span></div><div class="line">          <span class="attr">source</span>=<span class="template-variable">&#123;&#123;uri: 'http://jiuye-res.jikexueyuan.com/zhiye/showcase/attach-0da69660-4fcc-45d1-9b84-88271851f57f.jpg'&#125;</span><span class="xml"><span class="tag">&#125;</span></span></div><div class="line">          <span class="attr">style</span>=<span class="template-variable">&#123;styles.images&#125;</span><span class="xml"><span class="tag"></span></span></div><div class="line">        /&gt;</div><div class="line">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=</span><span class="template-variable">&#123;styles.title&#125;</span><span class="xml"><span class="tag">&gt;</span>基于Python的静态爬虫实战<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=</span><span class="template-variable">&#123;styles.teacher&#125;</span><span class="xml"><span class="tag">&gt;</span>飞雪<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=</span><span class="template-variable">&#123;styles.time&#125;</span><span class="xml"><span class="tag">&gt;</span>2013-07-11<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></div><div class="line">      <span class="tag">&lt;/<span class="name">ScrollView</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const styles = StyleSheet.create(<span class="template-variable">&#123;</span></div><div class="line">  container: &#123;</div><div class="line">    flex: 1,</div><div class="line">    backgroundColor: '#F2F2F2',</div><div class="line">    margin: 5,</div><div class="line">    borderWidth: 1,</div><div class="line">    borderColor: '#d2d2d2',</div><div class="line">  &#125;<span class="xml">,</span></div><div class="line">  title: <span class="template-variable">&#123;</span></div><div class="line">    fontSize: 15,</div><div class="line">    marginLeft: 10,</div><div class="line">    color: '#333333',</div><div class="line">    textAlign: 'left',</div><div class="line">  &#125;<span class="xml">,</span></div><div class="line">  images: <span class="template-variable">&#123;</span></div><div class="line">    height: 200,</div><div class="line">    margin: 10,</div><div class="line">  &#125;<span class="xml">,</span></div><div class="line">  teacher: <span class="template-variable">&#123;</span></div><div class="line">    fontSize: 13,</div><div class="line">    marginLeft: 10,</div><div class="line">    color: '#525252',</div><div class="line">    textAlign: 'left',</div><div class="line">  &#125;<span class="xml">,</span></div><div class="line">  time: <span class="template-variable">&#123;</span></div><div class="line">    fontSize: 13,</div><div class="line">    marginLeft: 10,</div><div class="line">    color: '#2d854a',</div><div class="line">    textAlign: 'left',</div><div class="line">  &#125;<span class="xml">,</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line">AppRegistry.registerComponent('luumans', () =&gt; luumans);</div></pre></td></tr></table></figure>
+<p>列表控件Listview：</p>
+<h2 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h2><p><img src="http://www.th7.cn/d/file/p/2016/08/30/532c0a8f1bc8b3d4037a61d7efc61d36.jpg" alt=""></p>
+<h3 id="什么事Flexbox"><a href="#什么事Flexbox" class="headerlink" title="什么事Flexbox"></a>什么事Flexbox</h3><p>Flexbox是css 3中引入的布局模型“弹性盒子模型”，通过弹性的方式来对齐和分布容器中的内容空间，使其能够适应不同屏幕的宽度。React Native中Flexbox是这个规范的子集。</p>
+<h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3><p>浮动布局<br>不同宽度屏幕的适配<br>宽度自动分配<br>水平垂直居中</p>
+<h3 id="相关资料："><a href="#相关资料：" class="headerlink" title="相关资料："></a>相关资料：</h3><p><a href="https://github.com/facebook/react-native" title="A framework for building native apps with React." target="_blank" rel="external">facebook/react-native</a><br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">A Complete Guide to Flexbox</a><br><a href="https://github.com/tmallfe/tmallfe.github.io/issues/19" target="_blank" rel="external">react-native 之布局篇</a><br><a href="http://caibaojian.com/flexbox-guide.html" target="_blank" rel="external">flexbox-CSS3弹性盒模型flexbox完整版教程</a><br><a href="http://blog.csdn.net/u014486880/article/details/51385688" target="_blank" rel="external">React-Native之flexbox布局篇</a><br><a href="http://www.lcode.org/react-native/" title="qing" target="_blank" rel="external">React Native专题</a><br><a href="http://godcoder.me/categories/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/React-Native/" title="非著名程序员" target="_blank" rel="external">React Native专题</a></p>
+<p><a href="http://www.w3.org/TR/css3-flexbox/" target="_blank" rel="external">Flexbox in the CSS specifications</a><br><a href="https://developer.mozilla.org/en-US/docs/CSS/Tutorials/Using_CSS_flexible_boxes" target="_blank" rel="external">Flexbox at MDN</a><br><a href="http://dev.opera.com/articles/view/flexbox-basics/" target="_blank" rel="external">Flexbox at Opera</a><br><a href="http://weblog.bocoup.com/dive-into-flexbox/" target="_blank" rel="external">Diving into Flexbox by Bocoup</a><br><a href="http://css-tricks.com/using-flexbox/" target="_blank" rel="external">Mixing syntaxes for best browser support on CSS-Tricks</a><br><a href="http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html" target="_blank" rel="external">Flexbox by Raphael Goetter (FR)</a><br><a href="http://bennettfeely.com/flexplorer/" target="_blank" rel="external">Flexplorer by Bennett Feely</a><br><a href="http://devbryce.com/site/flexbox/" target="_blank" rel="external">http://devbryce.com/site/flexbox/</a><br><a href="http://css.doyoe.com/properties/flex/index.htm" target="_blank" rel="external">http://css.doyoe.com/properties/flex/index.htm</a><br><a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">http://css-tricks.com/snippets/css/a-guide-to-flexbox/</a><br><a href="http://facebook.github.io/react-native/docs/style.html" target="_blank" rel="external">样式测试</a></p>
+<h2 id="ES6语法问题"><a href="#ES6语法问题" class="headerlink" title="ES6语法问题"></a>ES6语法问题</h2><p><a href="http://www.infoq.com/cn/articles/es6-in-depth-let-and-const/" target="_blank" rel="external">深入浅出ES6（十四）：let和const</a><br><a href="&quot;&quot;"></a></p>
+<h2 id="问题：首页白屏"><a href="#问题：首页白屏" class="headerlink" title="问题：首页白屏"></a>问题：首页白屏</h2><p><a href="https://segmentfault.com/a/1190000004743424" target="_blank" rel="external">ReactNative安卓首屏白屏优化</a></p>
+<h2 id="react-native学习列表"><a href="#react-native学习列表" class="headerlink" title="react-native学习列表"></a>react-native学习列表</h2><p>收集了react-native一些学习资源，列表会继续更新，大家有好的资源欢迎Pull Requests！</p>
+<h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="http://facebook.github.io/react-native/" title="English" target="_blank" rel="external">React Native</a><br><a href="http://reactnative.cn/" title="最专业的翻译，最及时的资讯，最火爆的社区" target="_blank" rel="external">React Native 中文网</a><br><a href="https://www.youtube.com/watch?v=KVZ-P-ZI6W4" target="_blank" rel="external">官方视频</a><br><a href="https://github.com/joggerplus/ReactNativeRollingExamples/blob/master/react-native_Study_List.md" target="_blank" rel="external">react-native学习列表</a><br><a href="https://github.com/vczero/react-native-lesson" target="_blank" rel="external">React-Native入门指南</a><br><a href="http://www.tuicool.com/articles/zaInUbA" target="_blank" rel="external">整理了一份React-Native学习指南</a><br><a href="http://www.cocoachina.com/ios/20150408/11513.html" target="_blank" rel="external">深入浅出 React Native：使用 JavaScript 构建原生应用</a></p>
+<p><a href="http://segmentfault.com/blog/cnsnake11_react_native" title="segmentfault" target="_blank" rel="external">React Native系列文章</a><br><a href="http://gold.xitu.io/#/tag/React%20Native" title="掘金" target="_blank" rel="external">React Native系列文章</a><br><a href="http://bbs.reactnative.cn/" target="_blank" rel="external">React Native中文社区</a><br><a href="https://github.com/tmallfe/tmallfe.github.io/issues" target="_blank" rel="external">天猫前端</a></p>
+<p><a href="https://js.coach/react-native/" target="_blank" rel="external">React-native组件库</a><br><a href="http://reactnativemodules.com/" target="_blank" rel="external">React Native Modules</a></p>
+<h4 id="库"><a href="#库" class="headerlink" title="库"></a>库</h4><p><a href="https://github.com/ptmt/react-native-desktop" title="通过React Native构建macOS app" target="_blank" rel="external">react-native-desktop</a><br><a href="https://github.com/Microsoft/react-native-code-push" title="微软出的热更新平台" target="_blank" rel="external">react-native-code-push</a><br><a href="https://github.com/wix/react-native-invoke" title="从JS调用native的代码而不需要任何的封装" target="_blank" rel="external">react-native-invoke</a> </p>
+<h3 id="相关书籍"><a href="#相关书籍" class="headerlink" title="相关书籍"></a>相关书籍</h3><p><a href="http://es6.ruanyifeng.com/" title="阮一峰" target="_blank" rel="external">ECMAScript 6入门</a><br><a href="http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8" target="_blank" rel="external">React/React Native 的ES5 ES6写法对照表</a></p>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><p><a href="https://github.com/jondot/awesome-react-native" target="_blank" rel="external">awesome-react-native</a><br><a href="https://github.com/sivan/javascript-style-guide" target="_blank" rel="external">Airbnb JavaScript Style Guide 中文版</a><br><a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="external">React 入门实例教程-阮一峰</a><br><a href="http://reactjs.cn/" target="_blank" rel="external">ReactJS中文文档</a><br><a href="https://github.com/ele828/react-native-guide" title=":React Native指南汇集了react-native学习资源与各类开源app" target="_blank" rel="external">react-native-guide</a><br><a href="https://github.com/vczero/react-native-lesson" title=":React Native入门指南" target="_blank" rel="external">React-Native-lesson</a><br><a href="https://github.com/WildDylan/ReactNativeDemo" target="_blank" rel="external">ReactNativeDemo</a><br><a href="http://javascript.ruanyifeng.com/nodejs/npm.html" target="_blank" rel="external">npm模块管理器</a><br><a href="http://www.gruntjs.net/getting-started" target="_blank" rel="external">快速入门-Grunt中文网</a><br><a href="http://camsong.github.io/redux-in-chinese/" target="_blank" rel="external">Redux 中文文档</a><br><a href="http://reactjs.cn/react/docs/flux-overview.html" target="_blank" rel="external">reactjs.cn - Flux应用架构</a><br><a href="https://github.com/cnsnake11/blog" target="_blank" rel="external">cnsnake11研究react-native的blog</a><br><a href="http://www.jianshu.com/p/28e9c7957d0c" target="_blank" rel="external">Facebook F8App-ReactNative项目源码分析系列</a><br><a href="https://github.com/Kennytian/learning-react-native" target="_blank" rel="external">React Native 学习笔记</a><br><a href="http://f8-app.liaohuqiu.net/" target="_blank" rel="external">构建 F8 App / React Native 开发指南</a><br><a href="https://github.com/Code-T/salon-resources/tree/master/%E5%8C%97%E4%BA%AC%202016:05:28" target="_blank" rel="external">React Native：移动开发时代的巴别塔 - 专题分享</a></p>
+<h3 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h3><p><a href="http://www.w3cplus.com/css3/a-guide-to-flexbox.html" target="_blank" rel="external">一个完整的Flexbox指南</a><br><a href="http://reactjs.cn/react/docs/component-specs.html" target="_blank" rel="external">组件的详细说明和生命周期（Component Specs and Lifecycle）</a><br><a href="http://reactjs.cn/react/tips/if-else-in-JSX.html&quot;&quot;" target="_blank" rel="external">JSX 中的 If-Else</a></p>
+<p><a href="http://reactjs.cn/react/tips/communicate-between-components.html" target="_blank" rel="external">组件间的通信</a><br><a href="https://developer.mozilla.org/cn/docs/Web/JavaScript/Closures" target="_blank" rel="external">mozilla-闭包</a><br><a href="https://github.com/ericdum/mujiang.info/issues/6" target="_blank" rel="external">npm的package.json中文文档</a><br><a href="http://bluereader.org/article/73541139" target="_blank" rel="external">快来使用ECMAScript 2015吧</a><br><a href="http://lijianfei.sinaapp.com/?p=888" title="关于组件生命周期的讲得特别到位" target="_blank" rel="external">React-Native学习技术的三部曲</a><br><a href="http://bbs.reactnative.cn/topic/20/%E6%96%B0%E6%89%8B%E7%90%86%E8%A7%A3navigator%E7%9A%84%E6%95%99%E7%A8%8B" title="对于Navigator讲解的特别详细" target="_blank" rel="external">新手理解Navigator的教程</a><br><a href="http://bbs.reactnative.cn/topic/15/eact-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8" target="_blank" rel="external">React/React Native 的ES5 ES6写法对照表</a></p>
+<p><a href="http://f2e.souche.com/blog/-ge-san-duan-kai-fa-zhe-yan-zhong-de-react-native/" title="对react-native从各个层面有一个比较深入的见解" target="_blank" rel="external">一个“三端”开发者眼中的React Native</a><br><a href="https://github.com/jabez128/jabez128.github.io/issues/1" target="_blank" rel="external">“指尖上的魔法” – 谈谈React-Native中的手势</a><br><a href="http://segmentfault.com/a/1190000004161358" title="包括Flux、Reflux、Redux" target="_blank" rel="external">ReactNative的组件架构设计</a><br><a href="http://www.jianshu.com/p/2c43860b0532" target="_blank" rel="external">在react-native中使用redux</a><br><a href="http://browniefed.com/blog/react-native-how-to-bridge-an-objective-c-view-component/" target="_blank" rel="external">怎么样桥接一个objective-c的视图组件</a></p>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p><a href="http://bbs.reactnative.cn/topic/480/%E5%AE%89%E5%8D%93back%E9%94%AE%E7%9A%84%E5%A4%84%E7%90%86-%E5%9F%BA%E6%9C%AC-%E9%AB%98%E7%BA%A7%E7%AF%87" target="_blank" rel="external">安卓Back键的处理·基本+高级篇</a></p>
+<h4 id="音视频相机"><a href="#音视频相机" class="headerlink" title="音视频相机"></a>音视频相机</h4><p><a href="http://gold.xitu.io/post/581755be2f301e005ce78a18?utm_source=gold_browser_extension" title="二维码扫描组件" target="_blank" rel="external">React Native 实现二维码扫描</a><br><a href="https://github.com/ideacreation/react-native-barcodescanner" title="二维码扫描组件" target="_blank" rel="external">react-native-barcodescanner</a><br><a href="https://github.com/lwansbrough/react-native-camera" title="相机组件" target="_blank" rel="external">react-native-camera</a><br><a href="https://github.com/marcshilling/react-native-image-picker" title="可以从相机或者相册选择图片" target="_blank" rel="external">react-native-image-picker</a>  </p>
+<h4 id="图形动画"><a href="#图形动画" class="headerlink" title="图形动画"></a>图形动画</h4><h4 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h4><p><a href="https://github.com/ide/react-native-button" title="按钮，因为react-native没有提供button" target="_blank" rel="external">react-native-button</a><br><a href="https://github.com/skv-headless/react-native-scrollable-tab-view" title="滑动的tab视图" target="_blank" rel="external">react-native-scrollable-tab-view</a> </p>
+<h4 id="listview"><a href="#listview" class="headerlink" title="listview"></a>listview</h4><p><a href="https://github.com/sghiassy/react-native-sglistview" title="性能优化的listview" target="_blank" rel="external">react-native-sglistview</a><br><a href="https://github.com/aksonov/react-native-tableview" title="桥接了原生的UITableView" target="_blank" rel="external">react-native-tableview</a> </p>
+<h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><h4 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h4><p><a href="https://github.com/lixinso/html5" target="_blank" rel="external">HTML5 CSS3 code sample</a><br><a href="https://github.com/dsibiski/react-native-hybrid-app-examples" title="iOS原生项目集成react-native的示例项目" target="_blank" rel="external">react-native-hybrid-app-examples</a><br><a href="https://github.com/ninty90/react-native-redux-demo" title="react-native使用redux的demo，结合这篇文章看效果更好，" target="_blank" rel="external">react-native-redux-demo</a><br><a href="http://www.jianshu.com/p/2c43860b0532" target="_blank" rel="external">react-native中使用redux</a></p>
+<h4 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h4><p><a href="https://github.com/Bob1993/React-Native-Gank" title="低俗无聊的扎设计，看看代码德勒" target="_blank" rel="external">React-Native-Gank</a><br><a href="https://github.com/fbsamples/f8app" title="facebook 官方f8 app" target="_blank" rel="external">f8app</a><br><a href="https://github.com/joemaddalone/react-native-todo" title="一个简单的to do 应用程序 jast IOS" target="_blank" rel="external">react-native-todo</a><br><a href="https://github.com/soliury/noder-react-native" title="Noder-cnodejs客户端" target="_blank" rel="external">noder-react-native</a><br><a href="https://github.com/7kfpun/FinanceReactNative" title="Finance - 股票报价app" target="_blank" rel="external">FinanceReactNative</a><br><a href="https://github.com/benoitvallon/react-native-nw-react-calculator" title="iOS/Android、Web、桌面多端的计算器app" target="_blank" rel="external">react-native-nw-react-calculator</a></p>
+<h4 id="Mode"><a href="#Mode" class="headerlink" title="Mode"></a>Mode</h4><p><a href="https://github.com/leecade/react-native-swiper" title="The best Swiper component for React Native." target="_blank" rel="external">react-native-swiper</a></p>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p><a href="https://github.com/decosoftware/deco-ide" target="_blank" rel="external">开源的react-native IDE</a><br><a href="https://github.com/rnpm/rnpm" title="React Native的包管理器" target="_blank" rel="external">rnpm</a><br><a href="https://github.com/oblador/react-native-vector-icons" title="为React Native集成了很多icon" target="_blank" rel="external">react-native-vector-icons</a><br><a href="https://github.com/reactjs/redux" title="Redux 就是用来确保 state 变化的可预测性，仓库readme中的代码很简洁的描述了redux的内容" target="_blank" rel="external">redux</a><br><a href="https://github.com/reactjs/react-redux" title="官方的React绑定redux" target="_blank" rel="external">react-redux</a><br><a href="https://github.com/gaearon/redux-thunk" title="redux的thunk中间件" target="_blank" rel="external">redux-thunk</a><br><a href="https://github.com/rt2zz/redux-persist" target="_blank" rel="external">redux-persist</a><br><a href="https://github.com/goatslacker/alt" title="flux的实现" target="_blank" rel="external">alt</a></p>
+<p><a href="http://blog.csdn.net/liu__520/article/details/52903667" target="_blank" rel="external">携程技术中心React Native Meetup活动经验分享</a></p>
+<p><a href="&quot;&quot;"></a></p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            window._hmt.push(['_trackEvent', 'pay', 'click', '赏'])
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/12/25/FrontFrame/ReactNative/RN/">React Native初探</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 世平阜康 的个人博客">世平阜康</a></p>
+        <p><span>发布时间:</span>2016年12月25日 - 09时29分</p>
+        <p><span>最后更新:</span>2017年07月28日 - 18时54分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/12/25/FrontFrame/ReactNative/RN/" title="React Native初探">http://luuman.github.io/2016/12/25/FrontFrame/ReactNative/RN/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://luuman.github.io/2016/12/25/FrontFrame/ReactNative/RN/　　作者: 世平阜康" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/12/25/FrontFrame/ReactNative/RNSetAndroid/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          React Native Android环境搭建（Window）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/08/Induce/Mobile/MobileGuide/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动Web解决方案</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Native初探"><span class="toc-number">1.</span> <span class="toc-text">React Native初探</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#技术背景"><span class="toc-number">1.1.</span> <span class="toc-text">技术背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点："><span class="toc-number">1.2.</span> <span class="toc-text">特点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本模式："><span class="toc-number">1.3.</span> <span class="toc-text">基本模式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同类型的代码："><span class="toc-number">1.4.</span> <span class="toc-text">同类型的代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨平台开发框架"><span class="toc-number">1.5.</span> <span class="toc-text">跨平台开发框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ReactNative提供了那些能力"><span class="toc-number">1.6.</span> <span class="toc-text">ReactNative提供了那些能力</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目结构"><span class="toc-number">2.</span> <span class="toc-text">项目结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设备调试工具"><span class="toc-number">2.1.</span> <span class="toc-text">设备调试工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Debug-Js-Remotely-js远程调试"><span class="toc-number">2.1.1.</span> <span class="toc-text">Debug Js Remotely   js远程调试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Enable-Live-Reload-启动实时刷新"><span class="toc-number">2.1.2.</span> <span class="toc-text">Enable Live Reload   启动实时刷新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Enable-Hot-Reloading-启动热刷新"><span class="toc-number">2.1.3.</span> <span class="toc-text">Enable Hot Reloading   启动热刷新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Toggle-Inspector-标签调试"><span class="toc-number">2.1.4.</span> <span class="toc-text">Toggle Inspector   标签调试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Show-Perf-Monitor-显示性能监视器"><span class="toc-number">2.1.5.</span> <span class="toc-text">Show Perf Monitor   显示性能监视器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Capture-Heap"><span class="toc-number">2.1.6.</span> <span class="toc-text">Capture Heap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Start-Stop-Sampling-Profiler-启动-停止检测器"><span class="toc-number">2.1.7.</span> <span class="toc-text">Start/Stop Sampling Profiler   启动/停止检测器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dev-Settings-设备设置"><span class="toc-number">2.1.8.</span> <span class="toc-text">Dev Settings   设备设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提示信息"><span class="toc-number">2.1.9.</span> <span class="toc-text">提示信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简单的列表Demo"><span class="toc-number">2.1.10.</span> <span class="toc-text">简单的列表Demo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flexbox布局"><span class="toc-number">3.</span> <span class="toc-text">Flexbox布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么事Flexbox"><span class="toc-number">3.1.</span> <span class="toc-text">什么事Flexbox</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决问题"><span class="toc-number">3.2.</span> <span class="toc-text">解决问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关资料："><span class="toc-number">3.3.</span> <span class="toc-text">相关资料：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6语法问题"><span class="toc-number">4.</span> <span class="toc-text">ES6语法问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题：首页白屏"><span class="toc-number">5.</span> <span class="toc-text">问题：首页白屏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#react-native学习列表"><span class="toc-number">6.</span> <span class="toc-text">react-native学习列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#官方文档"><span class="toc-number">6.1.</span> <span class="toc-text">官方文档</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#库"><span class="toc-number">6.1.1.</span> <span class="toc-text">库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关书籍"><span class="toc-number">6.2.</span> <span class="toc-text">相关书籍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#教程"><span class="toc-number">6.3.</span> <span class="toc-text">教程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文章"><span class="toc-number">6.4.</span> <span class="toc-text">文章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#事件"><span class="toc-number">6.4.1.</span> <span class="toc-text">事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#音视频相机"><span class="toc-number">6.4.2.</span> <span class="toc-text">音视频相机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图形动画"><span class="toc-number">6.4.3.</span> <span class="toc-text">图形动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#视图"><span class="toc-number">6.4.4.</span> <span class="toc-text">视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#listview"><span class="toc-number">6.4.5.</span> <span class="toc-text">listview</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目"><span class="toc-number">6.5.</span> <span class="toc-text">项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Demo"><span class="toc-number">6.5.1.</span> <span class="toc-text">Demo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Design"><span class="toc-number">6.5.2.</span> <span class="toc-text">Design</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mode"><span class="toc-number">6.5.3.</span> <span class="toc-text">Mode</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工具"><span class="toc-number">6.6.</span> <span class="toc-text">工具</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '7f50019c6a02c37e7aca',
+        client_secret: 'd583910e6ae1492b375796d2c82efcda2cc67aae',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/12/25/FrontFrame/ReactNative/RNSetAndroid/" title="上一篇: React Native Android环境搭建（Window）">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/05/08/Induce/Mobile/MobileGuide/" title="下一篇: 移动Web解决方案">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/29/Tool/GitWorkflows/">Git Workflows</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Tool/Git/">Git速查手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/VueComponents/">Vue组件探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/InduceSass/">深入Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/KeepAlive/">keep-alive最佳实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/CSS/CssLowFrequency/">CSS低频属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Tool/Terminal/">Terminal配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/Induce/Weixin/JS-SDK/">WeChat SDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/Induce/Hack/Canvas/">浏览器常见Bug——Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/25/FrontFrame/Vue/Vuex/">Vuex</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/Induce/HTML/Video/">Mobile Video</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/FrontFrame/Vue/VueRouter/">Vue Router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/Tool/Sublime/sublimeMac/">Sublime Mac 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/FrontFrame/React/React/">React初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/Induce/CSS/CSSElementAlign/">用CSS实现元素垂直居中方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normCSS/">CSS前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normjs/">前端代码规范Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normhtml/">HTML前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normdev/">前端开发代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCText/">React Native Text</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCTextInput/">React Native TextInput</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCImage/">React Native Image</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNComponents/">React Native 组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNTest/">React Native 实战封装组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNBasics/">React Native 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetOX/">React Native IOS环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNTools/">React Native开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetAndroid/">React Native Android环境搭建（Window）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RN/">React Native初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/JavaScript/JSInputSearch/">Input输入框的案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Gulp/InduceGulp/">Gulp前端构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/">OmniMarkupPreviewer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/HTML/HtmlRem/">移动H5自适应布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/Demo/TextShow/">BOOS信息展示与收缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/Demo/MobileRotate/">移动端横屏提示动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Skill/OOCSS/">面向对象的CSS样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Mobile/MobliePC/">关于移动端界面在PC端显示的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/Node/NodeJsWeb/">Node.js实战 建立简单的Web服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/CSS/animation/">CSS3动画探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/Induce/Mobile/Mobile-knowledge/">移动前端知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Induce/Ajax/Ajax/">Ajax学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/Plug/ChromePlug/">前端Chrome插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/JavaScript/JSTip/">原生JS TitleTip</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/Ajax/AjaxStatus/">Ajax Status请求状态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Induce/JavaScript/NativeJS/">原生JavaScript探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/GitHubHexo/">使用GitHub搭建Hexo博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoBug/">Hexo bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoPlug/">Hexo插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/Hexo/">Hexo的使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoTheme/">Hexo 主题：SPFK</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/26/Skill/win7Set/">电脑优化相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CssTips/">CSS小技巧收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Interview/WebFront/">web前端职业规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/HTML/media/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CSS/">CSS学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/Tool/Sublime/Sublimemarkdown/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Induce/JavaScript/JQueryCDN/">CDN公共库</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Demo/FrontEndGuide/">前端资源导航</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/11/Skill/BusyFront/">Busy前端工作室</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 世平阜康
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

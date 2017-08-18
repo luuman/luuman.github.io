@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端代码规范Javascript | Luuman&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="规范：你是否常常碰到以下问题：你总是看不懂他写的代码，或者读起来很吃力；你需要改他的代码却无从下手，或总是要去问他这里是什么改了会不会影响其他代码；你和他一起开发一个产品，你总是怕代码和他有冲突或互相影响；你的代码在多次维护任务之后变得越来越臃肿，越来越难以维护。解决以上问题只需一种方法——读我们的规范！">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端代码规范Javascript">
+<meta property="og:url" content="http://luuman.github.io/2016/12/31/Skill/norm/normjs/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="规范：你是否常常碰到以下问题：你总是看不懂他写的代码，或者读起来很吃力；你需要改他的代码却无从下手，或总是要去问他这里是什么改了会不会影响其他代码；你和他一起开发一个产品，你总是怕代码和他有冲突或互相影响；你的代码在多次维护任务之后变得越来越臃肿，越来越难以维护。解决以上问题只需一种方法——读我们的规范！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端代码规范Javascript">
+<meta name="twitter:description" content="规范：你是否常常碰到以下问题：你总是看不懂他写的代码，或者读起来很吃力；你需要改他的代码却无从下手，或总是要去问他这里是什么改了会不会影响其他代码；你和他一起开发一个产品，你总是怕代码和他有冲突或互相影响；你的代码在多次维护任务之后变得越来越臃肿，越来越难以维护。解决以上问题只需一种方法——读我们的规范！">
+  
+    <link rel="alternative" href="/atom.xml" title="Luuman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">世平阜康</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 11.67px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Development/" style="font-size: 10px;">Development</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/Hack/" style="font-size: 10px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 13.33px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/Video/" style="font-size: 10px;">Video</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/WeChatSDK/" style="font-size: 10px;">WeChatSDK</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.waydrow.com/">waydrow</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.tangbc.com">TANGBC</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.w3ctrain.com/">Helkyle</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">世平阜康</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">世平阜康</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Skill/norm/normjs" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/31/Skill/norm/normjs/" class="article-date">
+      <time datetime="2016-12-31T10:29:00.000Z" itemprop="datePublished">2016-12-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端代码规范Javascript
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Norm/">Norm</a>
+    </div>
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<strong>规范：</strong>你是否常常碰到以下问题：你总是看不懂他写的代码，或者读起来很吃力；你需要改他的代码却无从下手，或总是要去问他这里是什么改了会不会影响其他代码；你和他一起开发一个产品，你总是怕代码和他有冲突或互相影响；你的代码在多次维护任务之后变得越来越臃肿，越来越难以维护。解决以上问题只需一种方法——读我们的规范！<br><a id="more"></a></p>
+<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><blockquote>
+<p>JavaScript支持大小写<br>统一使用单引号<br>命名使用驼峰法则<br>开头字母大写，表示对象。</p>
+</blockquote>
+<h3 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h3><h3 id="变量命名-1"><a href="#变量命名-1" class="headerlink" title="变量命名"></a>变量命名</h3><ol>
+<li>匈牙利命名：</li>
+</ol>
+<p>开头字母用变量类型的缩写，其余部分用变量的英文或英文的缩写，要求单词第一个字母大写。</p>
+<pre><code>For example: long lsum = 0;&quot;l&quot;是类型的缩写；
+s：表示字符串。例如：sName，sHtml；
+n：表示数字。例如：nPage，nTotal；
+b：表示逻辑。例如：bChecked，bHasLogin；
+a：表示数组。例如：aList，aGroup；
+r：表示正则表达式。例如：rDomain，rEmail；
+f：表示函数。例如：fGetHtml，fInit；
+o：表示以上未涉及到的其他对象，例如：oButton，oDate；
+g：表示全局变量，例如：gUserName，gLoginTime；
+</code></pre><ol>
+<li>驼峰式：</li>
+</ol>
+<p>第一个单词首字母小写，后面其他单词首字母大写。</p>
+<pre><code>For example:  firstName 
+</code></pre><h3 id="函数命名"><a href="#函数命名" class="headerlink" title="函数命名"></a>函数命名</h3><ol>
+<li><p>函数命名：统一使用动词或者动词+名词形式 —- fnInit()</p>
+</li>
+<li><p>对象方法命名使用fn+对象类名+动词+名词形式   fnAnimateDoRun() </p>
+</li>
+<li><p>某事件响应函数命名方式为fn+触发事件对象名+事件名或者模块名  fnDivClick()</p>
+</li>
+</ol>
+<p>附常用的动词列表：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th style="text-align:center">含义</th>
+<th>名称</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get</td>
+<td style="text-align:center">获取</td>
+<td>set</td>
+<td style="text-align:center">设置</td>
+</tr>
+<tr>
+<td>add</td>
+<td style="text-align:center">增加</td>
+<td>remove</td>
+<td style="text-align:center">删除</td>
+</tr>
+<tr>
+<td>create</td>
+<td style="text-align:center">创建</td>
+<td>destory</td>
+<td style="text-align:center">移除</td>
+</tr>
+<tr>
+<td>start</td>
+<td style="text-align:center">启动</td>
+<td>stop</td>
+<td style="text-align:center">停止</td>
+</tr>
+<tr>
+<td>open</td>
+<td style="text-align:center">打开</td>
+<td>close</td>
+<td style="text-align:center">关闭</td>
+</tr>
+<tr>
+<td>read</td>
+<td style="text-align:center">读取</td>
+<td>write</td>
+<td style="text-align:center">写入</td>
+</tr>
+<tr>
+<td>load</td>
+<td style="text-align:center">载入</td>
+<td>save</td>
+<td style="text-align:center">保存</td>
+</tr>
+<tr>
+<td>create</td>
+<td style="text-align:center">创建</td>
+<td>destroy</td>
+<td style="text-align:center">销毁</td>
+</tr>
+<tr>
+<td>begin</td>
+<td style="text-align:center">开始</td>
+<td>end</td>
+<td style="text-align:center">结束</td>
+</tr>
+<tr>
+<td>backup</td>
+<td style="text-align:center">备份</td>
+<td>restore</td>
+<td style="text-align:center">恢复</td>
+</tr>
+<tr>
+<td>import</td>
+<td style="text-align:center">导入</td>
+<td>export</td>
+<td style="text-align:center">导出</td>
+</tr>
+<tr>
+<td>split</td>
+<td style="text-align:center">分割</td>
+<td>merge</td>
+<td style="text-align:center">合并</td>
+</tr>
+<tr>
+<td>inject</td>
+<td style="text-align:center">注入</td>
+<td>extract</td>
+<td style="text-align:center">提取</td>
+</tr>
+<tr>
+<td>attach</td>
+<td style="text-align:center">附着</td>
+<td>detach</td>
+<td style="text-align:center">脱离</td>
+</tr>
+<tr>
+<td>bind</td>
+<td style="text-align:center">绑定</td>
+<td>separate</td>
+<td style="text-align:center">分离</td>
+</tr>
+<tr>
+<td>view</td>
+<td style="text-align:center">查看</td>
+<td>browse</td>
+<td style="text-align:center">浏览</td>
+</tr>
+<tr>
+<td>edit</td>
+<td style="text-align:center">编辑</td>
+<td>modify</td>
+<td style="text-align:center">修改</td>
+</tr>
+<tr>
+<td>select</td>
+<td style="text-align:center">选取</td>
+<td>mark</td>
+<td style="text-align:center">标记</td>
+</tr>
+<tr>
+<td>copy</td>
+<td style="text-align:center">复制</td>
+<td>paste</td>
+<td style="text-align:center">粘贴</td>
+</tr>
+<tr>
+<td>undo</td>
+<td style="text-align:center">撤销</td>
+<td>redo</td>
+<td style="text-align:center">重做</td>
+</tr>
+<tr>
+<td>insert</td>
+<td style="text-align:center">插入</td>
+<td>delete</td>
+<td style="text-align:center">移除</td>
+</tr>
+<tr>
+<td>add</td>
+<td style="text-align:center">加入</td>
+<td>append</td>
+<td style="text-align:center">添加</td>
+</tr>
+<tr>
+<td>clean</td>
+<td style="text-align:center">清理</td>
+<td>clear</td>
+<td style="text-align:center">清除</td>
+</tr>
+<tr>
+<td>index</td>
+<td style="text-align:center">索引</td>
+<td>sort</td>
+<td style="text-align:center">排序</td>
+</tr>
+<tr>
+<td>find</td>
+<td style="text-align:center">查找</td>
+<td>search</td>
+<td style="text-align:center">搜索</td>
+</tr>
+<tr>
+<td>increase</td>
+<td style="text-align:center">增加</td>
+<td>decrease</td>
+<td style="text-align:center">减少</td>
+</tr>
+<tr>
+<td>play</td>
+<td style="text-align:center">播放</td>
+<td>pause</td>
+<td style="text-align:center">暂停</td>
+</tr>
+<tr>
+<td>launch</td>
+<td style="text-align:center">启动</td>
+<td>run</td>
+<td style="text-align:center">运行</td>
+</tr>
+<tr>
+<td>compile</td>
+<td style="text-align:center">编译</td>
+<td>execute</td>
+<td style="text-align:center">执行</td>
+</tr>
+<tr>
+<td>debug</td>
+<td style="text-align:center">调试</td>
+<td>trace</td>
+<td style="text-align:center">跟踪</td>
+</tr>
+<tr>
+<td>observe</td>
+<td style="text-align:center">观察</td>
+<td>listen</td>
+<td style="text-align:center">监听</td>
+</tr>
+<tr>
+<td>build</td>
+<td style="text-align:center">构建</td>
+<td>publish</td>
+<td style="text-align:center">发布</td>
+</tr>
+<tr>
+<td>input</td>
+<td style="text-align:center">输入</td>
+<td>output</td>
+<td style="text-align:center">输出</td>
+</tr>
+<tr>
+<td>encode</td>
+<td style="text-align:center">编码</td>
+<td>decode</td>
+<td style="text-align:center">解码</td>
+</tr>
+<tr>
+<td>encrypt</td>
+<td style="text-align:center">加密</td>
+<td>decrypt</td>
+<td style="text-align:center">解密</td>
+</tr>
+<tr>
+<td>compress</td>
+<td style="text-align:center">压缩</td>
+<td>decompress</td>
+<td style="text-align:center">解压缩</td>
+</tr>
+<tr>
+<td>pack</td>
+<td style="text-align:center">打包</td>
+<td>unpack</td>
+<td style="text-align:center">解包</td>
+</tr>
+<tr>
+<td>parse</td>
+<td style="text-align:center">解析</td>
+<td>emit</td>
+<td style="text-align:center">生成</td>
+</tr>
+<tr>
+<td>connect</td>
+<td style="text-align:center">连接</td>
+<td>disconnect</td>
+<td style="text-align:center">断开</td>
+</tr>
+<tr>
+<td>send</td>
+<td style="text-align:center">发送</td>
+<td>receive</td>
+<td style="text-align:center">接收</td>
+</tr>
+<tr>
+<td>download</td>
+<td style="text-align:center">下载</td>
+<td>upload</td>
+<td style="text-align:center">上传</td>
+</tr>
+<tr>
+<td>refresh</td>
+<td style="text-align:center">刷新</td>
+<td>synchronize</td>
+<td style="text-align:center">同步</td>
+</tr>
+<tr>
+<td>update</td>
+<td style="text-align:center">更新</td>
+<td>revert</td>
+<td style="text-align:center">复原</td>
+</tr>
+<tr>
+<td>lock</td>
+<td style="text-align:center">锁定</td>
+<td>unlock</td>
+<td style="text-align:center">解锁</td>
+</tr>
+<tr>
+<td>check</td>
+<td style="text-align:center">out</td>
+<td>签出</td>
+<td style="text-align:center">/check in 签入</td>
+</tr>
+<tr>
+<td>submit</td>
+<td style="text-align:center">提交</td>
+<td>commit</td>
+<td style="text-align:center">交付</td>
+</tr>
+<tr>
+<td>push</td>
+<td style="text-align:center">推</td>
+<td>pull</td>
+<td style="text-align:center">拉</td>
+</tr>
+<tr>
+<td>expand</td>
+<td style="text-align:center">展开</td>
+<td>collapse</td>
+<td style="text-align:center">折叠</td>
+</tr>
+<tr>
+<td>begin</td>
+<td style="text-align:center">起始</td>
+<td>end</td>
+<td style="text-align:center">结束</td>
+</tr>
+<tr>
+<td>start</td>
+<td style="text-align:center">开始</td>
+<td>finish</td>
+<td style="text-align:center">完成</td>
+</tr>
+<tr>
+<td>enter</td>
+<td style="text-align:center">进入</td>
+<td>exit</td>
+<td style="text-align:center">退出</td>
+</tr>
+<tr>
+<td>abort</td>
+<td style="text-align:center">放弃</td>
+<td>quit</td>
+<td style="text-align:center">离开</td>
+</tr>
+<tr>
+<td>obsolete</td>
+<td style="text-align:center">废弃</td>
+<td>depreciate</td>
+<td style="text-align:center">废旧</td>
+</tr>
+<tr>
+<td>collect</td>
+<td style="text-align:center">收集</td>
+<td>aggregate</td>
+<td style="text-align:center">聚集</td>
+</tr>
+</tbody>
+</table>
+<p>附上一段代码细细品味</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//类名</span></div><div class="line"><span class="keyword">var</span> ClassName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="comment">//私有变量</span></div><div class="line">	<span class="keyword">var</span> _FieldName = <span class="string">"Test Field"</span>;</div><div class="line">	<span class="comment">//属性</span></div><div class="line">	<span class="keyword">this</span>.PropertyName = <span class="string">"Test Property Name"</span>;</div><div class="line">	<span class="comment">//私有方法</span></div><div class="line">	<span class="keyword">var</span> functionName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">&#125;</div><div class="line">A：加 _ 下划线前缀  </div><div class="line"></div><div class="line"><span class="keyword">this</span>.PublicFunctionName = <span class="function"><span class="keyword">function</span><span class="params">(pTestName)</span></span>&#123;<span class="comment">//公有方法 pTestName:参数</span></div><div class="line">    <span class="comment">//局部变量</span></div><div class="line">    <span class="keyword">var</span> condition = <span class="string">"condition"</span>;</div><div class="line">    <span class="comment">//判断</span></div><div class="line">    <span class="keyword">if</span>(condition)&#123;</div><div class="line">        <span class="keyword">return</span> functionName();</div><div class="line">    &#125;<span class="keyword">else</span>&#123;&#125;</div><div class="line">    B：小写开头</div><div class="line">    <span class="comment">//数组</span></div><div class="line">    <span class="keyword">var</span> nameCol = [<span class="string">"a"</span>,<span class="string">"b"</span>]; </div><div class="line">    <span class="comment">//数组项</span></div><div class="line">    <span class="keyword">var</span> nameItem = nameCol[<span class="number">0</span>]; </div><div class="line">    <span class="comment">//循环</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; nameCol.length; i++)&#123;</div><div class="line">    &#125;</div><div class="line">    C:大写开头</div><div class="line">    <span class="keyword">var</span> selectName = <span class="string">"item"</span>;</div><div class="line">    <span class="comment">//选择</span></div><div class="line">    <span class="keyword">switch</span>(selectName)&#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">"item"</span>:</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    D：加小写p前缀</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>要避免全局变量泛滥， 可以考虑使用匿名函数， 把不需要在外部访问的变量或者函数限制在一个比较小的范围内。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">例如以下代码:</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"></span></span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">func1</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">var</span> list = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; list.length; i++)&#123;</div><div class="line">            <span class="comment">//..</span></div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">    func1(); <span class="comment">//　自动运行</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这段代码的作用是在页面加载的时候自动执行某些操作， 并不需要被外部调用， 但是它执行过后却留下了一个全局的函数。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">像这种情况， 非常有必要使用匿名函数：</div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"></span></div><div class="line">    (<span class="function"><span class="keyword">function</span> <span class="title">func1</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">var</span> list = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; list.length; i++)&#123;</div><div class="line">            <span class="comment">//..</span></div><div class="line">        &#125;;</div><div class="line">    &#125;)(); <span class="comment">//　自动运行</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="匿名函数的格式："><a href="#匿名函数的格式：" class="headerlink" title="匿名函数的格式："></a>匿名函数的格式：</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">// 代码块</span></div><div class="line">&#125;)();</div><div class="line">如果要带参数的话：</div><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">(arg1, arg2, argN)</span></span>&#123;</div><div class="line">    <span class="comment">//..</span></div><div class="line">&#125;)(arg1, arg2, argN);</div></pre></td></tr></table></figure>
+<h3 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h3><p>还有另外一个方法可以减少全局变量， 那就是命名空间， 在JS中可以用”对象-属性”来模拟命名空间；</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">window</span>.com = &#123;&#125;</div><div class="line"><span class="keyword">window</span>.com.bytter = &#123;&#125;</div><div class="line"><span class="keyword">window</span>.com.bytter.hello = <span class="keyword">function</span>()&#123;</div><div class="line">    alert(<span class="string">"hello"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果你要给某个已经存在的页面增加功能， 可能要增加十多个函数， 而那个页面已经存在大量的全局变量和函数， 甚至还有函数跟你新增的函数同名， 怎么办？<br>命名空间是比较好的选择， 你可以创建一个命名空间， 把你的新函数都放在那个命名空间之下， 例如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"pg.check.userAcc()"</span>&gt;</span>检查用户名<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"pg.check.userAcc()"</span>&gt;</span>检查帐号<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="built_in">window</span>.pg = &#123;&#125;</div><div class="line">    <span class="built_in">window</span>.pg.check = &#123;</div><div class="line">        <span class="comment">// 检查用户名</span></div><div class="line">        userName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="comment">//..</span></div><div class="line">        &#125;,</div><div class="line">        <span class="comment">// 检查帐号</span></div><div class="line">        userAcc: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="comment">//..</span></div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="互不干扰"><a href="#互不干扰" class="headerlink" title="互不干扰"></a>互不干扰</h3><p>结合上述的匿名函数和命名空间的使用， 可以把一个页面中自己维护的代码与其它的代码分隔开来， 将与外部代码的耦合降低到最小。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="comment">// 页面命名空间</span></div><div class="line">    <span class="built_in">window</span>.pg = &#123;&#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">// 检查用户信息</span></div><div class="line">    <span class="comment">// 作者：张三</span></div><div class="line">    <span class="comment">// 最后更新： 2012.12.31</span></div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">        <span class="comment">// 私有变量</span></div><div class="line">        <span class="keyword">var</span> a, b, c;</div><div class="line"></div><div class="line">        <span class="comment">// 检查用户信息的相关方法</span></div><div class="line">        <span class="built_in">window</span>.pg.check = &#123;</div><div class="line">            <span class="comment">// 检查用户名</span></div><div class="line">            userName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="comment">//..</span></div><div class="line">            &#125;,</div><div class="line">            <span class="comment">// 检查帐号</span></div><div class="line">            userAcc: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="comment">//..</span></div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">    &#125;)(); <span class="comment">// end 张三的代码</span></div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">// xxx功能</span></div><div class="line">    <span class="comment">// 作者：李四</span></div><div class="line">    <span class="comment">// 最后更新： 2012.1.1</span></div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">window</span>.pg.xxx = &#123;</div><div class="line">            <span class="comment">//..</span></div><div class="line">        &#125;</div><div class="line">    &#125;)(); <span class="comment">// end 李四的代码</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><p>变量必须在使用前用var进行声明；<br>变量的声明应该放在代码块或者函数的头部；<br>可在一行内声明多个变量， 但要考虑美观易读；</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 银行名称, 银行帐号 </span></div><div class="line"><span class="keyword">var</span> type, acc;</div><div class="line"></div><div class="line"><span class="comment">// 银行名称, 银行帐号</span></div><div class="line"><span class="keyword">var</span> type = <span class="string">"中国银行"</span>, acc = <span class="string">"xxxxxx"</span>;</div><div class="line"><span class="keyword">var</span> type = <span class="string">"中国银行"</span>,   <span class="comment">// 银行名称</span></div><div class="line">    acc = <span class="string">"xxxxxx"</span>;      <span class="comment">// 银行帐号</span></div><div class="line">尽量使用易于理解的变量名，如：</div><div class="line"><span class="keyword">var</span> bankType = <span class="string">"中国银行"</span>,</div><div class="line">    bankAccount = <span class="string">"xxxxxx"</span>; </div><div class="line"><span class="comment">### 命名</span></div><div class="line">普通变量名和函数名采用<span class="string">"小驼峰式命名法"</span>， 如：firstName、lastName</div><div class="line">作为构造函数的函数采用<span class="string">"大驼峰式命名法"</span>， 如：</div><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">//..</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> me = <span class="keyword">new</span> Person();</div><div class="line">常量用大写和下划线表示，如：</div><div class="line"><span class="keyword">var</span> ROOT_PATH = <span class="string">"/v10/"</span>;</div><div class="line">分号</div><div class="line">每条语句必须使用分号结尾（特别是需要压缩的js，省略分号常常会导致压缩失败）；</div><div class="line">大括号</div><div class="line"><span class="keyword">if</span>语句、函数定义、<span class="keyword">try</span>语句等带大括号的结构， 左大括号应紧跟前面的部分：</div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">//..</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//..</span></div><div class="line">&#125;</div><div class="line">使用复合语句时不要省略大括号&#123;&#125;</div><div class="line"><span class="comment">// good</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ary.length; i++)&#123;</div><div class="line">    <span class="keyword">list</span>.push(ary[i]);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// bad</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ary.length; i++)</div><div class="line">    <span class="keyword">list</span>.push(ary[i]);</div><div class="line">以提高代码可读性为前提，允许例外：</div><div class="line"><span class="keyword">if</span>(!data) <span class="keyword">return</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(row) <span class="keyword">list</span>.push(row);</div></pre></td></tr></table></figure>
+<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>数值操作符(如, +/-/*/% 等)、比较符（大于、小于、等于）两边留空格；<br>逗号、冒号、分号后要留一个空格（如果后面还有内容的话）；<br>行尾不要有空格;<br>点号前后不要出现空格；<br>函数名末尾和左括号之间不要出现空格；<br>字符串<br>表示字符串用单引号或双引号均可， 建议统一使用双引号，<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">但表示html标签时一律使用单引号， 如：</div><div class="line">var html = '&lt;div class=<span class="string">"msg"</span> &gt;&lt;/div&gt;';</div><div class="line">数组</div><div class="line">使用简便的方式定义数组：</div><div class="line"><span class="comment">// good</span></div><div class="line">var <span class="type">list</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"></div><div class="line"><span class="comment">// bad</span></div><div class="line">var <span class="type">list</span> = new Array();</div><div class="line"><span class="type">list</span>[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line"><span class="type">list</span>[<span class="number">1</span>] = <span class="number">2</span>;</div><div class="line"><span class="type">list</span>[<span class="number">2</span>] = <span class="number">3</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="注释规范"><a href="#注释规范" class="headerlink" title="注释规范"></a>注释规范</h2><h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><pre><code>语法：
+// 这是单行注释
+</code></pre><p>使用方式：</p>
+<blockquote>
+<ol>
+<li>单独一行：//(双斜线)与注释文字之间保留一个空格。</li>
+<li>在代码后面添加注释：//(双斜线)与代码之间保留一个空格，并且//(双斜线)与注释文字之间保留一个空格。</li>
+<li>注释代码：//(双斜线)与代码之间保留一个空格。</li>
+</ol>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">//</span> 调用了一个函数；1)单独在一行</div><div class="line"><span class="keyword">set</span>Title<span class="params">()</span>;</div><div class="line">var maxCount = 10; <span class="string">//</span> 设置最大量；2)在代码后面注释</div><div class="line"><span class="string">//</span> <span class="keyword">set</span>Name<span class="params">()</span>; <span class="string">//</span> 3)注释代码</div></pre></td></tr></table></figure>
+<h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><pre><code>语法：/* 注释说明 */
+</code></pre><p>使用方法：</p>
+<blockquote>
+<ol>
+<li>若开始(/<em>)和结束(</em>/)都在一行，推荐采用单行注释。</li>
+<li>若至少三行注释时，第一行为/<em>，最后行为</em>/，其他行以<em>开始，并且注释文字与</em>保留一个空格。</li>
+</ol>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* 代码执行到这里后会调用<span class="keyword">set</span>Title<span class="params">()</span>函数</div><div class="line">* <span class="keyword">set</span>Title<span class="params">()</span>：设置title的值</div><div class="line">*/</div><div class="line"><span class="keyword">set</span>Title<span class="params">()</span>;</div></pre></td></tr></table></figure>
+<h3 id="函数-方法-注释"><a href="#函数-方法-注释" class="headerlink" title="函数(方法)注释"></a>函数(方法)注释</h3><p>说明：函数(方法)注释也是多行注释的一种，但是包含了特殊的注释要求，参照 javadoc(百度百科)。</p>
+<p>语法：</p>
+<pre><code>/** 
+* 函数说明 
+* @关键字 
+*/
+</code></pre><p>常用注释关键字：(只列出一部分，并不是全部)</p>
+<p>示例：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">注释名</th>
+<th>语法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">@name</td>
+<td>@name 名称</td>
+<td>@name WacthClock</td>
+</tr>
+<tr>
+<td style="text-align:left">@author</td>
+<td>@author 作者 邮箱</td>
+<td>@author Luuman <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#108;&#117;&#x75;&#x6d;&#x61;&#x6e;&#x73;&#x40;&#x71;&#113;&#46;&#x63;&#111;&#x6d;">&#108;&#117;&#x75;&#x6d;&#x61;&#x6e;&#x73;&#x40;&#x71;&#113;&#46;&#x63;&#111;&#x6d;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">@brief</td>
+<td>@brief  描述</td>
+<td>@brief this is watch for clock in canvas.</td>
+</tr>
+<tr>
+<td style="text-align:left">@dateTime</td>
+<td>@dateTime 时间</td>
+<td>@dateTime 2016-11-27</td>
+</tr>
+<tr>
+<td style="text-align:left">@moreInfo</td>
+<td>@moreInfo 链接</td>
+<td>@moreInfo luuman.github.io/[link]</td>
+</tr>
+<tr>
+<td style="text-align:left">@version</td>
+<td>@version XX.XX.XX</td>
+<td>@version 1.0.3</td>
+</tr>
+<tr>
+<td style="text-align:left">@param</td>
+<td>@param 名 {[type]}  描述信息</td>
+<td>@param name {String} 传入名称</td>
+</tr>
+<tr>
+<td style="text-align:left">@return</td>
+<td>@return {[type]} 描述信息</td>
+<td>@return {Boolean} true:可执行;false:不可执行</td>
+</tr>
+<tr>
+<td style="text-align:left">@example</td>
+<td>@example 示例代码</td>
+<td>@example WacthClock({});</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight julia"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * <span class="meta">@name</span>     WacthClock              watch clock js</div><div class="line"> * <span class="meta">@author</span>   Luuman                  &lt;luumans<span class="meta">@qq</span>.com&gt;</div><div class="line"> * <span class="meta">@brief</span>    this is watch <span class="keyword">for</span> clock <span class="keyword">in</span> canvas.</div><div class="line"> * <span class="meta">@dateTime</span> <span class="number">2016</span>-<span class="number">11</span>-<span class="number">27</span></div><div class="line"> * <span class="meta">@moreInfo</span> luuman.github.io/[link]</div><div class="line"> * <span class="meta">@version</span>  <span class="number">1.0</span><span class="number">.0</span></div><div class="line"> * <span class="meta">@param</span>    &#123;[<span class="keyword">type</span>]&#125;</div><div class="line"> * <span class="meta">@param</span>    &#123;[<span class="keyword">type</span>]&#125;</div><div class="line"> * <span class="meta">@param</span>    &#123;[<span class="keyword">type</span>]&#125;</div><div class="line"> * <span class="meta">@return</span>   &#123;[<span class="keyword">type</span>]&#125;</div><div class="line"> * <span class="meta">@example</span> WacthClock(&#123;&#125;);</div><div class="line"> */</div></pre></td></tr></table></figure>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">/<span class="symbol">*</span><span class="symbol">*</span></div><div class="line"><span class="symbol">*</span> 合并Grid的行</div><div class="line"><span class="symbol">*</span> <span class="meta">@param</span> grid &#123;Ext.Grid.Panel&#125; 需要合并的Grid</div><div class="line"><span class="symbol">*</span> <span class="meta">@param</span> cols &#123;Array&#125; 需要合并列的Index(序号)数组；从0开始计数，序号也包含。</div><div class="line"><span class="symbol">*</span> <span class="meta">@param</span> isAllSome &#123;Boolean&#125; ：是否2个tr的cols必须完成一样才能进行合并。true：完成一样；false(默认)：不完全一样</div><div class="line"><span class="symbol">*</span> <span class="meta">@return</span> void</div><div class="line"><span class="symbol">*</span> <span class="meta">@author</span> polk6 2015/07/21 </div><div class="line"><span class="symbol">*</span> <span class="meta">@example</span></div><div class="line"><span class="symbol">*</span> _________________                             _________________</div><div class="line"><span class="symbol">*</span> |<span class="string">  年龄 </span>|<span class="string">  姓名 </span>|<span class="string">                             </span>|<span class="string">  年龄 </span>|<span class="string">  姓名 </span>|</div><div class="line"><span class="symbol">*</span> -----------------      mergeCells(grid,[0])   -----------------</div><div class="line"><span class="symbol">*</span> |<span class="string">  18   </span>|<span class="string">  张三 </span>|<span class="string">              =&gt;             </span>|<span class="string">       </span>|<span class="string">  张三 </span>|</div><div class="line"><span class="symbol">*</span> -----------------                             -  18   ---------</div><div class="line"><span class="symbol">*</span> |<span class="string">  18   </span>|<span class="string">  王五 </span>|<span class="string">                             </span>|<span class="string">       </span>|<span class="string">  王五 </span>|</div><div class="line"><span class="symbol">*</span> -----------------                             -----------------</div><div class="line"><span class="symbol">*</span>/</div><div class="line">function mergeCells(grid, cols, isAllSome) &#123;</div><div class="line">    // Do Something</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="http://www.cnblogs.com/polk6/p/4660195.html" target="_blank" rel="external">JavaScript 开发规范</a><br><a href="http://www.codeweblog.com/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" target="_blank" rel="external">javascript学习笔记(一)基础知识</a></p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            window._hmt.push(['_trackEvent', 'pay', 'click', '赏'])
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/12/31/Skill/norm/normjs/">前端代码规范Javascript</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 世平阜康 的个人博客">世平阜康</a></p>
+        <p><span>发布时间:</span>2016年12月31日 - 18时29分</p>
+        <p><span>最后更新:</span>2017年07月28日 - 18时54分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/12/31/Skill/norm/normjs/" title="前端代码规范Javascript">http://luuman.github.io/2016/12/31/Skill/norm/normjs/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://luuman.github.io/2016/12/31/Skill/norm/normjs/　　作者: 世平阜康" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/12/31/Skill/norm/normCSS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CSS前端代码规范
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/31/Skill/norm/normhtml/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTML前端代码规范</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规则"><span class="toc-number">1.</span> <span class="toc-text">命名规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量命名"><span class="toc-number">1.1.</span> <span class="toc-text">变量命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量命名-1"><span class="toc-number">1.2.</span> <span class="toc-text">变量命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数命名"><span class="toc-number">1.3.</span> <span class="toc-text">函数命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匿名函数"><span class="toc-number">1.4.</span> <span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匿名函数的格式："><span class="toc-number">1.5.</span> <span class="toc-text">匿名函数的格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命名空间"><span class="toc-number">1.6.</span> <span class="toc-text">命名空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#互不干扰"><span class="toc-number">1.7.</span> <span class="toc-text">互不干扰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量声明"><span class="toc-number">1.8.</span> <span class="toc-text">变量声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空格"><span class="toc-number">1.9.</span> <span class="toc-text">空格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释规范"><span class="toc-number">2.</span> <span class="toc-text">注释规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单行注释"><span class="toc-number">2.1.</span> <span class="toc-text">单行注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多行注释"><span class="toc-number">2.2.</span> <span class="toc-text">多行注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数-方法-注释"><span class="toc-number">2.3.</span> <span class="toc-text">函数(方法)注释</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '7f50019c6a02c37e7aca',
+        client_secret: 'd583910e6ae1492b375796d2c82efcda2cc67aae',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/12/31/Skill/norm/normCSS/" title="上一篇: CSS前端代码规范">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/12/31/Skill/norm/normhtml/" title="下一篇: HTML前端代码规范">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/29/Tool/GitWorkflows/">Git Workflows</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Tool/Git/">Git速查手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/VueComponents/">Vue组件探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/InduceSass/">深入Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/KeepAlive/">keep-alive最佳实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/CSS/CssLowFrequency/">CSS低频属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Tool/Terminal/">Terminal配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/Induce/Weixin/JS-SDK/">WeChat SDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/Induce/Hack/Canvas/">浏览器常见Bug——Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/25/FrontFrame/Vue/Vuex/">Vuex</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/Induce/HTML/Video/">Mobile Video</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/FrontFrame/Vue/VueRouter/">Vue Router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/Tool/Sublime/sublimeMac/">Sublime Mac 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/FrontFrame/React/React/">React初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/Induce/CSS/CSSElementAlign/">用CSS实现元素垂直居中方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normCSS/">CSS前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normjs/">前端代码规范Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normhtml/">HTML前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normdev/">前端开发代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCText/">React Native Text</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCTextInput/">React Native TextInput</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCImage/">React Native Image</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNComponents/">React Native 组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNTest/">React Native 实战封装组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNBasics/">React Native 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetOX/">React Native IOS环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNTools/">React Native开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetAndroid/">React Native Android环境搭建（Window）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RN/">React Native初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/JavaScript/JSInputSearch/">Input输入框的案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Gulp/InduceGulp/">Gulp前端构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/">OmniMarkupPreviewer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/HTML/HtmlRem/">移动H5自适应布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/Demo/TextShow/">BOOS信息展示与收缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/Demo/MobileRotate/">移动端横屏提示动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Skill/OOCSS/">面向对象的CSS样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Mobile/MobliePC/">关于移动端界面在PC端显示的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/Node/NodeJsWeb/">Node.js实战 建立简单的Web服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/CSS/animation/">CSS3动画探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/Induce/Mobile/Mobile-knowledge/">移动前端知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Induce/Ajax/Ajax/">Ajax学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/Plug/ChromePlug/">前端Chrome插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/JavaScript/JSTip/">原生JS TitleTip</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/Ajax/AjaxStatus/">Ajax Status请求状态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Induce/JavaScript/NativeJS/">原生JavaScript探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/GitHubHexo/">使用GitHub搭建Hexo博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoBug/">Hexo bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoPlug/">Hexo插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/Hexo/">Hexo的使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoTheme/">Hexo 主题：SPFK</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/26/Skill/win7Set/">电脑优化相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CssTips/">CSS小技巧收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Interview/WebFront/">web前端职业规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/HTML/media/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CSS/">CSS学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/Tool/Sublime/Sublimemarkdown/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Induce/JavaScript/JQueryCDN/">CDN公共库</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Demo/FrontEndGuide/">前端资源导航</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/11/Skill/BusyFront/">Busy前端工作室</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 世平阜康
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

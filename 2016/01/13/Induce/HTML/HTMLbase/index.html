@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML结构零散 | Luuman&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="HTML结构零散：头部分的标签、元素有很多，涉及到浏览器对网页的渲染，SEO 等等，而各个浏览器内核以及各个国内浏览器厂商都有些自己的标签元素,这就造成了很多差异性。移动互联网时代，head 头部结构，移动端的 meta 元素，显得更为重要。了解每个标签的意义，写出满足自己需求的 head 头标签，是本文的目的。本篇以一丝的文章为基础，进行扩展总结介绍常用的 head 中各个标签、元素的意义以">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML结构零散">
+<meta property="og:url" content="http://luuman.github.io/2016/01/13/Induce/HTML/HTMLbase/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="HTML结构零散：头部分的标签、元素有很多，涉及到浏览器对网页的渲染，SEO 等等，而各个浏览器内核以及各个国内浏览器厂商都有些自己的标签元素,这就造成了很多差异性。移动互联网时代，head 头部结构，移动端的 meta 元素，显得更为重要。了解每个标签的意义，写出满足自己需求的 head 头标签，是本文的目的。本篇以一丝的文章为基础，进行扩展总结介绍常用的 head 中各个标签、元素的意义以">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML结构零散">
+<meta name="twitter:description" content="HTML结构零散：头部分的标签、元素有很多，涉及到浏览器对网页的渲染，SEO 等等，而各个浏览器内核以及各个国内浏览器厂商都有些自己的标签元素,这就造成了很多差异性。移动互联网时代，head 头部结构，移动端的 meta 元素，显得更为重要。了解每个标签的意义，写出满足自己需求的 head 头标签，是本文的目的。本篇以一丝的文章为基础，进行扩展总结介绍常用的 head 中各个标签、元素的意义以">
+  
+    <link rel="alternative" href="/atom.xml" title="Luuman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">世平阜康</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 11.67px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Development/" style="font-size: 10px;">Development</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/Hack/" style="font-size: 10px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 13.33px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/Video/" style="font-size: 10px;">Video</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/WeChatSDK/" style="font-size: 10px;">WeChatSDK</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.waydrow.com/">waydrow</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.tangbc.com">TANGBC</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.w3ctrain.com/">Helkyle</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">世平阜康</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">世平阜康</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Induce/HTML/HTMLbase" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/13/Induce/HTML/HTMLbase/" class="article-date">
+      <time datetime="2016-01-13T05:58:41.000Z" itemprop="datePublished">2016-01-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML结构零散
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Induce/">Induce</a>
+    </div>
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<strong>HTML结构零散：</strong>头部分的标签、元素有很多，涉及到浏览器对网页的渲染，SEO 等等，而各个浏览器内核以及各个国内浏览器厂商都有些自己的标签元素,这就造成了很多差异性。移动互联网时代，head 头部结构，移动端的 meta 元素，显得更为重要。了解每个标签的意义，写出满足自己需求的 head 头标签，是本文的目的。本篇以一丝的文章为基础，进行扩展总结介绍常用的 head 中各个标签、元素的意义以及使用场景。<br><a id="more"></a></p>
+<h3 id="版权声明"><a href="#版权声明" class="headerlink" title="版权声明"></a>版权声明</h3><p>DOCTYPE(Document Type)，该声明位于文档中最前面的位置，处于 html 标签之前，此标签告知浏览器文档使用哪种 HTML 或者 XHTML 规范。<br>DTD(Document Type Definition) 声明以 &lt;!DOCTYPE&gt; 开始，不区分大小写，前面没有任何内容，如果有其他内容(空格除外)会使浏览器在 IE 下开启怪异模式(quirks mode)渲染网页。公共 DTD，名称格式为注册//组织//类型 标签//语言,注册指组织是否由国际标准化组织(ISO)注册，+表示是，-表示不是。组织即组织名称，如：W3C。类型一般是 DTD。标签是指定公开文本描述，即对所引用的公开文本的唯一描述性名称，后面可附带版本号。最后语言是 DTD 语言的 ISO 639 语言标识符，如：EN 表示英文，ZH 表示中文。XHTML 1.0 可声明三种 DTD 类型。分别表示严格版本，过渡版本，以及基于框架的 HTML 文档。</p>
+<blockquote>
+<p>XHTML</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/1999/xhtml"</span> &gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>HTML</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- HTML 4.01 strict --&gt;</span></div><div class="line"><span class="meta">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- HTML 4.01 Transitional --&gt;</span></div><div class="line"><span class="meta">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- HTML 4.01 Frameset --&gt;</span></div><div class="line"><span class="meta">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>HTML 5</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- HTML 5 --&gt;</span></div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- HTML 5 --&gt;</span></div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">'en'</span> <span class="attr">xmlns</span>=<span class="string">'http://www.w3.org/1999/xhtml'</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>HTML5兼容</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">引用Google的html5.js文件</div><div class="line"></div><div class="line">&lt;!--[<span class="keyword">if</span> IE]&gt;</div><div class="line">&lt;script src=<span class="string">"http://html5shiv.googlecode.com/svn/trunk/html5.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line"></div><div class="line">将上代码复制到head部分，记住一定要是head部分（因为IE必须在元素解析前知道这个元素，所以这个js文件不能在其他位置调用，否则失效）</div><div class="line"></div><div class="line">最后在css里面加上这段：</div><div class="line"></div><div class="line"><span class="comment">/*html5*/</span></div><div class="line"><span class="selector-tag">article</span>,<span class="selector-tag">aside</span>,dialog,<span class="selector-tag">footer</span>,<span class="selector-tag">header</span>,<span class="selector-tag">section</span>,<span class="selector-tag">footer</span>,<span class="selector-tag">nav</span>,<span class="selector-tag">figure</span>,menu&#123;<span class="attribute">display</span>:block&#125;</div><div class="line"></div><div class="line">主要是让这些html5标签成块状，像div那样。</div></pre></td></tr></table></figure>
+<h3 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 英文 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">'en'</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 简体中文 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-cmn-Hans"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 繁体中文 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-cmn-Hant"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://www.zhihu.com/question/20797118" title="网页头部的声明应该是用 lang=&quot;zh&quot; 还是 lang=&quot;zh-cn&quot;？" target="_blank" rel="external">网页头部语言</a></p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h2><h3 id="标题SEO"><a href="#标题SEO" class="headerlink" title="标题SEO"></a>标题SEO</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 标题 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML Base<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="base默认地址"><a href="#base默认地址" class="headerlink" title="base默认地址"></a>base默认地址</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">base</span>&gt;</span> 标签为页面上的所有链接规定默认地址或默认目标。</div><div class="line">使用 <span class="tag">&lt;<span class="name">base</span>&gt;</span> 标签可以改变这一点。</div><div class="line">浏览器随后将不再使用当前文档的 URL，而使用指定的基本 URL 来解析所有的相对 URL。</div><div class="line">这其中包括 <span class="tag">&lt;<span class="name">a</span>&gt;</span>、<span class="tag">&lt;<span class="name">img</span>&gt;</span>、<span class="tag">&lt;<span class="name">link</span>&gt;</span>、<span class="tag">&lt;<span class="name">form</span>&gt;</span> 标签中的 URL。</div><div class="line">在 HTML 中，<span class="tag">&lt;<span class="name">base</span>&gt;</span> 标签没有结束标签；在 XHTML 中，<span class="tag">&lt;<span class="name">base</span>&gt;</span> 标签必须被正确地关闭。</div><div class="line">但是还是建议要闭合标签，这样不同浏览器兼容不容。</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">该标签将会控制所有链接，围棋添加默认的链接。</div><div class="line">默认的链接</div><div class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"http://www.w3school.com.cn/i/"</span> /&gt;</span></div><div class="line">默认的链接打开方式</div><div class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">target</span>=<span class="string">"_blank"</span> /&gt;</span></div><div class="line"></div><div class="line">注意：</div><div class="line">通常通常情况下，默认链接会自动添加到链接的前面。但是，也有特例：</div><div class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"http://www.w3school.com.cn/i/"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/root.css"</span>/&gt;</span></div><div class="line">http://www.w3school.com.cn/i/css/root.css</div><div class="line"></div><div class="line">但是，如果添加根目录（绝对路径），链接会自动根据默认链接进行根目录的查询指定。</div><div class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"http://www.w3school.com.cn/i/"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/css/root.css"</span>/&gt;</span></div><div class="line">http://www.w3school.com.cn/css/root.css</div></pre></td></tr></table></figure>
+<h3 id="meta"><a href="#meta" class="headerlink" title="meta"></a>meta</h3><h4 id="编码格式"><a href="#编码格式" class="headerlink" title="编码格式"></a>编码格式</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 编码格式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=gb2312"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="编码格式-1"><a href="#编码格式-1" class="headerlink" title="编码格式"></a>编码格式</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=7"</span>&gt;</span>  </div><div class="line"><span class="comment">&lt;!-- 指定网页的兼容性模式设置 --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=8"</span>&gt;</span>  </div><div class="line"><span class="comment">&lt;!-- 以上代码告诉IE浏览器，无论是否用DTD声明文档标准，IE8/9都会以IE7引擎来渲染页面。   --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span>  </div><div class="line"><span class="comment">&lt;!-- 以上代码告诉IE浏览器，IE8/9都会以IE8引擎来渲染页面。   --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=7,IE=9"</span>&gt;</span>  </div><div class="line"><span class="comment">&lt;!-- 以上代码告诉IE浏览器，IE8/9及以后的版本都会以最高版本IE来渲染页面。   --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=7,9"</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=Edge,chrome=1"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 以上代码IE=edge告诉IE使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame. --&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="渲染页面"><a href="#渲染页面" class="headerlink" title="渲染页面"></a>渲染页面</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"webkit"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 默认webkit内核 --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 360 使用Google Chrome Frame --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"ie-comp"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 默认IE兼容模式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"ie-stand"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 默认IE标准模式 --&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="页面关键词SEO"><a href="#页面关键词SEO" class="headerlink" title="页面关键词SEO"></a>页面关键词SEO</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 关键词 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">""</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="页面描述SEO"><a href="#页面描述SEO" class="headerlink" title="页面描述SEO"></a>页面描述SEO</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">每个网页都应有一个不超过 150 个字符且能准确反映网页内容的描述标签。</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 描述 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">""</span> /&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"author"</span> <span class="attribute">content</span>=<span class="string">"作者"</span>&gt; </div><div class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"build"</span> <span class="attribute">content</span>=<span class="string">"日期"</span>&gt; </div><div class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"coprright"</span> <span class="attribute">content</span>=<span class="string">"版权"</span>&gt; </div><div class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"reply-to"</span> <span class="attribute">content</span>=<span class="string">"email"</span>&gt;</div></pre></td></tr></table></figure>
+<h4 id="搜索引擎索引方式"><a href="#搜索引擎索引方式" class="headerlink" title="搜索引擎索引方式"></a>搜索引擎索引方式</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。Content的参数有all、none、index、noindex、follow、nofollow。默认是all。</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"index,follow"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!--</span></div><div class="line">all：文件将被检索，且页面上的链接可以被查询；</div><div class="line">none：文件将不被检索，且页面上的链接不可以被查询；</div><div class="line">index：文件将被检索；</div><div class="line">follow：页面上的链接可以被查询；</div><div class="line">noindex：文件将不被检索；</div><div class="line">nofollow：页面上的链接不可以被查询。</div><div class="line">--&gt;</div></pre></td></tr></table></figure>
+<h4 id="页面重定向和刷新"><a href="#页面重定向和刷新" class="headerlink" title="页面重定向和刷新"></a>页面重定向和刷新</h4><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">content</span>内的数字代表时间（秒），既多少时间后刷新。</div><div class="line">如果加url,则会重定向到指定网页（搜索引擎能够自动检测，也很容易被引擎视作误导而受到惩罚）。</div><div class="line"></div><div class="line">&lt;meta http-equiv=<span class="string">"refresh"</span> <span class="built_in">content</span>=<span class="string">"5;url=http://luuman.github.io/"</span> /&gt;</div></pre></td></tr></table></figure>
+<h4 id="页面期限"><a href="#页面期限" class="headerlink" title="页面期限"></a>页面期限</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输，必须使用GMT的时间格式。</div><div class="line"></div><div class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"expires"</span> <span class="attribute">Content</span>=<span class="string">"Wed, 26 Feb 1997 08:21:57 GMT"</span>&gt;</div></pre></td></tr></table></figure>
+<h4 id="页面Cookie设定"><a href="#页面Cookie设定" class="headerlink" title="页面Cookie设定"></a>页面Cookie设定</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">如果网页过期，那么存盘的cookie将被删除。</div><div class="line"></div><div class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Set-Cookie"</span> <span class="attribute">content</span>=<span class="string">"cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/"</span>&gt;</div></pre></td></tr></table></figure>
+<h4 id="页面Cache模式"><a href="#页面Cache模式" class="headerlink" title="页面Cache模式"></a>页面Cache模式</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">禁止浏览器从本地计算机的缓存中访问页面内容。</div><div class="line"></div><div class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Pragma"</span> <span class="attribute">content</span>=<span class="string">"no-cache"</span>&gt;</div></pre></td></tr></table></figure>
+<h4 id="显示窗口的设定"><a href="#显示窗口的设定" class="headerlink" title="显示窗口的设定"></a>显示窗口的设定</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">强制页面在当前窗口以独立页面显示，用来防止别人在框架里调用自己的页面。</div><div class="line"></div><div class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Window-target"</span> <span class="attribute">content</span>=<span class="string">"_top"</span>&gt;</div></pre></td></tr></table></figure>
+<h4 id="可视区域（移动端）"><a href="#可视区域（移动端）" class="headerlink" title="可视区域（移动端）"></a>可视区域（移动端）</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 可视区域 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"</span>&gt;</span></div><div class="line"></div><div class="line">width - viewport的宽度 </div><div class="line">height - viewport的高度 </div><div class="line">initial-scale - 初始的缩放比例 </div><div class="line">minimum-scale - 允许用户缩放到的最小比例 </div><div class="line">maximum-scale - 允许用户缩放到的最大比例 </div><div class="line">user-scalable - 用户是否可以手动缩放</div><div class="line"></div><div class="line">minimal-ui iOS 7.1 beta 2 中新增属性，可以在页面加载时最小化上下状态栏。这是一个布尔值，可以直接这样写：</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, minimal-ui"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="禁止了把数字转化为拨号链接"><a href="#禁止了把数字转化为拨号链接" class="headerlink" title="禁止了把数字转化为拨号链接"></a>禁止了把数字转化为拨号链接</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 禁止了把数字转化为拨号链接 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telephone=no"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="忽略识别邮箱"><a href="#忽略识别邮箱" class="headerlink" title="忽略识别邮箱"></a>忽略识别邮箱</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 禁止了识别邮箱 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"email=no"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 删除默认的苹果工具栏和菜单栏 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"yes"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="关键词-1"><a href="#关键词-1" class="headerlink" title="关键词"></a>关键词</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 控制状态栏显示样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> <span class="attr">content</span>=<span class="string">"default"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> <span class="attr">content</span>=<span class="string">"black"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> <span class="attr">content</span>=<span class="string">"black-translucent"</span> /&gt;</span></div><div class="line"></div><div class="line">默认：default（白色）</div><div class="line">black（黑色）</div><div class="line">black-translucent（灰色半透明）</div></pre></td></tr></table></figure>
+<h4 id="Iphone的Safari浏览器"><a href="#Iphone的Safari浏览器" class="headerlink" title="Iphone的Safari浏览器"></a>Iphone的Safari浏览器</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- iphone的safari浏览器 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-itunes-app"</span> <span class="attr">content</span>=<span class="string">"app-id=432274380"</span> /&gt;</span></div><div class="line"><span class="comment">&lt;!-- &lt;meta name="znonce" content="74810a1113ff4cf49d97f2616bdfe158"&gt; --&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="添加Meta声明"><a href="#添加Meta声明" class="headerlink" title="添加Meta声明"></a>添加Meta声明</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 用于添加Meta声明；无对应关系的PC页面无需添加Meta --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"mobile-agent"</span> <span class="attr">content</span>=<span class="string">"format=[wml|xhtml|html5]; url=url"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"mobile-agent"</span> <span class="attr">content</span>=<span class="string">"format=html5;url=http://www.z.com/"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="网站所有者"><a href="#网站所有者" class="headerlink" title="网站所有者"></a>网站所有者</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 验证网站所有者的一种方式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">"wb:webmaster"</span> <span class="attr">content</span>=<span class="string">"8e9c4b702508b902"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 --&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"HandheldFriendly"</span> <span class="attr">content</span>=<span class="string">"true"</span>&gt;</span>  </div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 微软的老式浏览器 --&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"MobileOptimized"</span> <span class="attr">content</span>=<span class="string">"320"</span>&gt;</span>  </div><div class="line"></div><div class="line"><span class="comment">&lt;!-- uc强制竖屏 --&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"screen-orientation"</span> <span class="attr">content</span>=<span class="string">"portrait"</span>&gt;</span>  </div><div class="line"></div><div class="line"><span class="comment">&lt;!-- QQ强制竖屏 --&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"x5-orientation"</span> <span class="attr">content</span>=<span class="string">"portrait"</span>&gt;</span>  </div><div class="line"></div><div class="line"><span class="comment">&lt;!-- UC强制全屏 --&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"full-screen"</span> <span class="attr">content</span>=<span class="string">"yes"</span>&gt;</span>  </div><div class="line"></div><div class="line"><span class="comment">&lt;!-- QQ强制全屏 --&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"x5-fullscreen"</span> <span class="attr">content</span>=<span class="string">"true"</span>&gt;</span>  </div><div class="line"></div><div class="line"><span class="comment">&lt;!-- UC应用模式 --&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"browsermode"</span> <span class="attr">content</span>=<span class="string">"application"</span>&gt;</span>  </div><div class="line"></div><div class="line"><span class="comment">&lt;!-- QQ应用模式 --&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"x5-page-mode"</span> <span class="attr">content</span>=<span class="string">"app"</span>&gt;</span>  </div><div class="line"></div><div class="line"><span class="comment">&lt;!-- windows phone 点击无高光 --&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-tap-highlight"</span> <span class="attr">content</span>=<span class="string">"no"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="社交分享（富媒体对象）"><a href="#社交分享（富媒体对象）" class="headerlink" title="社交分享（富媒体对象）"></a>社交分享（富媒体对象）</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">网页内容可以被其他社会化网站引用等，目前这种协议被SNS网站如Fackbook、renren采用。</div><div class="line"></div><div class="line">&lt;meta <span class="attribute">property</span>=<span class="string">"og:type"</span> <span class="attribute">content</span>=<span class="string">"article"</span>&gt;</div><div class="line">&lt;meta <span class="attribute">property</span>=<span class="string">"og:title"</span> <span class="attribute">content</span>=<span class="string">"HTML结构零散"</span>&gt;</div><div class="line">&lt;meta <span class="attribute">property</span>=<span class="string">"og:url"</span> <span class="attribute">content</span>=<span class="string">"http://yoursite.com/2016/01/13/HTMLbase/index.html"</span>&gt;</div><div class="line">&lt;meta <span class="attribute">property</span>=<span class="string">"og:site_name"</span> <span class="attribute">content</span>=<span class="string">"Luuman's Blog"</span>&gt;</div><div class="line">&lt;meta <span class="attribute">property</span>=<span class="string">"og:description"</span> <span class="attribute">content</span>=<span class="string">"自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why　　最近，使用Hexo遇到了很多问题，在设立进行整理。"</span>&gt;</div><div class="line">&lt;meta <span class="attribute">property</span>=<span class="string">"og:updated_time"</span> <span class="attribute">content</span>=<span class="string">"2016-01-20T16:59:08.000Z"</span>&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-----------Base</span> <span class="selector-tag">Element</span>基本类型<span class="selector-tag">-----------</span></div><div class="line">1、<span class="selector-tag">og</span><span class="selector-pseudo">:type</span> 网页资源类型标识</div><div class="line"><span class="selector-tag">content</span> <span class="selector-tag">enum</span>: </div><div class="line">● <span class="selector-tag">video</span> 视频</div><div class="line">● <span class="selector-tag">audio</span> 音频</div><div class="line">● <span class="selector-tag">link</span> 链接</div><div class="line">● <span class="selector-tag">photo</span> 图片</div><div class="line">● <span class="selector-tag">product</span> 产品</div><div class="line">2、<span class="selector-tag">og</span><span class="selector-pseudo">:title</span> 标题描述</div><div class="line">3、<span class="selector-tag">og</span><span class="selector-pseudo">:image</span> 缩略图</div><div class="line">4、<span class="selector-tag">og</span><span class="selector-pseudo">:url</span> 当前内容链接</div><div class="line">5、<span class="selector-tag">rr</span><span class="selector-pseudo">:appid</span> 如果您的网站是<span class="selector-tag">CONNECT</span>到<span class="selector-tag">renren</span><span class="selector-class">.com</span>的，请提供该<span class="selector-tag">ID</span> </div><div class="line">6、<span class="selector-tag">rr</span><span class="selector-pseudo">:appid</span> 如果您的网站是<span class="selector-tag">CONNECT</span>到<span class="selector-tag">renren</span><span class="selector-class">.com</span>的，请提供该<span class="selector-tag">ID</span> </div><div class="line">7、<span class="selector-tag">og</span><span class="selector-pseudo">:width</span> 视频的宽度</div><div class="line">8、<span class="selector-tag">og</span><span class="selector-pseudo">:height</span> 视频的高度</div><div class="line"><span class="selector-tag">-----------Audio</span> <span class="selector-tag">Element</span> 音频<span class="selector-tag">------------</span></div><div class="line">1、<span class="selector-tag">og</span><span class="selector-pseudo">:audiosrc</span> 音乐资源链接，例如可是播放歌曲的<span class="selector-tag">flash</span>地址</div><div class="line">2、<span class="selector-tag">og</span><span class="selector-pseudo">:artist</span> 音乐家</div><div class="line"><span class="selector-tag">-----------Commen</span> <span class="selector-tag">Page</span> <span class="selector-tag">Element</span> 普通网页<span class="selector-tag">------------</span></div><div class="line">1、<span class="selector-tag">og</span><span class="selector-pseudo">:abstract</span> 内容摘要</div><div class="line"></div><div class="line">2、<span class="selector-tag">og</span><span class="selector-pseudo">:contentid</span> 内容主体的<span class="selector-tag">ID</span>，用来标识当前页面主要内容所处的<span class="selector-tag">HTML</span>标签的<span class="selector-tag">ID</span> </div><div class="line"><span class="selector-tag">-----------Graphic</span> <span class="selector-tag">Element</span> 图片<span class="selector-tag">------------</span></div><div class="line"></div><div class="line">1、<span class="selector-tag">og</span><span class="selector-pseudo">:photo</span> 图片列表</div><div class="line"></div><div class="line">2、<span class="selector-tag">og</span><span class="selector-pseudo">:width</span> 图片宽度</div><div class="line">3、<span class="selector-tag">og</span><span class="selector-pseudo">:height</span> 图片高度</div><div class="line"></div><div class="line"><span class="selector-tag">-----------Product</span> <span class="selector-tag">Element</span> 商品<span class="selector-tag">-----------</span></div><div class="line"></div><div class="line">1、<span class="selector-tag">og</span><span class="selector-pseudo">:price</span> 产品价格</div><div class="line">2、<span class="selector-tag">og</span><span class="selector-pseudo">:description</span> 产品描述</div><div class="line">3、<span class="selector-tag">og</span><span class="selector-pseudo">:nick</span> 店铺名</div><div class="line"></div><div class="line">4、<span class="selector-tag">og</span><span class="selector-pseudo">:postfee</span> 运费</div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="attribute">property</span>=<span class="string">"fb:admins"</span> <span class="attribute">content</span>=<span class="string">"100001422224225"</span>&gt;</div><div class="line">&lt;meta <span class="attribute">property</span>=<span class="string">"fb:page_id"</span> <span class="attribute">content</span>=<span class="string">"241333394220"</span>&gt;</div></pre></td></tr></table></figure>
+<h4 id="访问时以兼容模式访问"><a href="#访问时以兼容模式访问" class="headerlink" title="访问时以兼容模式访问"></a>访问时以兼容模式访问</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">国内浏览器很多都是双内核（webkit和Trident），webkit内核高速浏览，IE内核兼容网页和旧版网站。而添加meta标签的网站可以控制浏览器选择何种内核渲染。</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 访问时以兼容模式访问 --&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 默认webkit内核 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"webkit"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 默认IE兼容模式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"ie-comp"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 默认IE标准模式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"ie-stand"</span>&gt;</span></div><div class="line"></div><div class="line">国内双核浏览器默认内核模式如下：</div><div class="line"></div><div class="line">1. 搜狗高速浏览器、QQ浏览器：IE内核（兼容模式）</div><div class="line">2. 360极速浏览器、遨游浏览器：Webkit内核（极速模式）</div></pre></td></tr></table></figure>
+<h4 id="创建一个推特卡"><a href="#创建一个推特卡" class="headerlink" title="创建一个推特卡"></a>创建一个推特卡</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"twitter:card"</span> <span class="attribute">content</span>=<span class="string">"summary"</span> /&gt;</div><div class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"twitter:url"</span> <span class="attribute">content</span>=<span class="string">"http://www.peerflyoffers.com/offer.php?id=7351"</span> /&gt;</div><div class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"twitter:title"</span> <span class="attribute">content</span>=<span class="string">"Tara Astrology - US"</span> /&gt;&lt;br /&gt;&lt;meta <span class="attribute">name</span>=<span class="string">"twitter:description"</span> <span class="attribute">content</span>=<span class="string">"Payout: <span class="variable">$1</span>.30 - CR: 28.91% - EPC: <span class="variable">$0</span>.38 - Get your free reading! Target demo is women 25+. Converts on first page."</span> /&gt;</div><div class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"twitter:image"</span> <span class="attribute">content</span>=<span class="string">"http://s.wordpress.com/mshots/v1/http%3A%2F%2Fpeerfly.com%2Fpreview.php%3Foffer%3D7351?w=400&amp;amp;height=400"</span> /&gt;</div><div class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"twitter:site"</span> <span class="attribute">content</span>=<span class="string">"@peerflyoffers"</span> /&gt;</div><div class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"twitter:creator"</span> <span class="attribute">content</span>=<span class="string">"@LukePeerFly"</span> /&gt;</div></pre></td></tr></table></figure>
+<h4 id="Windows-8"><a href="#Windows-8" class="headerlink" title="Windows 8"></a>Windows 8</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Windows 8 磁贴颜色 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-TileColor"</span> <span class="attr">content</span>=<span class="string">"#000"</span>/&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Windows 8 磁贴图标 --&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-TileImage"</span> <span class="attr">content</span>=<span class="string">"icon.png"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="手机页URL"><a href="#手机页URL" class="headerlink" title="手机页URL"></a>手机页URL</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"mobile-agent"</span> <span class="attr">content</span>=<span class="string">"format=[wml|xhtml|html5]; url=url"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--</span></div><div class="line">[wml|xhtml|html5]根据手机页的协议语言，选择其中一种；url="url" 后者代表当前PC页所对应的手机页URL，两者必须是一一对应关系。</div><div class="line">--&gt;</div></pre></td></tr></table></figure>
+<h4 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">用百度打开网页可能会对其进行转码（比如贴广告）</div><div class="line"></div><div class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Cache-Control"</span> <span class="attribute">content</span>=<span class="string">"no-siteapp"</span> /&gt;</div></pre></td></tr></table></figure>
+<h3 id="引入link"><a href="#引入link" class="headerlink" title="引入link"></a>引入link</h3><h4 id="Icon-link"><a href="#Icon-link" class="headerlink" title="Icon link"></a>Icon link</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Icon link --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">href</span>=<span class="string">"favicon.ico"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 添加到主屏上的图标会使用指定的图片 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">href</span>=<span class="string">"templets/default/images/ico/apple-touch-icon.png"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- ipad --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">sizes</span>=<span class="string">"72x72"</span> <span class="attr">href</span>=<span class="string">"templets/default/images/ico/apple-touch-icon-72.png"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- iPhone、iTouch --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">sizes</span>=<span class="string">"114x114"</span> <span class="attr">href</span>=<span class="string">"templets/default/images/ico/apple-touch-icon-114.png"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- precomposed --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon-precomposed"</span> <span class="attr">href</span>=<span class="string">"static/img/ios/zhihu(57px).png"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon-precomposed"</span> <span class="attr">sizes</span>=<span class="string">"72x72"</span> <span class="attr">href</span>=<span class="string">"templets/default/images/ico/apple-touch-icon-72.png"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon-precomposed"</span> <span class="attr">sizes</span>=<span class="string">"114x114"</span> <span class="attr">href</span>=<span class="string">"templets/default/images/ico/apple-touch-icon-114.png"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="section"><a href="#section" class="headerlink" title="section"></a>section</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 把搜索功能放到浏览器的快捷搜索工具上 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"search"</span> <span class="attr">type</span>=<span class="string">"application/opensearchdescription+xml"</span> <span class="attr">href</span>=<span class="string">"static/search.xml"</span> <span class="attr">title</span>=<span class="string">"知乎"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="section-1"><a href="#section-1" class="headerlink" title="section"></a>section</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link <span class="attribute">rel</span>=<span class="string">"stylesheet"</span> <span class="attribute">href</span>=<span class="string">".css"</span>&gt;</div></pre></td></tr></table></figure>
+<h4 id="添加-RSS-订阅"><a href="#添加-RSS-订阅" class="headerlink" title="添加 RSS 订阅"></a>添加 RSS 订阅</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 添加 RSS 订阅 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"alternate"</span> <span class="attr">type</span>=<span class="string">"application/rss+xml"</span> <span class="attr">title</span>=<span class="string">"RSS"</span> <span class="attr">href</span>=<span class="string">"/rss.xml"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="引入JavaScript"><a href="#引入JavaScript" class="headerlink" title="引入JavaScript"></a>引入JavaScript</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- JavaScript --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="引入style"><a href="#引入style" class="headerlink" title="引入style"></a>引入style</h3><h3 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span> <span class="comment">&lt;!-- 使用 HTML5 doctype，不区分大小写 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-cmn-Hans"</span>&gt;</span> <span class="comment">&lt;!-- 更加标准的 lang 属性写法 http://zhi.hu/XyIa --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 声明文档使用的字符编码 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">'utf-8'</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 优先使用 IE 最新版本和 Chrome --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,chrome=1"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 页面描述 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"不超过150个字符"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 页面关键词 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">""</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 网页作者 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"author"</span> <span class="attr">content</span>=<span class="string">"name, email@gmail.com"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 搜索引擎抓取 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"index,follow"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 为移动设备添加 viewport --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边 http://bigc.at/ios-webapp-viewport-meta.orz --&gt;</span></div><div class="line"> </div><div class="line">    <span class="comment">&lt;!-- iOS 设备 begin --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-title"</span> <span class="attr">content</span>=<span class="string">"标题"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 添加到主屏后的标题（iOS 6 新增） --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"yes"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 --&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-itunes-app"</span> <span class="attr">content</span>=<span class="string">"app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> <span class="attr">content</span>=<span class="string">"black"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 设置苹果工具栏颜色 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telphone=no, email=no"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 忽略页面中的数字识别为电话，忽略email识别 --&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 启用360浏览器的极速模式(webkit) --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"webkit"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 避免IE使用兼容模式 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"HandheldFriendly"</span> <span class="attr">content</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 微软的老式浏览器 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"MobileOptimized"</span> <span class="attr">content</span>=<span class="string">"320"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- uc强制竖屏 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"screen-orientation"</span> <span class="attr">content</span>=<span class="string">"portrait"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- QQ强制竖屏 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"x5-orientation"</span> <span class="attr">content</span>=<span class="string">"portrait"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- UC强制全屏 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"full-screen"</span> <span class="attr">content</span>=<span class="string">"yes"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- QQ强制全屏 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"x5-fullscreen"</span> <span class="attr">content</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- UC应用模式 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"browsermode"</span> <span class="attr">content</span>=<span class="string">"application"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- QQ应用模式 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"x5-page-mode"</span> <span class="attr">content</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- windows phone 点击无高光 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-tap-highlight"</span> <span class="attr">content</span>=<span class="string">"no"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iOS 图标 begin --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon-precomposed"</span> <span class="attr">href</span>=<span class="string">"/apple-touch-icon-57x57-precomposed.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iPhone 和 iTouch，默认 57x57 像素，必须有 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon-precomposed"</span> <span class="attr">sizes</span>=<span class="string">"114x114"</span> <span class="attr">href</span>=<span class="string">"/apple-touch-icon-114x114-precomposed.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- Retina iPhone 和 Retina iTouch，114x114 像素，可以没有，但推荐有 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon-precomposed"</span> <span class="attr">sizes</span>=<span class="string">"144x144"</span> <span class="attr">href</span>=<span class="string">"/apple-touch-icon-144x144-precomposed.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- Retina iPad，144x144 像素，可以没有，但推荐有 --&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iOS 图标 end --&gt;</span></div><div class="line"> </div><div class="line">    <span class="comment">&lt;!-- iOS 启动画面 begin --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-startup-image"</span> <span class="attr">sizes</span>=<span class="string">"768x1004"</span> <span class="attr">href</span>=<span class="string">"/splash-screen-768x1004.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iPad 竖屏 768 x 1004（标准分辨率） --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-startup-image"</span> <span class="attr">sizes</span>=<span class="string">"1536x2008"</span> <span class="attr">href</span>=<span class="string">"/splash-screen-1536x2008.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iPad 竖屏 1536x2008（Retina） --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-startup-image"</span> <span class="attr">sizes</span>=<span class="string">"1024x748"</span> <span class="attr">href</span>=<span class="string">"/Default-Portrait-1024x748.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iPad 横屏 1024x748（标准分辨率） --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-startup-image"</span> <span class="attr">sizes</span>=<span class="string">"2048x1496"</span> <span class="attr">href</span>=<span class="string">"/splash-screen-2048x1496.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iPad 横屏 2048x1496（Retina） --&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-startup-image"</span> <span class="attr">href</span>=<span class="string">"/splash-screen-320x480.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iPhone/iPod Touch 竖屏 320x480 (标准分辨率) --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-startup-image"</span> <span class="attr">sizes</span>=<span class="string">"640x960"</span> <span class="attr">href</span>=<span class="string">"/splash-screen-640x960.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iPhone/iPod Touch 竖屏 640x960 (Retina) --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-startup-image"</span> <span class="attr">sizes</span>=<span class="string">"640x1136"</span> <span class="attr">href</span>=<span class="string">"/splash-screen-640x1136.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iPhone 5/iPod Touch 5 竖屏 640x1136 (Retina) --&gt;</span></div><div class="line">    <span class="comment">&lt;!-- iOS 启动画面 end --&gt;</span></div><div class="line"> </div><div class="line">    <span class="comment">&lt;!-- iOS 设备 end --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-TileColor"</span> <span class="attr">content</span>=<span class="string">"#000"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- Windows 8 磁贴颜色 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-TileImage"</span> <span class="attr">content</span>=<span class="string">"icon.png"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- Windows 8 磁贴图标 --&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"alternate"</span> <span class="attr">type</span>=<span class="string">"application/rss+xml"</span> <span class="attr">title</span>=<span class="string">"RSS"</span> <span class="attr">href</span>=<span class="string">"/rss.xml"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 添加 RSS 订阅 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">type</span>=<span class="string">"image/ico"</span> <span class="attr">href</span>=<span class="string">"/favicon.ico"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 添加 favicon icon --&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="hack-IE"><a href="#hack-IE" class="headerlink" title="hack IE"></a>hack IE</h3><p>用于解决IE兼容性问题的特殊方案，只有满足条件，才会执行代码，否则视为注释。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- hack IE --&gt;</span></div><div class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">&lt;script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="section">&lt;/head&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Body"><a href="#Body" class="headerlink" title="Body"></a>Body</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">body</span>&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>audio声音事件<br><a href="http://e.waimai.meituan.com/#/v2/order/pre" target="_blank" rel="external">美团外卖商家中心</a></p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">"main_audio"</span> <span class="attr">preload</span>=<span class="string">"auto"</span> <span class="attr">volume</span>=<span class="string">"1.0"</span> <span class="attr">loop</span></span></div><div class="line"><span class="attr">data-type</span>=<span class="string">"waimai"</span>&gt;</div><div class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"meituan://waimai.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"static/media/waimai.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 加入refundloop的判断 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">"refund-audio"</span> <span class="attr">preload</span>=<span class="string">"auto"</span> <span class="attr">volume</span>=<span class="string">"1.0"</span> </span></div><div class="line"><span class="attr">data-type</span>=<span class="string">"one"</span>&gt;</div><div class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"meituan://refund.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"static/media/refund.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            window._hmt.push(['_trackEvent', 'pay', 'click', '赏'])
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 世平阜康 的个人博客">世平阜康</a></p>
+        <p><span>发布时间:</span>2016年01月13日 - 13时58分</p>
+        <p><span>最后更新:</span>2017年07月28日 - 18时54分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/13/Induce/HTML/HTMLbase/" title="HTML结构零散">http://luuman.github.io/2016/01/13/Induce/HTML/HTMLbase/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://luuman.github.io/2016/01/13/Induce/HTML/HTMLbase/　　作者: 世平阜康" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/01/15/Induce/JavaScript/NativeJS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          原生JavaScript探索
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/27/Hexo/GitHubHexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用GitHub搭建Hexo博客</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#版权声明"><span class="toc-number">1.</span> <span class="toc-text">版权声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语言"><span class="toc-number">2.</span> <span class="toc-text">语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-number"></span> <span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HEAD"><span class="toc-number"></span> <span class="toc-text">HEAD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标题SEO"><span class="toc-number">1.</span> <span class="toc-text">标题SEO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#base默认地址"><span class="toc-number">2.</span> <span class="toc-text">base默认地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#meta"><span class="toc-number">3.</span> <span class="toc-text">meta</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#编码格式"><span class="toc-number">3.1.</span> <span class="toc-text">编码格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编码格式-1"><span class="toc-number">3.2.</span> <span class="toc-text">编码格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#渲染页面"><span class="toc-number">3.3.</span> <span class="toc-text">渲染页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#页面关键词SEO"><span class="toc-number">3.4.</span> <span class="toc-text">页面关键词SEO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#页面描述SEO"><span class="toc-number">3.5.</span> <span class="toc-text">页面描述SEO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#搜索引擎索引方式"><span class="toc-number">3.6.</span> <span class="toc-text">搜索引擎索引方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#页面重定向和刷新"><span class="toc-number">3.7.</span> <span class="toc-text">页面重定向和刷新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#页面期限"><span class="toc-number">3.8.</span> <span class="toc-text">页面期限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#页面Cookie设定"><span class="toc-number">3.9.</span> <span class="toc-text">页面Cookie设定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#页面Cache模式"><span class="toc-number">3.10.</span> <span class="toc-text">页面Cache模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#显示窗口的设定"><span class="toc-number">3.11.</span> <span class="toc-text">显示窗口的设定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可视区域（移动端）"><span class="toc-number">3.12.</span> <span class="toc-text">可视区域（移动端）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#禁止了把数字转化为拨号链接"><span class="toc-number">3.13.</span> <span class="toc-text">禁止了把数字转化为拨号链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#忽略识别邮箱"><span class="toc-number">3.14.</span> <span class="toc-text">忽略识别邮箱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关键词"><span class="toc-number">3.15.</span> <span class="toc-text">关键词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关键词-1"><span class="toc-number">3.16.</span> <span class="toc-text">关键词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Iphone的Safari浏览器"><span class="toc-number">3.17.</span> <span class="toc-text">Iphone的Safari浏览器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加Meta声明"><span class="toc-number">3.18.</span> <span class="toc-text">添加Meta声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网站所有者"><span class="toc-number">3.19.</span> <span class="toc-text">网站所有者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他"><span class="toc-number">3.20.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#社交分享（富媒体对象）"><span class="toc-number">3.21.</span> <span class="toc-text">社交分享（富媒体对象）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#访问时以兼容模式访问"><span class="toc-number">3.22.</span> <span class="toc-text">访问时以兼容模式访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一个推特卡"><span class="toc-number">3.23.</span> <span class="toc-text">创建一个推特卡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows-8"><span class="toc-number">3.24.</span> <span class="toc-text">Windows 8</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#手机页URL"><span class="toc-number">3.25.</span> <span class="toc-text">手机页URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#百度"><span class="toc-number">3.26.</span> <span class="toc-text">百度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引入link"><span class="toc-number">4.</span> <span class="toc-text">引入link</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Icon-link"><span class="toc-number">4.1.</span> <span class="toc-text">Icon link</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#section"><span class="toc-number">4.2.</span> <span class="toc-text">section</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#section-1"><span class="toc-number">4.3.</span> <span class="toc-text">section</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加-RSS-订阅"><span class="toc-number">4.4.</span> <span class="toc-text">添加 RSS 订阅</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引入JavaScript"><span class="toc-number">5.</span> <span class="toc-text">引入JavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引入style"><span class="toc-number">6.</span> <span class="toc-text">引入style</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移动端"><span class="toc-number">7.</span> <span class="toc-text">移动端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hack-IE"><span class="toc-number">8.</span> <span class="toc-text">hack IE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Body"><span class="toc-number"></span> <span class="toc-text">Body</span></a>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '7f50019c6a02c37e7aca',
+        client_secret: 'd583910e6ae1492b375796d2c82efcda2cc67aae',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/15/Induce/JavaScript/NativeJS/" title="上一篇: 原生JavaScript探索">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2015/12/27/Hexo/GitHubHexo/" title="下一篇: 使用GitHub搭建Hexo博客">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/29/Tool/GitWorkflows/">Git Workflows</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Tool/Git/">Git速查手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/VueComponents/">Vue组件探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/InduceSass/">深入Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/KeepAlive/">keep-alive最佳实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/CSS/CssLowFrequency/">CSS低频属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Tool/Terminal/">Terminal配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/Induce/Weixin/JS-SDK/">WeChat SDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/Induce/Hack/Canvas/">浏览器常见Bug——Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/25/FrontFrame/Vue/Vuex/">Vuex</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/Induce/HTML/Video/">Mobile Video</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/FrontFrame/Vue/VueRouter/">Vue Router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/Tool/Sublime/sublimeMac/">Sublime Mac 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/FrontFrame/React/React/">React初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/Induce/CSS/CSSElementAlign/">用CSS实现元素垂直居中方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normCSS/">CSS前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normjs/">前端代码规范Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normhtml/">HTML前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normdev/">前端开发代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCText/">React Native Text</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCTextInput/">React Native TextInput</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCImage/">React Native Image</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNComponents/">React Native 组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNTest/">React Native 实战封装组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNBasics/">React Native 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetOX/">React Native IOS环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNTools/">React Native开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetAndroid/">React Native Android环境搭建（Window）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RN/">React Native初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/JavaScript/JSInputSearch/">Input输入框的案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Gulp/InduceGulp/">Gulp前端构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/">OmniMarkupPreviewer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/HTML/HtmlRem/">移动H5自适应布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/Demo/TextShow/">BOOS信息展示与收缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/Demo/MobileRotate/">移动端横屏提示动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Skill/OOCSS/">面向对象的CSS样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Mobile/MobliePC/">关于移动端界面在PC端显示的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/Node/NodeJsWeb/">Node.js实战 建立简单的Web服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/CSS/animation/">CSS3动画探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/Induce/Mobile/Mobile-knowledge/">移动前端知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Induce/Ajax/Ajax/">Ajax学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/Plug/ChromePlug/">前端Chrome插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/JavaScript/JSTip/">原生JS TitleTip</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/Ajax/AjaxStatus/">Ajax Status请求状态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Induce/JavaScript/NativeJS/">原生JavaScript探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/GitHubHexo/">使用GitHub搭建Hexo博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoBug/">Hexo bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoPlug/">Hexo插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/Hexo/">Hexo的使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoTheme/">Hexo 主题：SPFK</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/26/Skill/win7Set/">电脑优化相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CssTips/">CSS小技巧收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Interview/WebFront/">web前端职业规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/HTML/media/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CSS/">CSS学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/Tool/Sublime/Sublimemarkdown/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Induce/JavaScript/JQueryCDN/">CDN公共库</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Demo/FrontEndGuide/">前端资源导航</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/11/Skill/BusyFront/">Busy前端工作室</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 世平阜康
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

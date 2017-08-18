@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML前端代码规范 | Luuman&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="规范：你是否常常碰到以下问题：你总是看不懂他写的代码，或者读起来很吃力；你需要改他的代码却无从下手，或总是要去问他这里是什么改了会不会影响其他代码；你和他一起开发一个产品，你总是怕代码和他有冲突或互相影响；你的代码在多次维护任务之后变得越来越臃肿，越来越难以维护。解决以上问题只需一种方法——读我们的规范！">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML前端代码规范">
+<meta property="og:url" content="http://luuman.github.io/2016/12/31/Skill/norm/normhtml/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="规范：你是否常常碰到以下问题：你总是看不懂他写的代码，或者读起来很吃力；你需要改他的代码却无从下手，或总是要去问他这里是什么改了会不会影响其他代码；你和他一起开发一个产品，你总是怕代码和他有冲突或互相影响；你的代码在多次维护任务之后变得越来越臃肿，越来越难以维护。解决以上问题只需一种方法——读我们的规范！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML前端代码规范">
+<meta name="twitter:description" content="规范：你是否常常碰到以下问题：你总是看不懂他写的代码，或者读起来很吃力；你需要改他的代码却无从下手，或总是要去问他这里是什么改了会不会影响其他代码；你和他一起开发一个产品，你总是怕代码和他有冲突或互相影响；你的代码在多次维护任务之后变得越来越臃肿，越来越难以维护。解决以上问题只需一种方法——读我们的规范！">
+  
+    <link rel="alternative" href="/atom.xml" title="Luuman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">世平阜康</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 11.67px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Development/" style="font-size: 10px;">Development</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/Hack/" style="font-size: 10px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 13.33px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/Video/" style="font-size: 10px;">Video</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/WeChatSDK/" style="font-size: 10px;">WeChatSDK</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.waydrow.com/">waydrow</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.tangbc.com">TANGBC</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.w3ctrain.com/">Helkyle</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">世平阜康</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">世平阜康</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Skill/norm/normhtml" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/31/Skill/norm/normhtml/" class="article-date">
+      <time datetime="2016-12-31T10:29:00.000Z" itemprop="datePublished">2016-12-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML前端代码规范
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Norm/">Norm</a>
+    </div>
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<strong>规范：</strong>你是否常常碰到以下问题：你总是看不懂他写的代码，或者读起来很吃力；你需要改他的代码却无从下手，或总是要去问他这里是什么改了会不会影响其他代码；你和他一起开发一个产品，你总是怕代码和他有冲突或互相影响；你的代码在多次维护任务之后变得越来越臃肿，越来越难以维护。解决以上问题只需一种方法——读我们的规范！<br><a id="more"></a></p>
+<h2 id="整体结构"><a href="#整体结构" class="headerlink" title="整体结构"></a>整体结构</h2><h3 id="HTML基础设施"><a href="#HTML基础设施" class="headerlink" title="HTML基础设施"></a>HTML基础设施</h3><p>文件应以“&lt;!DOCTYPE ……&gt;”首行顶格开始，推荐使用“&lt;!DOCTYPE html&gt;”。<br>必须申明文档的编码charset，且与文件本身编码保持一致，推荐使用UTF-8编码<meta charset="utf-8">。<br>根据页面内容和需求填写适当的keywords和description。<br>页面title是极为重要的不可缺少的一项。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>NEC：更好的CSS方案<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">""</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">""</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/style.css"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">href</span>=<span class="string">"img/favicon.ico"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">href</span>=<span class="string">"img/touchicon.png"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="结构顺序和视觉顺序基本保持一致"><a href="#结构顺序和视觉顺序基本保持一致" class="headerlink" title="结构顺序和视觉顺序基本保持一致"></a>结构顺序和视觉顺序基本保持一致</h3><p>按照从上至下、从左到右的视觉顺序书写HTML结构。<br>有时候为了便于搜索引擎抓取，我们也会将重要内容在HTML结构顺序上提前。<br>用div代替table布局，可以使HTML更具灵活性，也方便利用CSS控制。<br>table不建议用于布局，但表现具有明显表格形式的数据，table还是首选。<br>结构、表现、行为三者分离，避免内联<br>使用link将css文件引入，并置于head中。<br>使用script将js文件引入，并置于body底部。<br>保持良好的简洁的树形结构<br>每一个块级元素都另起一行，每一行都使用Tab缩进对齐（head和body的子元素不需要缩进）。删除冗余的行尾的空格。<br>使用4个空格代替1个Tab（大多数编辑器中可设置）。<br>对于内容较为简单的表格，建议将tr写成单行。<br>你也可以在大的模块之间用空行隔开，使模块更清晰。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 侧栏内容区 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-side"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"side"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sidein"</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- 热门标签 --&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sideblk"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-hd3"</span>&gt;</span><span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">"tit"</span>&gt;</span>热门标签<span class="tag">&lt;/<span class="name">h3</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                ...</div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- 最热TOP5 --&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sideblk"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-hd3"</span>&gt;</span><span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">"tit"</span>&gt;</span>最热TOP5<span class="tag">&lt;/<span class="name">h3</span>&gt;</span> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"s-fc02 f-fr"</span>&gt;</span>更多»<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                ...</div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- /侧栏内容区 --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="另外，请做到以下几点"><a href="#另外，请做到以下几点" class="headerlink" title="另外，请做到以下几点"></a>另外，请做到以下几点</h3><ol>
+<li>结构上如果可以并列书写，就不要嵌套。如果可以写成<code>&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;</code>那么就不要写成<code>&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;</code></li>
+<li>如果结构已经可以满足视觉和语义的要求，那么就不要有额外的冗余的结构。比如<code>&lt;div&gt;&lt;h2&gt;&lt;/h2&gt;&lt;/div&gt;</code>已经能满足要求，那么就不要再写成<code>&lt;div&gt;&lt;div&gt;&lt;h2&gt;&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;</code></li>
+<li>一个标签上引用的className不要过多，越少越好。比如不要出现这种情况：<code>&lt;div class=&quot;class1 class2 class3 class4&quot;&gt;&lt;/div&gt;</code></li>
+<li>对于一个语义化的内部标签，应尽量避免使用className。比如在这样一个列表中，li标签中的itm应去除：<code>&lt;ul class=&quot;m-help&quot;&gt;&lt;li class=&quot;itm&quot;&gt;&lt;/li&gt;&lt;li class=&quot;itm&quot;&gt;&lt;/li&gt;&lt;/ul&gt;</code></li>
+</ol>
+<h2 id="代码格式"><a href="#代码格式" class="headerlink" title="代码格式"></a>代码格式</h2><h3 id="说明文案的注释方法"><a href="#说明文案的注释方法" class="headerlink" title="说明文案的注释方法"></a>说明文案的注释方法</h3><p>采用类似标签闭合的写法，与HTML统一格式；注释文案两头空格，与CSS注释统一格式。</p>
+<p>开始注释：<!-- 注释文案 -->（文案两头空格）。<br>结束注释：<!-- /注释文案 -->（文案前加“/”符号，类似标签的闭合）。<br>允许只有开始注释！</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 头部 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"g-hd"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- LOGO --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"m-logo"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>LOGO<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- /LOGO --&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 导航 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"m-nav"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>NAV1<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>NAV2<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 更多导航项 --&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- /导航 --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- /头部 --&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="代码本身的注释方法"><a href="#代码本身的注释方法" class="headerlink" title="代码本身的注释方法"></a>代码本身的注释方法</h3><p>单行代码的注释也保持同行，两端空格；多行代码的注释起始和结尾都另起一行并左缩进对齐。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- &lt;h1 class="m-logo"&gt;&lt;a href="#"&gt;LOGO&lt;/a&gt;&lt;/h1&gt; --&gt;</span></div><div class="line"><span class="comment">&lt;!--</span></div><div class="line">&lt;ul class="m-nav"&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;NAV1&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;NAV2&lt;/a&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">--&gt;</div></pre></td></tr></table></figure>
+<h3 id="HTML注释在IE6中的BUG"><a href="#HTML注释在IE6中的BUG" class="headerlink" title="HTML注释在IE6中的BUG"></a>HTML注释在IE6中的BUG</h3><p>如果两个浮动元素之间存在注释，那么可能导致布局错位或文字的BUG。<br>所以，这种情况下，我们通常将注释去掉，或者索性采用模板语言（ftl、vm）的注释。</p>
+<h3 id="严格的嵌套"><a href="#严格的嵌套" class="headerlink" title="严格的嵌套"></a>严格的嵌套</h3><p>尽可能以最严格的xhtml strict标准来嵌套，比如内联元素不能包含块级元素等等。<br>正确闭合标签且必须闭合。</p>
+<h3 id="严格的属性"><a href="#严格的属性" class="headerlink" title="严格的属性"></a>严格的属性</h3><p>属性和值全部小写，每个属性都必须有一个值，每个值必须加双引号。<br>没有值的属性必须使用自己的名称做为值（checked、disabled、readonly、selected等等）。<br>可以省略style标签和script标签的type属性。</p>
+<h3 id="常用的标签"><a href="#常用的标签" class="headerlink" title="常用的标签"></a>常用的标签</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>语义</th>
+<th style="text-align:center">嵌套常见错误</th>
+<th>常用属性（加粗的为不可缺少的或建议的）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>超链接/锚</td>
+<td style="text-align:center">a不可嵌套a</td>
+<td>href,name,title,rel,target</td>
+</tr>
+<tr>
+<td>br</td>
+<td>换行</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>button</td>
+<td>按钮</td>
+<td style="text-align:center">不可嵌套表单元素</td>
+<td>type,disabled</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>定义列表中的定义（描述内容）</td>
+<td style="text-align:center">只能以dl为父容器，对应一个dt</td>
+<td></td>
+</tr>
+<tr>
+<td>del</td>
+<td>文本删除</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>div</td>
+<td>块级容器</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>dl</td>
+<td>定义列表</td>
+<td style="text-align:center">只能嵌套dt和dd</td>
+<td></td>
+</tr>
+<tr>
+<td>dt</td>
+<td>定义列表中的定义术语</td>
+<td style="text-align:center">只能以dl为父容器，对应多个dd</td>
+<td></td>
+</tr>
+<tr>
+<td>em</td>
+<td>强调文本</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>form</td>
+<td>表单</td>
+<td style="text-align:center">action</td>
+<td>,target,method,name</td>
+</tr>
+<tr>
+<td>h1</td>
+<td>标题</td>
+<td style="text-align:center">从h1到h6，不可嵌套块级元素</td>
+<td></td>
+</tr>
+<tr>
+<td>iframe</td>
+<td>内嵌一个网页</td>
+<td style="text-align:center">frameborder</td>
+<td>,width,height,src,scrolling,name</td>
+</tr>
+<tr>
+<td>img</td>
+<td>图像</td>
+<td style="text-align:center">alt</td>
+<td>,src,width,height</td>
+</tr>
+<tr>
+<td>input</td>
+<td>各种表单控件</td>
+<td style="text-align:center">type</td>
+<td>,name,value,checked,disabled,maxlength,readonly,accesskey</td>
+</tr>
+<tr>
+<td>label</td>
+<td>标签为input元素定义标注</td>
+<td style="text-align:center">for</td>
+<td></td>
+</tr>
+<tr>
+<td>li</td>
+<td>列表项</td>
+<td style="text-align:center">只能以ul或ol为父容器</td>
+<td></td>
+</tr>
+<tr>
+<td>link</td>
+<td>引用样式或icon</td>
+<td style="text-align:center">不可嵌套任何元素</td>
+<td>type,rel,href</td>
+</tr>
+<tr>
+<td>meta</td>
+<td>文档信息</td>
+<td style="text-align:center">只用于head</td>
+<td>content,http-equiv,name</td>
+</tr>
+<tr>
+<td>ol</td>
+<td>有序列表</td>
+<td style="text-align:center">只能嵌套li</td>
+<td></td>
+</tr>
+<tr>
+<td>option</td>
+<td>select中的一个选项</td>
+<td style="text-align:center">仅用于select</td>
+<td>value,selected,disabled</td>
+</tr>
+<tr>
+<td>p</td>
+<td>段落</td>
+<td style="text-align:center">不能嵌套块级元素</td>
+<td></td>
+</tr>
+<tr>
+<td>script</td>
+<td>引用脚本</td>
+<td style="text-align:center">不可嵌套任何元素</td>
+<td>type,src</td>
+</tr>
+<tr>
+<td>select</td>
+<td>列表框或下拉框</td>
+<td style="text-align:center">只能嵌套option或optgroup</td>
+<td>name,disabled,multiple</td>
+</tr>
+<tr>
+<td>span</td>
+<td>内联容器</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>strong</td>
+<td>强调文本</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>style</td>
+<td>引用样式</td>
+<td style="text-align:center">不可嵌套任何元素</td>
+<td>type,media</td>
+</tr>
+<tr>
+<td>sub</td>
+<td>下标</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>sup</td>
+<td>上标</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>table</td>
+<td>表格</td>
+<td style="text-align:center">只可嵌套表格元素</td>
+<td>width,align,background,cellpadding,cellspacing,summary,border</td>
+</tr>
+<tr>
+<td>tbody</td>
+<td>表格主体</td>
+<td style="text-align:center">只用于table</td>
+<td></td>
+</tr>
+<tr>
+<td>td</td>
+<td>表格中的单元格</td>
+<td style="text-align:center">只用于tr</td>
+<td>colspan,rowspan</td>
+</tr>
+<tr>
+<td>textarea</td>
+<td>多行文本输入控件</td>
+<td style="text-align:center">name</td>
+<td>,accesskey,disabled,readonly,rows,cols</td>
+</tr>
+<tr>
+<td>tfoot</td>
+<td>表格表尾</td>
+<td style="text-align:center">只用于table</td>
+<td></td>
+</tr>
+<tr>
+<td>th</td>
+<td>表格中的标题单元格</td>
+<td style="text-align:center">只用于tr</td>
+<td>colspan,rowspan</td>
+</tr>
+<tr>
+<td>thead</td>
+<td>表格表头</td>
+<td style="text-align:center">只用于table</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>文档标题</td>
+<td style="text-align:center">只用于head</td>
+<td></td>
+</tr>
+<tr>
+<td>tr</td>
+<td>表格行</td>
+<td style="text-align:center">嵌套于table或thead、tbody、tfoot</td>
+<td></td>
+</tr>
+<tr>
+<td>ul</td>
+<td>无序列表</td>
+<td style="text-align:center">只能嵌套li</td>
+</tr>
+</tbody>
+</table>
+<h2 id="内容语义"><a href="#内容语义" class="headerlink" title="内容语义"></a>内容语义</h2><h3 id="CSS文件的分类"><a href="#CSS文件的分类" class="headerlink" title="CSS文件的分类"></a>CSS文件的分类</h3><h3 id="内容类型决定使用的语义标签"><a href="#内容类型决定使用的语义标签" class="headerlink" title="内容类型决定使用的语义标签"></a>内容类型决定使用的语义标签</h3><p>在网页中某种类型的内容必定需要某种特定的HTML标签来承载，也就是我们常常提到的根据你的内容语义化HTML结构。</p>
+<h3 id="加强“资源型”内容的可访问性和可用性"><a href="#加强“资源型”内容的可访问性和可用性" class="headerlink" title="加强“资源型”内容的可访问性和可用性"></a>加强“资源型”内容的可访问性和可用性</h3><p>在资源型的内容上加入描述文案，比如给img添加alt属性，在audio内加入文案和链接等等。</p>
+<h3 id="加强“不可见”内容的可访问性"><a href="#加强“不可见”内容的可访问性" class="headerlink" title="加强“不可见”内容的可访问性"></a>加强“不可见”内容的可访问性</h3><p>背景图上的文字应该同时写在html中，并使用css使其不可见，有利于搜索引擎抓取你的内容，也可以在css失效的情况下看到内容。</p>
+<h3 id="适当使用实体"><a href="#适当使用实体" class="headerlink" title="适当使用实体"></a>适当使用实体</h3><p>以实体代替与HTML语法相同的字符，避免浏览解析错误。</p>
+<h3 id="常用HTML字符实体（建议使用实体）："><a href="#常用HTML字符实体（建议使用实体）：" class="headerlink" title="常用HTML字符实体（建议使用实体）："></a>常用HTML字符实体（建议使用实体）：</h3><table>
+<thead>
+<tr>
+<th>字符</th>
+<th style="text-align:center">名称</th>
+<th>实体名</th>
+<th style="text-align:center">实体数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“</td>
+<td style="text-align:center">双引号</td>
+<td>&quot;</td>
+<td style="text-align:center">&#34;</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td style="text-align:center">&amp;符</td>
+<td>&amp;</td>
+<td style="text-align:center">&#38;</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td style="text-align:center">左尖括号（小于号）</td>
+<td>&lt;</td>
+<td style="text-align:center">&#60;</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td style="text-align:center">右尖括号（大于号）</td>
+<td>&gt;</td>
+<td style="text-align:center">&#62;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">空格</td>
+<td>&nbsp;</td>
+<td style="text-align:center">&#160;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">中文全角空格</td>
+<td></td>
+<td style="text-align:center">&#12288;</td>
+</tr>
+</tbody>
+</table>
+<p>常用特殊字符实体（不建议使用实体）：</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th style="text-align:center">名称</th>
+<th>实体名</th>
+<th style="text-align:center">实体数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¥</td>
+<td style="text-align:center">元</td>
+<td>&yen;</td>
+<td style="text-align:center">&#165;</td>
+</tr>
+<tr>
+<td>¦</td>
+<td style="text-align:center">断竖线</td>
+<td>&brvbar;</td>
+<td style="text-align:center">&#166;</td>
+</tr>
+<tr>
+<td>©</td>
+<td style="text-align:center">版权</td>
+<td>&copy;</td>
+<td style="text-align:center">&#169;</td>
+</tr>
+<tr>
+<td>®</td>
+<td style="text-align:center">注册商标R</td>
+<td>&reg;</td>
+<td style="text-align:center">&#174;</td>
+</tr>
+<tr>
+<td>™</td>
+<td style="text-align:center">商标TM</td>
+<td>&trade;</td>
+<td style="text-align:center">&#8482;</td>
+</tr>
+<tr>
+<td>·</td>
+<td style="text-align:center">间隔符</td>
+<td>&middot;</td>
+<td style="text-align:center">&#183;</td>
+</tr>
+<tr>
+<td>«</td>
+<td style="text-align:center">左双尖括号</td>
+<td>&laquo;</td>
+<td style="text-align:center">&#171;</td>
+</tr>
+<tr>
+<td>»</td>
+<td style="text-align:center">右双尖括号</td>
+<td>&raquo;</td>
+<td style="text-align:center">&#187;</td>
+</tr>
+<tr>
+<td>°</td>
+<td style="text-align:center">度</td>
+<td>&deg;</td>
+<td style="text-align:center">&#176;</td>
+</tr>
+<tr>
+<td>×</td>
+<td style="text-align:center">乘</td>
+<td>&times;</td>
+<td style="text-align:center">&#215;</td>
+</tr>
+<tr>
+<td>÷</td>
+<td style="text-align:center">除</td>
+<td>&divide;</td>
+<td style="text-align:center">&#247;</td>
+</tr>
+<tr>
+<td>‰</td>
+<td style="text-align:center">千分比</td>
+<td>&permil;</td>
+<td style="text-align:center">&#8240;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="邮件内容"><a href="#邮件内容" class="headerlink" title="邮件内容"></a>邮件内容</h2><h3 id="邮件环境"><a href="#邮件环境" class="headerlink" title="邮件环境"></a>邮件环境</h3><p>邮件内容所在上下文或者说所在外部容器（以下简称环境）都是由邮箱服务商决定的，这就要求邮件内容需要在任何一种情况下都要正确显示。<br>这些环境可能是以下某几种情况：</p>
+<ol>
+<li>可能是个iframe，你的内容是被放在body里面的；可能只是个div，你的内容就被放在这个div里面。</li>
+<li>可能邮箱自身设置了些css，他可能对你产生未知的影响。</li>
+<li>可能根本没有申明doctype，即使申明了，也不是你想要的doctype。</li>
+</ol>
+<h3 id="避免被嵌套在不正确的容器里"><a href="#避免被嵌套在不正确的容器里" class="headerlink" title="避免被嵌套在不正确的容器里"></a>避免被嵌套在不正确的容器里</h3><p>惑：因为容器可能是body或div，所以，我们邮件内容不应该是一个完整的html。<br>解：所以邮件内容应该是以div为根节点的html片段。</p>
+<h3 id="避免css冲突或被覆盖"><a href="#避免css冲突或被覆盖" class="headerlink" title="避免css冲突或被覆盖"></a>避免css冲突或被覆盖</h3><p>惑：因为环境中可能已经设置了css，比如一些reset、一些.class。<br>解：所以我们只能使用行内style来确保我们的效果，并且在内容根节点上设置基础style，并且尽量使用div、span等无语义标签。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 根节点 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:600px;text-align:left;color:#000;font:normal 12px/15px arial,simsun;background:#fff;"</span>&gt;</span></div><div class="line">    内容区域</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 根节点-邮件内容居中 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:600px;margin:0 auto;text-align:left;color:#000;font:normal 12px/15px arial,simsun;background:#fff;"</span>&gt;</span></div><div class="line">        内容区域</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 如果使用语义化标签，那么需要多写一些style，以避免被环境中的css覆盖 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">"width:100px;height:100px;margin:0;padding:0;fong-weight:normal;font-size:12px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 而使用无语义标签，就可以省下很多style --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:100px;height:100px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="避免盒模型错误"><a href="#避免盒模型错误" class="headerlink" title="避免盒模型错误"></a>避免盒模型错误</h3><p>惑：因为doctype的不确定性，我们在写style的时候，应该考虑无论doctype是什么情况，都可以正常显示，doctype影响最大的就是盒模型的解析。<br>解：所以我们要将盒模型拆分开来写，比如我们将原本要定义在某个div上的height和padding分别写到这个div和他的父元素或子元素上。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height:100px;padding:20px 0;"</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 上面的写法应该改成以下写法 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"padding:20px 0;"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height:100px;"</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="其他注意事项"><a href="#其他注意事项" class="headerlink" title="其他注意事项"></a>其他注意事项</h3><p>因为只能使用行内style，所以清除浮动需要使用额外标签。<br>避免使用绝对定位，可能会被过滤。<br>避免使用js，可能会被过滤。<br>避免使用table布局，不易于修改维护。<br>背景图片或内容图片上的文字信息，必须在代码中可见。<br>如果没有特殊要求，所有a链接都要从新窗口打开，即target=”_blank”，且a标签内容不能为空。<br>所有链接必须设置使用颜色、是否下划线，即style=”text-decoration:;color:;”。<br>重点检查ie！！！</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:600px;text-align:left;color:#000;font:normal 12px/15px simsun;background:#d9d9d9;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height:268px;background:url(images/bg1.jpg) no-repeat;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height:228px;"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"padding:21px 0 0 21px;"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://yuedu.163.com/"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">style</span>=<span class="string">"display:block;width:111px;height:28px;overflow:hidden;text-indent:-2000px;text-decoration:none;"</span> <span class="attr">title</span>=<span class="string">"网易阅读-随时随地品质阅读"</span>&gt;</span>网易阅读-随时随地品质阅读<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">"margin:0;padding:0;width:0;height:0;overflow:hidden;text-indent:-2000px;"</span>&gt;</span>你的iPad够有料吗？iPad不等于愤怒的小鸟！不等于切水果！下载网易阅读，给你的iPad添点料，打造你独一无二的iPad！<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"padding:0 0 0 35px;"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://itunes.apple.com/cn/app/id421092396?mt=8"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">style</span>=<span class="string">"color:#f00;text-decoration:none;"</span> <span class="attr">title</span>=<span class="string">"下载网易阅读"</span>&gt;</span>下载网易阅读<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="发现的问题及解决方案"><a href="#发现的问题及解决方案" class="headerlink" title="发现的问题及解决方案"></a>发现的问题及解决方案</h3><p>问题：部分智能手机的邮件客户端可能会有只显示部分的bug（宽度被截）。<br>解决：在外面套一个同宽的table即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;table width=<span class="string">"600"</span> cellpadding=<span class="string">"0"</span> cellspacing=<span class="string">"0"</span> border=<span class="string">"0"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:600px;text-align:left;color:#000;font:normal 12px/15px simsun;background:#d9d9d9;"</span>&gt;</span></div><div class="line">        ......</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="xml"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h3 id="使用框架"><a href="#使用框架" class="headerlink" title="使用框架"></a>使用框架</h3><p>推荐使用 email框架 来创建邮件内容。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">width</span>=<span class="string">"600"</span> <span class="attr">cellpadding</span>=<span class="string">"0"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">border</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;<span class="name">tbody</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:600px;text-align:left;font:12px/15px simsun;color:#000;background:#fff;"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 水平居左的邮件 --&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">width</span>=<span class="string">"600"</span> <span class="attr">cellpadding</span>=<span class="string">"0"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">style</span>=<span class="string">"margin:0 auto;"</span>&gt;</span><span class="tag">&lt;<span class="name">tbody</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:600px;text-align:left;font:12px/15px simsun;color:#000;background:#fff;"</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- 水平居中的邮件 --&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://www.jianshu.com/p/8d291d823cc0#" title="web前端规范" target="_blank" rel="external">web前端规范</a><br><a href="https://github.com/mishe/blog/issues/125" title="前端开发 @ 资邦集团（上海）" target="_blank" rel="external">新公司的前端开发规范（初稿） #125</a></p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            window._hmt.push(['_trackEvent', 'pay', 'click', '赏'])
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/12/31/Skill/norm/normhtml/">HTML前端代码规范</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 世平阜康 的个人博客">世平阜康</a></p>
+        <p><span>发布时间:</span>2016年12月31日 - 18时29分</p>
+        <p><span>最后更新:</span>2017年07月28日 - 18时54分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/12/31/Skill/norm/normhtml/" title="HTML前端代码规范">http://luuman.github.io/2016/12/31/Skill/norm/normhtml/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://luuman.github.io/2016/12/31/Skill/norm/normhtml/　　作者: 世平阜康" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/12/31/Skill/norm/normjs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          前端代码规范Javascript
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/31/Skill/norm/normdev/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端开发代码规范</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#整体结构"><span class="toc-number">1.</span> <span class="toc-text">整体结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML基础设施"><span class="toc-number">1.1.</span> <span class="toc-text">HTML基础设施</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构顺序和视觉顺序基本保持一致"><span class="toc-number">1.2.</span> <span class="toc-text">结构顺序和视觉顺序基本保持一致</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#另外，请做到以下几点"><span class="toc-number">1.3.</span> <span class="toc-text">另外，请做到以下几点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码格式"><span class="toc-number">2.</span> <span class="toc-text">代码格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#说明文案的注释方法"><span class="toc-number">2.1.</span> <span class="toc-text">说明文案的注释方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码本身的注释方法"><span class="toc-number">2.2.</span> <span class="toc-text">代码本身的注释方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML注释在IE6中的BUG"><span class="toc-number">2.3.</span> <span class="toc-text">HTML注释在IE6中的BUG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#严格的嵌套"><span class="toc-number">2.4.</span> <span class="toc-text">严格的嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#严格的属性"><span class="toc-number">2.5.</span> <span class="toc-text">严格的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的标签"><span class="toc-number">2.6.</span> <span class="toc-text">常用的标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内容语义"><span class="toc-number">3.</span> <span class="toc-text">内容语义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS文件的分类"><span class="toc-number">3.1.</span> <span class="toc-text">CSS文件的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内容类型决定使用的语义标签"><span class="toc-number">3.2.</span> <span class="toc-text">内容类型决定使用的语义标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加强“资源型”内容的可访问性和可用性"><span class="toc-number">3.3.</span> <span class="toc-text">加强“资源型”内容的可访问性和可用性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加强“不可见”内容的可访问性"><span class="toc-number">3.4.</span> <span class="toc-text">加强“不可见”内容的可访问性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#适当使用实体"><span class="toc-number">3.5.</span> <span class="toc-text">适当使用实体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用HTML字符实体（建议使用实体）："><span class="toc-number">3.6.</span> <span class="toc-text">常用HTML字符实体（建议使用实体）：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#邮件内容"><span class="toc-number">4.</span> <span class="toc-text">邮件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#邮件环境"><span class="toc-number">4.1.</span> <span class="toc-text">邮件环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免被嵌套在不正确的容器里"><span class="toc-number">4.2.</span> <span class="toc-text">避免被嵌套在不正确的容器里</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免css冲突或被覆盖"><span class="toc-number">4.3.</span> <span class="toc-text">避免css冲突或被覆盖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免盒模型错误"><span class="toc-number">4.4.</span> <span class="toc-text">避免盒模型错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他注意事项"><span class="toc-number">4.5.</span> <span class="toc-text">其他注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发现的问题及解决方案"><span class="toc-number">4.6.</span> <span class="toc-text">发现的问题及解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用框架"><span class="toc-number">4.7.</span> <span class="toc-text">使用框架</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '7f50019c6a02c37e7aca',
+        client_secret: 'd583910e6ae1492b375796d2c82efcda2cc67aae',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/12/31/Skill/norm/normjs/" title="上一篇: 前端代码规范Javascript">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/12/31/Skill/norm/normdev/" title="下一篇: 前端开发代码规范">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/29/Tool/GitWorkflows/">Git Workflows</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Tool/Git/">Git速查手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/VueComponents/">Vue组件探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/InduceSass/">深入Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/KeepAlive/">keep-alive最佳实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/CSS/CssLowFrequency/">CSS低频属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Tool/Terminal/">Terminal配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/Induce/Weixin/JS-SDK/">WeChat SDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/Induce/Hack/Canvas/">浏览器常见Bug——Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/25/FrontFrame/Vue/Vuex/">Vuex</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/Induce/HTML/Video/">Mobile Video</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/FrontFrame/Vue/VueRouter/">Vue Router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/Tool/Sublime/sublimeMac/">Sublime Mac 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/FrontFrame/React/React/">React初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/Induce/CSS/CSSElementAlign/">用CSS实现元素垂直居中方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normCSS/">CSS前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normjs/">前端代码规范Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normhtml/">HTML前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normdev/">前端开发代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCText/">React Native Text</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCTextInput/">React Native TextInput</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCImage/">React Native Image</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNComponents/">React Native 组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNTest/">React Native 实战封装组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNBasics/">React Native 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetOX/">React Native IOS环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNTools/">React Native开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetAndroid/">React Native Android环境搭建（Window）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RN/">React Native初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/JavaScript/JSInputSearch/">Input输入框的案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Gulp/InduceGulp/">Gulp前端构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/">OmniMarkupPreviewer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/HTML/HtmlRem/">移动H5自适应布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/Demo/TextShow/">BOOS信息展示与收缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/Demo/MobileRotate/">移动端横屏提示动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Skill/OOCSS/">面向对象的CSS样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Mobile/MobliePC/">关于移动端界面在PC端显示的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/Node/NodeJsWeb/">Node.js实战 建立简单的Web服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/CSS/animation/">CSS3动画探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/Induce/Mobile/Mobile-knowledge/">移动前端知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Induce/Ajax/Ajax/">Ajax学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/Plug/ChromePlug/">前端Chrome插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/JavaScript/JSTip/">原生JS TitleTip</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/Ajax/AjaxStatus/">Ajax Status请求状态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Induce/JavaScript/NativeJS/">原生JavaScript探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/GitHubHexo/">使用GitHub搭建Hexo博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoBug/">Hexo bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoPlug/">Hexo插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/Hexo/">Hexo的使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoTheme/">Hexo 主题：SPFK</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/26/Skill/win7Set/">电脑优化相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CssTips/">CSS小技巧收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Interview/WebFront/">web前端职业规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/HTML/media/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CSS/">CSS学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/Tool/Sublime/Sublimemarkdown/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Induce/JavaScript/JQueryCDN/">CDN公共库</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Demo/FrontEndGuide/">前端资源导航</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/11/Skill/BusyFront/">Busy前端工作室</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 世平阜康
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

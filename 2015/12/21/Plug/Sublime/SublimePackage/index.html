@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sublime插件 | Luuman&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="来到GitHub这么长时间，才开始真真的了解GitHub，这个国外的代码托管平台，充满着大牛的身影。">
+<meta name="keywords" content="Sublime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sublime插件">
+<meta property="og:url" content="http://luuman.github.io/2015/12/21/Plug/Sublime/SublimePackage/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="来到GitHub这么长时间，才开始真真的了解GitHub，这个国外的代码托管平台，充满着大牛的身影。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sublime插件">
+<meta name="twitter:description" content="来到GitHub这么长时间，才开始真真的了解GitHub，这个国外的代码托管平台，充满着大牛的身影。">
+  
+    <link rel="alternative" href="/atom.xml" title="Luuman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">世平阜康</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 11.67px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Development/" style="font-size: 10px;">Development</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/Hack/" style="font-size: 10px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 13.33px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/Video/" style="font-size: 10px;">Video</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/WeChatSDK/" style="font-size: 10px;">WeChatSDK</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.waydrow.com/">waydrow</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.tangbc.com">TANGBC</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.w3ctrain.com/">Helkyle</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">世平阜康</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">世平阜康</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Plug/Sublime/SublimePackage" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/21/Plug/Sublime/SublimePackage/" class="article-date">
+      <time datetime="2015-12-21T10:29:10.000Z" itemprop="datePublished">2015-12-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sublime插件
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Plug/">Plug</a>
+    </div>
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime/">Sublime</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<strong>自用笔记：</strong>本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why<br><a id="more"></a></p>
+<h3 id="安装有两个办法："><a href="#安装有两个办法：" class="headerlink" title="安装有两个办法："></a>安装有两个办法：</h3><blockquote>
+<p>1、直接把插件放到它的安装路径对应文件包packages里面去，不知道在哪的可以直接打开 preferences-&gt;Browse packages，放进去之后软件会自动检测。</p>
+<p>2、使用命令方式直接让软件自己下载安装。（使用package control组件）（前提：先安装下面那个package control插件)</p>
+<p>按下Ctrl+Shift+P调出命令面板，输入install， 调出 Install Package 选项并回车，然后在列表中选中要安装的插件。</p>
+<p>下载拷贝：然后把它放到package文件包中。没用过Github的朋友不知道在哪里下载。Download ZIP。然后把它解压，把文件夹放进package文件包，然后它就能检测到包啦！</p>
+<p>代码安装：Ctrl+shift+p、输入install、选择package install 过几秒会弹出另一个框。然后在输入框中输入你想要的插件关键字安装吧！大致就是这样，简单明了。下面介绍其他常用插件，安装方式同理！</p>
+</blockquote>
+<h3 id="package-control（包裹组件）"><a href="#package-control（包裹组件）" class="headerlink" title="package control（包裹组件）"></a>package control（包裹组件）</h3><p>通过快捷键 ctrl+` 或者 View &gt; Show Console 菜单打开控制台，然后粘贴对应的版本代码进去，然后回车让它安装。</p>
+<p>适用于 Sublime Text 3：</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os,hashlib; h = <span class="string">'2915d1851351e5ee549c20394736b442'</span> + <span class="string">'8bc59f460fa1548d1514676163dafc88'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); <span class="keyword">by</span> = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.<span class="built_in">replace</span>(<span class="string">' '</span>, <span class="string">'%20'</span>)).<span class="built_in">read</span>(); dh = hashlib.sha256(<span class="keyword">by</span>).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="built_in">open</span>(os.path.join( ipp, pf), <span class="string">'wb'</span> ).<span class="built_in">write</span>(<span class="keyword">by</span>)</div></pre></td></tr></table></figure>
+<p>适用于 Sublime Text 2：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib2,<span class="built_in">os</span>,hashlib; h = <span class="string">'2915d1851351e5ee549c20394736b442'</span> + <span class="string">'8bc59f460fa1548d1514676163dafc88'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); <span class="built_in">os</span>.makedirs( ipp ) <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">os</span>.<span class="built_in">path</span>.exists(ipp) <span class="keyword">else</span> None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).<span class="built_in">read</span>(); dh = hashlib.sha256(by).hexdigest(); <span class="built_in">open</span>( <span class="built_in">os</span>.<span class="built_in">path</span>.join( ipp, pf), <span class="string">'wb'</span> ).<span class="built_in">write</span>(by) <span class="keyword">if</span> dh == h <span class="keyword">else</span> None; <span class="built_in">print</span>(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="string">'Please restart Sublime Text to finish installation'</span>)</div></pre></td></tr></table></figure>
+<p>当然了，有些时候这样你安装不进去的，就只能自个去下载安装包放到package文件里边去了（就是上边我说的那个文件夹)如果在Preferences → Package Settings 中看到 Package Control 这一项，说明安装成功。</p>
+<h1 id="插件整理"><a href="#插件整理" class="headerlink" title="插件整理"></a>插件整理</h1><h2 id="代码整理："><a href="#代码整理：" class="headerlink" title="代码整理："></a>代码整理：</h2><h3 id="Tag（代码格式化）"><a href="#Tag（代码格式化）" class="headerlink" title="Tag（代码格式化）"></a>Tag（代码格式化）</h3><p>全选Ctrl+A，Ctrl+Alt+F</p>
+<h3 id="HTMLBeautify（）"><a href="#HTMLBeautify（）" class="headerlink" title="HTMLBeautify（）"></a>HTMLBeautify（）</h3><p>格式化HTML。</p>
+<h3 id="HTML-CSS-JS-Prettify（代码格式化）"><a href="#HTML-CSS-JS-Prettify（代码格式化）" class="headerlink" title="HTML/CSS/JS Prettify（代码格式化）"></a>HTML/CSS/JS Prettify（代码格式化）</h3><p>能够格式化css html和js。<br>注意：格式化的文件路径中不能有中文，不然会报找不到node的错误（windows下）。</p>
+<h3 id="YUI-Compressor（压缩JS和CSS文件）"><a href="#YUI-Compressor（压缩JS和CSS文件）" class="headerlink" title="YUI Compressor（压缩JS和CSS文件）"></a>YUI Compressor（压缩JS和CSS文件）</h3><h3 id="PHPTidy（整理与排版PHP代码）"><a href="#PHPTidy（整理与排版PHP代码）" class="headerlink" title="PHPTidy（整理与排版PHP代码）"></a>PHPTidy（整理与排版PHP代码）</h3><h3 id="JsFormat（JS格式化）"><a href="#JsFormat（JS格式化）" class="headerlink" title="JsFormat（JS格式化）"></a>JsFormat（JS格式化）</h3><p>很多网站的JS代码都进行了压缩，一行式的甚至混淆压缩，这让我们看起来很吃力。而这个插件能帮我们把原始代码进行格式的整理，包括换行和缩进等等，是代码一目了然，更快读懂</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Ctrl+Alt+F JS格式化</div></pre></td></tr></table></figure>
+<h2 id="注释："><a href="#注释：" class="headerlink" title="注释："></a>注释：</h2><h3 id="DocBlockr（代码自动注释生成）"><a href="#DocBlockr（代码自动注释生成）" class="headerlink" title="DocBlockr（代码自动注释生成）"></a>DocBlockr（代码自动注释生成）</h3><p>标准的注释，包括函数名、参数、返回值等，并以多行显示，手动写比较麻烦</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">输入/*、/**然后回车，还有很多用法，请参照</div></pre></td></tr></table></figure>
+<h3 id="HtmlTidy（清理与排版你的HTML代码）"><a href="#HtmlTidy（清理与排版你的HTML代码）" class="headerlink" title="HtmlTidy（清理与排版你的HTML代码）"></a>HtmlTidy（清理与排版你的HTML代码）</h3><h3 id="AutoPEP8（）"><a href="#AutoPEP8（）" class="headerlink" title="AutoPEP8（）"></a>AutoPEP8（）</h3><p>格式化Python代码。</p>
+<h3 id="Alignment安装案例"><a href="#Alignment安装案例" class="headerlink" title="Alignment安装案例"></a>Alignment安装案例</h3><h3 id="Alignment（代码补齐）补齐就是补齐-就像这样"><a href="#Alignment（代码补齐）补齐就是补齐-就像这样" class="headerlink" title="Alignment（代码补齐）补齐就是补齐~就像这样"></a>Alignment（代码补齐）补齐就是补齐~就像这样</h3><h2 id="代码简写："><a href="#代码简写：" class="headerlink" title="代码简写："></a>代码简写：</h2><h3 id="Emmet（Zen-Coding-代码自动补齐）-Wiki"><a href="#Emmet（Zen-Coding-代码自动补齐）-Wiki" class="headerlink" title="Emmet（Zen Coding 代码自动补齐） Wiki"></a>Emmet（Zen Coding 代码自动补齐） <a href="http://docs.emmet.io/cheat-sheet/" title="Cheat Sheet" target="_blank" rel="external">Wiki</a></h3><p>Emmet作为zen coding的升级版，对于前端来说，可是必备插件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctrl+alt+enter：激发zencoding控制台</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">div<span class="comment">#content&gt;ul&gt;li*3&gt;a[href="javascript:void(0);"]&#123;Links$&#125;</span></div><div class="line">&lt;div id=<span class="string">"content"</span>&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">    &lt;li&gt;&lt;a href=<span class="string">"javascript:void(0);"</span>&gt;Links1&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href=<span class="string">"javascript:void(0);"</span>&gt;Links2&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href=<span class="string">"javascript:void(0);"</span>&gt;Links3&lt;/a&gt;&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">div.wrapper&gt;div.header+div.main+div.footer：按下Tab，立刻变成</div><div class="line">&lt;div class=<span class="string">"wrapper"</span>&gt;</div><div class="line">  &lt;div class=<span class="string">"header"</span>&gt;&lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"main"</span>&gt;&lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"footer"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="SublimeCodeIntel（代码提示）"><a href="#SublimeCodeIntel（代码提示）" class="headerlink" title="SublimeCodeIntel（代码提示）"></a>SublimeCodeIntel（代码提示）</h3><p>自动提示我们，可能要输入HTML代码内容</p>
+<h3 id="snippets（自定制代码补齐机制）"><a href="#snippets（自定制代码补齐机制）" class="headerlink" title="snippets（自定制代码补齐机制）"></a>snippets（自定制代码补齐机制）</h3><p>自定制代码补齐机制，</p>
+<h2 id="高亮显示："><a href="#高亮显示：" class="headerlink" title="高亮显示："></a>高亮显示：</h2><h3 id="BracketHighlighter"><a href="#BracketHighlighter" class="headerlink" title="BracketHighlighter"></a>BracketHighlighter</h3><p>BracketHighlighter高亮显示匹配的括号、引号和标签，BracketHighlighter这个插件能在左侧高亮显示匹配的括号、引号和标签，能匹配的### ] ,  () ,  {} ,  “” ,  ‘’ , <tag></tag>等甚至是自定义的标签，当看到密密麻麻的代码分不清标签之间包容嵌套的关系时，这款插件就能很好地帮你理清楚代码结构，快速定位括号，引号和标签内的</p>
+<h3 id="TrailingSpacer（高亮显示多余的空格和Tab）"><a href="#TrailingSpacer（高亮显示多余的空格和Tab）" class="headerlink" title="TrailingSpacer（高亮显示多余的空格和Tab）"></a>TrailingSpacer（高亮显示多余的空格和Tab）</h3><h2 id="颜色："><a href="#颜色：" class="headerlink" title="颜色："></a>颜色：</h2><h3 id="ColorPicker-（调色盘）"><a href="#ColorPicker-（调色盘）" class="headerlink" title="ColorPicker （调色盘）"></a>ColorPicker （调色盘）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctrl+<span class="built_in">shift</span>+c：需要输入颜色时，可直接选取颜色</div></pre></td></tr></table></figure>
+<h2 id="CSS："><a href="#CSS：" class="headerlink" title="CSS："></a>CSS：</h2><h3 id="CSScomb（CSS属性排序）"><a href="#CSScomb（CSS属性排序）" class="headerlink" title="CSScomb（CSS属性排序）"></a>CSScomb（CSS属性排序）</h3><h3 id="CSS3-Syntax（css语法高亮）"><a href="#CSS3-Syntax（css语法高亮）" class="headerlink" title="CSS3_Syntax（css语法高亮）"></a>CSS3_Syntax（css语法高亮）</h3><p>对css语法高亮的支持，view-syntax-css3选中css3就能使用css3高亮了。必须每条属性都加上分号，并且属性必须小写，不然不会高亮，有点鸡肋啊。</p>
+<h3 id="Prefixr（自动加-webkit前缀）"><a href="#Prefixr（自动加-webkit前缀）" class="headerlink" title="Prefixr（自动加-webkit前缀）"></a>Prefixr（自动加-webkit前缀）</h3><p>写 CSS可自动添加 -webkit 等私有词缀，Ctrl+Alt+X触发。</p>
+<h3 id="Autoprefixer（自动加前缀）"><a href="#Autoprefixer（自动加前缀）" class="headerlink" title="Autoprefixer（自动加前缀）"></a>Autoprefixer（自动加前缀）</h3><p>可以给css自动加前缀功能</p>
+<h3 id="Goto-CSS-Declaration（CSS文件跳转）"><a href="#Goto-CSS-Declaration（CSS文件跳转）" class="headerlink" title="Goto-CSS-Declaration（CSS文件跳转）"></a>Goto-CSS-Declaration（CSS文件跳转）</h3><p>跳转到css文件该class的声明处，方便修改查看，如图下所示，注意对应的css文件要同时打开才行。</p>
+<h2 id="编码："><a href="#编码：" class="headerlink" title="编码："></a>编码：</h2><h3 id="GBK-Encoding-Support（GBK中文编码）"><a href="#GBK-Encoding-Support（GBK中文编码）" class="headerlink" title="GBK Encoding Support（GBK中文编码）"></a>GBK Encoding Support（GBK中文编码）</h3><p>这个插件还是非常有用的，因为sublime 本身 不支持gbk编码，在utf8如此流行的今天，我们整站还是gbk编码，o(︶︿︶)o 唉，所以全靠这个插件了。</p>
+<h3 id="GBK-to-UTF8（编码转换）"><a href="#GBK-to-UTF8（编码转换）" class="headerlink" title="GBK to UTF8（编码转换）"></a>GBK to UTF8（编码转换）</h3><p>将文件编码从GBK转换成UTF8，菜单 – File里面找。</p>
+<h2 id="文档管理："><a href="#文档管理：" class="headerlink" title="文档管理："></a>文档管理：</h2><h3 id="AdvancedNewFile（新建文件）"><a href="#AdvancedNewFile（新建文件）" class="headerlink" title="AdvancedNewFile（新建文件）"></a>AdvancedNewFile（新建文件）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Ctrl+Alt+N：按路径自动创建文件</div></pre></td></tr></table></figure>
+<h3 id="AutoFileName（文件名索引）"><a href="#AutoFileName（文件名索引）" class="headerlink" title="AutoFileName（文件名索引）"></a>AutoFileName（文件名索引）</h3><p>快捷输入文件名，输入”/”即可看到相对于本项目文件夹的其他文件。</p>
+<h3 id="GotoRecent（历史文档记录）"><a href="#GotoRecent（历史文档记录）" class="headerlink" title="GotoRecent（历史文档记录）"></a>GotoRecent（历史文档记录）</h3><p>打开最近的文件，系统有这个功能，但只能看最近8个，有点不爽，按ctrl+e，选择即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctrl+e：</div></pre></td></tr></table></figure>
+<h3 id="Nettus-fetch-（管理一些开源框架）"><a href="#Nettus-fetch-（管理一些开源框架）" class="headerlink" title="Nettus+ fetch （管理一些开源框架）"></a>Nettus+ fetch （管理一些开源框架）</h3><p>配置文件修改，Ctrl+Shift+P输入Fetch Manage，配置文档。通过输入fetch file，搜索框架名进行导入。</p>
+<h3 id="SideBarEnhancements（侧边栏增强）"><a href="#SideBarEnhancements（侧边栏增强）" class="headerlink" title="SideBarEnhancements（侧边栏增强）"></a>SideBarEnhancements（侧边栏增强）</h3><h3 id="SyncedSideBar（侧边栏打开文件定位）"><a href="#SyncedSideBar（侧边栏打开文件定位）" class="headerlink" title="SyncedSideBar（侧边栏打开文件定位）"></a>SyncedSideBar（侧边栏打开文件定位）</h3><p>支持当前文件在左侧面板中定位，不错。</p>
+<h3 id="Hex-to-HSL-Color-Hex（颜色模式转HSL颜色模式）"><a href="#Hex-to-HSL-Color-Hex（颜色模式转HSL颜色模式）" class="headerlink" title="Hex-to-HSL-Color Hex（颜色模式转HSL颜色模式）"></a>Hex-to-HSL-Color Hex（颜色模式转HSL颜色模式）</h3><h3 id="advanceNewfile（面板随意添加文件）"><a href="#advanceNewfile（面板随意添加文件）" class="headerlink" title="advanceNewfile（面板随意添加文件）"></a>advanceNewfile（面板随意添加文件）</h3><p>按Ctrl+Alt+N，下方输入A\B\test.css就好了，test.css这个文件出现在某个文件夹。</p>
+<h3 id="SublimeTmpl-（自定义新建文件）"><a href="#SublimeTmpl-（自定义新建文件）" class="headerlink" title="SublimeTmpl （自定义新建文件）"></a>SublimeTmpl （自定义新建文件）</h3><p>默认已经添加了html、css、js等常见类型的面板，按ctrl+alt+h/ctrl+alt+c/ctrl+alt+j可新建这 3钟类型的文件，快捷键在这里\Packages\SublimeTmpl\Default (Windows).sublime-keymap, 模板文件在这里\Packages\SublimeTmpl\templates，可修改。 比如下边简单的html文件</p>
+<h2 id="语法识别："><a href="#语法识别：" class="headerlink" title="语法识别："></a>语法识别：</h2><h3 id="LESS（LESS语法识别）"><a href="#LESS（LESS语法识别）" class="headerlink" title="LESS（LESS语法识别）"></a>LESS（LESS语法识别）</h3><p>这是一个非常棒的插件，可以让sublime支持less的语法高亮和语法提示，对于搞less的同学灰常重要，不过多解释。</p>
+<h3 id="SCSS（SCSS语法识别）"><a href="#SCSS（SCSS语法识别）" class="headerlink" title="SCSS（SCSS语法识别）"></a>SCSS（SCSS语法识别）</h3><p>支持scss的语法高亮，里面附带了好多CSS Snippet，无论现用或者改造成，都可节省不少时间。</p>
+<h3 id="ejs（ejs语法识别）"><a href="#ejs（ejs语法识别）" class="headerlink" title="ejs（ejs语法识别）"></a>ejs（ejs语法识别）</h3><p>支持ejs的语法高亮，里面附带了好多CSS Snippet，无论现用或者改造成，都可节省不少时间。</p>
+<h3 id="node（node语法识别）"><a href="#node（node语法识别）" class="headerlink" title="node（node语法识别）"></a>node（node语法识别）</h3><p>支持node的只能语法提示，很赞。</p>
+<h3 id="jQuery（jQuery语法识别）"><a href="#jQuery（jQuery语法识别）" class="headerlink" title="jQuery（jQuery语法识别）"></a>jQuery（jQuery语法识别）</h3><p>支持jquery的只能语法提示，很赞。</p>
+<h3 id="JavaScriptNext-ES6-Syntax（ES6语法识别）"><a href="#JavaScriptNext-ES6-Syntax（ES6语法识别）" class="headerlink" title="JavaScriptNext - ES6 Syntax（ES6语法识别）"></a>JavaScriptNext - ES6 Syntax（ES6语法识别）</h3><p>提供ES6的语法支持。</p>
+<h3 id="WordPress（WordPress的函数）"><a href="#WordPress（WordPress的函数）" class="headerlink" title="WordPress（WordPress的函数）"></a>WordPress（WordPress的函数）</h3><p>集成一些WordPress的函数，对于像我这种经常要写WP模版和插件的人特别有用</p>
+<h3 id="Vintage（Vim模拟）"><a href="#Vintage（Vim模拟）" class="headerlink" title="Vintage（Vim模拟）"></a>Vintage（Vim模拟）</h3><p>如果你习惯使用vim，那么可以安装这个插件，这个插件可以让sublime像vim一样。</p>
+<h3 id="Liquid（Liquid语法识别）"><a href="#Liquid（Liquid语法识别）" class="headerlink" title="Liquid（Liquid语法识别）"></a>Liquid（Liquid语法识别）</h3><p>提供Liquid语法支持，如果你也写博客的话不妨试试。</p>
+<h3 id="Smarty（Smarty语法识别）"><a href="#Smarty（Smarty语法识别）" class="headerlink" title="Smarty（Smarty语法识别）"></a>Smarty（Smarty语法识别）</h3><p>提供smarty语法的支持。Smarty插件默认的分隔符是{}，如果你使用的分隔符不同可以更改插件目录的Smarty.tmPreferences文件，找到其中的SMARTY_LDELIM和SMARTY_RDELIM，修改为你的分隔符即可。</p>
+<h2 id="文件传输："><a href="#文件传输：" class="headerlink" title="文件传输："></a>文件传输：</h2><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><ul>
+<li>最后推荐一个同步插件，这个插件可以在不同的机器同步配置信息和插件，非常方便，但鉴于国内的墙太高，我都是直接把插件给手动备份了，然后直接拖进去，或者直接去github上下载对应的包。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 昨天安装过Android Studio，之后就出现PATH问题。 --&gt;</div><div class="line"></div><div class="line">&gt; status</div><div class="line"></div><div class="line">```bash</div><div class="line">Git: status：查看改动的文件</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>add</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Git: add all：添加所有文件</div><div class="line">Git: add ...：添加制定文件</div><div class="line">Git: add</div></pre></td></tr></table></figure>
+<blockquote>
+<p>commit</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git: commit：提交描述</div><div class="line">Git: commithistroy：提交历史描述</div></pre></td></tr></table></figure>
+<p>将会展示提交内容修改了那些内容。<br>ctrl+w：关闭文件的同时，commit操作自动触发。</p>
+<h3 id="SFTP（编辑-FTP-或-SFTP-服务器上的文件）"><a href="#SFTP（编辑-FTP-或-SFTP-服务器上的文件）" class="headerlink" title="SFTP（编辑 FTP 或 SFTP 服务器上的文件）"></a>SFTP（编辑 FTP 或 SFTP 服务器上的文件）</h3><h3 id="Package-Syncing"><a href="#Package-Syncing" class="headerlink" title="Package Syncing"></a>Package Syncing</h3><h2 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h2><h3 id="OmniMarkupPreviewer"><a href="#OmniMarkupPreviewer" class="headerlink" title="OmniMarkupPreviewer"></a>OmniMarkupPreviewer</h3><blockquote>
+<p>Windows, Linux:</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Ctrl+Alt+O: Preview Markup <span class="keyword">in</span> Browser.</div><div class="line">Ctrl+Alt+X: Export Markup as HTML.</div><div class="line">Ctrl+Alt+C: Copy Markup as HTML.</div></pre></td></tr></table></figure>
+<blockquote>
+<p>OSX:</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">commond+control+O: Preview Markup <span class="keyword">in</span> Browser.</div><div class="line">commond+control+X: Export Markup as HTML.</div><div class="line">Ctrl+Alt+C: Copy Markup as HTML.</div></pre></td></tr></table></figure>
+<h3 id="FileDiff（代码对比）"><a href="#FileDiff（代码对比）" class="headerlink" title="FileDiff（代码对比）"></a>FileDiff（代码对比）</h3><p>右键标签页，出现FileDiffs Menu或者Diff with Tab…选择对应文件比较即可</p>
+<h3 id="Bracket-Highlighter（代码匹配）"><a href="#Bracket-Highlighter（代码匹配）" class="headerlink" title="Bracket Highlighter（代码匹配）"></a>Bracket Highlighter（代码匹配）</h3><p>可匹配[], (), {}, “”, ”, <tag></tag>，高亮标记，便于查看起始和结束标记</p>
+<h3 id="Clipboard-history（粘贴板历史记录）"><a href="#Clipboard-history（粘贴板历史记录）" class="headerlink" title="Clipboard-history（粘贴板历史记录）"></a>Clipboard-history（粘贴板历史记录）</h3><p>可以保存粘贴的历史，很赞的功能，再也不用担心历史丢失了。ctrl+alt+v可打开历史面板，上下选择即可，安装后会和默认的ctrl+shift+v（粘贴缩进）冲突，干掉这个快捷键。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Ctrl+alt+v：显示历史记录</div><div class="line">Ctrl+alt+d：清空历史记录</div><div class="line">Ctrl+<span class="built_in">shift</span>+v：粘贴上一条记录（最旧）</div><div class="line">Ctrl+<span class="built_in">shift</span>+alt+v：粘贴下一条记录（最新）</div></pre></td></tr></table></figure>
+<h3 id="CTags（函数跳转）"><a href="#CTags（函数跳转）" class="headerlink" title="CTags（函数跳转）"></a>CTags（函数跳转）</h3><p>需要安装<a href="http://ctags.sourceforge.net/" title="DownLoad" target="_blank" rel="external">CTags</a></p>
+<h3 id="Terminal（终端）"><a href="#Terminal（终端）" class="headerlink" title="Terminal（终端）"></a>Terminal（终端）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Ctrl+Shift+T：增加Open Terminal Here</div></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">//</span> window下终端路径</div><div class="line">  <span class="string">"terminal"</span>: <span class="string">"E:/Program Files/Git/git-bash.exe"</span>,</div><div class="line">  <span class="string">//</span> <span class="string">"terminal"</span>: <span class="string">"C:\\Program Files\\cmder_mini\\cmder.exe"</span>,</div><div class="line">  <span class="string">//</span> <span class="string">"parameters"</span>: [<span class="string">"/START"</span>, <span class="string">"%CWD%"</span>]</div><div class="line">  <span class="string">//</span>  window下终端参数</div><div class="line">  <span class="string">"parameters"</span>: []</div><div class="line">  <span class="string">//</span> xterm on GNU/Linux</div><div class="line">  <span class="string">//</span> <span class="string">"terminal"</span>: <span class="string">"xterm"</span></div><div class="line">  <span class="string">//</span> iTerm on OS X</div><div class="line">  <span class="string">//</span> <span class="string">"terminal"</span>: <span class="string">"iTerm.sh"</span></div><div class="line">  <span class="string">//</span> iTerm on OS X with tabs</div><div class="line">  <span class="string">//</span> <span class="string">"terminal"</span>: <span class="string">"iTerm.sh"</span>,</div><div class="line">  <span class="string">//</span> iTerm2 v3 on OS X</div><div class="line">  <span class="string">//</span> <span class="string">"terminal"</span>: <span class="string">"iTerm2-v3.sh"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Gits（集成-GitHub）"><a href="#Gits（集成-GitHub）" class="headerlink" title="Gits（集成 GitHub）"></a>Gits（集成 GitHub）</h3><h3 id="lint（语法校验）："><a href="#lint（语法校验）：" class="headerlink" title="lint（语法校验）："></a>lint（语法校验）：</h3><h3 id="SublimeLinter（代码错误提示）-总体架构"><a href="#SublimeLinter（代码错误提示）-总体架构" class="headerlink" title="SublimeLinter（代码错误提示） 总体架构"></a>SublimeLinter（代码错误提示） 总体架构</h3><h3 id="Jslint编程风格"><a href="#Jslint编程风格" class="headerlink" title="Jslint编程风格"></a>Jslint编程风格</h3><h3 id="Tradsim（中文繁字体和简体字转换）"><a href="#Tradsim（中文繁字体和简体字转换）" class="headerlink" title="Tradsim（中文繁字体和简体字转换）"></a>Tradsim（中文繁字体和简体字转换）</h3><h3 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h3><p>可以sublime中，打开命令行，非常方便哦。</p>
+<h3 id="AllAutocomplete"><a href="#AllAutocomplete" class="headerlink" title="AllAutocomplete"></a>AllAutocomplete</h3><p>自动完成插件，可在全部打开的文件中，自动完成。</p>
+<h3 id="HexViewer"><a href="#HexViewer" class="headerlink" title="HexViewer"></a>HexViewer</h3><p>提供十六进制文件查看功能。</p>
+<h3 id="MultiEditUtils"><a href="#MultiEditUtils" class="headerlink" title="MultiEditUtils"></a>MultiEditUtils</h3><p>扩展多行编辑的功能。</p>
+<h3 id="IMESupport（输入框不更随着光标）"><a href="#IMESupport（输入框不更随着光标）" class="headerlink" title="IMESupport（输入框不更随着光标）"></a>IMESupport（输入框不更随着光标）</h3><h2 id="主题（Themes）"><a href="#主题（Themes）" class="headerlink" title="主题（Themes）"></a>主题（Themes）</h2><p>Sublime Text有大量第三方主题：ayu Theme、sublime material</p>
+<h3 id="SublimeTextTrans（背景透明度）DownLoad"><a href="#SublimeTextTrans（背景透明度）DownLoad" class="headerlink" title="SublimeTextTrans（背景透明度）DownLoad"></a>SublimeTextTrans（背景透明度）<a href="https://github.com/vhanla/SublimeTextTrans" title="SublimeTextTrans GIT" target="_blank" rel="external">DownLoad</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Ctrl+Shift+1-6 执行调节背景透明度。</div></pre></td></tr></table></figure>
+<h3 id="SideBarFolders"><a href="#SideBarFolders" class="headerlink" title="SideBarFolders"></a>SideBarFolders</h3><p>打开的文件夹都太多了，再用这个来管理文件夹</p>
+<h3 id="Sublime-Merger"><a href="#Sublime-Merger" class="headerlink" title="Sublime Merger"></a>Sublime Merger</h3><pre><code class="bash">
+</code></pre>
+<p><a href="&quot;&quot;"></a></p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            window._hmt.push(['_trackEvent', 'pay', 'click', '赏'])
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 世平阜康 的个人博客">世平阜康</a></p>
+        <p><span>发布时间:</span>2015年12月21日 - 18时29分</p>
+        <p><span>最后更新:</span>2017年07月28日 - 18时54分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/12/21/Plug/Sublime/SublimePackage/" title="Sublime插件">http://luuman.github.io/2015/12/21/Plug/Sublime/SublimePackage/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://luuman.github.io/2015/12/21/Plug/Sublime/SublimePackage/　　作者: 世平阜康" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2015/12/21/Induce/JavaScript/JQueryCDN/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CDN公共库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/21/Demo/FrontEndGuide/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端资源导航</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装有两个办法："><span class="toc-number">1.</span> <span class="toc-text">安装有两个办法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#package-control（包裹组件）"><span class="toc-number">2.</span> <span class="toc-text">package control（包裹组件）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#插件整理"><span class="toc-number"></span> <span class="toc-text">插件整理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码整理："><span class="toc-number"></span> <span class="toc-text">代码整理：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tag（代码格式化）"><span class="toc-number">1.</span> <span class="toc-text">Tag（代码格式化）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTMLBeautify（）"><span class="toc-number">2.</span> <span class="toc-text">HTMLBeautify（）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML-CSS-JS-Prettify（代码格式化）"><span class="toc-number">3.</span> <span class="toc-text">HTML/CSS/JS Prettify（代码格式化）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#YUI-Compressor（压缩JS和CSS文件）"><span class="toc-number">4.</span> <span class="toc-text">YUI Compressor（压缩JS和CSS文件）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHPTidy（整理与排版PHP代码）"><span class="toc-number">5.</span> <span class="toc-text">PHPTidy（整理与排版PHP代码）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JsFormat（JS格式化）"><span class="toc-number">6.</span> <span class="toc-text">JsFormat（JS格式化）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释："><span class="toc-number"></span> <span class="toc-text">注释：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DocBlockr（代码自动注释生成）"><span class="toc-number">1.</span> <span class="toc-text">DocBlockr（代码自动注释生成）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HtmlTidy（清理与排版你的HTML代码）"><span class="toc-number">2.</span> <span class="toc-text">HtmlTidy（清理与排版你的HTML代码）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AutoPEP8（）"><span class="toc-number">3.</span> <span class="toc-text">AutoPEP8（）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alignment安装案例"><span class="toc-number">4.</span> <span class="toc-text">Alignment安装案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alignment（代码补齐）补齐就是补齐-就像这样"><span class="toc-number">5.</span> <span class="toc-text">Alignment（代码补齐）补齐就是补齐~就像这样</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码简写："><span class="toc-number"></span> <span class="toc-text">代码简写：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Emmet（Zen-Coding-代码自动补齐）-Wiki"><span class="toc-number">1.</span> <span class="toc-text">Emmet（Zen Coding 代码自动补齐） Wiki</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SublimeCodeIntel（代码提示）"><span class="toc-number">2.</span> <span class="toc-text">SublimeCodeIntel（代码提示）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#snippets（自定制代码补齐机制）"><span class="toc-number">3.</span> <span class="toc-text">snippets（自定制代码补齐机制）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高亮显示："><span class="toc-number"></span> <span class="toc-text">高亮显示：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BracketHighlighter"><span class="toc-number">1.</span> <span class="toc-text">BracketHighlighter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TrailingSpacer（高亮显示多余的空格和Tab）"><span class="toc-number">2.</span> <span class="toc-text">TrailingSpacer（高亮显示多余的空格和Tab）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#颜色："><span class="toc-number"></span> <span class="toc-text">颜色：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ColorPicker-（调色盘）"><span class="toc-number">1.</span> <span class="toc-text">ColorPicker （调色盘）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS："><span class="toc-number"></span> <span class="toc-text">CSS：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSScomb（CSS属性排序）"><span class="toc-number">1.</span> <span class="toc-text">CSScomb（CSS属性排序）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS3-Syntax（css语法高亮）"><span class="toc-number">2.</span> <span class="toc-text">CSS3_Syntax（css语法高亮）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prefixr（自动加-webkit前缀）"><span class="toc-number">3.</span> <span class="toc-text">Prefixr（自动加-webkit前缀）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Autoprefixer（自动加前缀）"><span class="toc-number">4.</span> <span class="toc-text">Autoprefixer（自动加前缀）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Goto-CSS-Declaration（CSS文件跳转）"><span class="toc-number">5.</span> <span class="toc-text">Goto-CSS-Declaration（CSS文件跳转）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码："><span class="toc-number"></span> <span class="toc-text">编码：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GBK-Encoding-Support（GBK中文编码）"><span class="toc-number">1.</span> <span class="toc-text">GBK Encoding Support（GBK中文编码）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GBK-to-UTF8（编码转换）"><span class="toc-number">2.</span> <span class="toc-text">GBK to UTF8（编码转换）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文档管理："><span class="toc-number"></span> <span class="toc-text">文档管理：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AdvancedNewFile（新建文件）"><span class="toc-number">1.</span> <span class="toc-text">AdvancedNewFile（新建文件）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AutoFileName（文件名索引）"><span class="toc-number">2.</span> <span class="toc-text">AutoFileName（文件名索引）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GotoRecent（历史文档记录）"><span class="toc-number">3.</span> <span class="toc-text">GotoRecent（历史文档记录）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nettus-fetch-（管理一些开源框架）"><span class="toc-number">4.</span> <span class="toc-text">Nettus+ fetch （管理一些开源框架）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SideBarEnhancements（侧边栏增强）"><span class="toc-number">5.</span> <span class="toc-text">SideBarEnhancements（侧边栏增强）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SyncedSideBar（侧边栏打开文件定位）"><span class="toc-number">6.</span> <span class="toc-text">SyncedSideBar（侧边栏打开文件定位）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hex-to-HSL-Color-Hex（颜色模式转HSL颜色模式）"><span class="toc-number">7.</span> <span class="toc-text">Hex-to-HSL-Color Hex（颜色模式转HSL颜色模式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#advanceNewfile（面板随意添加文件）"><span class="toc-number">8.</span> <span class="toc-text">advanceNewfile（面板随意添加文件）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SublimeTmpl-（自定义新建文件）"><span class="toc-number">9.</span> <span class="toc-text">SublimeTmpl （自定义新建文件）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法识别："><span class="toc-number"></span> <span class="toc-text">语法识别：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LESS（LESS语法识别）"><span class="toc-number">1.</span> <span class="toc-text">LESS（LESS语法识别）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SCSS（SCSS语法识别）"><span class="toc-number">2.</span> <span class="toc-text">SCSS（SCSS语法识别）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ejs（ejs语法识别）"><span class="toc-number">3.</span> <span class="toc-text">ejs（ejs语法识别）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node（node语法识别）"><span class="toc-number">4.</span> <span class="toc-text">node（node语法识别）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery（jQuery语法识别）"><span class="toc-number">5.</span> <span class="toc-text">jQuery（jQuery语法识别）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScriptNext-ES6-Syntax（ES6语法识别）"><span class="toc-number">6.</span> <span class="toc-text">JavaScriptNext - ES6 Syntax（ES6语法识别）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WordPress（WordPress的函数）"><span class="toc-number">7.</span> <span class="toc-text">WordPress（WordPress的函数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vintage（Vim模拟）"><span class="toc-number">8.</span> <span class="toc-text">Vintage（Vim模拟）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Liquid（Liquid语法识别）"><span class="toc-number">9.</span> <span class="toc-text">Liquid（Liquid语法识别）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Smarty（Smarty语法识别）"><span class="toc-number">10.</span> <span class="toc-text">Smarty（Smarty语法识别）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件传输："><span class="toc-number"></span> <span class="toc-text">文件传输：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SFTP（编辑-FTP-或-SFTP-服务器上的文件）"><span class="toc-number">2.</span> <span class="toc-text">SFTP（编辑 FTP 或 SFTP 服务器上的文件）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Package-Syncing"><span class="toc-number">3.</span> <span class="toc-text">Package Syncing</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他："><span class="toc-number"></span> <span class="toc-text">其他：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OmniMarkupPreviewer"><span class="toc-number">1.</span> <span class="toc-text">OmniMarkupPreviewer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FileDiff（代码对比）"><span class="toc-number">2.</span> <span class="toc-text">FileDiff（代码对比）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bracket-Highlighter（代码匹配）"><span class="toc-number">3.</span> <span class="toc-text">Bracket Highlighter（代码匹配）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Clipboard-history（粘贴板历史记录）"><span class="toc-number">4.</span> <span class="toc-text">Clipboard-history（粘贴板历史记录）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CTags（函数跳转）"><span class="toc-number">5.</span> <span class="toc-text">CTags（函数跳转）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Terminal（终端）"><span class="toc-number">6.</span> <span class="toc-text">Terminal（终端）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gits（集成-GitHub）"><span class="toc-number">7.</span> <span class="toc-text">Gits（集成 GitHub）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lint（语法校验）："><span class="toc-number">8.</span> <span class="toc-text">lint（语法校验）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SublimeLinter（代码错误提示）-总体架构"><span class="toc-number">9.</span> <span class="toc-text">SublimeLinter（代码错误提示） 总体架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jslint编程风格"><span class="toc-number">10.</span> <span class="toc-text">Jslint编程风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tradsim（中文繁字体和简体字转换）"><span class="toc-number">11.</span> <span class="toc-text">Tradsim（中文繁字体和简体字转换）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Terminal"><span class="toc-number">12.</span> <span class="toc-text">Terminal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AllAutocomplete"><span class="toc-number">13.</span> <span class="toc-text">AllAutocomplete</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HexViewer"><span class="toc-number">14.</span> <span class="toc-text">HexViewer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MultiEditUtils"><span class="toc-number">15.</span> <span class="toc-text">MultiEditUtils</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IMESupport（输入框不更随着光标）"><span class="toc-number">16.</span> <span class="toc-text">IMESupport（输入框不更随着光标）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主题（Themes）"><span class="toc-number"></span> <span class="toc-text">主题（Themes）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SublimeTextTrans（背景透明度）DownLoad"><span class="toc-number">1.</span> <span class="toc-text">SublimeTextTrans（背景透明度）DownLoad</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SideBarFolders"><span class="toc-number">2.</span> <span class="toc-text">SideBarFolders</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sublime-Merger"><span class="toc-number">3.</span> <span class="toc-text">Sublime Merger</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '7f50019c6a02c37e7aca',
+        client_secret: 'd583910e6ae1492b375796d2c82efcda2cc67aae',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/12/21/Induce/JavaScript/JQueryCDN/" title="上一篇: CDN公共库">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2015/12/21/Demo/FrontEndGuide/" title="下一篇: 前端资源导航">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/29/Tool/GitWorkflows/">Git Workflows</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Tool/Git/">Git速查手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/VueComponents/">Vue组件探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/InduceSass/">深入Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/KeepAlive/">keep-alive最佳实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/CSS/CssLowFrequency/">CSS低频属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Tool/Terminal/">Terminal配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/Induce/Weixin/JS-SDK/">WeChat SDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/Induce/Hack/Canvas/">浏览器常见Bug——Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/25/FrontFrame/Vue/Vuex/">Vuex</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/Induce/HTML/Video/">Mobile Video</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/FrontFrame/Vue/VueRouter/">Vue Router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/Tool/Sublime/sublimeMac/">Sublime Mac 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/FrontFrame/React/React/">React初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/Induce/CSS/CSSElementAlign/">用CSS实现元素垂直居中方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normCSS/">CSS前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normjs/">前端代码规范Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normhtml/">HTML前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normdev/">前端开发代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCText/">React Native Text</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCTextInput/">React Native TextInput</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCImage/">React Native Image</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNComponents/">React Native 组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNTest/">React Native 实战封装组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNBasics/">React Native 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetOX/">React Native IOS环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNTools/">React Native开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetAndroid/">React Native Android环境搭建（Window）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RN/">React Native初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/JavaScript/JSInputSearch/">Input输入框的案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Gulp/InduceGulp/">Gulp前端构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/">OmniMarkupPreviewer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/HTML/HtmlRem/">移动H5自适应布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/Demo/TextShow/">BOOS信息展示与收缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/Demo/MobileRotate/">移动端横屏提示动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Skill/OOCSS/">面向对象的CSS样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Mobile/MobliePC/">关于移动端界面在PC端显示的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/Node/NodeJsWeb/">Node.js实战 建立简单的Web服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/CSS/animation/">CSS3动画探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/Induce/Mobile/Mobile-knowledge/">移动前端知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Induce/Ajax/Ajax/">Ajax学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/Plug/ChromePlug/">前端Chrome插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/JavaScript/JSTip/">原生JS TitleTip</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/Ajax/AjaxStatus/">Ajax Status请求状态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Induce/JavaScript/NativeJS/">原生JavaScript探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/GitHubHexo/">使用GitHub搭建Hexo博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoBug/">Hexo bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoPlug/">Hexo插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/Hexo/">Hexo的使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoTheme/">Hexo 主题：SPFK</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/26/Skill/win7Set/">电脑优化相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CssTips/">CSS小技巧收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Interview/WebFront/">web前端职业规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/HTML/media/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CSS/">CSS学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/Tool/Sublime/Sublimemarkdown/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Induce/JavaScript/JQueryCDN/">CDN公共库</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Demo/FrontEndGuide/">前端资源导航</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/11/Skill/BusyFront/">Busy前端工作室</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 世平阜康
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

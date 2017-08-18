@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Gulp前端构建工具 | Luuman&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Gulp前端自动化：Gulp的高度集成化开发环境，释放了前端开发中大量时间，如css压缩、js压缩、错误检查、合并js、压缩图片、压缩html、模块构造等，只要你能想到的基本都可以通过Gulp插件去实现。">
+<meta name="keywords" content="Gulp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gulp前端构建工具">
+<meta property="og:url" content="http://luuman.github.io/2016/04/02/Plug/Gulp/InduceGulp/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="Gulp前端自动化：Gulp的高度集成化开发环境，释放了前端开发中大量时间，如css压缩、js压缩、错误检查、合并js、压缩图片、压缩html、模块构造等，只要你能想到的基本都可以通过Gulp插件去实现。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gulp前端构建工具">
+<meta name="twitter:description" content="Gulp前端自动化：Gulp的高度集成化开发环境，释放了前端开发中大量时间，如css压缩、js压缩、错误检查、合并js、压缩图片、压缩html、模块构造等，只要你能想到的基本都可以通过Gulp插件去实现。">
+  
+    <link rel="alternative" href="/atom.xml" title="Luuman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">世平阜康</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 11.67px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Development/" style="font-size: 10px;">Development</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/Hack/" style="font-size: 10px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 13.33px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/Video/" style="font-size: 10px;">Video</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/WeChatSDK/" style="font-size: 10px;">WeChatSDK</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.waydrow.com/">waydrow</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.tangbc.com">TANGBC</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.w3ctrain.com/">Helkyle</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">世平阜康</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">世平阜康</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Plug/Gulp/InduceGulp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/02/Plug/Gulp/InduceGulp/" class="article-date">
+      <time datetime="2016-04-02T06:11:20.000Z" itemprop="datePublished">2016-04-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Gulp前端构建工具
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Plug/">Plug</a>
+    </div>
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gulp/">Gulp</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<strong>Gulp前端自动化：</strong>Gulp的高度集成化开发环境，释放了前端开发中大量时间，如css压缩、js压缩、错误检查、合并js、压缩图片、压缩html、模块构造等，只要你能想到的基本都可以通过Gulp插件去实现。</p>
+<a id="more"></a>
+<h2 id="前端自动化的目的"><a href="#前端自动化的目的" class="headerlink" title="前端自动化的目的"></a>前端自动化的目的</h2><p>在一个项目过程中，重复而枯燥的工作太多了……绳命就这样浪费了。<br>我们需要一个自动化的工作流程，让我们更专注于coding，而不是coding外的繁琐工作。于是Gulp应运而生。可以想像，如果在node环境下，一行命令搞定一个场景，So Cool…</p>
+<p>gulp是基于Nodejs的自动任务运行器， 她能自动化地完成 javascript/coffee/sass/less/html/image/css 等文件的的测试、检查、合并、压缩、格式化、浏览器自动刷新、部署文件生成，并监听文件在改动后重复指定的这些步骤。在实现上，她借鉴了<b>Unix操作系统的管道（pipe）</b>思想，前一级的输出，直接变成后一级的输入，使得在操作上非常简单。通过本文，我们将学习如何使用Gulp来改变开发流程，从而使开发更加快速高效。<br>gulp 和 grunt 非常类似，但相比于 grunt 的频繁 IO 操作，gulp 的流操作，能更快地更便捷地完成构建工作。<br>本示例以gulp-less为例（将less编译成css的gulp插件）展示gulp的常规用法，只要我们学会使用一个gulp插件后，其他插件就差看看其帮助文档了。让我们一起来学习gulp吧！ ^_^</p>
+<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><blockquote>
+<ol>
+<li>版本控制</li>
+<li>检查JS</li>
+<li>图片合并</li>
+<li>压缩CSS</li>
+<li>压缩JS</li>
+<li>编译SASS</li>
+</ol>
+</blockquote>
+<h3 id="目前最知名的构建工具：-Gulp、Grunt、NPM-Webpack；"><a href="#目前最知名的构建工具：-Gulp、Grunt、NPM-Webpack；" class="headerlink" title="目前最知名的构建工具： Gulp、Grunt、NPM + Webpack；"></a>目前最知名的构建工具： Gulp、Grunt、NPM + Webpack；</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">grunt是前端工程化的先驱</div><div class="line"></div><div class="line">gulp更自然基于流的方式连接任务</div><div class="line"></div><div class="line">Webpack最年轻，擅长用于依赖管理，配置稍较复杂</div><div class="line"></div><div class="line">推荐使用Gulp，Gulp基于nodejs中stream，效率更好语法更自然,不需要编写复杂的配置文件</div></pre></td></tr></table></figure>
+<h2 id="安装前准备："><a href="#安装前准备：" class="headerlink" title="安装前准备："></a>安装前准备：</h2><p>在学习前，先谈谈大致使用gulp的步骤，给读者以初步的认识。首先当然是安装nodejs，通过nodejs的npm全局安装和项目安装gulp，其次在项目里安装所需要的gulp插件，然后新建gulp的配置文件gulpfile.js并写好配置信息（定义gulp任务），最后通过命令提示符运行gulp任务即可。<br>安装nodejs -&gt; 全局安装gulp -&gt; 项目安装gulp以及gulp插件 -&gt; 配置gulpfile.js -&gt; 运行任务</p>
+<h3 id="node"><a href="#node" class="headerlink" title="node"></a>node</h3><p>为了确保依赖环境正确，我们先执行几个简单的命令检查。</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">luuman@luuman-PC MINGW64 ~</div><div class="line">$ <span class="keyword">node</span> <span class="title">-v</span></div><div class="line"></div><div class="line">v5.<span class="number">3.0</span></div><div class="line"></div><div class="line"><span class="keyword">Node</span><span class="title">是一个基于Chrome</span> JavaScript V8引擎建立的一个解释器</div><div class="line">检测<span class="keyword">Node</span><span class="title">是否已经安装，如果正确安装的话你会看到所安装的Node</span>的版本号</div></pre></td></tr></table></figure>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>接下来看看npm，它是 node 的包管理工具，可以利用它安装 gulp 所需的包</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">luuman@luuman-PC MINGW64 ~</div><div class="line">$ <span class="built_in">npm</span> -v</div><div class="line"></div><div class="line"><span class="number">3.3</span><span class="number">.12</span></div><div class="line"></div><div class="line">这同样能得到<span class="built_in">npm</span>的版本号，装 Node 时已经自动安装了<span class="built_in">npm</span></div></pre></td></tr></table></figure>
+<h3 id="npm-Node依赖包"><a href="#npm-Node依赖包" class="headerlink" title="npm Node依赖包"></a>npm Node依赖包</h3><ol>
+<li>说明：npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）；</li>
+<li><p>使用npm安装插件：命令提示符执行<figure class="highlight plain"><figcaption><span>install <name> [-g] [--save-dev]；```</name></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1、&lt;name&gt;：node插件名称。例：```npm install gulp-less --save-dev</div></pre></td></tr></table></figure></p>
+<p> 2、-g：全局安装。将会安装在C:\Users\Administrator\AppData\Roaming\npm，并且写入系统环境变量；  非全局安装：将会安装在当前定位目录；  全局安装可以通过命令行在任何地方调用它，本地安装将安装在定位目录的node_modules文件夹下，通过require()调用；<br> 3、–save：将保存配置信息至package.json（package.json是nodejs项目配置文件）；<br> 4、-dev：保存至package.json的devDependencies节点，不指定-dev将保存至dependencies节点；一般保存在dependencies的像这些express/ejs/body-parser等等。<br> 5、为什么要保存至package.json？因为node插件包相对来说非常庞大，所以不加入版本管理，将配置信息写入package.json并将其加入版本管理，其他开发者对应下载即可（命令提示符执行npm install，则会根据package.json下载所有需要的包，npm install –production只下载dependencies节点的包）。</p>
+</li>
+<li><p>使用npm卸载插件：<figure class="highlight plain"><figcaption><span>uninstall <name> [-g] [--save-dev]```  PS：不要直接删除本地插件包</name></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    1、删除全部插件：```npm uninstall gulp-less gulp-uglify gulp-concat``` ……???太麻烦</div><div class="line">    2、借助rimraf：```npm install rimraf -g``` 用法：rimraf node_modules</div><div class="line">4. 使用npm更新插件：```npm update &lt;name&gt; [-g] [--save-dev]</div></pre></td></tr></table></figure></p>
+<p> 更新全部插件：<figure class="highlight plain"><figcaption><span>update [--save-dev]```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5. 查看npm帮助：```npm help</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>当前目录已安装插件：<figure class="highlight plain"><figcaption><span>list```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">PS：npm安装插件过程：从http://registry.npmjs.org下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常），解决办法往下看↓↓↓↓↓↓。</div><div class="line"></div><div class="line">### 选装cnpm</div><div class="line">因为npm安装插件是从国外服务器下载，受网络影响大，可能出现异常，如果npm的服务器在中国就好了，所以我们乐于分享的淘宝团队干了这事。</div><div class="line">来自官网：“这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”；</div><div class="line"></div><div class="line">[官方网址：](http://npm.taobao.org &quot;&quot;)</div><div class="line">安装：命令提示符执行```npm install cnpm -g --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<p>注意：安装完后最好查看其版本号cnpm -v或关闭命令提示符重新打开，安装完直接使用有可能会出现错误；<br>注：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）。<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">luuman@luuman-PC MINGW64 /l/自动化</div><div class="line">$ npm install cnpm -g --registry=https://registry.npm.taobao.org</div><div class="line">npm WARN deprecated has-color@0.1.7: Renamed to supports-color. If you're usingchalk, upgrade to the latest version. https://github.com/chalk/supports-color</div><div class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\c</span>npm -&gt; C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\n</span>ode_modules<span class="symbol">\c</span>npm<span class="symbol">\b</span>in<span class="symbol">\c</span>npm</div><div class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\c</span>npm-sync -&gt; C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\n</span>ode_modules<span class="symbol">\c</span>npm<span class="symbol">\b</span>in<span class="symbol">\c</span>npm-sync</div><div class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\c</span>npm-user -&gt; C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\n</span>ode_modules<span class="symbol">\c</span>npm<span class="symbol">\b</span>in<span class="symbol">\c</span>npm-user</div><div class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\c</span>npm-check -&gt; C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\n</span>ode_modules<span class="symbol">\c</span>npm<span class="symbol">\b</span>in<span class="symbol">\c</span>npm-check</div><div class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\c</span>npm-web -&gt; C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\n</span>ode_modules<span class="symbol">\c</span>npm<span class="symbol">\b</span>in<span class="symbol">\c</span>npm-web</div><div class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\c</span>npm-doc -&gt; C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\n</span>ode_modules<span class="symbol">\c</span>npm<span class="symbol">\b</span>in<span class="symbol">\c</span>npm-doc</div><div class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\c</span>npm-search -&gt; C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm<span class="symbol">\n</span>ode_modules<span class="symbol">\c</span>npm<span class="symbol">\b</span>in<span class="symbol">\c</span>npm-search</div><div class="line">C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>uuman<span class="symbol">\A</span>ppData<span class="symbol">\R</span>oaming<span class="symbol">\n</span>pm</div><div class="line">├── abbrev@1.0.9</div><div class="line">├── aproba@1.0.4</div><div class="line">├─┬ cnpm@4.3.1</div><div class="line">│ ├── auto-correct@1.0.0</div><div class="line">│ ├── bagpipe@0.3.5</div></pre></td></tr></table></figure></p>
+<h3 id="全局安装gulp"><a href="#全局安装gulp" class="headerlink" title="全局安装gulp"></a>全局安装gulp</h3><p>说明：全局安装gulp目的是为了通过她执行gulp任务；<br>安装：命令提示符执行<figure class="highlight plain"><figcaption><span>install gulp -g```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">查看是否正确安装：命令提示符执行gulp -v，出现版本号即为正确安装。</div></pre></td></tr></table></figure></p>
+<p>luuman@luuman-PC MINGW64 /l/自动化<br>$ cnpm -v<br>4.3.1<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 开始全局安装Gulp</div></pre></td></tr></table></figure></p>
+<p>luuman@luuman-PC MINGW64 ~<br>$ cnpm install -g gulp</p>
+<p>npm WARN deprecated graceful-fs@3.0.8: graceful-fs version 3 and before will fail on newer node releases. Please update to graceful-fs@^4.0.0 as soon as possible.<br>npm WARN deprecated lodash@1.0.2: lodash@<3.0.0 3="" is="" no="" longer="" maintained.="" upgrade="" to="" lodash@^4.0.0.="" npm="" warn="" deprecated="" graceful-fs@1.2.3:="" graceful-fs="" version="" and="" before="" will="" fail="" on="" newer="" node="" releases.="" please="" update="" graceful-fs@^4.0.0="" as="" soon="" possible.="" c:\users\luuman\appdata\roaming\npm\gulp="" -=""> C:\Users\luuman\AppData\Roaming\npm\node_modules\gulp\bin\gulp.js<br>C:\Users\luuman\AppData\Roaming\npm<br>└─┬ gulp@3.9.1<br>  └─┬ gulp-util@3.0.7<br>    ├─┬ dateformat@1.0.12<br>    │ └─┬ meow@3.7.0<br>    │   └─┬ normalize-package-data@2.3.5<br>    │     └─┬ validate-npm-package-license@3.0.1<br>    │       └─┬ spdx-correct@1.0.2<br>    │         └── spdx-license-ids@1.2.1<br>    └─┬ fancy-log@1.2.0<br>      └── time-stamp@1.0.1<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></3.0.0></p>
+<p>luuman@luuman-PC MINGW64 /l/Github<br>$ gulp -v</p>
+<p>[18:39:18] CLI version 3.9.1</p>
+<p>得到gulp的版本号，确认安装成功<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"><span class="comment"># 创建工程</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"><span class="comment">## 演示项目目录结构</span></span></div></pre></td></tr></table></figure></p>
+<p>└─┬ src — 源文件:<br>    ├──images<br>    ├──scripts<br>    ├──styles<br>├──build — 编译后文件输出到的生产文件夹:<br>├──images<br>├──scripts<br>├──styles</p>
+<p>TestProject     (项目名称)<br>|–.git               通过git进行版本控制,项目自动生成这个文件<br>|–node_modules       组件包目录<br>|–dist               发布环境（编译自动生成的）<br>    |–css                 样式文件(style.css style.min.css)<br>    |–images              图片文件(压缩图片\合并后的图片)<br>    |–js                  js文件(main.js main.min.js)<br>    |–index.html          静态页面文件(压缩html)</p>
+<p>|–src                开发环境<br>    |–sass                sass文件<br>    |–images              图片文件<br>    |–js                  js文件<br>    |–index.html          静态文件<br>|–gulpfile.js        gulp配置文件<br>|–package.json       依赖模块json文件,在项目目录下npm install会安装项目所有的依赖模块，简化项目的安装程序<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 创建<span class="built_in">package</span>.json</div><div class="line"></div><div class="line">我们先使用npm init来创建类似Nuget <span class="built_in">package</span>的<span class="built_in">package</span>.<span class="built_in">config</span>一样的文件，这样我们就知道项目依赖哪些插件，而且我们不需要把插件提交到代码库，其它程序员只需要使用 npm install 就可以安装所有配置的插件</div></pre></td></tr></table></figure></p>
+<p>$ npm init<br>This utility will walk you through creating a package.json file.<br>It only covers the most common items, and tries to guess sensible defaults.</p>
+<p>See <code>npm help json</code> for definitive documentation on these fields<br>and exactly what they do.</p>
+<p>Use <code>npm install &lt;pkg&gt; --save</code> afterwards to install a package and<br>save it as a dependency in the package.json file.</p>
+<p>Press ^C at any time to quit.<br>name: (test) test                  //名称<br>version: (1.0.0) 1.0.0             //版本<br>description: test description      //描述<br>entry point: (index.js)            //<br>test command:                      //测试代码<br>git repository:                    //Git版本库<br>keywords:                          //关键词<br>author: luuman                     //作者<br>license: (ISC)                     //协议<br>About to write to F:\Gulp\test\package.json:</p>
+<p>{<br>  “name”: “test”,<br>  “version”: “1.0.0”,<br>  “description”: “test description”,<br>  “main”: “index.js”,<br>  “scripts”: {<br>    “test”: “echo \”Error: no test specified\” &amp;&amp; exit 1”<br>  },<br>  “author”: “luuman”,<br>  “license”: “ISC”<br>}</p>
+<p>Is this ok? (yes)</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 安装插件，加到项目依赖package.json中</div><div class="line"></div><div class="line">npm install gulp --save-dev <span class="comment">//将具体的gulp功能插件局部安装项目下</span></div></pre></td></tr></table></figure>
+<p>$ npm install gulp –save-dev</p>
+<p>npm WARN deprecated graceful-fs@3.0.8: graceful-fs version 3 and before will fail on newer node releases. Please update to graceful-fs@^4.0.0 as soon as possible.<br>npm WARN deprecated lodash@1.0.2: lodash@<3.0.0 3="" is="" no="" longer="" maintained.="" upgrade="" to="" lodash@^4.0.0.="" npm="" warn="" deprecated="" graceful-fs@1.2.3:="" graceful-fs="" version="" and="" before="" will="" fail="" on="" newer="" node="" releases.="" please="" update="" graceful-fs@^4.0.0="" as="" soon="" possible.="" f:\gulp\new="" └─┬="" gulp@3.9.1="" <figure="" class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">npm install gulp-sass --<span class="built_in">save</span>-<span class="built_in">dev</span> <span class="comment">//将具体的gulp功能插件局部安装项目下</span></div></pre></td></tr></table></3.0.0></p>
+<p>$ npm install gulp-sass –save-dev<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 安装gulp功能插件依赖包</div><div class="line"></div><div class="line">npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev</div><div class="line">gulp功能模块的文件会放在项目所在的目录的./node_modules 下,并在package.json中添加插件名称。</div><div class="line"></div><div class="line"></div><div class="line">### 引入插件包</div></pre></td></tr></table></figure></p>
+<p>npm install</p>
+<p>当package.json中已经有提示插件依赖包，node.js将会直接下载所有依赖插件包。<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">### 简单的功能：</span></div><div class="line"></div><div class="line">|<span class="string"> 插件 </span>|<span class="string"> 功能 </span>|</div><div class="line">|<span class="string">  ---- </span>|<span class="string"> ---- </span>|</div><div class="line">|<span class="string"> gulp-imagemin:   </span>|<span class="string"> 压缩图片</span></div><div class="line">|<span class="string"> gulp-ruby-sass:  </span>|<span class="string"> 支持sass，安装此版本需要安装ruby</span></div><div class="line">|<span class="string"> gulp-minify-css: </span>|<span class="string"> 压缩css</span></div><div class="line">|<span class="string"> gulp-jshint:     </span>|<span class="string"> 检查js</span></div><div class="line">|<span class="string"> gulp-uglify:     </span>|<span class="string"> 压缩js</span></div><div class="line">|<span class="string"> gulp-concat:     </span>|<span class="string"> 合并文件</span></div><div class="line">|<span class="string"> gulp-rename:     </span>|<span class="string"> 重命名文件</span></div><div class="line">|<span class="string"> gulp-htmlmin:    </span>|<span class="string"> 压缩html</span></div><div class="line">|<span class="string"> gulp-clean:      </span>|<span class="string"> 清空文件夹</span></div><div class="line">|<span class="string"> gulp-livereload: </span>|<span class="string"> 服务器控制客户端同步刷新（需配合chrome插件LiveReload及tiny-lr）</span></div><div class="line"></div><div class="line">#### gulp-jshint</div></pre></td></tr></table></figure></p>
+<p>luuman@luuman-PC MINGW64 /f/Gulp/new<br>$ npm install gulp-jshint –save-dev</p>
+<p>F:\Gulp\new<br>├─┬ gulp@3.9.1<br>├─┬ gulp-jshint@2.0.0</p>
+<p>npm WARN EPEERINVALID gulp-jshint@2.0.0 requires a peer of jshint@2.x but none was installed.<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">### 补充：的前端开发软件环境</span></div><div class="line"></div><div class="line">```text</div><div class="line"><span class="keyword">Node</span>.<span class="title">Js</span>、NPM、Ruby、Java        基础环境</div><div class="line">Sublime + 插件                  用于编写前端代码</div><div class="line">Chrome、Firefox + Firebug       浏览器</div><div class="line">Internet Explorer               进行兼容测试和预览页面UI、动画效果和交互功能</div><div class="line"><span class="keyword">Node</span>.<span class="title">js</span>+Gulp                    进行前端自动化构建、JS语法验证、CSS压缩，图片压缩等；</div><div class="line">Koala                           实时编译Less、Sass、Compass、CoffeeScript;</div><div class="line">Github                          存储自己的代码库 、git或SVN用于版本控制和团队Code Review</div><div class="line">Tomcat、DedeAMPZ、MAMP          进行简单运行环境演示</div><div class="line">Photoshop CC 切图 + Sprites     合并小图标</div><div class="line">XMind                           画出清晰的工作或业务逻辑思维图</div></pre></td></tr></table></figure></p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">新建gulpfile.js 配置文件放在项目根目录下</div><div class="line"></div><div class="line">演示项目目录结构</div><div class="line">testProject     (项目名称)</div><div class="line"><span class="string">|–.git            通过git进行版本控制,项目自动生成这个文件</span></div><div class="line"><span class="string">|–node_modules    组件包目录</span></div><div class="line"><span class="string">|–dist            **发布环境**（编译自动生成的）</span></div><div class="line">    <span class="string">|–css         样式文件(style.css style.min.css)</span></div><div class="line">    <span class="string">|–images  图片文件(压缩图片\合并后的图片)</span></div><div class="line">    <span class="string">|–js      js文件(main.js main.min.js)</span></div><div class="line">    <span class="string">|–index.html  静态页面文件(压缩html)</span></div><div class="line"><span class="string">|–src             **开发环境**</span></div><div class="line">    <span class="string">|–sass                sass文件</span></div><div class="line">    <span class="string">|–images              图片文件</span></div><div class="line">    <span class="string">|–js                  js文件</span></div><div class="line">    <span class="string">|–index.html      静态文件</span></div><div class="line"><span class="string">|–gulpfile.js             gulp配置文件</span></div><div class="line"><span class="string">|–package.json            依赖模块json文件,在项目目录下npm install会安装项目所有的依赖模块，简化项目的安装程序</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">现在，项目文件夹都建好，组件也安装完毕了，我们需要编写gulpfile.js文件以指定gulp需要为我们完成什么任务。</div><div class="line"></div><div class="line">gulpfile.js内容如下：</div><div class="line"></div><div class="line"><span class="comment">// 引入gulp</span></div><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 引入组件</span></div><div class="line"><span class="keyword">var</span> jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>);<span class="comment">//检查js</span></div><div class="line"><span class="keyword">var</span> sass   = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);  <span class="comment">//编译Sass</span></div><div class="line"><span class="keyword">var</span> concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>);<span class="comment">//合并</span></div><div class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);<span class="comment">//uglify 组件（用于压缩 JS）</span></div><div class="line"><span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>);<span class="comment">//重命名</span></div><div class="line"></div><div class="line"><span class="comment">// 检查js脚本的任务</span></div><div class="line">gulp.task(<span class="string">'lint'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.src(<span class="string">'./js/*.js'</span>) <span class="comment">//可配置你需要检查脚本的具体名字。</span></div><div class="line">        .pipe(jshint())</div><div class="line">        .pipe(jshint.reporter(<span class="string">'default'</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 编译Sass</span></div><div class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.src(<span class="string">'./scss/*.scss'</span>)</div><div class="line">        .pipe(sass())</div><div class="line">        .pipe(gulp.dest(<span class="string">'./css'</span>));<span class="comment">//dest()写入文件</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 合并，压缩js文件</span></div><div class="line"><span class="comment">// 找到 js/ 目录下的所有 js 文件，压缩，重命名，最后将处理完成的js存放在 dist/js/ 目录下</span></div><div class="line">gulp.task(<span class="string">'scripts'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.src(<span class="string">'./js/*.js'</span>)</div><div class="line">        .pipe(concat(<span class="string">'all.js'</span>))</div><div class="line">        .pipe(gulp.dest(<span class="string">'./dist'</span>))</div><div class="line">        .pipe(rename(<span class="string">'all.min.js'</span>))</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(<span class="string">'./dist'</span>));</div><div class="line"></div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'gulp task is done'</span>);<span class="comment">//自定义提醒信息</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>…. // 其他任务类似</p>
+<p>// 定义默认任务,执行gulp会自动执行的任务<br>gulp.task(‘default’, function(){<br>    gulp.run(‘lint’, ‘sass’, ‘scripts’);</p>
+<pre><code>// 监听js文件变化，当文件发生变化后会自动执行任务
+gulp.watch(&apos;./js/*.js&apos;, function(){
+    gulp.run(&apos;lint&apos;,&apos;scripts&apos;);
+});
+</code></pre><p>});</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">现在，回到命令行窗口，可以直接运行gulp任务了。</div><div class="line"></div><div class="line">gulp</div><div class="line"></div><div class="line">这将执行定义的default任务，就和以下的命令式同一个意思</div><div class="line"></div><div class="line">gulp<span class="built_in"> default</span></div><div class="line"></div><div class="line">当然，我们可以运行在gulpfile.js中定义的任意任务，比如，现在单独运行sass任务：</div><div class="line"></div><div class="line">gulp sass</div></pre></td></tr></table></figure>
+<h3 id="编译会显示Finished-如果你的JS有什么不好的地方它会提醒，避免一些不必要的错误，十分贴心"><a href="#编译会显示Finished-如果你的JS有什么不好的地方它会提醒，避免一些不必要的错误，十分贴心" class="headerlink" title="编译会显示Finished,如果你的JS有什么不好的地方它会提醒，避免一些不必要的错误，十分贴心"></a>编译会显示Finished,如果你的JS有什么不好的地方它会提醒，避免一些不必要的错误，十分贴心</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">常见提醒：</div><div class="line"><span class="number">1.</span>禁止在同一行声明多个变量。</div><div class="line"><span class="number">2.</span>请使用 ===/!==来比较true/false或者数值</div><div class="line"><span class="number">3.</span>使用对象字面量替代new Array这种形式</div><div class="line"><span class="number">4.</span>不要使用全局函数。</div><div class="line"><span class="number">5.</span>Switch语句必须带有<span class="section">default</span>分支</div><div class="line"><span class="number">6.</span>函数不应该有时候有返回值，有时候没有返回值。</div><div class="line"><span class="number">7.</span>For循环必须使用大括号</div><div class="line"><span class="number">8.</span>If语句必须使用大括号</div><div class="line"><span class="number">9.</span>for-in循环中的变量 应该使用var关键字明确限定作用域，从而避免作用域污染。</div></pre></td></tr></table></figure>
+<h3 id="gulp的插件数量很多，后面还可以根据自己的需要进行添加任务"><a href="#gulp的插件数量很多，后面还可以根据自己的需要进行添加任务" class="headerlink" title="gulp的插件数量很多，后面还可以根据自己的需要进行添加任务"></a>gulp的插件数量很多，后面还可以根据自己的需要进行添加任务</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">常用的gulp插件参考</div><div class="line">gulp-<span class="string">imagemin:</span>      压缩图片</div><div class="line">gulp-ruby-<span class="string">sass:</span>     支持sass，安装此版本需要安装ruby</div><div class="line">gulp-minify-<span class="string">css:</span>    压缩css</div><div class="line">gulp-<span class="string">jshint:</span>        检查js</div><div class="line">gulp-<span class="string">uglify:</span>        压缩js</div><div class="line">gulp-<span class="string">concat:</span>        合并文件</div><div class="line">gulp-<span class="string">rename:</span>        重命名文件</div><div class="line">gulp-<span class="string">htmlmin:</span>       压缩html</div><div class="line">gulp-<span class="string">clean:</span>         清空文件夹</div><div class="line">gulp-<span class="string">livereload:</span>    服务器控制客户端同步刷新（需配合chrome插件LiveReload及tiny-lr）</div></pre></td></tr></table></figure>
+<h3 id="gulp-livereload"><a href="#gulp-livereload" class="headerlink" title="gulp-livereload"></a>gulp-livereload</h3><p>npm install gulp gulp-livereload –save-dev<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">    livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;    <span class="comment">// 这里的watch，是自定义的，写成live或者别的也行</span></div><div class="line">    <span class="keyword">var</span> server = livereload();</div><div class="line">    </div><div class="line">    <span class="comment">// app/**/*.*的意思是 app文件夹下的 任何文件夹 的 任何文件</span></div><div class="line">    gulp.watch(<span class="string">'app/**/*.*'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">file</span>) </span>&#123;</div><div class="line">        server.changed(file.path);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>命令行下运行<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">gulp watch</span></div></pre></td></tr></table></figure></p>
+<h2 id="前端自动化的目的-1"><a href="#前端自动化的目的-1" class="headerlink" title="前端自动化的目的"></a>前端自动化的目的</h2><p><a href="http://www.w3ctrain.com/2015/12/22/gulp-for-beginners/" target="_blank" rel="external">Gulp新手入门教程</a><br><a href="http://mrzhang123.github.io/2016/09/07/gulpUse/" target="_blank" rel="external">基于Gulp的前端自动化工程搭建</a><br>Gulp 自动化你的前端<br><a href="http://www.sheyilin.cn/2016/02/gulp_introduce/" target="_blank" rel="external">http://www.sheyilin.cn/2016/02/gulp_introduce/</a><br><a href="http://gulpjs.com" target="_blank" rel="external">gulp官方网址：</a><br><a href="http://gulpjs.com/plugins" target="_blank" rel="external">gulp插件地址：</a><br><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">gulp 官方API：</a><br><a href="http://www.ydcss.com/archives/424" target="_blank" rel="external">gulp 中文API：</a><br><a href="http://gruntjs.com" title="The JavaScript Task Runner" target="_blank" rel="external">Gruntjs</a><br><a href="http://www.dbpoo.com/getting-started-with-grunt/" target="_blank" rel="external">Grunt安装及配合组件构建前端开发一体化</a><br><a href="http://www.php100.com/html/it/qianduan/2015/0115/8377.html:" target="_blank" rel="external">grunt前端打包——css篇</a></p>
+<p><a href="http:" target="_blank" rel="external">SourceTree</a><br><a href="http:" target="_blank" rel="external">SourceTree</a><br><a href="http://markyun.github.io/2015/The-front-end-code-build-automated-build-environment/" target="_blank" rel="external">UED团队前端自动化构建环境的搭建</a><br><a href="http://www.cnblogs.com/cnblogsfans/p/5104450.html" target="_blank" rel="external">前端构建大法 Gulp 系列 (四)：gulp实战</a></p>
+<p>自动刷新<br>建议使用browser-sync<br><a href="http://www.cnblogs.com/anywing/p/5311061.html" target="_blank" rel="external">[gulp入门]gulp-connect浏览器自动刷新</a><br><a href="http://cnodejs.org/topic/53427d16dc556e3b3901861e" target="_blank" rel="external">Gulp.js-livereload 不用F5了，实时自动刷新页面来开发</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">    livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 这里的f5，是自定义的，写成live或者别的也行</span></div><div class="line">gulp.task(<span class="string">'f5'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> server = livereload();</div><div class="line">    <span class="comment">// app/**/*.*的意思是 app文件夹下的 任何文件夹 的 任何文件</span></div><div class="line">    gulp.watch(<span class="string">'app/**/*.*'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">file</span>)</span>&#123;</div><div class="line">        server.changed(file.path);</div><div class="line">    &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><a href="http://www.tuicool.com/articles/qyiaInI" target="_blank" rel="external">Gulp构建前端自动化工作流之：入门介绍及LiveReload的使用</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>), </div><div class="line">  webserver = <span class="built_in">require</span>(<span class="string">'gulp-webserver'</span>); </div><div class="line"></div><div class="line">gulp.task(<span class="string">'webserver'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  gulp.src( <span class="string">'./'</span> ) <span class="comment">// 服务器目录（./代表根目录）</span></div><div class="line">  .pipe(webserver(&#123; <span class="comment">// 运行gulp-webserver</span></div><div class="line">    livereload: <span class="literal">true</span>, <span class="comment">// 启用LiveReload</span></div><div class="line">    open: <span class="literal">true</span> <span class="comment">// 服务器启动时自动打开网页</span></div><div class="line">  &#125;));</div><div class="line">&#125;);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'watch'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  gulp.watch( <span class="string">'*.html'</span>, [<span class="string">'html'</span>]) <span class="comment">// 监听根目录下所有.html文件</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'default'</span>,[<span class="string">'webserver'</span>,<span class="string">'watch'</span>]);</div><div class="line"></div><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line"><span class="comment">// 网页自动刷新（服务器控制客户端同步刷新）</span></div><div class="line">    livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>),</div><div class="line"><span class="comment">// 本地服务器</span></div><div class="line">    webserver = <span class="built_in">require</span>(<span class="string">'gulp-webserver'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 注册任务</span></div><div class="line">gulp.task(<span class="string">'webserver'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    gulp.src(<span class="string">'./'</span>)</div><div class="line">    .pipe(webserver(&#123;</div><div class="line">        <span class="attr">livereload</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">open</span>: <span class="literal">true</span>,</div><div class="line">    &#125;))</div><div class="line">&#125;)</div><div class="line"><span class="comment">// 监听f5任务</span></div><div class="line">gulp.task(<span class="string">'f5'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    gulp.watch(<span class="string">'*.html'</span>,[<span class="string">'html'</span>])</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// web任务</span></div><div class="line">gulp.task(<span class="string">'web'</span>,[<span class="string">'webserver'</span>,<span class="string">'f5'</span>])</div></pre></td></tr></table></figure></p>
+<h3 id="报错："><a href="#报错：" class="headerlink" title="报错："></a>报错：</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">$ gulp build</div><div class="line">fs.js:<span class="number">856</span></div><div class="line">  return binding.readdir(pathModule._makeLong(path));</div><div class="line">                 ^</div><div class="line">Error: ENOENT: no such file <span class="keyword">or</span> directory, scandir 'L:\自动化\new\node_modules\.<span class="number">3.8</span>.<span class="number">0</span>@<span class="keyword">node</span><span class="title">-sass</span>\vendor'</div><div class="line">    at Error (native)</div><div class="line">    at Object.fs.readdirSync (fs.js:<span class="number">856</span>:<span class="number">18</span>)</div><div class="line">    at Object.getInstalledBinaries (L:\自动化\new\node_modules\.<span class="number">3.8</span>.<span class="number">0</span>@<span class="keyword">node</span><span class="title">-sass</span>\lib\extensions.js:<span class="number">119</span>:<span class="number">13</span>)</div><div class="line">    at foundBinariesList (L:\自动化\new\node_modules\.<span class="number">3.8</span>.<span class="number">0</span>@<span class="keyword">node</span><span class="title">-sass</span>\lib\errors.js:<span class="number">20</span>:<span class="number">15</span>)</div><div class="line">    at foundBinaries (L:\自动化\new\node_modules\.<span class="number">3.8</span>.<span class="number">0</span>@<span class="keyword">node</span><span class="title">-sass</span>\lib\errors.js:<span class="number">15</span>:<span class="number">5</span>)</div><div class="line">    at Object.module.exports.missingBinary (L:\自动化\new\node_modules\.<span class="number">3.8</span>.<span class="number">0</span>@<span class="keyword">node</span><span class="title">-sass</span>\lib\errors.js:<span class="number">45</span>:<span class="number">5</span>)</div><div class="line">    at Object.<span class="tag">&lt;anonymous&gt;</span> (L:\自动化\new\node_modules\.<span class="number">3.8</span>.<span class="number">0</span>@<span class="keyword">node</span><span class="title">-sass</span>\lib\index.js:<span class="number">15</span>:<span class="number">28</span>)</div><div class="line">    at Module._compile (module.js:<span class="number">398</span>:<span class="number">26</span>)</div><div class="line">    at Object.Module._extensions..js (module.js:<span class="number">405</span>:<span class="number">10</span>)</div><div class="line">    at Module.load (module.js:<span class="number">344</span>:<span class="number">32</span>)</div><div class="line"></div><div class="line"></div><div class="line">解决方案是执行以下方法：</div><div class="line">luuman@luuman-PC MINGW64 /l/自动化/new</div><div class="line">$ cnpm rebuild <span class="keyword">node</span><span class="title">-sass</span></div><div class="line"></div><div class="line">&gt; <span class="keyword">node</span><span class="title">-sass</span>@<span class="number">3.8</span>.<span class="number">0</span> install L:\自动化\new\node_modules\gulp-sass\node_modules\<span class="keyword">node</span><span class="title">-sass</span></div><div class="line">&gt; <span class="keyword">node</span> <span class="title">scripts</span>/install.js</div><div class="line"></div><div class="line">Binary downloaded <span class="keyword">and</span> installed at L:\自动化\new\node_modules\.<span class="number">3.8</span>.<span class="number">0</span>@<span class="keyword">node</span><span class="title">-sass</span>\vendor\win32-x64-<span class="number">47</span>\binding.node</div><div class="line"></div><div class="line">&gt; <span class="keyword">node</span><span class="title">-sass</span>@<span class="number">3.8</span>.<span class="number">0</span> postinstall L:\自动化\new\node_modules\gulp-sass\node_modules\<span class="keyword">node</span><span class="title">-sass</span></div><div class="line">&gt; <span class="keyword">node</span> <span class="title">scripts</span>/build.js</div><div class="line"></div><div class="line"><span class="string">"L:\自动化\new\node_modules\.3.8.0@node-sass\vendor\win32-x64-47\binding.node"</span> exists.testing binary.Binary is fine; exiting.</div><div class="line"><span class="keyword">node</span><span class="title">-sass</span>@<span class="number">3.8</span>.<span class="number">0</span> L:\自动化\new\node_modules\gulp-sass\node_modules\<span class="keyword">node</span><span class="title">-sass</span></div></pre></td></tr></table></figure>
+<h2 id="使用-gulp-构建一个项目"><a href="#使用-gulp-构建一个项目" class="headerlink" title="使用 gulp 构建一个项目"></a>使用 gulp 构建一个项目</h2><h3 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h3><p>安装完成Gulp之后我就要频繁的使用它，进行代码自动化处理。由于服务来自外国，可以被墙了。<a href="npm.taobao.org" title="这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。">淘宝 NPM 镜像</a></p>
+<h3 id="新建文件package-json"><a href="#新建文件package-json" class="headerlink" title="新建文件package.json"></a>新建文件package.json</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">luuman<span class="meta">@luuman</span>-PC MINGW64 <span class="regexp">/l/</span>自动化/Gulp</div><div class="line">$ npm init <span class="comment">//创建package.json</span></div><div class="line"><span class="symbol"></span></div><div class="line">name: (Gulp) test                  <span class="comment">//名称</span></div><div class="line"><span class="string">version:</span> (<span class="number">1.0</span><span class="number">.0</span>) <span class="number">1.0</span><span class="number">.0</span>             <span class="comment">//版本</span></div><div class="line"><span class="string">description:</span> test description      <span class="comment">//描述</span></div><div class="line">entry <span class="string">point:</span> (index.js)            <span class="comment">//</span></div><div class="line">test <span class="string">command:</span>                      <span class="comment">//测试代码</span></div><div class="line">git <span class="string">repository:</span>                    <span class="comment">//Git版本库</span></div><div class="line"><span class="string">keywords:</span>                          <span class="comment">//关键词</span></div><div class="line"><span class="string">author:</span> luuman                     <span class="comment">//作者</span></div><div class="line"><span class="string">license:</span> (ISC)                     <span class="comment">//协议</span></div><div class="line">About to write to <span class="string">L:</span>\自动化\Gulp\<span class="keyword">package</span>.<span class="string">json:</span></div></pre></td></tr></table></figure>
+<p>最终会在当前目录中创建 package.json 文件并生成类似如下代码：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"gulp-demo"</span>,</div><div class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="attr">"description"</span>: <span class="string">"gulp-demo"</span>,</div><div class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">  <span class="attr">"scripts"</span>: &#123;</div><div class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"repository"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"git"</span>,</div><div class="line">    <span class="attr">"url"</span>: <span class="string">"git@github.com:luuman/Game.git"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"keywords"</span>: [</div><div class="line">    <span class="string">"H5"</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"author"</span>: <span class="string">"luuman li"</span>,</div><div class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</div><div class="line">  <span class="attr">"bugs"</span>: &#123;</div><div class="line">    <span class="attr">"url"</span>: <span class="string">"https://github.com/luuman/Game/issues"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"homepage"</span>: <span class="string">"http://luuman.github.io/Game/"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="安装gulp依赖包"><a href="#安装gulp依赖包" class="headerlink" title="安装gulp依赖包"></a>安装gulp依赖包</h3><figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp --<span class="built_in">save</span>-<span class="built_in">dev</span></div></pre></td></tr></table></figure>
+<p>此时打开 package.json 会发现多了如下代码<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"gulp"</span>: <span class="string">"^3.8.11"</span> <span class="comment">//声明此项目的开发依赖 gulp</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="安装gulp功能插件依赖包"><a href="#安装gulp功能插件依赖包" class="headerlink" title="安装gulp功能插件依赖包"></a>安装gulp功能插件依赖包</h3><h4 id="未配置文档"><a href="#未配置文档" class="headerlink" title="未配置文档"></a>未配置文档</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> gulp-uglify gulp-watch-<span class="keyword">path</span> stream-combiner2 gulp-sourcemaps gulp-minify-css gulp-autoprefixer gulp-<span class="keyword">less</span> gulp-ruby-sass gulp-imagemin gulp-util <span class="comment">--save-dev</span></div></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">此时，package<span class="selector-class">.json</span> 将会更新</div><div class="line"><span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"colors"</span>: <span class="string">"^1.0.3"</span>,</div><div class="line">    <span class="string">"gulp"</span>: <span class="string">"^3.8.11"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="已配置文档"><a href="#已配置文档" class="headerlink" title="已配置文档"></a>已配置文档</h4><p>当你将这份 gulpfile.js 配置分享给你的朋友时，就不需要将 node_modules/ 发送给他，他只需在命令行输入<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span></div></pre></td></tr></table></figure></p>
+<h3 id="设计目录结构"><a href="#设计目录结构" class="headerlink" title="设计目录结构"></a>设计目录结构</h3><p>我们将文件分为2类，一类是源码，一类是编译压缩后的版本。文件夹分别为 src 和 dist。(注意区分 dist 和 ·dest 的区别)<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">TestProject     (项目名称)</div><div class="line"></div><div class="line"><span class="string">|– .git             通过git进行版本控制,项目自动生成这个文件</span></div><div class="line"><span class="string">|– node_modules     组件包目录</span></div><div class="line"><span class="string">|– dist             **发布环境**（编译自动生成的）</span></div><div class="line">    <span class="string">|– css/         样式文件(style.css style.min.css)</span></div><div class="line">    <span class="string">|– images/      图片文件(压缩图片\合并后的图片)</span></div><div class="line">    <span class="string">|– js/          js文件(main.js main.min.js)</span></div><div class="line">    <span class="string">|– index.html   静态页面文件(压缩html)</span></div><div class="line"><span class="string">|– src              **开发环境**</span></div><div class="line">    <span class="string">|– sass/                *.scss *.sass 文件夹</span></div><div class="line">    <span class="string">|– less/                less文件夹</span></div><div class="line">    <span class="string">|– images/              图片文件夹</span></div><div class="line">    <span class="string">|– fonts/               字体文件夹</span></div><div class="line">    <span class="string">|– js/                  js文件夹</span></div><div class="line">    <span class="string">|– index.html           静态文件</span></div><div class="line"><span class="string">|– gulpfile.js              gulp配置文件</span></div><div class="line"><span class="string">|– package.json             依赖模块json文件,在项目目录下npm install会安装项目所有的依赖模块，简化项目的安装程序</span></div></pre></td></tr></table></figure></p>
+<h3 id="gulp-util"><a href="#gulp-util" class="headerlink" title="gulp-util"></a>gulp-util</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">var</span> gulp = require(<span class="string">'gulp'</span>)</div><div class="line"><span class="selector-tag">var</span> gutil = require(<span class="string">'gulp-util'</span>)</div><div class="line"></div><div class="line">gulp.task(<span class="string">'default'</span>, function () &#123;</div><div class="line">    gutil.log(<span class="string">'message'</span>)</div><div class="line">    gutil.log(gutil<span class="selector-class">.colors</span><span class="selector-class">.red</span>(<span class="string">'error'</span>))</div><div class="line">    gutil.log(gutil<span class="selector-class">.colors</span><span class="selector-class">.green</span>(<span class="string">'message:'</span>) + <span class="string">"some"</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="Browser-Sync自动刷新"><a href="#Browser-Sync自动刷新" class="headerlink" title="Browser Sync自动刷新"></a>Browser Sync自动刷新</h3><p>Browser Sync 帮助我们搭建简单的本地服务器并能实时刷新浏览器，它还能 同时刷新多个设备。</p>
+<p>不只是自动刷新<br>BrowserSync并不只是一个自动刷新工具，它还有许多其他功能。默认配置下，BrowserSync会在多个浏览器中同步滚动条位置，表单行为和点击事件。而且可以在不同设备上进行实时浏览文件效果，在局域网里面。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[<span class="number">11</span>:<span class="number">33</span>:<span class="number">17</span>] Finished <span class="string">'dev'</span> after <span class="number">6.07</span> μs</div><div class="line">[BS] Access <span class="string">URLs:</span></div><div class="line"> -------------------------------------</div><div class="line"><span class="symbol">       Local:</span> <span class="string">http:</span><span class="comment">//localhost:3000</span></div><div class="line"><span class="symbol">    External:</span> <span class="string">http:</span><span class="comment">//192.168.1.63:3000</span></div><div class="line"> -------------------------------------</div><div class="line"><span class="symbol">          UI:</span> <span class="string">http:</span><span class="comment">//localhost:3001</span></div><div class="line"> UI <span class="string">External:</span> <span class="string">http:</span><span class="comment">//192.168.1.63:3001</span></div><div class="line"> -------------------------------------</div><div class="line">[BS] Serving files <span class="string">from:</span> dist/</div><div class="line">[BS] Watching files...</div></pre></td></tr></table></figure>
+<h3 id="快速拷贝部署文件"><a href="#快速拷贝部署文件" class="headerlink" title="快速拷贝部署文件"></a>快速拷贝部署文件</h3><p>在已经有成熟的gulp构建文件，新建文件夹，将文件gulpfile.js、package.json、src文件夹。</p>
+<blockquote>
+<p>cnpm install gulp引入gulp<br>gulp install安装插件<br>gulp执行</p>
+</blockquote>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            window._hmt.push(['_trackEvent', 'pay', 'click', '赏'])
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/04/02/Plug/Gulp/InduceGulp/">Gulp前端构建工具</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 世平阜康 的个人博客">世平阜康</a></p>
+        <p><span>发布时间:</span>2016年04月02日 - 14时11分</p>
+        <p><span>最后更新:</span>2017年07月28日 - 18时54分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/02/Plug/Gulp/InduceGulp/" title="Gulp前端构建工具">http://luuman.github.io/2016/04/02/Plug/Gulp/InduceGulp/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://luuman.github.io/2016/04/02/Plug/Gulp/InduceGulp/　　作者: 世平阜康" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/04/02/Induce/JavaScript/JSInputSearch/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Input输入框的案例
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OmniMarkupPreviewer</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前端自动化的目的"><span class="toc-number">1.</span> <span class="toc-text">前端自动化的目的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#功能："><span class="toc-number">1.1.</span> <span class="toc-text">功能：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目前最知名的构建工具：-Gulp、Grunt、NPM-Webpack；"><span class="toc-number">1.2.</span> <span class="toc-text">目前最知名的构建工具： Gulp、Grunt、NPM + Webpack；</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装前准备："><span class="toc-number">2.</span> <span class="toc-text">安装前准备：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#node"><span class="toc-number">2.1.</span> <span class="toc-text">node</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm"><span class="toc-number">2.2.</span> <span class="toc-text">npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-Node依赖包"><span class="toc-number">2.3.</span> <span class="toc-text">npm Node依赖包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局安装gulp"><span class="toc-number">2.4.</span> <span class="toc-text">全局安装gulp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编译会显示Finished-如果你的JS有什么不好的地方它会提醒，避免一些不必要的错误，十分贴心"><span class="toc-number">2.5.</span> <span class="toc-text">编译会显示Finished,如果你的JS有什么不好的地方它会提醒，避免一些不必要的错误，十分贴心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gulp的插件数量很多，后面还可以根据自己的需要进行添加任务"><span class="toc-number">2.6.</span> <span class="toc-text">gulp的插件数量很多，后面还可以根据自己的需要进行添加任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gulp-livereload"><span class="toc-number">2.7.</span> <span class="toc-text">gulp-livereload</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端自动化的目的-1"><span class="toc-number">3.</span> <span class="toc-text">前端自动化的目的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#报错："><span class="toc-number">3.1.</span> <span class="toc-text">报错：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-gulp-构建一个项目"><span class="toc-number">4.</span> <span class="toc-text">使用 gulp 构建一个项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装前准备"><span class="toc-number">4.1.</span> <span class="toc-text">安装前准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建文件package-json"><span class="toc-number">4.2.</span> <span class="toc-text">新建文件package.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装gulp依赖包"><span class="toc-number">4.3.</span> <span class="toc-text">安装gulp依赖包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装gulp功能插件依赖包"><span class="toc-number">4.4.</span> <span class="toc-text">安装gulp功能插件依赖包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#未配置文档"><span class="toc-number">4.4.1.</span> <span class="toc-text">未配置文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#已配置文档"><span class="toc-number">4.4.2.</span> <span class="toc-text">已配置文档</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计目录结构"><span class="toc-number">4.5.</span> <span class="toc-text">设计目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gulp-util"><span class="toc-number">4.6.</span> <span class="toc-text">gulp-util</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Browser-Sync自动刷新"><span class="toc-number">4.7.</span> <span class="toc-text">Browser Sync自动刷新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速拷贝部署文件"><span class="toc-number">4.8.</span> <span class="toc-text">快速拷贝部署文件</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '7f50019c6a02c37e7aca',
+        client_secret: 'd583910e6ae1492b375796d2c82efcda2cc67aae',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/04/02/Induce/JavaScript/JSInputSearch/" title="上一篇: Input输入框的案例">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/" title="下一篇: OmniMarkupPreviewer">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/29/Tool/GitWorkflows/">Git Workflows</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Tool/Git/">Git速查手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/VueComponents/">Vue组件探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/InduceSass/">深入Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/KeepAlive/">keep-alive最佳实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/CSS/CssLowFrequency/">CSS低频属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Tool/Terminal/">Terminal配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/Induce/Weixin/JS-SDK/">WeChat SDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/Induce/Hack/Canvas/">浏览器常见Bug——Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/25/FrontFrame/Vue/Vuex/">Vuex</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/Induce/HTML/Video/">Mobile Video</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/FrontFrame/Vue/VueRouter/">Vue Router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/Tool/Sublime/sublimeMac/">Sublime Mac 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/FrontFrame/React/React/">React初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/Induce/CSS/CSSElementAlign/">用CSS实现元素垂直居中方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normCSS/">CSS前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normjs/">前端代码规范Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normhtml/">HTML前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normdev/">前端开发代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCText/">React Native Text</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCTextInput/">React Native TextInput</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCImage/">React Native Image</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNComponents/">React Native 组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNTest/">React Native 实战封装组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNBasics/">React Native 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetOX/">React Native IOS环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNTools/">React Native开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetAndroid/">React Native Android环境搭建（Window）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RN/">React Native初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/JavaScript/JSInputSearch/">Input输入框的案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Gulp/InduceGulp/">Gulp前端构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/">OmniMarkupPreviewer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/HTML/HtmlRem/">移动H5自适应布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/Demo/TextShow/">BOOS信息展示与收缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/Demo/MobileRotate/">移动端横屏提示动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Skill/OOCSS/">面向对象的CSS样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Mobile/MobliePC/">关于移动端界面在PC端显示的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/Node/NodeJsWeb/">Node.js实战 建立简单的Web服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/CSS/animation/">CSS3动画探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/Induce/Mobile/Mobile-knowledge/">移动前端知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Induce/Ajax/Ajax/">Ajax学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/Plug/ChromePlug/">前端Chrome插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/JavaScript/JSTip/">原生JS TitleTip</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/Ajax/AjaxStatus/">Ajax Status请求状态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Induce/JavaScript/NativeJS/">原生JavaScript探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/GitHubHexo/">使用GitHub搭建Hexo博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoBug/">Hexo bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoPlug/">Hexo插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/Hexo/">Hexo的使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoTheme/">Hexo 主题：SPFK</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/26/Skill/win7Set/">电脑优化相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CssTips/">CSS小技巧收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Interview/WebFront/">web前端职业规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/HTML/media/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CSS/">CSS学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/Tool/Sublime/Sublimemarkdown/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Induce/JavaScript/JQueryCDN/">CDN公共库</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Demo/FrontEndGuide/">前端资源导航</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/11/Skill/BusyFront/">Busy前端工作室</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 世平阜康
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

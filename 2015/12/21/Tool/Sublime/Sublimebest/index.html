@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sublime Text历练 | Luuman&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="来到GitHub这么长时间，才开始真真的了解GitHub，这个国外的代码托管平台，充满着大牛的身影。">
+<meta name="keywords" content="Sublime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sublime Text历练">
+<meta property="og:url" content="http://luuman.github.io/2015/12/21/Tool/Sublime/Sublimebest/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="来到GitHub这么长时间，才开始真真的了解GitHub，这个国外的代码托管平台，充满着大牛的身影。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sublime Text历练">
+<meta name="twitter:description" content="来到GitHub这么长时间，才开始真真的了解GitHub，这个国外的代码托管平台，充满着大牛的身影。">
+  
+    <link rel="alternative" href="/atom.xml" title="Luuman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">世平阜康</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 11.67px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Development/" style="font-size: 10px;">Development</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/Hack/" style="font-size: 10px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 13.33px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/Video/" style="font-size: 10px;">Video</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/WeChatSDK/" style="font-size: 10px;">WeChatSDK</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.waydrow.com/">waydrow</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.tangbc.com">TANGBC</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.w3ctrain.com/">Helkyle</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">世平阜康</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">世平阜康</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Tool/Sublime/Sublimebest" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/21/Tool/Sublime/Sublimebest/" class="article-date">
+      <time datetime="2015-12-21T10:29:20.000Z" itemprop="datePublished">2015-12-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sublime Text历练
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Tool/">Tool</a>
+    </div>
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime/">Sublime</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<strong>自用笔记：</strong>本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why<br><a id="more"></a></p>
+<h2 id="编辑器的选择（Editor-Choices）"><a href="#编辑器的选择（Editor-Choices）" class="headerlink" title="编辑器的选择（Editor Choices）"></a>编辑器的选择（Editor Choices）</h2><p>Sublime Text是一款跨平台代码编辑器（Code Editor），从最初的Sublime Text 1.0，到现在的Sublime Text 3.0，Sublime Text从一个不知名的编辑器演变到现在几乎是各平台首选的GUI编辑器。<a href="http://www.sublimetext.com/2" target="_blank" rel="external">官网地址</a><br>从初学编程到现在，我用过的编辑器有EditPlus、UltraEdit、Notepad++、Vim、TextMate和Sublime Text，如果让我从中推荐，我会毫不犹豫的推荐Vim和Sublime Text，原因有下面几点：</p>
+<blockquote>
+<ol>
+<li><p>跨平台：Vim和Sublime Text均为跨平台编辑器（在Linux、OS X和Windows下均可使用）。作为一个程序员，切换系统是常有的事情，为了减少重复学习，使用一个跨平台的编辑器是很有必要的。可扩展：Vim和Sublime Text都是可扩展的（Extensible），并包含大量实用插件，我们可以通过安装自己领域的插件来成倍提高工作效率。互补：Vim和Sublime Text分别是命令行环境（CLI）和图形界面环境（GUI）下的最佳选择，同时使用两者会大大提高工作效率。</p>
+</li>
+<li><p>优点：自动保存代码，代码高亮、语法提示、自动完成且反应快速。少用鼠标，多用键盘。<br>编辑器（Editor） vs 集成开发环境（Integrated Development Environment，下文简称IDE）</p>
+</li>
+</ol>
+</blockquote>
+<p>我经常看到一些程序员拿编辑器和IDE进行比较，诸如Vim比Eclipse强大或是Visual Studio太慢不如Notepad++好使之类的讨论比比皆是，个人认为这些讨论没有意义，因为编辑器和IDE根本是面向两种不同使用场景的工具：<br>编辑器面向无语义的纯文本，不涉及领域逻辑，因此速度快体积小，适合编写单独的配置文件和动态语言脚本（Shell、Python和Ruby等）。IDE面向有语义的代码，会涉及到大量领域逻辑，因此速度偏慢体积庞大，适合编写静态语言项目（Java、C++和C#等）。<br>我认为应当使用正确的工具去做有价值的事情，并把效率最大化，所以我会用Eclipse编写Java项目，用Vim编写Shell，用Sublime Text编写JavaScript/HTML/Python，用Visual Studio编写C#。<br>前言到此结束，下面进入正题。</p>
+<h2 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h2><blockquote>
+<p>1、概况：</p>
+<ol>
+<li>从上到下：标题栏Title、菜单栏Menu、标签栏Tab、编辑区Editing Area、控制台Console、状态栏Status Bar。</li>
+<li><p>从做到右：侧边栏（可关闭、文件、文件夹视图）、编辑区（代码编辑）、MiniMap（缩略图）。</p>
+</li>
+<li><p>菜单栏：<br>各种命令，各种设置。文件File：编辑Edit：选择Selection：查找Find：视图View：转到Goto：工具Tools：项目Project：首选项Preferences：个性化定制。帮助Help：</p>
+</li>
+<li><p>标签栏：<br>文件名的缩略图，文件编辑未保存，右上角有个小圆点，提示保存。如果未保存关了也不用害怕，自动保存。</p>
+</li>
+<li><p>状态栏：<br>ASCII编码、Line 6-Column 53（当前行列号）、Tab Size：4（Tab格式等信息）、HTML（当前语言）。</p>
+</li>
+<li><p>控制台：<br>使用Ctrl+`调出，它既是一个标准的Python REPL，也可以直接对Sublime Text进行配置。</p>
+</li>
+<li><p>编辑区：<br>这是我们主要的工作区域，ST2支持代码自动缩进，代码折叠功能。</p>
+</li>
+</ol>
+<p>2、常见的功能：</p>
+<ol>
+<li>自动完成：<br>自动完成的快捷键是Tab，如果在html文件中，输入cl按下tab，即可自动补全为class=””；加上zencoding后，更是如虎添翼，后面再讲到</li>
+<li>多列编辑：<br>按住ctrl点击鼠标，会出现多个闪烁的光标，这时可同时修改多处，或者按住鼠标中键拖拽，</li>
+<li>代码注释功能：ctrl+/、ctrl+shift+/分别未行注释和块注释，再按一下就能去掉注释，ST2能够自动识别是html、css还是js文件，给出不同类型的注释。</li>
+<li>行操作：<br>ctrl+alt+↑、ctrl+alt+↓向上或者向下交换两行，ctrl+enter，光标后插入空行，ctrl+d选择相似，可以参考后面的快捷键列表。</li>
+<li>右键功能：<br>前3个，大家都知道，第4个，show unsaved changes，显示未保存的修改，红色减号表示删去的内容，绿色加号表示新增的内容<br>Open Containing Folder…，打开包含此文件的文件夹，这个很方便找到相关的文件<br>Copy File Path，复制文件路径，方便我们复制路径到浏览器中查看<br>Auto-Format Tags on Selection 格式化选中的文档，方便我们更清晰的查看代码结构，虽然ST2有自动缩进功能，但是当我们粘贴进一段没有格式化过的代码，就需要这个能了，这个功能要安装了Tag这个插件才会出现。</li>
+<li>人性化设计：<br>ST2虽然还是beta版中，但是有很多设计细节还是值得称赞的，比如点击一个标签或者括弧，会在起始处显示下划点线，方便看清代码结果，每一层嵌套代码间都有竖线，起到视觉辅助的作用。</li>
+</ol>
+</blockquote>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>自定制，数据被保存在Preferences.sublime-settings，Default或User，user可以覆盖default。在配置文件，直接设置<br>配置文件在：preferences－setting user。<br>下面是一些可能有用但我很少用到的功能：</p>
+<blockquote>
+<p>宏（Macro）：Sublime Text支持录制宏，但我在实际工作中并未发现宏有多大用处。</p>
+<p>其它平台（Other Platforms）：本文只介绍了Windows平台上Sublime Text的使用，不过Linux和OS X上Sublime Text的使用方式和Windows差别不大，只是在快捷键上有所差异，请参考Windows/Linux快捷键和OS X快捷键。</p>
+<p>项目（Projects）：Sublime Text支持简单的项目管理，但我一般只用到文件夹。</p>
+<p>Vim模式（Vintage）：Sublime Text自带Vim模式。</p>
+<p>构建（Build）：通过配置，Sublime Text可以进行源码构建。</p>
+<p>调试（Debug）：通过安装插件，Sublime Text可以对代码进行调试。</p>
+</blockquote>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>若稍有英文基础，则更建议打开Preferences-&gt;KeyBindings–Default，这里面是详细的快捷键配置。<br>快捷键设置，ST2的快捷键很多，改的时候注意不要覆盖了。<br>因为快捷键众多，所以有下面这种组合快捷键，先按下ctrl+k，松开k，再按下j就可以展开全部代码了。</p>
+<p>快捷键列表（Shortcuts Cheatsheet）<br>我把本文出现的Sublime Text按其类型整理在这里，以便查阅。</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div></pre></td><td class="code"><pre><div class="line">### 通用（General）</div><div class="line">    ↑↓←→：上下左右移动光标，注意不是不是KJHL！</div><div class="line">    Alt：调出菜单</div><div class="line">### 整理（clear）</div><div class="line">    Tab：缩进：自动完成</div><div class="line">    Shift+Tab：去除缩进</div><div class="line">    Ctrl+KT：折叠属性</div><div class="line">    Ctrl+K0：展开所有</div><div class="line">### 窗口（Window）</div><div class="line">### 移动（Move）</div><div class="line">    Ctrl+←/→：进行逐词移动</div><div class="line">    Ctrl+Shift+←/→进行逐词选择</div><div class="line">    Ctrl+↑/↓移动当前显示区域</div><div class="line">    Ctrl+Shift+↑/↓移动当前行</div><div class="line">    Ctrl+D：选择当前光标所在的词并高亮该词所有出现的位置，再次Ctrl+D选择该词出现的下一个位置，在多重选词的过程中，使用Ctrl+K进行跳过，使用Ctrl+U进行回退，使用Esc退出多重</div><div class="line">### 编辑</div><div class="line">    Ctrl+Shift+L：将当前选中区域打散</div><div class="line">### 文件（File）</div><div class="line">    Ctrl+N：在当前窗口创建一个新标签</div><div class="line">    Ctrl+O：打开文件</div><div class="line">    Ctrl+Shift+T：打开最近关闭的文件</div><div class="line">    Ctrl+S：保存</div><div class="line">    Ctrl+Shift+S：另存为</div><div class="line">    Ctrl+Shift+N：创建新窗口</div><div class="line">    Ctrl+Shift+W：关闭窗口</div><div class="line">    Ctrl+W：关闭当前标签，当窗口内没有标签时会关闭该窗口</div><div class="line">### 编辑（Edit）</div><div class="line">    Ctrl+Z：撤销</div><div class="line">    Ctrl+Y：恢复</div><div class="line">### 取消选择（Undo Selection）</div><div class="line">    Ctrl+U：智能撤销</div><div class="line">    Ctrl+ Shift+U：智能重做</div><div class="line">    Ctrl+ Shift+V：粘贴并缩进</div><div class="line">    Ctrl+K，Ctrl+V：</div><div class="line">### 行（Line）</div><div class="line">    Ctrl +]：缩进</div><div class="line">    Ctrl +[：反缩进</div><div class="line">    Ctrl + Shift + Up：上移一行 </div><div class="line">    Ctrl + Shift + Down：下移一行</div><div class="line">    Ctrl + Shift + D：复制行(加倍)</div><div class="line">    Ctrl + Shift + K：删除行</div><div class="line">    Ctrl + J：连接行</div><div class="line">### 文本（Text）</div><div class="line">    Ctrl+Shift+Enter：在当前行上面增加一行并跳至该行</div><div class="line">    Ctrl+Alt+Enter：替换所有关键字匹配</div><div class="line">    Ctrl+Enter：在当前行下面新增一行然后跳至该行</div><div class="line">    Ctrl+Delete：删除单词前部</div><div class="line">    Ctrl+Backspace：删除单词后部</div><div class="line">    Ctrl+K，Ctrl+K：从光标处删除至行尾</div><div class="line">    Ctrl+K+Backspace：从光标处删除至行首</div><div class="line">    Ctrl+T：前后调转</div><div class="line">### 注释（Comment）</div><div class="line">    Ctrl+/：注释（如已选择内容，同“Ctrl+Shift+/”效果）</div><div class="line">    Ctrl+Shift：/：块注释(注释已选择内容)</div><div class="line">    Ctrl+Alt+/：块注释，并Focus到首行，写注释说明用的</div><div class="line">### 标签（Tag）</div><div class="line">    Alt+.：闭合当前标签</div><div class="line">    Ctrl+Shift+A：选择标签(可重复)</div><div class="line">    Ctrl+Shift+W：选择区域被标签包含</div><div class="line">### （Mark）</div><div class="line">    Ctrl+K， Alt+Space：设置记号</div><div class="line">    Ctrl+K，Alt+A：选择到记号</div><div class="line">    Ctrl+K，Alt+W：删除到记号</div><div class="line">    Ctrl+K，Alt+S：交换(移动)记号</div><div class="line">    Ctrl+K，Alt+G：移除记号</div><div class="line">    Ctrl+K，Alt+Y：Yank</div><div class="line">    Ctrl+K，Alt+J：取消所有折叠</div><div class="line">### 代码折叠（Code Folding）</div><div class="line">    Ctrl+Shift+[：折叠代码</div><div class="line">    Ctrl+Shift+]：展开代码</div><div class="line">    （Convert Case）</div><div class="line">    Ctrl+K，Ctrl+U：改为大写</div><div class="line">    Ctrl+K，Ctrl+L：改为小写</div><div class="line">### （Wrap）</div><div class="line">    Alt+Q：</div><div class="line">    Ctrl+Space：显示提示</div><div class="line">    F9：按行排序</div><div class="line">    Ctrl+F9：按行排序(区分大小写)</div><div class="line">### 选择（Selection）</div><div class="line">    Ctrl+ Shift+L：分割为多光标(选择多行时)</div><div class="line">    Ctrl+ Alt +Up：向上一行添加光标</div><div class="line">    Ctrl+ Alt +Down：向下一行添加光标</div><div class="line">    Escape单光标</div><div class="line">### 扩展（Expand）</div><div class="line">    Ctrl+A：全选</div><div class="line">    Ctrl+L：选择整行（按住-继续选择下行）</div><div class="line">    Ctrl+D：选词：（按住-继续选择下个相同的字符串）</div><div class="line">    Ctrl+Shift+Space：快速选择当前作用域（Scope）的内容</div><div class="line">    Ctrl+Shift+M：快速选择括号间的内容&#123;&#125;</div><div class="line">    Ctrl+Shift+J：快速选择同缩进的内容</div><div class="line">    Ctrl+Shift+A：选择光标位置父标签对儿</div><div class="line">### 查找（Find）</div><div class="line">    Ctrl+F：进行标准查找</div><div class="line">    F3：跳至当前关键字下一个位置</div><div class="line">    Shift+F3：跳到当前关键字上一个位置</div><div class="line">    Ctrl +I：</div><div class="line">    Ctrl +H：进行标准替换</div><div class="line">    Ctrl+Shift+H：替换当前关键字</div><div class="line">    Ctrl +F3：快速查询</div><div class="line">    Alt +F3：选中当前关键字出现的所有位置</div><div class="line">    Ctrl+D：快速查询下一个(多光标)</div><div class="line">    Ctrl+K，Ctrl+D：快速查询跳过下一个(多光标)</div><div class="line">    Ctrl+E：字</div><div class="line">    Ctrl+Shift+E：字</div><div class="line">    Ctrl+Shift+F：多文件搜索&amp;替换</div><div class="line">### 视图（View）</div><div class="line">    Ctrl+K，Ctrl+B：侧边栏开关Side Bar</div><div class="line">    Ctrl+`：调出控制台</div><div class="line">    F11：切换普通全屏</div><div class="line">    Shift+F11：切换无干扰全屏</div><div class="line">    Alt+Shift+<span class="number">2</span>：进行左右分屏</div><div class="line">    Alt+Shift+<span class="number">5</span>：进行上下左右分屏</div><div class="line">    Alt+Shift+<span class="number">8</span>：进行上下分屏。</div><div class="line">    分屏，使用Ctrl+数字键跳转到指定屏，使用Ctrl+Shift+数字键将当前屏移动到指定屏</div><div class="line">### 组（Group）：</div><div class="line">    Ctrl+K，Ctrl+Up：</div><div class="line">    Ctrl+K，Ctrl+ Shift+ Up：</div><div class="line">    Ctrl+K，Ctrl+Down：</div><div class="line">### 焦点小组（Focus Group）：</div><div class="line">    Ctrl+K，Ctrl+Right：</div><div class="line">    Ctrl+K，Ctrl+ Left：</div><div class="line">    Ctrl+<span class="number">1</span>：组间切换焦点</div><div class="line">    Ctrl+ Shift +<span class="number">1</span>：移动文件到组</div><div class="line">    Syntax语法和文件类型、indentation缩排、Line Endings行尾结束符号</div><div class="line">    F6：拼写检查</div><div class="line">    Ctrl + F6：下一个错误</div><div class="line">    Ctrl+Shift+ F6：上一个错误</div><div class="line">### 跳转（Goto）</div><div class="line">    Ctrl+P：跳转到指定文件</div><div class="line">    Ctrl+R：跳转到指定符号</div><div class="line">    Ctrl+Shift+R：</div><div class="line">    F12：</div><div class="line">    Ctrl+G：跳转到指定行号</div><div class="line">    Alt+-：跳转到底部</div><div class="line">    Alt+Shift +-：</div><div class="line">### 文件开关（Switch File）</div><div class="line">    Ctrl+Pagedown：下一个文件</div><div class="line">    Ctrl+Pageup：上一个文件</div><div class="line">    Ctrl+Tab：下一个文件(stack)</div><div class="line">    Ctrl+Shift + Tab：上一个文件(stack)</div><div class="line">    Alt+O：</div><div class="line">    Alt+<span class="number">1</span>：最近打开文件</div><div class="line">### 滚动（Scroll）</div><div class="line">    Ctrl+K，Ctrl+C：滚动到光标处</div><div class="line">    Ctrl+Up：向上滚动一行(定光标)</div><div class="line">    Ctrl+Down：向下滚动一行(定光标)</div><div class="line">### 书签（Boolmarks）</div><div class="line">    Ctrl+F2：设置书签</div><div class="line">    F2：下一个书签</div><div class="line">    Shift+F2：上一个书签</div><div class="line">    Ctrl+Shift+F2：清除书签</div><div class="line">    Alt+F2：全选书签</div><div class="line">    Ctrl+M：在起始括号和结尾括号间切换</div><div class="line">### 工具（Tools）</div><div class="line">    Ctrl+Shift+P：调出命令板（Command Palette）</div><div class="line">    Ctrl +B：</div><div class="line">    Ctrl+Shift+B：</div><div class="line">    Ctrl +Break：</div><div class="line">    F4：</div><div class="line">    Shift+ F4：</div><div class="line">    Ctrl +Q：</div><div class="line">    Ctrl+Shift+Q：</div><div class="line">### 项目（Project）</div><div class="line">    Ctrl+Alt+P：切换项目</div><div class="line">    #### 首选项（Preferences）</div><div class="line">    Ctrl+ Keypad Plus：</div><div class="line">    Ctrl+Shift+Keypad Plus：</div><div class="line">    Help（帮助）</div></pre></td></tr></table></figure>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="多行游标："><a href="#多行游标：" class="headerlink" title="多行游标："></a>多行游标：</h3><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">方法一：利用查找替换功能：Ctrl + H</div><div class="line">方法二（推荐）：Ctrl+<span class="keyword">D</span>选中另一个，如果有某些不想添加新行的模式则按ctrl+<span class="keyword">K</span>，ctrl+<span class="keyword">D</span>跳过这个进入下一个符合条件的模式行。</div><div class="line">按Alt + F3快捷键，全选所有符合条件的单词。</div><div class="line">如果要在每行都加入光标，可以先ctrl+A然后ctrl+shift+L即可。</div><div class="line">如果在某个字符的多行后面加上光标，可以将光标放在这个字符后面，按住shift键，然后右键可以向下拖动产生多个光标。</div></pre></td></tr></table></figure>
+<h3 id="Goto-anything：（模糊匹配）"><a href="#Goto-anything：（模糊匹配）" class="headerlink" title="Goto anything：（模糊匹配）"></a>Goto anything：（模糊匹配）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Ctrl+P：跳转到指定文件，输入文件名后可以：</div><div class="line">@ 符号跳转：输入@symbol跳转到symbol符号所在的位置</div><div class="line"><span class="meta">#</span><span class="bash"> 关键字跳转：输入<span class="comment">#keyword跳转到keyword所在的位置</span></span></div><div class="line">: 行号跳转：输入:12跳转到文件的第12行。</div></pre></td></tr></table></figure>
+<p>命令快捷执行：<br><figure class="highlight dos"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Ctrl+<span class="built_in">Shift</span>+P：输入<span class="built_in">set</span> syntax JavaScript进行文件类型更改。</div><div class="line">输入Minimap进行迷你地图切换。</div></pre></td></tr></table></figure></p>
+<p>快速添加新行<br><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Ctrl + <span class="keyword">Enter</span>可以在当前行下新建一行。 </div><div class="line">Ctrl + Shift + <span class="keyword">Enter</span>可以在当前行上面添加一行。</div></pre></td></tr></table></figure></p>
+<h2 id="最后购买："><a href="#最后购买：" class="headerlink" title="最后购买："></a>最后购买：</h2><p>Sublime Text2或者3都没关系，3也只是作为2的beta版本，所以还是推荐3吧，支持新版嘛。2和3在使用方法功能上也有差异~<br>你可以去官网下载对应版本，但可能需要输入序列号什么的。访问<a href="http://www.sublimetext.com/2" target="_blank" rel="external">下载 2.x 版本</a>。或从<a href="http://www.sublimetext.com/3" target="_blank" rel="external">下载 3.x 版本</a>。</p>
+<p>注册码（仅供个人非商业应用）：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">----- BEGIN LICENSE ------</div><div class="line">Alexander</div><div class="line">Single User License</div><div class="line">EA7E<span class="number">-814345</span></div><div class="line"><span class="number">51</span>F47F09 <span class="number">4</span>EAB1285 <span class="number">7827</span>EFF0 <span class="number">8</span>B1207DC</div><div class="line">A76A6EA3 E1A1CA7A DC1F2703 <span class="number">14</span>,<span class="number">897</span>,<span class="number">784</span></div><div class="line"><span class="number">8</span>EDC1C82 <span class="number">3</span>F2A58B9 <span class="number">1</span>C0C8B24 <span class="number">67686432</span></div><div class="line"><span class="number">281245</span>B3 <span class="number">6233</span>DE5C ADC5C2F9 <span class="number">61</span>FB8A04</div><div class="line"><span class="number">171</span>B63EF <span class="number">86</span>BA423F <span class="number">6</span>AC884FD <span class="number">3273</span>A7AA</div><div class="line"><span class="number">5</span>F50A6DB CE7859AE D62D2B37 AEEDD8C2</div><div class="line"><span class="number">078</span>A8A20 <span class="number">70</span>EEA791 <span class="number">84</span>F48C1E <span class="number">8</span>ABA7DEB</div><div class="line"><span class="number">0</span>B3907C0 C9A3523B <span class="number">0091</span>A045 <span class="number">6</span>F67AED8</div><div class="line">------ END LICENSE ------</div></pre></td></tr></table></figure></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">----- BEGIN LICENSE -----</div><div class="line">Andrew Weber</div><div class="line">Single User License</div><div class="line">EA7E<span class="number">-855605</span></div><div class="line"><span class="number">813</span>A03DD <span class="number">5E4</span>AD9E6 <span class="number">6</span>C0EEB94 BC99798F</div><div class="line"><span class="number">942194</span>A6 <span class="number">02396E98</span> E62C9979 <span class="number">4</span>BB979FE</div><div class="line"><span class="number">91424</span>C9D A45400BF F6747D88 <span class="number">2</span>FB88078</div><div class="line"><span class="number">90</span>F5CC94 <span class="number">1</span>CDC92DC <span class="number">8457107</span>A F151657B</div><div class="line"><span class="number">1</span>D22E383 A997F016 <span class="number">42397640</span> <span class="number">33</span>F41CFC</div><div class="line">E1D0AE85 A0BBD039 <span class="number">0E9</span>C8D55 E1B89D5D</div><div class="line"><span class="number">5</span>CDB7036 E56DE1C0 EFCC0840 <span class="number">650</span>CD3A6</div><div class="line">B98FC99C <span class="number">8</span>FAC73EE D2B95564 DF450523</div><div class="line">------ END LICENSE ------</div></pre></td></tr></table></figure>
+<p>搜索3114注册码<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">—– BEGIN LICENSE —–</div><div class="line">Anthony Sansone</div><div class="line">Single User License</div><div class="line">EA7E<span class="number">-878563</span></div><div class="line"><span class="number">28</span>B9A648 <span class="number">42</span>B99D8A F2E3E9E0 <span class="number">16</span>DE076E</div><div class="line">E218B3DC F3606379 C33C1526 E8B58964</div><div class="line">B2CB3F63 BDF901BE D31424D2 <span class="number">082891</span>B5</div><div class="line">F7058694 <span class="number">55</span>FA46D8 EFC11878 <span class="number">0868</span>F093</div><div class="line">B17CAFE7 <span class="number">63</span>A78881 <span class="number">86</span>B78E38 <span class="number">0</span>F146238</div><div class="line">BAE22DBB D4EC71A1 <span class="number">0</span>EC2E701 C7F9C648</div><div class="line"><span class="number">5</span>CF29CA3 <span class="number">1</span>CB14285 <span class="number">19</span>A46991 E9A98676</div><div class="line"><span class="number">14</span>FD4777 <span class="number">2</span>D8A0AB6 A444EE0D CA009B54</div><div class="line">—— END LICENSE —</div></pre></td></tr></table></figure></p>
+<h2 id="汉化："><a href="#汉化：" class="headerlink" title="汉化："></a>汉化：</h2><p>可以网上找些中文包放进去就行了。<br><a href="http://lucida.me/blog/sublime-text-complete-guide/" target="_blank" rel="external">Sublime Text 全程指南：</a></p>
+<h2 id="插件："><a href="#插件：" class="headerlink" title="插件："></a>插件：</h2><p>插件的选择：<br>主题：blackboard<br>SideBarEnhancements（侧边栏增强，添加浏览器）<br>Zen Coding<br>advanceNewfile<br>SyncedSideBar<br>tag</p>
+<p>JsFormat（javascript格式化）<br>ColorPicker （调色盘）<br>GBK to UTF8<br>GBK Encoding Support（GBK中文编码）<br>SublimeLinter（代码错误提示） 总体架构<br>snippets（自定制代码补齐机制）</p>
+<h2 id="快捷代码："><a href="#快捷代码：" class="headerlink" title="快捷代码："></a>快捷代码：</h2><ol>
+<li>跳到行首行尾的快捷键<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    //跳到行首行尾的快捷键</div><div class="line">    &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+k"</span>, <span class="string">"ctrl+h"</span>], <span class="attr">"command"</span>: <span class="string">"move_to"</span>, <span class="attr">"args"</span>: &#123;<span class="attr">"to"</span>: <span class="string">"bol"</span>, <span class="attr">"extend"</span>: <span class="literal">false</span>&#125; &#125;,</div><div class="line">    &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+k"</span>, <span class="string">"ctrl+e"</span>], <span class="attr">"command"</span>: <span class="string">"move_to"</span>, <span class="attr">"args"</span>: &#123;<span class="attr">"to"</span>: <span class="string">"eol"</span>, <span class="attr">"extend"</span>: <span class="literal">false</span>&#125; &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>先按ctrl+k，然后按ctrl+h（home首字母）光标移动到行首；先按ctrl+k，然后按ctrl+e（end首字母）光标移动到行尾。</p>
+<h2 id="设置Setting"><a href="#设置Setting" class="headerlink" title="设置Setting"></a>设置Setting</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//<span class="keyword">Set</span> <span class="keyword">Update</span> <span class="literal">false</span></div><div class="line"><span class="string">"update_check"</span>: <span class="literal">false</span>,</div></pre></td></tr></table></figure>
+<h2 id="延伸阅读（Further-Reading）："><a href="#延伸阅读（Further-Reading）：" class="headerlink" title="延伸阅读（Further Reading）："></a>延伸阅读（Further Reading）：</h2><h3 id="1、书籍（Books）"><a href="#1、书籍（Books）" class="headerlink" title="1、书籍（Books）"></a>1、书籍（Books）</h3><p>Mastering Sublime Text：我读过的唯一一本关于Sublime Text的书籍，书中介绍的插件很实用，但对编辑技巧介绍不全。<br>Instant Sublime Text Starter：另外一本关于Sublime Text的书，我没有读过。</p>
+<h3 id="2、链接（Links）"><a href="#2、链接（Links）" class="headerlink" title="2、链接（Links）"></a>2、链接（Links）</h3><p> <a href="http://www.sublimetext.com/docs/3/" target="_blank" rel="external">官方文档：</a><br> <a href="http://www.sublimetext.com/forum/" target="_blank" rel="external">官方论坛：</a><br>Stack Overflow的Sublime Text频道：<br> <a href="http://stackoverflow.com/questions/tagged/sublimetext" target="_blank" rel="external">sublimetext</a><br> <a href="http://stackoverflow.com/questions/tagged/sublimetext2" target="_blank" rel="external">sublimetext2</a><br> <a href="http://stackoverflow.com/questions/tagged/sublimetext3" target="_blank" rel="external">sublimetext3</a><br> <a href="http://sublime-text-unofficial-documentation.readthedocs.org/" target="_blank" rel="external">非官方文档：</a> 甚至比官方文档还要全面！<br> <a href="https://sublime.wbond.net/" target="_blank" rel="external">Package Control： </a>大量的Sublime Text插件和主题。</p>
+<h3 id="3、视频（Videos）"><a href="#3、视频（Videos）" class="headerlink" title="3、视频（Videos）"></a>3、视频（Videos）</h3><p> <a href="https://www.youtube.com/watch?v=04gKiTiRlq8" target="_blank" rel="external">Getting Started with SublimeText：</a><br> <a href="https://www.youtube.com/watch?v=bpEp0ePIOEM&amp;list=PLuwqxbvf3olpLsnFvo06gbrkcEB5o7K0g" target="_blank" rel="external">Sublime Text Pefect Workflow：</a></p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            window._hmt.push(['_trackEvent', 'pay', 'click', '赏'])
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 世平阜康 的个人博客">世平阜康</a></p>
+        <p><span>发布时间:</span>2015年12月21日 - 18时29分</p>
+        <p><span>最后更新:</span>2017年07月28日 - 18时54分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/12/21/Tool/Sublime/Sublimebest/" title="Sublime Text历练">http://luuman.github.io/2015/12/21/Tool/Sublime/Sublimebest/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://luuman.github.io/2015/12/21/Tool/Sublime/Sublimebest/　　作者: 世平阜康" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2015/12/24/Tool/Sublime/Sublimemarkdown/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Markdown使用指南
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/21/Induce/JavaScript/JQueryCDN/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CDN公共库</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑器的选择（Editor-Choices）"><span class="toc-number">1.</span> <span class="toc-text">编辑器的选择（Editor Choices）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#界面"><span class="toc-number">2.</span> <span class="toc-text">界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置"><span class="toc-number">3.</span> <span class="toc-text">设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键"><span class="toc-number">4.</span> <span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结："><span class="toc-number">5.</span> <span class="toc-text">总结：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多行游标："><span class="toc-number">5.1.</span> <span class="toc-text">多行游标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Goto-anything：（模糊匹配）"><span class="toc-number">5.2.</span> <span class="toc-text">Goto anything：（模糊匹配）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后购买："><span class="toc-number">6.</span> <span class="toc-text">最后购买：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#汉化："><span class="toc-number">7.</span> <span class="toc-text">汉化：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件："><span class="toc-number">8.</span> <span class="toc-text">插件：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷代码："><span class="toc-number">9.</span> <span class="toc-text">快捷代码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置Setting"><span class="toc-number">10.</span> <span class="toc-text">设置Setting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#延伸阅读（Further-Reading）："><span class="toc-number">11.</span> <span class="toc-text">延伸阅读（Further Reading）：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、书籍（Books）"><span class="toc-number">11.1.</span> <span class="toc-text">1、书籍（Books）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、链接（Links）"><span class="toc-number">11.2.</span> <span class="toc-text">2、链接（Links）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、视频（Videos）"><span class="toc-number">11.3.</span> <span class="toc-text">3、视频（Videos）</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '7f50019c6a02c37e7aca',
+        client_secret: 'd583910e6ae1492b375796d2c82efcda2cc67aae',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/12/24/Tool/Sublime/Sublimemarkdown/" title="上一篇: Markdown使用指南">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2015/12/21/Induce/JavaScript/JQueryCDN/" title="下一篇: CDN公共库">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/29/Tool/GitWorkflows/">Git Workflows</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Tool/Git/">Git速查手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/VueComponents/">Vue组件探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/InduceSass/">深入Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/KeepAlive/">keep-alive最佳实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/CSS/CssLowFrequency/">CSS低频属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Tool/Terminal/">Terminal配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/Induce/Weixin/JS-SDK/">WeChat SDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/Induce/Hack/Canvas/">浏览器常见Bug——Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/25/FrontFrame/Vue/Vuex/">Vuex</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/Induce/HTML/Video/">Mobile Video</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/FrontFrame/Vue/VueRouter/">Vue Router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/Tool/Sublime/sublimeMac/">Sublime Mac 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/FrontFrame/React/React/">React初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/Induce/CSS/CSSElementAlign/">用CSS实现元素垂直居中方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normCSS/">CSS前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normjs/">前端代码规范Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normhtml/">HTML前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normdev/">前端开发代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCText/">React Native Text</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCTextInput/">React Native TextInput</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCImage/">React Native Image</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNComponents/">React Native 组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNTest/">React Native 实战封装组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNBasics/">React Native 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetOX/">React Native IOS环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNTools/">React Native开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetAndroid/">React Native Android环境搭建（Window）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RN/">React Native初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/JavaScript/JSInputSearch/">Input输入框的案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Gulp/InduceGulp/">Gulp前端构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/">OmniMarkupPreviewer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/HTML/HtmlRem/">移动H5自适应布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/Demo/TextShow/">BOOS信息展示与收缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/Demo/MobileRotate/">移动端横屏提示动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Skill/OOCSS/">面向对象的CSS样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Mobile/MobliePC/">关于移动端界面在PC端显示的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/Node/NodeJsWeb/">Node.js实战 建立简单的Web服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/CSS/animation/">CSS3动画探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/Induce/Mobile/Mobile-knowledge/">移动前端知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Induce/Ajax/Ajax/">Ajax学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/Plug/ChromePlug/">前端Chrome插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/JavaScript/JSTip/">原生JS TitleTip</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/Ajax/AjaxStatus/">Ajax Status请求状态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Induce/JavaScript/NativeJS/">原生JavaScript探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/GitHubHexo/">使用GitHub搭建Hexo博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoBug/">Hexo bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoPlug/">Hexo插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/Hexo/">Hexo的使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoTheme/">Hexo 主题：SPFK</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/26/Skill/win7Set/">电脑优化相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CssTips/">CSS小技巧收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Interview/WebFront/">web前端职业规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/HTML/media/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CSS/">CSS学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/Tool/Sublime/Sublimemarkdown/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Induce/JavaScript/JQueryCDN/">CDN公共库</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Demo/FrontEndGuide/">前端资源导航</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/11/Skill/BusyFront/">Busy前端工作室</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 世平阜康
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>【转】2015-2016前端知识体系 | Luuman&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端知识体系：总结了下前端这两年的主流技术，大部分技术在我的博客里有较深入的研究学习对应技术博客地址：http://ouvens.github.io ，博客持续更新中，欢迎大家关注~">
+<meta name="keywords" content="Interview">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转】2015-2016前端知识体系">
+<meta property="og:url" content="http://luuman.github.io/2016/01/16/Interview/FrontMap/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="前端知识体系：总结了下前端这两年的主流技术，大部分技术在我的博客里有较深入的研究学习对应技术博客地址：http://ouvens.github.io ，博客持续更新中，欢迎大家关注~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【转】2015-2016前端知识体系">
+<meta name="twitter:description" content="前端知识体系：总结了下前端这两年的主流技术，大部分技术在我的博客里有较深入的研究学习对应技术博客地址：http://ouvens.github.io ，博客持续更新中，欢迎大家关注~">
+  
+    <link rel="alternative" href="/atom.xml" title="Luuman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">世平阜康</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 11.67px;">Ajax</a> <a href="/tags/CDN/" style="font-size: 10px;">CDN</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 11.67px;">CSS3</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Development/" style="font-size: 10px;">Development</a> <a href="/tags/Front-end-outline/" style="font-size: 10px;">Front end outline</a> <a href="/tags/FrontPlan/" style="font-size: 10px;">FrontPlan</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/Hack/" style="font-size: 10px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/tags/Interview/" style="font-size: 10px;">Interview</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mobile/" style="font-size: 13.33px;">Mobile</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/Video/" style="font-size: 10px;">Video</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/WeChatSDK/" style="font-size: 10px;">WeChatSDK</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/window-7/" style="font-size: 10px;">window 7</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hankin.cn/">hankin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.waydrow.com/">waydrow</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.tangbc.com">TANGBC</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.w3ctrain.com/">Helkyle</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">世平阜康</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">世平阜康</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">因为有了危机感，所以会义无反顾。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter">twitter</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/luumans/" title="Instagram">Instagram</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E5%BF%A0%E6%88%90-%E6%9D%8E-a48562b1" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Interview/FrontMap" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/16/Interview/FrontMap/" class="article-date">
+      <time datetime="2016-01-16T05:58:41.000Z" itemprop="datePublished">2016-01-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【转】2015-2016前端知识体系
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Interview/">Interview</a>
+    </div>
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Interview/">Interview</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<strong> 前端知识体系：</strong>总结了下前端这两年的主流技术，大部分技术在我的博客里有较深入的研究学习<br>对应技术博客地址：<a href="http://ouvens.github.io" target="_blank" rel="external">http://ouvens.github.io</a> ，博客持续更新中，欢迎大家关注~</p>
+<a id="more"></a>
+<h2 id="框架与组件"><a href="#框架与组件" class="headerlink" title="框架与组件"></a>框架与组件</h2><h3 id="bootstrap等UI框架设计与实现"><a href="#bootstrap等UI框架设计与实现" class="headerlink" title="bootstrap等UI框架设计与实现"></a>bootstrap等UI框架设计与实现</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">伸缩布局：</div><div class="line"><span class="built_in">grid</span>网格布局</div><div class="line"></div><div class="line">基础UI样式：</div><div class="line">元素<span class="built_in">reset</span>、按钮、图片、菜单、表单</div><div class="line"></div><div class="line">组件UI样式：</div><div class="line">按钮组、字体图标、下拉菜单、输入框组、导航组、面包屑、分页、标签、轮播、弹出框、列表、多媒体、警告</div><div class="line"></div><div class="line">响应式布局：</div><div class="line">布局、结构、样式、媒体、javascript响应式</div><div class="line"></div><div class="line">第三方插件：</div><div class="line">插件管理</div></pre></td></tr></table></figure>
+<h3 id="jQuery、zepto使用原理以及插件开发"><a href="#jQuery、zepto使用原理以及插件开发" class="headerlink" title="jQuery、zepto使用原理以及插件开发"></a>jQuery、zepto使用原理以及插件开发</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">支持amd、cmd、全局变量的模块化封装</div><div class="line">$.fn.method=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div></pre></td></tr></table></figure>
+<h3 id="mvc-mvvm框架原理设计，vue-angular-avalon等"><a href="#mvc-mvvm框架原理设计，vue-angular-avalon等" class="headerlink" title="mvc/mvvm框架原理设计，vue/angular/avalon等"></a>mvc/mvvm框架原理设计，vue/angular/avalon等</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">directive设计：</div><div class="line">html、<span class="built_in">text</span>、<span class="built_in">class</span>、html、attr、<span class="keyword">repeat</span>、<span class="keyword">ref</span>，可扩展</div><div class="line"></div><div class="line">filter设计：</div><div class="line">bool、upperCase、lowerCase，可扩展</div><div class="line"></div><div class="line">表达式设计：</div><div class="line"><span class="keyword">if</span>-<span class="keyword">else</span>等实现</div><div class="line"></div><div class="line">viewmodel结构设计：</div><div class="line">例如数据，元素，方法的挂载与作用域</div><div class="line"></div><div class="line">数据更变检测：</div><div class="line">函数触发，脏数据检测、对象hijacking</div></pre></td></tr></table></figure>
+<h3 id="polymer-angular2思想与设计思路"><a href="#polymer-angular2思想与设计思路" class="headerlink" title="polymer/angular2思想与设计思路"></a>polymer/angular2思想与设计思路</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span>技术</div><div class="line"><span class="keyword">template</span>和script引入方式</div><div class="line">css样式命名空间隔离</div><div class="line">简单复用第三方库</div></pre></td></tr></table></figure>
+<h3 id="reactjs原理与使用"><a href="#reactjs原理与使用" class="headerlink" title="reactjs原理与使用"></a>reactjs原理与使用</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">virtualdom单向数据绑定</div><div class="line"><span class="keyword">js执行语法方式</span></div><div class="line">UI由状态控制</div></pre></td></tr></table></figure>
+<h3 id="commonJS-AMD-CMD"><a href="#commonJS-AMD-CMD" class="headerlink" title="commonJS/AMD/CMD"></a>commonJS/AMD/CMD</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">模块引入</div><div class="line">模块定义</div><div class="line">模块标识</div><div class="line">UMD解决不同规范兼容性的问题，例如webpack封装</div><div class="line">模块懒执行(<span class="keyword">CMD</span><span class="bash">)与与预执行(AMD)</span></div></pre></td></tr></table></figure>
+<h3 id="loadJs模块化加载原理与实现"><a href="#loadJs模块化加载原理与实现" class="headerlink" title="loadJs模块化加载原理与实现"></a>loadJs模块化加载原理与实现</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">创建<span class="keyword">script</span>标签，需要<span class="built_in">id</span>映射到资源url</div><div class="line">onload加载模块队列判断</div><div class="line">全部加载完成后触发</div><div class="line">加载失败问题优化</div><div class="line">requirejs、modjs、seajs</div></pre></td></tr></table></figure>
+<h3 id="polyfill、shim原理与实现"><a href="#polyfill、shim原理与实现" class="headerlink" title="polyfill、shim原理与实现"></a>polyfill、shim原理与实现</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">polyfill提供了开发者们希望浏览器原生提供支持的功能特性</div><div class="line">shim将新的API引入到旧的环境中,且仅靠旧环境中已有的手段实现</div></pre></td></tr></table></figure>
+<h3 id="virtualDom、IncrementalDOM"><a href="#virtualDom、IncrementalDOM" class="headerlink" title="virtualDom、IncrementalDOM"></a>virtualDom、IncrementalDOM</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.用<span class="selector-tag">js</span>对象树表示<span class="selector-tag">dom</span>树结构，根据该对象树构建<span class="selector-tag">dom</span>树</div><div class="line">2.状态改变时，重新构建对象，和旧的对象对比，记录两个对象树差异</div><div class="line">3.将对象树差异应用到<span class="selector-tag">dom</span>中</div><div class="line">小结<span class="selector-pseudo">:js</span>对象模拟<span class="selector-tag">dom</span>(<span class="selector-tag">elem</span><span class="selector-class">.js</span>)，<span class="selector-tag">virtualdomdiff</span>算法(<span class="selector-tag">diff</span><span class="selector-class">.js</span>)、差异渲染<span class="selector-tag">dom</span>(<span class="selector-tag">patch</span><span class="selector-class">.js</span>)</div><div class="line"><span class="selector-tag">incrementaldom</span>在状态改变时扫描旧对象树将差异直接应用到<span class="selector-tag">dom</span>中</div></pre></td></tr></table></figure>
+<h3 id="shadowdom"><a href="#shadowdom" class="headerlink" title="shadowdom"></a>shadowdom</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">隔离外部环境用于封装组件：</div><div class="line">结构、样式、行为</div><div class="line"></div><div class="line">实现形式：</div><div class="line">新标签、<span class="class"><span class="keyword">class</span>类属性+构建编译</span></div></pre></td></tr></table></figure>
+<h3 id="webwork与serviceWorker"><a href="#webwork与serviceWorker" class="headerlink" title="webwork与serviceWorker"></a>webwork与serviceWorker</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">webwork与主线程机制，<span class="keyword">on</span>/post</div><div class="line">serviceworker可作为浏览器请求代理</div><div class="line">应用场景</div></pre></td></tr></table></figure>
+<h3 id="ES6转ES5、Babel与ES6开发规范体系"><a href="#ES6转ES5、Babel与ES6开发规范体系" class="headerlink" title="ES6转ES5、Babel与ES6开发规范体系"></a>ES6转ES5、Babel与ES6开发规范体系</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ES6编码规范全</div><div class="line">ES6在babel下兼容性</div><div class="line">ES6在<span class="keyword">node</span><span class="title">下兼容性与性能</span></div><div class="line">ES6新特性：</div><div class="line">看编码规范</div><div class="line"></div><div class="line">aureliaES6前端框架</div></pre></td></tr></table></figure>
+<h3 id="IsomorphicJavaScript"><a href="#IsomorphicJavaScript" class="headerlink" title="IsomorphicJavaScript"></a>IsomorphicJavaScript</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">同构原理</div><div class="line">同构方案Rendr</div><div class="line"><span class="section">nodejs:服务器</span></div><div class="line"><span class="section">hapi:应用服务</span></div><div class="line"><span class="section">backbone.js:后台mvc</span></div><div class="line"><span class="section">requirejs:模块加载</span></div><div class="line"><span class="section">jquery:dom处理</span></div><div class="line"><span class="section">reactjs同构:React+Flux+Koa</span></div></pre></td></tr></table></figure>
+<h3 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">函数触发<span class="selector-pseudo">:vuejs</span></div><div class="line">脏数据检测<span class="selector-pseudo">:angular</span></div><div class="line">对象<span class="selector-tag">hijacking</span><span class="selector-pseudo">:avalon</span></div></pre></td></tr></table></figure>
+<h3 id="browserify运行原理"><a href="#browserify运行原理" class="headerlink" title="browserify运行原理"></a>browserify运行原理</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>从入口模块开始分析require函数调用</div><div class="line"><span class="number">2.</span>根据依赖生成AST</div><div class="line"><span class="number">3.</span>根据AST找到每个模块的模块名</div><div class="line"><span class="number">4.</span>得到每个模块的依赖关系，生成一个依赖字典</div><div class="line"><span class="number">5.</span>包装每个模块（传入依赖字典以及export和require函数），生成执行的js</div></pre></td></tr></table></figure>
+<h3 id="performancetiming"><a href="#performancetiming" class="headerlink" title="performancetiming"></a>performancetiming</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">performancetimingapi</span></div><div class="line">performancetiming过程</div><div class="line">performancetiming性能计算</div><div class="line">performanceTrace库</div></pre></td></tr></table></figure>
+<h3 id="组件UI与js组件规范化"><a href="#组件UI与js组件规范化" class="headerlink" title="组件UI与js组件规范化"></a>组件UI与js组件规范化</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">组件编码规范</div><div class="line">组件目录规范：</div><div class="line">组件目录与公用目录</div><div class="line"></div><div class="line">组件构建规范：</div><div class="line">构建环境支持</div><div class="line"></div><div class="line">组件模块化管理：</div><div class="line"><span class="symbol">spm</span>，<span class="keyword">bowserify</span></div><div class="line"></div><div class="line">组件复用性管理</div><div class="line">第三方组件接入成本</div></pre></td></tr></table></figure>
+<h3 id="immutableJavaScript"><a href="#immutableJavaScript" class="headerlink" title="immutableJavaScript"></a>immutableJavaScript</h3><h3 id="generator与promise原理与使用"><a href="#generator与promise原理与使用" class="headerlink" title="generator与promise原理与使用"></a>generator与promise原理与使用</h3><h2 id="构建生态"><a href="#构建生态" class="headerlink" title="构建生态"></a>构建生态</h2><h3 id="grunt-gulp开发环境任务编写"><a href="#grunt-gulp开发环境任务编写" class="headerlink" title="grunt/gulp开发环境任务编写"></a>grunt/gulp开发环境任务编写</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">文件处理插件：</div><div class="line">html、scss、js、<span class="built_in">image</span>、<span class="built_in">font</span>、其它</div><div class="line"></div><div class="line">优化插件：</div><div class="line">雪碧图、图片压缩、iconfont构建</div><div class="line"></div><div class="line">发布替换插件</div><div class="line">打包、压缩包插件：</div><div class="line">组件自动分析</div><div class="line"></div><div class="line">白名单配置</div><div class="line">自定义插件编写</div></pre></td></tr></table></figure>
+<h3 id="npm、jspm、bower包管理工具"><a href="#npm、jspm、bower包管理工具" class="headerlink" title="npm、jspm、bower包管理工具"></a>npm、jspm、bower包管理工具</h3><h3 id="r-js、browserify、webpack、Rollup打包工具使用"><a href="#r-js、browserify、webpack、Rollup打包工具使用" class="headerlink" title="r.js、browserify、webpack、Rollup打包工具使用"></a>r.js、browserify、webpack、Rollup打包工具使用</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">原理：</div><div class="line">根据依赖配置文件对文件进行依赖打包</div><div class="line"></div><div class="line">webpack支持更多的规范打包，AMD,Commonjs</div><div class="line">webpack+babel/reactjs+reflux</div></pre></td></tr></table></figure>
+<h3 id="fis3构建与插件开发、构建环境、fis3构建离线包"><a href="#fis3构建与插件开发、构建环境、fis3构建离线包" class="headerlink" title="fis3构建与插件开发、构建环境、fis3构建离线包"></a>fis3构建与插件开发、构建环境、fis3构建离线包</h3><h3 id="webComponent："><a href="#webComponent：" class="headerlink" title="webComponent："></a>webComponent：</h3><p>rosetta-org、x-view、Q、riot、nova</p>
+<h3 id="brunch构建工具"><a href="#brunch构建工具" class="headerlink" title="brunch构建工具"></a>brunch构建工具</h3><h2 id="开发技巧与调试"><a href="#开发技巧与调试" class="headerlink" title="开发技巧与调试"></a>开发技巧与调试</h2><h3 id="fiddler加willow基础组合调试"><a href="#fiddler加willow基础组合调试" class="headerlink" title="fiddler加willow基础组合调试"></a>fiddler加willow基础组合调试</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">常见配置与分析</div><div class="line">结合浏览器调试</div></pre></td></tr></table></figure>
+<h3 id="werien、vorlonjs远程调试，chromeinspect"><a href="#werien、vorlonjs远程调试，chromeinspect" class="headerlink" title="werien、vorlonjs远程调试，chromeinspect"></a>werien、vorlonjs远程调试，chromeinspect</h3><h3 id="mockjs，F-M-S-FrontMockServer-模拟调试使用与cgi自动调试"><a href="#mockjs，F-M-S-FrontMockServer-模拟调试使用与cgi自动调试" class="headerlink" title="mockjs，F.M.S(FrontMockServer)模拟调试使用与cgi自动调试"></a>mockjs，F.M.S(FrontMockServer)模拟调试使用与cgi自动调试</h3><h3 id="macha-phantomjs-casperjs-karma测试自动化任务使用"><a href="#macha-phantomjs-casperjs-karma测试自动化任务使用" class="headerlink" title="macha/phantomjs/casperjs/karma测试自动化任务使用"></a>macha/phantomjs/casperjs/karma测试自动化任务使用</h3><h3 id="自动化UI测试，海豚"><a href="#自动化UI测试，海豚" class="headerlink" title="自动化UI测试，海豚"></a>自动化UI测试，海豚</h3><h3 id="node-supervior、node-inspector、karma"><a href="#node-supervior、node-inspector、karma" class="headerlink" title="node-supervior、node-inspector、karma"></a>node-supervior、node-inspector、karma</h3><h3 id="开发发布系统流程"><a href="#开发发布系统流程" class="headerlink" title="开发发布系统流程"></a>开发发布系统流程</h3><h3 id="sublime高效插件"><a href="#sublime高效插件" class="headerlink" title="sublime高效插件"></a>sublime高效插件</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">emmet工具使用、sublimelinter、babelsnippets、sublimeLint、SassBeautify、emmet快速编辑、jsxlint、SideBarEnhancements、SnippetsMaker、SublimeCodeIntel、csssnippets、ColorPicker、html<span class="meta-keyword">/css/</span>jsPretty、SpinnetMacker、DocBlockr、MultiEditUtils、javascript<span class="variable">&amp;nodespinnet</span>、JavaScript&amp;NodeJSSnippets、jsLint、cssLint</div></pre></td></tr></table></figure>
+<h3 id="代码自动化检查fecs"><a href="#代码自动化检查fecs" class="headerlink" title="代码自动化检查fecs"></a>代码自动化检查fecs</h3><h2 id="html、css与重构"><a href="#html、css与重构" class="headerlink" title="html、css与重构"></a>html、css与重构</h2><h3 id="jpeg、webp、apng、bpg图片"><a href="#jpeg、webp、apng、bpg图片" class="headerlink" title="jpeg、webp、apng、bpg图片"></a>jpeg、webp、apng、bpg图片</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">编码原理</div><div class="line">特点与优劣势</div><div class="line">适用场景</div></pre></td></tr></table></figure>
+<h3 id="iconfont使用与实现原理"><a href="#iconfont使用与实现原理" class="headerlink" title="iconfont使用与实现原理"></a>iconfont使用与实现原理</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">自动打包构建方法</div><div class="line"><span class="selector-tag">iconfont</span>兼容性写法</div><div class="line"><span class="selector-tag">fonthello</span>、<span class="selector-tag">fontawesome</span>、<span class="selector-tag">icomoon</span><span class="selector-class">.io</span>、<span class="selector-tag">iconfont</span><span class="selector-class">.cn</span>线上工具</div></pre></td></tr></table></figure>
+<h3 id="页面响应式设计"><a href="#页面响应式设计" class="headerlink" title="页面响应式设计"></a>页面响应式设计</h3><figure class="highlight mel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">layout</span>布局响应式</div><div class="line">html结构响应式</div><div class="line">css样式响应式</div><div class="line"><span class="keyword">image</span>媒体响应式</div><div class="line">javascript响应式</div><div class="line">mediaquery与平台判断</div></pre></td></tr></table></figure>
+<h3 id="css重置"><a href="#css重置" class="headerlink" title="css重置"></a>css重置</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">reset</span></div><div class="line">nomalize</div><div class="line">neat</div></pre></td></tr></table></figure>
+<h3 id="sass-compass-less-postcss常用语法与使用"><a href="#sass-compass-less-postcss常用语法与使用" class="headerlink" title="sass/compass/less/postcss常用语法与使用"></a>sass/compass/less/postcss常用语法与使用</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">常用语法功能</div><div class="line">组件化UI设计管理</div><div class="line">构建工具实现方案</div><div class="line">雪碧图自动合成</div><div class="line">iconfont自动接入等等</div></pre></td></tr></table></figure>
+<h3 id="mediaquery与常见页面尺寸了解"><a href="#mediaquery与常见页面尺寸了解" class="headerlink" title="mediaquery与常见页面尺寸了解"></a>mediaquery与常见页面尺寸了解</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">媒体类型引入和媒体特性引入</div><div class="line">device-<span class="built_in">width</span>适应</div><div class="line">retina屏幕适应</div></pre></td></tr></table></figure>
+<h3 id="em-rem原理与实现"><a href="#em-rem原理与实现" class="headerlink" title="em,rem原理与实现"></a>em,rem原理与实现</h3><figure class="highlight dos"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">rem计算：</span></div><div class="line">width*retina/<span class="number">10</span>，相当于屏幕宽度为<span class="number">10</span><span class="built_in">rem</span></div><div class="line"></div><div class="line">字体在<span class="built_in">rem</span>情况下仍然使用px</div></pre></td></tr></table></figure>
+<h3 id="code4ui、code4app、初页、maka等"><a href="#code4ui、code4app、初页、maka等" class="headerlink" title="code4ui、code4app、初页、maka等"></a>code4ui、code4app、初页、maka等</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">前端dom操作即使刷新前端页面</div><div class="line">根据dom操作生成组件<span class="built_in">config</span>配置保存到db</div><div class="line">根据<span class="built_in">config</span>配置使用r.<span class="keyword">js或webpack打包</span></div><div class="line">发布打包后输出文件</div></pre></td></tr></table></figure>
+<h3 id="css3动画"><a href="#css3动画" class="headerlink" title="css3动画"></a>css3动画</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">transform</div><div class="line">animation</div><div class="line">transiction</div><div class="line"><span class="number">3</span>D加速与动画加速</div><div class="line">动画库</div><div class="line">缓动函数速查表：</div><div class="line"><span class="symbol">http:</span><span class="comment">//www.xuanfengge.com/easeing/easeing/</span></div><div class="line"></div><div class="line">Ceaser：</div><div class="line"><span class="symbol">http:</span><span class="comment">//xuanfengge.com/easeing/ceaser/</span></div><div class="line"></div><div class="line">cubic-bezier：</div><div class="line"><span class="symbol">http:</span><span class="comment">//cubic-bezier.com/</span></div></pre></td></tr></table></figure>
+<h3 id="css网格布局"><a href="#css网格布局" class="headerlink" title="css网格布局"></a>css网格布局</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">susy</div><div class="line">ResponsiveGridSystem</div><div class="line"><span class="function"><span class="title">Fluid960Grid</span><span class="params">(adaptjs)</span></span></div><div class="line">SimpleGrid</div></pre></td></tr></table></figure>
+<h3 id="搜索引擎与前端SEO"><a href="#搜索引擎与前端SEO" class="headerlink" title="搜索引擎与前端SEO"></a>搜索引擎与前端SEO</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">tdk优化</div><div class="line">页面内容优化</div><div class="line">唯一的H1标题</div><div class="line">img设置alt属性</div><div class="line">nofollow</div><div class="line">url优化</div><div class="line">统一链接</div><div class="line"><span class="number">301</span>跳转</div><div class="line">canonical</div><div class="line">robot优化</div><div class="line">robots<span class="selector-class">.txt</span></div><div class="line">metarobots</div><div class="line">sitemap</div><div class="line">SEO工具</div><div class="line">各种站长工具等</div></pre></td></tr></table></figure>
+<h3 id="浏览器缓存种类，resources-webSQL-indexDB-localstorage-cookie-appcache-cachestorage"><a href="#浏览器缓存种类，resources-webSQL-indexDB-localstorage-cookie-appcache-cachestorage" class="headerlink" title="浏览器缓存种类，resources,webSQL,indexDB,localstorage,cookie,appcache,cachestorage"></a>浏览器缓存种类，resources,webSQL,indexDB,localstorage,cookie,appcache,cachestorage</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">store</span><span class="selector-class">.js</span>、<span class="selector-tag">cookie</span><span class="selector-class">.js</span></div></pre></td></tr></table></figure>
+<h3 id="UI框架"><a href="#UI框架" class="headerlink" title="UI框架"></a>UI框架</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">bootstrap、jqwidgets、semanticui、amazeui</span></div><div class="line">微信手Qui:frozenui、weui、<span class="keyword">blendui</span></div><div class="line"><span class="symbol">extjs</span>、echart图表ui</div></pre></td></tr></table></figure>
+<h2 id="native-hybrid-桌面开发"><a href="#native-hybrid-桌面开发" class="headerlink" title="native/hybrid/桌面开发"></a>native/hybrid/桌面开发</h2><h3 id="ionic移动开发方案"><a href="#ionic移动开发方案" class="headerlink" title="ionic移动开发方案"></a>ionic移动开发方案</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">运行架构</div><div class="line">hybrid混合开发</div><div class="line">cordova交互</div><div class="line">离线包更新</div><div class="line">性能瓶颈</div></pre></td></tr></table></figure>
+<h3 id="nativescript移动开发方案"><a href="#nativescript移动开发方案" class="headerlink" title="nativescript移动开发方案"></a>nativescript移动开发方案</h3><h3 id="reactNative移动开发方案"><a href="#reactNative移动开发方案" class="headerlink" title="reactNative移动开发方案"></a>reactNative移动开发方案</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">运行架构：</div><div class="line"><span class="keyword">js引擎</span></div><div class="line"></div><div class="line">性能缺陷与内存泄露</div><div class="line">更新机制</div><div class="line">使用场景</div></pre></td></tr></table></figure>
+<h3 id="android-ios原生开发与框架"><a href="#android-ios原生开发与框架" class="headerlink" title="android/ios原生开发与框架"></a>android/ios原生开发与框架</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">java</span></div><div class="line">oc、<span class="keyword">swift</span></div><div class="line">web与native交互</div><div class="line">屏幕旋转</div><div class="line">摇一摇</div><div class="line">录像，拍照，选取本地图片</div><div class="line">打电话，发短信</div><div class="line">电池电量</div><div class="line">地理位置</div><div class="line">日期选择</div><div class="line">开启硬件加速</div></pre></td></tr></table></figure>
+<h3 id="桌面应用开发"><a href="#桌面应用开发" class="headerlink" title="桌面应用开发"></a>桌面应用开发</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">nodewebkit</div><div class="line"><span class="function"><span class="title">atom-shell</span><span class="params">(后改名为electron)</span></span></div><div class="line">网易Hex</div><div class="line"><span class="function"><span class="title">pomelo</span><span class="params">(游戏服务器框架)</span></span></div><div class="line">reactdesktop</div><div class="line">appjs:appjs.com</div></pre></td></tr></table></figure>
+<h2 id="前端-H5优化-另一个图已给出"><a href="#前端-H5优化-另一个图已给出" class="headerlink" title="前端/H5优化(另一个图已给出)"></a>前端/H5优化(另一个图已给出)</h2><h3 id="yslow、pagespeed"><a href="#yslow、pagespeed" class="headerlink" title="yslow、pagespeed"></a>yslow、pagespeed</h3><h3 id="移动web性能优化"><a href="#移动web性能优化" class="headerlink" title="移动web性能优化"></a>移动web性能优化</h3><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">手机浏览器<span class="string">"省流量"</span>原理</div><div class="line">增量更新原理及注意事项</div><div class="line">本地存储的应用</div><div class="line">加载优化</div><div class="line">图片优化</div><div class="line">单页面及路由实现</div><div class="line">业内著名站点案例分析</div></pre></td></tr></table></figure>
+<h2 id="全栈-全端开发"><a href="#全栈-全端开发" class="headerlink" title="全栈/全端开发"></a>全栈/全端开发</h2><h3 id="express-nodeclub-mongodb、thinkjs等框架"><a href="#express-nodeclub-mongodb、thinkjs等框架" class="headerlink" title="express/nodeclub+mongodb、thinkjs等框架"></a>express/nodeclub+mongodb、thinkjs等框架</h3><h3 id="node-js直出"><a href="#node-js直出" class="headerlink" title="node.js直出"></a>node.js直出</h3><h3 id="实时web开发，meteor-express-io"><a href="#实时web开发，meteor-express-io" class="headerlink" title="实时web开发，meteor/express.io"></a>实时web开发，meteor/express.io</h3><h3 id="MEAN-mongodb-express-angular-nodejs"><a href="#MEAN-mongodb-express-angular-nodejs" class="headerlink" title="MEAN(mongodb/express/angular/nodejs)"></a>MEAN(mongodb/express/angular/nodejs)</h3><h3 id="http与http2协议、bigpipe、pipeline"><a href="#http与http2协议、bigpipe、pipeline" class="headerlink" title="http与http2协议、bigpipe、pipeline"></a>http与http2协议、bigpipe、pipeline</h3><h3 id="离线缓存，cookie、localstorage、indexdb"><a href="#离线缓存，cookie、localstorage、indexdb" class="headerlink" title="离线缓存，cookie、localstorage、indexdb"></a>离线缓存，cookie、localstorage、indexdb</h3><h3 id="cdn与dns"><a href="#cdn与dns" class="headerlink" title="cdn与dns"></a>cdn与dns</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">动态域名加速</div><div class="line">cdn原理与cdncombo</div></pre></td></tr></table></figure>
+<h2 id="研究实验"><a href="#研究实验" class="headerlink" title="研究实验"></a>研究实验</h2><h3 id="WebAssembly、webTRC、typescript"><a href="#WebAssembly、webTRC、typescript" class="headerlink" title="WebAssembly、webTRC、typescript"></a>WebAssembly、webTRC、typescript</h3><h3 id="Materialdesign规范的前端框架"><a href="#Materialdesign规范的前端框架" class="headerlink" title="Materialdesign规范的前端框架"></a>Materialdesign规范的前端框架</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">交互动效库</div></pre></td></tr></table></figure>
+<h3 id="AMP-HTML规范"><a href="#AMP-HTML规范" class="headerlink" title="AMP-HTML规范"></a>AMP-HTML规范</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">使用受限HTML以及缓存技术来提高移动网络中静态内容的性能</div><div class="line">添加自定义的元素代替禁用掉的元素：</div><div class="line">amp-<span class="selector-tag">audio</span>,amp-img、amp-video等</div></pre></td></tr></table></figure>
+<h2 id="数据分析与监控"><a href="#数据分析与监控" class="headerlink" title="数据分析与监控"></a>数据分析与监控</h2><h3 id="badjs数据上报"><a href="#badjs数据上报" class="headerlink" title="badjs数据上报"></a>badjs数据上报</h3><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">捕获错误两种方法：</div><div class="line"></div><div class="line"></div><div class="line">onerror、<span class="keyword">try</span>-<span class="keyword">catch</span>。抽样上报，先onerror统计语法错误，如果是scripterror，再使用tryjs。</div><div class="line"></div><div class="line">后台统计方法、不同业务接入体系、抽样统计</div><div class="line"></div><div class="line">onerror:</div><div class="line">可以捕捉语法错误和运行时错误；可以拿到出错的信息，堆栈，出错文件、行号、列号；</div><div class="line">当前页面执行的js脚本出错都会捕捉到；跨域的资源需要特殊头部支持。</div><div class="line"></div><div class="line"><span class="keyword">try</span>-<span class="keyword">catch</span>:</div><div class="line">无法捕捉语法错误，只能捕捉运行时错误；可以拿到出错的信息，堆栈，出错文件、行号、列号；</div><div class="line">需要借助工具把<span class="keyword">function</span>块以及文件块加入<span class="keyword">try</span>,<span class="keyword">catch</span>，可以在这个阶段打入更多的静态信息。</div></pre></td></tr></table></figure>
+<h3 id="点击热力图clickHeat、heatMap"><a href="#点击热力图clickHeat、heatMap" class="headerlink" title="点击热力图clickHeat、heatMap"></a>点击热力图clickHeat、heatMap</h3><h3 id="js加载失败优化方案"><a href="#js加载失败优化方案" class="headerlink" title="js加载失败优化方案"></a>js加载失败优化方案</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">失败重发机制</div><div class="line">加载源域名服务器文件</div><div class="line"><span class="keyword">https</span>反劫持</div></pre></td></tr></table></figure>
+<h3 id="百度alog数据上报"><a href="#百度alog数据上报" class="headerlink" title="百度alog数据上报"></a>百度alog数据上报</h3><h2 id="其它软技能"><a href="#其它软技能" class="headerlink" title="其它软技能"></a>其它软技能</h2><h3 id="axure原型图设计"><a href="#axure原型图设计" class="headerlink" title="axure原型图设计"></a>axure原型图设计</h3><h3 id="xmind脑图管理"><a href="#xmind脑图管理" class="headerlink" title="xmind脑图管理"></a>xmind脑图管理</h3><h3 id="效率管理"><a href="#效率管理" class="headerlink" title="效率管理"></a>效率管理</h3><h3 id="caniuse、github"><a href="#caniuse、github" class="headerlink" title="caniuse、github"></a>caniuse、github</h3><h3 id="知识管理-总结分享"><a href="#知识管理-总结分享" class="headerlink" title="知识管理/总结分享"></a>知识管理/总结分享</h3><h3 id="产品思维与技能"><a href="#产品思维与技能" class="headerlink" title="产品思维与技能"></a>产品思维与技能</h3><h2 id="前端技术网站"><a href="#前端技术网站" class="headerlink" title="前端技术网站"></a>前端技术网站</h2><h3 id="技术社区"><a href="#技术社区" class="headerlink" title="技术社区"></a>技术社区</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">w3ctech、w3cplus、w3<span class="keyword">help</span></div><div class="line">div.io、nodeParty</div><div class="line">稀土掘金、前端早读课</div><div class="line">alloyteam、html5基地</div><div class="line">W3<span class="keyword">help</span></div></pre></td></tr></table></figure>
+<h3 id="行业会议"><a href="#行业会议" class="headerlink" title="行业会议"></a>行业会议</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">segmentfault会议</div><div class="line">深js、杭js</div><div class="line"><span class="function"><span class="title">GMIC</span><span class="params">(全球移动互联网大会)</span></span></div><div class="line">D2、webrebuild</div><div class="line">infoQ内容、Qcon、velocity</div></pre></td></tr></table></figure>
+<p>另外说明下，这里不仅仅是概念的罗列，过去也有些人有类似的总结，但是偏基础和概念罗列，没什么深度，这里有较多原理性的概述，博客有对应文章，较新热门的技术我的博客里也有很多，大家可以结合起来看，目前博客大概写了50%的总结文章。后面也会根据这个图去补齐我博客里的知识板块。持续更新中，如果觉得不错，请点star支持下，甚至在您的团队里扩散下，谢谢~</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            window._hmt.push(['_trackEvent', 'pay', 'click', '赏'])
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 世平阜康 的个人博客">世平阜康</a></p>
+        <p><span>发布时间:</span>2016年01月16日 - 13时58分</p>
+        <p><span>最后更新:</span>2017年07月28日 - 18时54分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/16/Interview/FrontMap/" title="【转】2015-2016前端知识体系">http://luuman.github.io/2016/01/16/Interview/FrontMap/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://luuman.github.io/2016/01/16/Interview/FrontMap/　　作者: 世平阜康" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/01/19/Induce/Ajax/AjaxStatus/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Ajax Status请求状态
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/15/Induce/JavaScript/NativeJS/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">原生JavaScript探索</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#框架与组件"><span class="toc-number">1.</span> <span class="toc-text">框架与组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bootstrap等UI框架设计与实现"><span class="toc-number">1.1.</span> <span class="toc-text">bootstrap等UI框架设计与实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery、zepto使用原理以及插件开发"><span class="toc-number">1.2.</span> <span class="toc-text">jQuery、zepto使用原理以及插件开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mvc-mvvm框架原理设计，vue-angular-avalon等"><span class="toc-number">1.3.</span> <span class="toc-text">mvc/mvvm框架原理设计，vue/angular/avalon等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#polymer-angular2思想与设计思路"><span class="toc-number">1.4.</span> <span class="toc-text">polymer/angular2思想与设计思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reactjs原理与使用"><span class="toc-number">1.5.</span> <span class="toc-text">reactjs原理与使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#commonJS-AMD-CMD"><span class="toc-number">1.6.</span> <span class="toc-text">commonJS/AMD/CMD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loadJs模块化加载原理与实现"><span class="toc-number">1.7.</span> <span class="toc-text">loadJs模块化加载原理与实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#polyfill、shim原理与实现"><span class="toc-number">1.8.</span> <span class="toc-text">polyfill、shim原理与实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#virtualDom、IncrementalDOM"><span class="toc-number">1.9.</span> <span class="toc-text">virtualDom、IncrementalDOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shadowdom"><span class="toc-number">1.10.</span> <span class="toc-text">shadowdom</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webwork与serviceWorker"><span class="toc-number">1.11.</span> <span class="toc-text">webwork与serviceWorker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6转ES5、Babel与ES6开发规范体系"><span class="toc-number">1.12.</span> <span class="toc-text">ES6转ES5、Babel与ES6开发规范体系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IsomorphicJavaScript"><span class="toc-number">1.13.</span> <span class="toc-text">IsomorphicJavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向数据绑定"><span class="toc-number">1.14.</span> <span class="toc-text">双向数据绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#browserify运行原理"><span class="toc-number">1.15.</span> <span class="toc-text">browserify运行原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#performancetiming"><span class="toc-number">1.16.</span> <span class="toc-text">performancetiming</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件UI与js组件规范化"><span class="toc-number">1.17.</span> <span class="toc-text">组件UI与js组件规范化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#immutableJavaScript"><span class="toc-number">1.18.</span> <span class="toc-text">immutableJavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#generator与promise原理与使用"><span class="toc-number">1.19.</span> <span class="toc-text">generator与promise原理与使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建生态"><span class="toc-number">2.</span> <span class="toc-text">构建生态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#grunt-gulp开发环境任务编写"><span class="toc-number">2.1.</span> <span class="toc-text">grunt/gulp开发环境任务编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm、jspm、bower包管理工具"><span class="toc-number">2.2.</span> <span class="toc-text">npm、jspm、bower包管理工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#r-js、browserify、webpack、Rollup打包工具使用"><span class="toc-number">2.3.</span> <span class="toc-text">r.js、browserify、webpack、Rollup打包工具使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fis3构建与插件开发、构建环境、fis3构建离线包"><span class="toc-number">2.4.</span> <span class="toc-text">fis3构建与插件开发、构建环境、fis3构建离线包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webComponent："><span class="toc-number">2.5.</span> <span class="toc-text">webComponent：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#brunch构建工具"><span class="toc-number">2.6.</span> <span class="toc-text">brunch构建工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发技巧与调试"><span class="toc-number">3.</span> <span class="toc-text">开发技巧与调试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fiddler加willow基础组合调试"><span class="toc-number">3.1.</span> <span class="toc-text">fiddler加willow基础组合调试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#werien、vorlonjs远程调试，chromeinspect"><span class="toc-number">3.2.</span> <span class="toc-text">werien、vorlonjs远程调试，chromeinspect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mockjs，F-M-S-FrontMockServer-模拟调试使用与cgi自动调试"><span class="toc-number">3.3.</span> <span class="toc-text">mockjs，F.M.S(FrontMockServer)模拟调试使用与cgi自动调试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#macha-phantomjs-casperjs-karma测试自动化任务使用"><span class="toc-number">3.4.</span> <span class="toc-text">macha/phantomjs/casperjs/karma测试自动化任务使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动化UI测试，海豚"><span class="toc-number">3.5.</span> <span class="toc-text">自动化UI测试，海豚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-supervior、node-inspector、karma"><span class="toc-number">3.6.</span> <span class="toc-text">node-supervior、node-inspector、karma</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发发布系统流程"><span class="toc-number">3.7.</span> <span class="toc-text">开发发布系统流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sublime高效插件"><span class="toc-number">3.8.</span> <span class="toc-text">sublime高效插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码自动化检查fecs"><span class="toc-number">3.9.</span> <span class="toc-text">代码自动化检查fecs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html、css与重构"><span class="toc-number">4.</span> <span class="toc-text">html、css与重构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jpeg、webp、apng、bpg图片"><span class="toc-number">4.1.</span> <span class="toc-text">jpeg、webp、apng、bpg图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iconfont使用与实现原理"><span class="toc-number">4.2.</span> <span class="toc-text">iconfont使用与实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面响应式设计"><span class="toc-number">4.3.</span> <span class="toc-text">页面响应式设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css重置"><span class="toc-number">4.4.</span> <span class="toc-text">css重置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sass-compass-less-postcss常用语法与使用"><span class="toc-number">4.5.</span> <span class="toc-text">sass/compass/less/postcss常用语法与使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mediaquery与常见页面尺寸了解"><span class="toc-number">4.6.</span> <span class="toc-text">mediaquery与常见页面尺寸了解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#em-rem原理与实现"><span class="toc-number">4.7.</span> <span class="toc-text">em,rem原理与实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code4ui、code4app、初页、maka等"><span class="toc-number">4.8.</span> <span class="toc-text">code4ui、code4app、初页、maka等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css3动画"><span class="toc-number">4.9.</span> <span class="toc-text">css3动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css网格布局"><span class="toc-number">4.10.</span> <span class="toc-text">css网格布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索引擎与前端SEO"><span class="toc-number">4.11.</span> <span class="toc-text">搜索引擎与前端SEO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器缓存种类，resources-webSQL-indexDB-localstorage-cookie-appcache-cachestorage"><span class="toc-number">4.12.</span> <span class="toc-text">浏览器缓存种类，resources,webSQL,indexDB,localstorage,cookie,appcache,cachestorage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UI框架"><span class="toc-number">4.13.</span> <span class="toc-text">UI框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#native-hybrid-桌面开发"><span class="toc-number">5.</span> <span class="toc-text">native/hybrid/桌面开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ionic移动开发方案"><span class="toc-number">5.1.</span> <span class="toc-text">ionic移动开发方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nativescript移动开发方案"><span class="toc-number">5.2.</span> <span class="toc-text">nativescript移动开发方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reactNative移动开发方案"><span class="toc-number">5.3.</span> <span class="toc-text">reactNative移动开发方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#android-ios原生开发与框架"><span class="toc-number">5.4.</span> <span class="toc-text">android/ios原生开发与框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#桌面应用开发"><span class="toc-number">5.5.</span> <span class="toc-text">桌面应用开发</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端-H5优化-另一个图已给出"><span class="toc-number">6.</span> <span class="toc-text">前端/H5优化(另一个图已给出)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yslow、pagespeed"><span class="toc-number">6.1.</span> <span class="toc-text">yslow、pagespeed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移动web性能优化"><span class="toc-number">6.2.</span> <span class="toc-text">移动web性能优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全栈-全端开发"><span class="toc-number">7.</span> <span class="toc-text">全栈/全端开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#express-nodeclub-mongodb、thinkjs等框架"><span class="toc-number">7.1.</span> <span class="toc-text">express/nodeclub+mongodb、thinkjs等框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js直出"><span class="toc-number">7.2.</span> <span class="toc-text">node.js直出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实时web开发，meteor-express-io"><span class="toc-number">7.3.</span> <span class="toc-text">实时web开发，meteor/express.io</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MEAN-mongodb-express-angular-nodejs"><span class="toc-number">7.4.</span> <span class="toc-text">MEAN(mongodb/express/angular/nodejs)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http与http2协议、bigpipe、pipeline"><span class="toc-number">7.5.</span> <span class="toc-text">http与http2协议、bigpipe、pipeline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#离线缓存，cookie、localstorage、indexdb"><span class="toc-number">7.6.</span> <span class="toc-text">离线缓存，cookie、localstorage、indexdb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cdn与dns"><span class="toc-number">7.7.</span> <span class="toc-text">cdn与dns</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#研究实验"><span class="toc-number">8.</span> <span class="toc-text">研究实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WebAssembly、webTRC、typescript"><span class="toc-number">8.1.</span> <span class="toc-text">WebAssembly、webTRC、typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Materialdesign规范的前端框架"><span class="toc-number">8.2.</span> <span class="toc-text">Materialdesign规范的前端框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AMP-HTML规范"><span class="toc-number">8.3.</span> <span class="toc-text">AMP-HTML规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据分析与监控"><span class="toc-number">9.</span> <span class="toc-text">数据分析与监控</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#badjs数据上报"><span class="toc-number">9.1.</span> <span class="toc-text">badjs数据上报</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点击热力图clickHeat、heatMap"><span class="toc-number">9.2.</span> <span class="toc-text">点击热力图clickHeat、heatMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js加载失败优化方案"><span class="toc-number">9.3.</span> <span class="toc-text">js加载失败优化方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#百度alog数据上报"><span class="toc-number">9.4.</span> <span class="toc-text">百度alog数据上报</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它软技能"><span class="toc-number">10.</span> <span class="toc-text">其它软技能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#axure原型图设计"><span class="toc-number">10.1.</span> <span class="toc-text">axure原型图设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xmind脑图管理"><span class="toc-number">10.2.</span> <span class="toc-text">xmind脑图管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效率管理"><span class="toc-number">10.3.</span> <span class="toc-text">效率管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#caniuse、github"><span class="toc-number">10.4.</span> <span class="toc-text">caniuse、github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#知识管理-总结分享"><span class="toc-number">10.5.</span> <span class="toc-text">知识管理/总结分享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#产品思维与技能"><span class="toc-number">10.6.</span> <span class="toc-text">产品思维与技能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端技术网站"><span class="toc-number">11.</span> <span class="toc-text">前端技术网站</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#技术社区"><span class="toc-number">11.1.</span> <span class="toc-text">技术社区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行业会议"><span class="toc-number">11.2.</span> <span class="toc-text">行业会议</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '7f50019c6a02c37e7aca',
+        client_secret: 'd583910e6ae1492b375796d2c82efcda2cc67aae',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/19/Induce/Ajax/AjaxStatus/" title="上一篇: Ajax Status请求状态">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/01/15/Induce/JavaScript/NativeJS/" title="下一篇: 原生JavaScript探索">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/29/Tool/GitWorkflows/">Git Workflows</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Tool/Git/">Git速查手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/VueComponents/">Vue组件探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/InduceSass/">深入Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/FrontFrame/Vue/KeepAlive/">keep-alive最佳实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/Induce/CSS/CssLowFrequency/">CSS低频属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Tool/Terminal/">Terminal配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/Induce/Weixin/JS-SDK/">WeChat SDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/Induce/Hack/Canvas/">浏览器常见Bug——Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/25/FrontFrame/Vue/Vuex/">Vuex</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/Induce/HTML/Video/">Mobile Video</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/FrontFrame/Vue/VueRouter/">Vue Router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/Tool/Sublime/sublimeMac/">Sublime Mac 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/FrontFrame/React/React/">React初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/Induce/CSS/CSSElementAlign/">用CSS实现元素垂直居中方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normCSS/">CSS前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normjs/">前端代码规范Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normhtml/">HTML前端代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/31/Skill/norm/normdev/">前端开发代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCText/">React Native Text</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCTextInput/">React Native TextInput</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNCImage/">React Native Image</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/FrontFrame/ReactNative/Components/RNComponents/">React Native 组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNTest/">React Native 实战封装组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/26/FrontFrame/ReactNative/RNBasics/">React Native 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetOX/">React Native IOS环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNTools/">React Native开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RNSetAndroid/">React Native Android环境搭建（Window）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/FrontFrame/ReactNative/RN/">React Native初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/Induce/Mobile/MobileGuide/">移动Web解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/JavaScript/JSInputSearch/">Input输入框的案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Gulp/InduceGulp/">Gulp前端构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Plug/Sublime/SublimeOmniMarkupPreviewer/">OmniMarkupPreviewer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/Induce/HTML/HtmlRem/">移动H5自适应布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/Demo/TextShow/">BOOS信息展示与收缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/Demo/MobileRotate/">移动端横屏提示动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Skill/OOCSS/">面向对象的CSS样式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/27/Induce/Mobile/MobliePC/">关于移动端界面在PC端显示的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/Node/NodeJsWeb/">Node.js实战 建立简单的Web服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Induce/CSS/animation/">CSS3动画探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/Induce/Mobile/Mobile-knowledge/">移动前端知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Induce/Ajax/Ajax/">Ajax学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/Plug/ChromePlug/">前端Chrome插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/JavaScript/JSTip/">原生JS TitleTip</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/Induce/Ajax/AjaxStatus/">Ajax Status请求状态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/Interview/FrontMap/">【转】2015-2016前端知识体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Induce/JavaScript/NativeJS/">原生JavaScript探索</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/Induce/HTML/HTMLbase/">HTML结构零散</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/GitHubHexo/">使用GitHub搭建Hexo博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoBug/">Hexo bug</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoPlug/">Hexo插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/Hexo/">Hexo的使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/27/Hexo/HexoTheme/">Hexo 主题：SPFK</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/26/Skill/win7Set/">电脑优化相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CssTips/">CSS小技巧收藏</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Interview/WebFront/">web前端职业规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/HTML/media/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/Induce/CSS/CSS/">CSS学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/Tool/Sublime/Sublimemarkdown/">Markdown使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Tool/Sublime/Sublimebest/">Sublime Text历练</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Induce/JavaScript/JQueryCDN/">CDN公共库</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Plug/Sublime/SublimePackage/">Sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/21/Demo/FrontEndGuide/">前端资源导航</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/11/Skill/BusyFront/">Busy前端工作室</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 世平阜康
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?819b1c6493df653afb8c7846bc4b8db6";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
