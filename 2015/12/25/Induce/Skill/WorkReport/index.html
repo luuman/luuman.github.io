@@ -1,0 +1,741 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Report," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+<meta name="keywords" content="Report">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发群报道">
+<meta property="og:url" content="http://luuman.github.io/2015/12/25/Induce/Skill/WorkReport/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发群报道">
+<meta name="twitter:description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2015/12/25/Induce/Skill/WorkReport/"/>
+
+
+
+
+
+  <title> 前端开发群报道 | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2015/12/25/Induce/Skill/WorkReport/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端开发群报道
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-25T18:29:00+08:00">
+                2015-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Report/" itemprop="url" rel="index">
+                    <span itemprop="name">Report</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　<strong>自用笔记：</strong>本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why<br><a id="more"></a><br><a href=""></a></p>
+<h1 id="2016年"><a href="#2016年" class="headerlink" title="2016年"></a>2016年</h1><h2 id="一月"><a href="#一月" class="headerlink" title="一月"></a>一月</h2><p>Javascript<br><a href="http://www.imooc.com/learn/590" target="_blank" rel="external">视频-D2前端技术论坛——2015融合</a><br><a href="http://yanhaijing.com/js/2015/12/29/mini-js-lib/" target="_blank" rel="external">不可错过的javascript迷你库</a><br><a href="http://www.imooc.com/article/3207" target="_blank" rel="external">测试框架 Mocha 实例教程</a><br><a href="http://jingyan.baidu.com/article/375c8e19770f0e25f2a22900.html" target="_blank" rel="external">为你详细解读HTTP请求头的具体含意</a><br><a href="https://github.com/Khan/simple-markdown" target="_blank" rel="external">Markdown解析的js库simple-markdown</a><br><a href="http://segmentfault.com/q/1010000004221774" target="_blank" rel="external">如果要用前端框架，开发流程是怎样的？</a><br><a href="http://segmentfault.com/q/1010000004225321" target="_blank" rel="external">obeject.key与object[key]有什么区别</a><br><a href="http://segmentfault.com/q/1010000004240527" target="_blank" rel="external">正确使用Github 的方法是什么？</a><br><a href="http://flowchart.js.org/" target="_blank" rel="external">flowchart.js 流程图插件</a><br><a href="http://www.zhangxinxu.com/wordpress/2016/01/contenteditable-plaintext-only/" target="_blank" rel="external">小tip: 如何让contenteditable元素只能输入纯文本</a><br><a href="http://gold.xitu.io/entry/5690751460b25396c51dbab2" target="_blank" rel="external">JSNext.fm - 前端技术中文播客节目</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzIxNzA4NzQ4OQ==&amp;mid=401622623&amp;idx=1&amp;sn=a97dc2bc54eaee1851dac751fdd79116&amp;scene=23&amp;srcid=01122PCW73oST0hrbdMt8T7H#rd" target="_blank" rel="external">前端开发：Javascript那些经典书籍你都造吗？</a><br><a href="https://stats.js.org/" target="_blank" rel="external">GitHub比较受欢迎的框架排名走势</a><br><a href="https://medium.com/javascript-scene/how-to-learn-es6-47d9a1ac2620#.thbf0i5z4" target="_blank" rel="external">How to Learn ES6</a><br><a href="http://gank.io/post/564151c1f1df1210001c9161" target="_blank" rel="external">给 JavaScript 初心者的 ES2015 实战</a><br><a href="https://www.zhihu.com/question/39571954" target="_blank" rel="external">ES7中async/await实现原理是什么？</a><br><a href="http://mp.weixin.qq.com/s?__biz=MTEwNTM0ODI0MQ==&amp;mid=402751887&amp;idx=1&amp;sn=3bc0ed7aca8f653f583c833a467b6d46" target="_blank" rel="external">面向设计的半封装web组件开发</a><br><a href="http://jinlong.github.io/2016/01/14/checkbox-trickery-with-css/" target="_blank" rel="external">复选框的 CSS 魔法</a><br><a href="https://www.zhihu.com/question/39598766" target="_blank" rel="external">如何评价 JavaScript 和 Ruby 的生态系统目前各自的发展状况？</a><br><a href="https://www.zhihu.com/question/39565359" target="_blank" rel="external">在JavaScript中，是否存在“同步非阻塞”和“异步阻塞”这两种情况？</a><br><a href="http://pengisgood.github.io/2016/01/16/becoming-a-javascript-ninja/" target="_blank" rel="external">[译]成为 JavaScript 忍者</a><br><a href="https://www.zhihu.com/question/38685128" target="_blank" rel="external">知乎上复制回答，剪贴板里自动加上版权出处的技术js如何实现？</a><br><a href="http://segmentfault.com/a/1190000004322487" target="_blank" rel="external">你真的会使用XMLHttpRequest吗？</a><br><a href="http://segmentfault.com/a/1190000004295106" target="_blank" rel="external">FastClick 源码解读</a><br><a href="http://segmentfault.com/a/1190000004293922" target="_blank" rel="external">RxJS 教程</a><br><a href="https://www.zhihu.com/question/39659771" target="_blank" rel="external">热炒的前端什么时候能冷静下来</a><br><a href="http://www.hollischuang.com/archives/1036" target="_blank" rel="external">各大互联网公司架构演进之路汇总</a><br><a href="http://weizhifeng.net/javascript-the-core.html" target="_blank" rel="external">JavaScript核心 - 「深入ECMA-262-3」系列的一个概览和摘要</a><br><a href="https://segmentfault.com/a/1190000004345355" target="_blank" rel="external">[翻译] JavaScript Scoping and Hoisting</a><br><a href="http://gank.io/post/564151c1f1df1210001c9161" target="_blank" rel="external">给 JavaScript 初心者的 ES2015 实战</a><br><a href="https://www.awesomes.cn/rss" target="_blank" rel="external">Awesomes.cn新增了RSS订阅源</a><br><a href="http://featurejs.com/" target="_blank" rel="external">Feature.js 各种浏览器特性检测</a><br><a href="http://zhuanlan.zhihu.com/hllvm/20505562" target="_blank" rel="external">新手上路学习JavaScript引擎实现——路线图</a><br><a href="http://delai.me/code/js-and-performance/" target="_blank" rel="external">JS一定要放在Body的最底部么？聊聊浏览器的渲染机制</a></p>
+<p>移动Javascript开发<br><a href="http://am-team.github.io/default.html" target="_blank" rel="external">支付宝-移动Web解决方案</a><br><a href="https://www.zhihu.com/question/35046637/answer/75730441" target="_blank" rel="external">微信公众号编辑有哪些实用的小工具？</a><br><a href="https://github.com/weui/weui" target="_blank" rel="external">WeUI 为微信 Web 服务量身设计</a><br><a href="http://www.jikexueyuan.com/course/2463.html" target="_blank" rel="external">微信 web 开发者工具详解</a></p>
+<p>Html5<br><a href="http://isux.tencent.com/h5active.html" target="_blank" rel="external">H5动效的常见制作手法</a><br><a href="http://ds-overdesign.com/transform/matrix3d.html" target="_blank" rel="external">在线编辑动画</a><br><a href="http://isux.tencent.com/the-making-of-qzone-6-0-animation.html" target="_blank" rel="external">空间秀的发现之旅：Qzone6.0动画诞生记</a><br><a href="http://mp.weixin.qq.com/wiki/10/e5f772f4521da17fa0d7304f68b97d7e.html" target="_blank" rel="external">微信web开发者工具</a><br><a href="https://github.com/imochen/hotcss" target="_blank" rel="external">移动端布局终极解决方案 - hotcss</a><br><a href="http://isux.tencent.com/nine-question-of-swipe-html5-page.html" target="_blank" rel="external">滑屏 H5 开发实践九问</a></p>
+<p>CSS<br><a href="http://zhuanlan.zhihu.com/FrontendMagazine/20486738" target="_blank" rel="external">Twitter “like” 动画实战</a><br><a href="http://w3ctrain.com/2016/01/09/Dribbble-Animation-Pratice/" target="_blank" rel="external">Dribbble动画实验室之两把刷子</a><br><a href="http://codepen.io/collection/HtAne/" target="_blank" rel="external">各种css动画</a><br><a href="http://luopq.com/2016/01/05/css-optimize/" target="_blank" rel="external">CSS代码重构与优化之路</a></p>
+<p>Angular<br>React, Webpack<br>React<a href="http://www.overreact.io/" target="_blank" rel="external">React组件的可视化生成器</a><br><a href="http://segmentfault.com/a/1190000004278414" target="_blank" rel="external">多React Native项目时依赖管理的最佳实践</a><br><a href="http://m.weibo.cn/1400854834/3929680178238734" target="_blank" rel="external">学习Webpack - 阮一峰</a><br><a href="https://www.zhihu.com/question/39452825" target="_blank" rel="external">react有哪些优秀实用的组件？</a></p>
+<p>Webpack<a href="http://zhaoda.net/webpack-handbook/index.html" target="_blank" rel="external">Webpack 中文指南</a><br><a href="https://segmentfault.com/a/1190000004279560" target="_blank" rel="external">如何写一个webpack插件（一）</a><br><a href="https://github.com/cssmagic/blog/issues/56" target="_blank" rel="external">[译] 基于 Webpack 和 ES6 打造 JavaScript 类库</a><br><a href="http://webpack.toobug.net/zh-cn/index.html" target="_blank" rel="external">webpack指南</a><br><a href="http://www.alloyteam.com/2016/01/webpack-use-optimization/" target="_blank" rel="external">webpack使用优化</a></p>
+<p>Vue<br><a href="http://djyde.github.io/2015/08/29/vuejs-and-webpack-1/" target="_blank" rel="external">Vue.js 和 Webpack文章系列（一）</a><br><a href="http://djyde.github.io/2015/08/30/vuejs-and-webpack-2/" target="_blank" rel="external">Vue.js 和 Webpack文章系列（二）</a><br><a href="http://djyde.github.io/2015/08/31/vuejs-and-webpack-3/" target="_blank" rel="external">Vue.js 和 Webpack文章系列（三）</a><br><a href="https://simplecast.fm/s/5e60d9be" target="_blank" rel="external">Evan You - Diving Deep into Vue.js</a></p>
+<p>jQuery<br><a href="http://fineuploader.com/" target="_blank" rel="external">文件上传</a></p>
+<p>看书学习<br><a href="https://www.zhihu.com/question/39162973" target="_blank" rel="external">在时间管理上，大家有什么好的心得和方法？</a><br><a href="https://www.zhihu.com/question/19940797" target="_blank" rel="external">互联网计算机技术方面的入门书籍有哪些推荐</a><br><a href="http://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&amp;mid=401575204&amp;idx=1&amp;sn=05fa0bb63cb8bd9ed87012dd1133b81f&amp;scene=0#wechat_redirect" target="_blank" rel="external">【第468期】牛人们有哪些思维方式值得我们学习</a><br><a href="https://www.zhihu.com/question/19866127" target="_blank" rel="external">陌生人的哪些事，让你感触很深？</a><br><a href="http://www.ganiks.me/how-to-avoid-listing-everything-but-carrying-out-little/" target="_blank" rel="external">Web开发学习之路是否有尽头</a><br><a href="https://www.zhihu.com/question/35112627/answer/62011613" target="_blank" rel="external">哪些知识技能一定要掌握？</a><br><a href="https://www.zhihu.com/question/23883975/answer/27043426" target="_blank" rel="external">怎样避免成为伸手党？</a></p>
+<p>Git,Github<br><a href="http://segmentfault.com/q/1010000004240527" target="_blank" rel="external">正确使用Github 的方法是什么？</a><br><a href="http://www.cnblogs.com/xcywt/p/5068355.html" target="_blank" rel="external">记录我学github的路程（三）</a></p>
+<p>创业 | 职业 | 管理 | 产品<br><a href="https://medium.com/@sebmck/2015-in-review-51ac7035e272#.rlhn2b7i7" target="_blank" rel="external">Babel 作者的年终总结</a><br><a href="http://www.isux.us/qdemo/index.php" target="_blank" rel="external">更简单、更快捷地呈现DEMO原型</a><br><a href="http://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&amp;mid=401557831&amp;idx=1&amp;sn=ac93d8ee19bdb5413be9a94dccf71b2e&amp;scene=0#wechat_redirect" target="_blank" rel="external">专访｜360奇舞团团长@月影</a><br><a href="http://zhuanlan.zhihu.com/robbin/20457539" target="_blank" rel="external">怎样以创业者的心态「打工」</a><br><a href="https://www.zhihu.com/question/39421456/answer/81373074" target="_blank" rel="external">怎么做好互联网公司的技术团队负责人？</a><br><a href="http://zhuanlan.zhihu.com/bigertech/20500602" target="_blank" rel="external">你永远都无法叫醒一家装睡的公司</a><br><a href="https://www.zhihu.com/question/19980901" target="_blank" rel="external">为什么上海出不了一流的互联网企业？</a><br><a href="https://www.zhihu.com/question/21648437" target="_blank" rel="external">为什么老板多数是销售出身，而不是市场出身？</a><br><a href="http://zhuanlan.zhihu.com/robbin/20427809" target="_blank" rel="external">大龄程序员怎样渡过中年危机？</a><br><a href="https://www.zhihu.com/question/36991788/answer/69902291" target="_blank" rel="external">IT行业都有哪些职位，初学者该如何选择，才能够快速进入这个行业？</a><br><a href="http://segmentfault.com/a/1190000004292245" target="_blank" rel="external">我的前端之路</a><br><a href="https://www.zhihu.com/question/39356417" target="_blank" rel="external">贺师俊（hax）在技术上的积累为什么这么深厚？学习路线是怎么样的？</a></p>
+<p>IDE，编辑器，调试等工具类<br><a href="http://www.imooc.com/article/2400" target="_blank" rel="external">可多人实时协作在线代码分享工具 – CodePiple</a><br><a href="http://www.ghugo.com/chrome-rendering-tools-1/" target="_blank" rel="external">Chrome渲染分析之Rendering工具使用(1)</a><br><a href="http://www.ghugo.com/chrome-rendering-tools-2/" target="_blank" rel="external">Chrome渲染分析之Rendering工具使用(2)</a><br><a href="http://www.ghugo.com/chrome-rendering-tools-3/" target="_blank" rel="external">Chrome渲染分析之Rendering工具使用(3)</a><br><a href="https://github.com/jiacai2050/chrome-history-stat" target="_blank" rel="external">Chrome 浏览记录统计</a><br><a href="http://i5ting.github.io/vsc/" target="_blank" rel="external">visual studio code 操作指南</a><br><a href="http://www.w3cplus.com/tools/dev-tips.html" target="_blank" rel="external">Chorme 35个开发者工具的小技巧</a><br><a href="http://chinagdg.org/2015/12/%E5%83%8F-sublime-text-%E4%B8%80%E6%A0%B7%E4%BD%BF%E7%94%A8-chrome-devtools/" target="_blank" rel="external">像 Sublime Text 一样使用 Chrome DevTools</a><br><a href="http://www.w3cplus.com/tools/how-to-use-chrome-devtools-like-a-pro.html" target="_blank" rel="external">如何更专业的使用Chrome开发者工具-w3cplus</a><br><a href="https://developers.google.com/web/updates/devtools/?hl=en" target="_blank" rel="external">Google Developers-w3cplus</a><br><a href="https://umaar.com/dev-tips/" target="_blank" rel="external">DevTools-w3cplus</a></p>
+<p>前端架构及工程化等<br><a href="http://geek.csdn.net/news/detail/48765" target="_blank" rel="external">全站 HTTPS 来了</a><br><a href="https://markgoodyear.com/2014/01/getting-started-with-gulp/" target="_blank" rel="external">Getting started with gulp</a><br><a href="https://github.com/nimojs/gulp-book" target="_blank" rel="external">Gulp 入门指南</a><br><a href="https://github.com/tj/frontend-boilerplate" target="_blank" rel="external">TJ - Frontend Boilerplate</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&amp;mid=408154901&amp;idx=1&amp;sn=c17573f6fbb2c035db6300ddfc5e9df7#rd&amp;location=35" target="_blank" rel="external">架构细节 | 看看 Medium 的开发团队用了哪些技术？</a></p>
+<p>Sass，PostCSS</p>
+<p>工作 | 协同 | 流程<br><a href="http://baike.baidu.com/view/5259318.htm" target="_blank" rel="external">番茄工作法</a><br><a href="https://www.zhihu.com/question/39465280" target="_blank" rel="external">如何融入工作？如何看待工作的意义</a><br><a href="https://blog.coding.net/blog/coding-mindmap" target="_blank" rel="external">让思路更清晰——我是怎样使用思维导图的</a></p>
+<p>Nodejs<br><a href="http://taobaofed.org/blog/2016/01/05/dragonfly-stability/" target="_blank" rel="external">Node.js 源站应用稳定性保障</a><br><a href="https://www.zhihu.com/question/21176891" target="_blank" rel="external">node.js能开发大型网站吗？</a><br><a href="https://github.com/Jam3/devtool" target="_blank" rel="external">runs Node.js programs through Chromium DevTools</a><br><a href="https://www.zhihu.com/question/22098326" target="_blank" rel="external">Node.js 未来会超越 Java 吗？</a><br><a href="https://cnodejs.org/topic/5696e43e6272216e51bff67e" target="_blank" rel="external">国内Nodejs 2015汇总</a><br><a href="https://github.com/gf-rd/blog/issues/29" target="_blank" rel="external">[Node] - 16年，新 Node 项目注意点</a></p>
+<p>UI<br><a href="http://witstudio.net/" target="_blank" rel="external">Assistor PS 切图标记外挂神器</a><br><a href="http://www.bigertech.com/post/assistor-ps-1/" target="_blank" rel="external">免费了，切图标记外挂神器 Assistor PS 深入解读(上)</a><br><a href="http://www.bigertech.com/post/assistor-ps-2/" target="_blank" rel="external">免费了，切图标记外挂神器 Assistor PS 深入解读(下)</a><br><a href="https://www.zhihu.com/question/19670020" target="_blank" rel="external">国外有哪些流行的图片分享网站</a><br><a href="https://www.zhihu.com/question/20857524/answer/41328995" target="_blank" rel="external">从零基础如何自学 UI 设计？</a><br><a href="http://www.uisdc.com/designer-self-study-2" target="_blank" rel="external">超赞！设计师完全自学指南</a></p>
+<p>性能优化教程<br><a href="http://www.imooc.com/learn/580" target="_blank" rel="external">前端性能优化-基础知识认知</a><br><a href="http://www.alloyteam.com/2016/01/points-about-resource-loading/" target="_blank" rel="external">研究首屏时间？你先要知道这几点细节</a></p>
+<p>面试相关<br><a href="https://www.zhihu.com/question/19603341" target="_blank" rel="external">面试的时候，如何自我介绍？</a></p>
+<p>mac ios<br><a href="http://www.zhihu.com/question/19588698" target="_blank" rel="external">Mac 上最好用的流程图软件是什么？</a></p>
+<p>php<br><a href="https://www.zhihu.com/question/21617669" target="_blank" rel="external">PHP框架Laravel还是Codeigniter？</a><br><a href="http://www.php7.site/book/php7.html" target="_blank" rel="external">PHP7新特性</a><br><a href="http://www.imooc.com/learn/438" target="_blank" rel="external">PHP7.0新特性</a><br><a href="http://segmentfault.com/q/1010000003465862" target="_blank" rel="external">PHP的框架通常用于小型项目吗？</a><br><a href="https://www.zhihu.com/question/30622752/answer/79244664" target="_blank" rel="external">为什么 Laravel 5 这么好一个框架，国人都不去用？</a><br><a href="http://yuedu.baidu.com/ebook/d817967416fc700abb68fca1?fr=aladdin&amp;key=docker%E5%85%A5%E9%97%A8%E5%AE%9E%E6%88%98" target="_blank" rel="external">Docker入门实战 - php群猫哥推荐</a></p>
+<p>英语<br><a href="http://javascriptweekly.com/issues/264" target="_blank" rel="external">A special issue looking back at the best of 2015</a><br><a href="https://www.zhihu.com/question/37174334" target="_blank" rel="external">在中国，英语流利能给个人带来多少额外的收益？</a></p>
+<p>其它<br><a href="http://unbug.github.io/codelf/" target="_blank" rel="external">变量命名神器</a><br><a href="http://segmentfault.com/a/1190000004292681" target="_blank" rel="external">SegmentFault 2015 年度精选</a><br><a href="http://zhuanlan.zhihu.com/marisa/20528510" target="_blank" rel="external">推荐一个做编程题的网站</a><br><a href="https://www.zhihu.com/question/29771389" target="_blank" rel="external">清明上河图有哪些鲜为人知又很值得品味的细节？</a></p>
+<p>特别推荐我联盟群几个高手的力作或个人网站<br>高级群<a href="http://bingojs.mydoc.io/" target="_blank" rel="external">bingoJS是一个前端MV*开发框架</a><br><a href="http://kalcaddle.com/" target="_blank" rel="external">KODExplorer是一个公开源码的基于Web的在线文件管理、代码编辑器</a><br><a href="http://wangeditor.github.io/" target="_blank" rel="external">基于javascript和css开发的 Web富文本编辑器， 轻量、简洁、易用、开源免费</a><br><a href="http://52wike.com/prototype/1.html" target="_blank" rel="external">WIKE - prototype源码分析之class.js</a><br><a href="http://52wike.com/prototype/2.html" target="_blank" rel="external">WIKE - prototype源码分析之array.js</a><br><a href="http://note.youdao.com/share/web/file.html?id=cc07fd37527db123daf71ad0691c860a&amp;type=note" target="_blank" rel="external">岭南才子 - web基础知识（重点学习和复习）</a><br><a href="http://note.youdao.com/share/web/file.html?id=0a8ddaacadcf35c5a864fd21c9a9db66&amp;type=note" target="_blank" rel="external">岭南才子 - web进阶知识点</a></p>
+<p>中级群<a href="http://lodash.think2011.net/" target="_blank" rel="external">我中级群小伙一翻译项目-lodashv4.0.0-pre中文翻译</a><br><a href="http://94dreamer.com/" target="_blank" rel="external">就是梦想家 - 像夜莺在夏天门前彻夜清啭</a><br><a href="http://www.x-view.org/" target="_blank" rel="external">A JavaScript library like React, but uses Web Components.</a><br><a href="http://blog.csdn.net/liusaint1992/article/details/50531186" target="_blank" rel="external">HTML5扫雷游戏</a><br><a href="http://runningls.com/demos/" target="_blank" rel="external">Runner - 作品集</a><br><a href="https://www.gitbook.com/book/niec-fe/underscorejs/details" target="_blank" rel="external">underscorejs 学习参考</a><br><a href="http://det101.github.io/" target="_blank" rel="external">基于canvas实现UI的H5播放器</a><br><a href="https://www.zyl.me/" target="_blank" rel="external">ZYL的博客</a><br><a href="http://kinglisky.github.io/lowpoly/" target="_blank" rel="external">low poly风格图片生成器</a></p>
+<p>初级群<a href="http://pagurian.com/" target="_blank" rel="external">一个管理系统的前端框架</a></p>
+<p>入门群<a href="https://github.com/jrainlau/markcook" target="_blank" rel="external">Markcook 1.0–简洁、高效的markdown编辑器</a></p>
+<p>跳板群 群号：492107297<a href="http://www.cnblogs.com/BlueQ/p/5000860.html" target="_blank" rel="external">从头开始写框架(二):孕育框架的种子_上</a><br><a href="https://github.com/taifu5522/sliceAnimate" target="_blank" rel="external">sliceAnimate是一个分动画的轮播插件</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Report/" rel="tag"># Report</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/25/FrontFrame/FrontFrame/" rel="next" title="前端框架">
+                <i class="fa fa-chevron-left"></i> 前端框架
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/25/Induce/CSS/CSS/" rel="prev" title="CSS学习计划">
+                CSS学习计划 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">226</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2016年"><span class="nav-number">1.</span> <span class="nav-text">2016年</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一月"><span class="nav-number">1.1.</span> <span class="nav-text">一月</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

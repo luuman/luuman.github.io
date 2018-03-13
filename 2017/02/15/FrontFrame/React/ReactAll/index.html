@@ -1,0 +1,870 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="React是如今最热门的前端框架，它设计思路独特，性能卓越，逻辑简单，受到了广泛开发者的喜爱。一旦接触她，你就会被她深深吸引。我断断续续的学了将近两个月，今天终于有时间把自己学习React的一些学习资料总结一下。 学习社区 官网地址 Github地址 ReactChina">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React资源">
+<meta property="og:url" content="http://luuman.github.io/2017/02/15/FrontFrame/React/ReactAll/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="React是如今最热门的前端框架，它设计思路独特，性能卓越，逻辑简单，受到了广泛开发者的喜爱。一旦接触她，你就会被她深深吸引。我断断续续的学了将近两个月，今天终于有时间把自己学习React的一些学习资料总结一下。 学习社区 官网地址 Github地址 ReactChina">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React资源">
+<meta name="twitter:description" content="React是如今最热门的前端框架，它设计思路独特，性能卓越，逻辑简单，受到了广泛开发者的喜爱。一旦接触她，你就会被她深深吸引。我断断续续的学了将近两个月，今天终于有时间把自己学习React的一些学习资料总结一下。 学习社区 官网地址 Github地址 ReactChina">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2017/02/15/FrontFrame/React/ReactAll/"/>
+
+
+
+
+
+  <title> React资源 | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2017/02/15/FrontFrame/React/ReactAll/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React资源
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-15T18:29:00+08:00">
+                2017-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>React是如今最热门的前端框架，它设计思路独特，性能卓越，逻辑简单，受到了广泛开发者的喜爱。一旦接触她，你就会被她深深吸引。<br>我断断续续的学了将近两个月，今天终于有时间把自己学习React的一些学习资料总结一下。</p>
+<h3 id="学习社区"><a href="#学习社区" class="headerlink" title="学习社区"></a>学习社区</h3><ul>
+<li><a href="http://facebook.github.io/react/" target="_blank" rel="external">官网地址</a></li>
+<li><a href="https://github.com/facebook/react" target="_blank" rel="external">Github地址</a></li>
+<li><a href="http://react-china.org/" target="_blank" rel="external">ReactChina</a></li>
+</ul>
+<a id="more"></a>
+<h2 id="初探"><a href="#初探" class="headerlink" title="初探"></a>初探</h2><h3 id="初学Demo"><a href="#初学Demo" class="headerlink" title="初学Demo"></a>初学Demo</h3><p>可以结合一些简单demo去看文章，例如你在看阮一峰的React 入门实例教程时，可结合他写的入门demo，或官方给的demo。当然你也要边学习边自己去写一些简单demo，去改改别人写的一些React 项目。一定要多动手。</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="external">React 入门实例教程-阮一峰</a>：建议先看demo</li>
+<li><a href="http://www.cocoachina.com/webapp/20150721/12692.html" target="_blank" rel="external">一看就懂的ReactJs入门教程（精华版）</a></li>
+<li><a href="http://www.runoob.com/react/react-tutorial.html" target="_blank" rel="external">React 教程-菜鸟教程</a>：安装那节好像有点错</li>
+<li><a href="http://blog.csdn.net/iambinger/article/details/51803606" target="_blank" rel="external">React 入门，5个常用DEMO展示</a></li>
+<li><a href="http://www.360doc.com/content/16/0129/07/13518188_531384175.shtml" target="_blank" rel="external">如何学习React</a></li>
+<li><a href="https://github.com/theJian/build-a-hn-front-page" target="_blank" rel="external">给新手的 React&amp;Webpack 上手教程</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/19896745?columnSlug=FrontendMagazine" target="_blank" rel="external">ReactJS 傻瓜教程</a></li>
+<li><a href="http://guodavid.tk/2016/08/29/React-Message-board/" target="_blank" rel="external">React 最简单的入门应用项目</a></li>
+</ul>
+<h3 id="入门-demo"><a href="#入门-demo" class="headerlink" title="入门 demo"></a>入门 demo</h3><ul>
+<li><a href="https://github.com/facebook/react/tree/master/examples" target="_blank" rel="external">官方入门 demo</a>：可结合官方的入门文档</li>
+<li><a href="https://github.com/ruanyf/react-demos" target="_blank" rel="external">入门 demo-阮一峰</a>：结合入门文章</li>
+<li><a href="http://www.icoolxue.com/album/show/262" target="_blank" rel="external">ReactJS中文基础视频教程-爱酷</a></li>
+</ul>
+<h3 id="入门视频教程"><a href="#入门视频教程" class="headerlink" title="入门视频教程"></a>入门视频教程</h3><p>一定要边看边写，不要囫囵吞枣的看一遍就好了。</p>
+<ul>
+<li><a href="http://www.imooc.com/learn/504" target="_blank" rel="external">React入门-慕课网</a></li>
+<li><a href="http://www.icoolxue.com/album/show/262" target="_blank" rel="external">ReactJS中文基础视频教程-爱酷</a></li>
+<li><a href="http://react-china.org/t/reactjs/584" target="_blank" rel="external">ReactJS中文视频教程</a></li>
+<li><a href="http://www.hubwiz.com/course/552762019964049d1872fc88/?ch=alloyteam" target="_blank" rel="external">React教程- 汇智网</a></li>
+</ul>
+<h3 id="入门实战视频"><a href="#入门实战视频" class="headerlink" title="入门实战视频"></a>入门实战视频</h3><p>了解React开发流程，作者的编码思路，写作规范。</p>
+<ul>
+<li><a href="http://www.imooc.com/learn/507" target="_blank" rel="external">React实战–打造画廊应用（上）</a></li>
+<li><a href="http://www.imooc.com/learn/652" target="_blank" rel="external">React实战–打造画廊应用（下）</a></li>
+<li><a href="http://zexeo.com/course/56753a22b2b8de861c0d281a" target="_blank" rel="external">ReactJS中文基础视频教程</a></li>
+<li><a href="http://zexeo.com/course/5672c2bd52b470c02bc28b6c" target="_blank" rel="external">构建实时聊天应用</a></li>
+</ul>
+<h2 id="开发文档"><a href="#开发文档" class="headerlink" title="开发文档"></a>开发文档</h2><p>开发其实不用详细去全看，在你做项目时，遇到不懂的就去查看一下文档，我认为这样效率更高一点。当然你有时间也可以一步步去阅读。</p>
+<ul>
+<li><a href="https://facebook.github.io/react/docs/hello-world.html" target="_blank" rel="external">官方文档</a></li>
+<li><a href="http://reactjs.cn/react/docs/getting-started-zh-CN.html" target="_blank" rel="external">中文文档</a></li>
+</ul>
+<h2 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h2><p>在学习中我们会遇到 一些问题，可以去社区或一些网站寻找答案，下面推荐一些好的React 社区和学习网站。</p>
+<ul>
+<li><a href="http://react-china.org/" target="_blank" rel="external">React中文社区</a></li>
+<li><a href="http://nav.react-china.org/" target="_blank" rel="external">React 中文索引</a></li>
+<li><a href="http://lib.csdn.net/base/react" target="_blank" rel="external">React知识库</a></li>
+<li><a href="https://codepicnic.com/posts/a-quick-start-to-react-0777d5c17d4066b82ab86dff8a46af6f" target="_blank" rel="external">A quick start to React</a></li>
+<li><a href="http://stackoverflow.com/questions/tagged/reactjs" target="_blank" rel="external">stack overflow</a></li>
+<li><a href="https://www.zhihu.com/topic/20013159/hot" target="_blank" rel="external">知乎 React 话题</a></li>
+<li><a href="https://segmentfault.com/t/react.js" target="_blank" rel="external">segmentfault React 话题</a></li>
+</ul>
+<h2 id="React技术栈"><a href="#React技术栈" class="headerlink" title="React技术栈"></a>React技术栈</h2><p>React是一款非常优秀的前端框架，你要发挥它完全的性能，你就要结合其他一些技术，例如webpack、redux、react-router等。</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html" target="_blank" rel="external">React 技术栈系列教程</a></li>
+<li><a href="https://github.com/my-fe/wiki/issues/1" target="_blank" rel="external">百度母婴技术团队—基于Reactjs实现webapp</a></li>
+<li><a href="https://www.sitepoint.com/building-a-react-universal-blog-app-a-step-by-step-guide/" target="_blank" rel="external">Building a React Universal Blog App</a></li>
+<li><a href="http://react-china.org/t/react-immutable-js/3770" target="_blank" rel="external">React为啥非得使用immutable.js</a></li>
+<li><a href="https://blog.coding.net/blog/React-Server-Side-Rendering-for-SPA-SEO" target="_blank" rel="external">React Server Side Rendering 解决 SPA 应用的 SEO 问题</a></li>
+</ul>
+<h3 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h3><ul>
+<li><a href="http://webpack.github.io/docs/" target="_blank" rel="external">webpack官方文档</a></li>
+<li><a href="http://webpackdoc.com/" target="_blank" rel="external">Webpack 中文指南</a></li>
+<li><a href="http://www.w2bc.com/Article/50764" target="_blank" rel="external">webpack一小时快速入门</a></li>
+<li><a href="http://www.jianshu.com/p/c8a805145046" target="_blank" rel="external">使用webpack轻松构建你的第一个react开发框架</a></li>
+<li><a href="http://www.jianshu.com/p/42e11515c10f#" target="_blank" rel="external">入门Webpack，看这篇就够了</a>:写的很不错，逐级深入，适合入门，有点长，耐心看完</li>
+</ul>
+<h3 id="router"><a href="#router" class="headerlink" title="router"></a>router</h3><ul>
+<li><a href="https://github.com/ReactTraining/react-router" target="_blank" rel="external">react-router</a></li>
+<li><a href="https://react-guide.github.io/react-router-cn/" target="_blank" rel="external">React Router 中文文档</a></li>
+<li><a href="https://github.com/reactjs/react-router-tutorial/tree/master/lessons" target="_blank" rel="external">React Router 官方 demo</a></li>
+</ul>
+<h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3><ul>
+<li><a href="http://redux.js.org/" target="_blank" rel="external">Redux官网</a></li>
+<li><a href="http://cn.redux.js.org/index.html" target="_blank" rel="external">Redux 中文文档</a></li>
+<li><a href="https://github.com/reactjs/redux/tree/master/examples" target="_blank" rel="external">Redux 官方 demo</a></li>
+<li><a href="https://github.com/kenberkeley/redux-simple-tutorial" target="_blank" rel="external">Redux 莞式教程</a></li>
+<li><a href="https://egghead.io/courses/getting-started-with-redux" target="_blank" rel="external">Redux 视频教程</a></li>
+<li><a href="http://qiutc.me/post/redux-%E5%A4%A7%E6%B3%95%E5%A5%BD-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B-TodoList.html" target="_blank" rel="external">redux 大法好</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/19900243?columnSlug=FrontendMagazine" target="_blank" rel="external">Flux 傻瓜教程</a></li>
+<li><a href="http://foio.github.io/react-redux-performance-boost/" target="_blank" rel="external">react+redux渲染性能优化原理</a></li>
+<li><a href="https://react.ctolib.com/" target="_blank" rel="external">React开发社区</a></li>
+<li><a href="http://www.alloyteam.com/2015/09/react-redux/" target="_blank" rel="external">数据流管理架构之 Redux 介绍</a></li>
+<li><a href="http://www.alloyteam.com/2016/06/react-isomorphic/" target="_blank" rel="external">React同构直出优化总结</a></li>
+<li><a href="http://www.alloyteam.com/2016/05/router/" target="_blank" rel="external">前端路由实现与 react-router 源码分析</a></li>
+<li><a href="http://www.alloyteam.com/2016/01/webpack-loader-1/" target="_blank" rel="external">如何开发一个 Webpack Loader ( 一 )</a></li>
+<li><a href="http://www.alloyteam.com/2015/10/8783/" target="_blank" rel="external">服务器端渲染实践小结</a></li>
+<li><a href="https://github.com/rccoder/blog/issues/18" target="_blank" rel="external">听说你需要这样了解 Redux</a></li>
+<li><a href="http://www.jianshu.com/p/94d8f8a36ab0" target="_blank" rel="external">学习Redux刷新了我的前端App状态管理观</a></li>
+<li><a href="https://github.com/theJian/build-a-hn-front-page" target="_blank" rel="external">Learn React &amp; Webpack by building a hacker news front page</a></li>
+<li><a href="https://segmentfault.com/a/1190000004236064" target="_blank" rel="external">解读redux工作原理</a></li>
+</ul>
+<h3 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h3><ul>
+<li><a href="https://github.com/facebook/react-devtools" target="_blank" rel="external">react-devtools</a></li>
+<li><a href="http://www.oschina.net/news/65837/react-devtools-2-0" target="_blank" rel="external">React DevTools 正式发布，完全支持 React Native</a></li>
+<li><a href="https://github.com/gaearon/redux-devtools/blob/master/docs/Walkthrough.md" target="_blank" rel="external">redux-devtools</a></li>
+<li><a href="http://www.zhufengpeixun.cn/article/151" target="_blank" rel="external">Redux超酷的开发工具Redux-Devtools</a></li>
+</ul>
+<h3 id="redux-常用中间件或工具"><a href="#redux-常用中间件或工具" class="headerlink" title="redux 常用中间件或工具"></a>redux 常用中间件或工具</h3><ul>
+<li><a href="https://github.com/gaearon/redux-thunk" target="_blank" rel="external">redux-thunk</a></li>
+<li><a href="https://github.com/weo-edu/redux-gen" target="_blank" rel="external">redux-gen</a></li>
+<li><a href="https://github.com/omnidan/redux-undo" target="_blank" rel="external">redux-undo</a></li>
+<li><a href="https://github.com/reactjs/react-router-redux" target="_blank" rel="external">react-router-redux</a></li>
+<li><a href="https://github.com/davidkpiano/react-redux-form" target="_blank" rel="external">react-redux-form</a></li>
+</ul>
+<h2 id="React-开源项目"><a href="#React-开源项目" class="headerlink" title="React 开源项目"></a>React 开源项目</h2><p>介绍一些国内外比较好的 React 开源项目。</p>
+<h3 id="国内："><a href="#国内：" class="headerlink" title="国内："></a>国内：</h3><ul>
+<li><a href="https://github.com/react-component" target="_blank" rel="external">阿里的 React 组件库</a></li>
+<li><a href="https://github.com/ant-design/ant-design" target="_blank" rel="external">Ant Design</a></li>
+<li><a href="https://github.com/tsrot/react-demo" target="_blank" rel="external">简易留言板</a></li>
+<li><a href="https://github.com/tsrot/react-zhihu" target="_blank" rel="external">react-zhihu</a></li>
+<li><a href="https://github.com/cjohansen/react-sweeper" target="_blank" rel="external">React的扫雷游戏</a></li>
+<li><a href="https://github.com/redsx/CR" target="_blank" rel="external">在线聊天室</a></li>
+<li><a href="https://github.com/JasonBai007/reactSPA" target="_blank" rel="external">使用React技术栈开发SPA</a></li>
+<li><a href="https://github.com/NumerHero/kuolun" target="_blank" rel="external">阔论留言评论</a></li>
+<li><a href="https://github.com/lzxb/react-cnode" target="_blank" rel="external">React版cnode社区</a></li>
+<li><a href="https://github.com/rongchanghai/justForYou" target="_blank" rel="external">适合新手学习的Demo， React + react-router + webpack + babel + Node + express + mongodb</a></li>
+</ul>
+<h3 id="国外："><a href="#国外：" class="headerlink" title="国外："></a>国外：</h3><ul>
+<li><a href="https://github.com/relax/relax" target="_blank" rel="external">Relax</a></li>
+<li><a href="https://github.com/andrewngu/sound-redux/" target="_blank" rel="external">SoundRedux</a></li>
+<li><a href="https://github.com/gatsbyjs/gatsby" target="_blank" rel="external">Gatsby</a></li>
+<li><a href="https://github.com/gpbl/isomorphic500" target="_blank" rel="external">isomorphic500</a></li>
+<li><a href="https://github.com/ianobermiller/nuclearmail" target="_blank" rel="external">NuclearMail</a></li>
+<li><a href="https://github.com/Automattic/Picard" target="_blank" rel="external">Picard</a></li>
+<li><a href="https://github.com/casesandberg/react-color" target="_blank" rel="external">React Color</a></li>
+<li><a href="https://github.com/getsentry/sentry/" target="_blank" rel="external">Sentry</a></li>
+<li><a href="https://github.com/insin/react-hn" target="_blank" rel="external">react-hn</a></li>
+<li><a href="https://github.com/khan/perseus" target="_blank" rel="external">Perseus</a></li>
+</ul>
+<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><ul>
+<li><a href="https://github.com/my-fe/wiki/issues/1" target="_blank" rel="external">百度母婴技术团队—基于Reactjs实现webapp</a></li>
+<li><a href="https://github.com/duxianwei520/react" title="一个react+redux+webpack+ES6+antd" target="_blank" rel="external">SPA的后台管理框架demo</a></li>
+<li><a href="https://github.com/Cathy0807/react" target="_blank" rel="external">京东首页构建</a></li>
+<li><a href="https://github.com/zhaotoday/react" title="基于 reactjs+redux+webpack2 的" target="_blank" rel="external">单页应用项目模板。</a></li>
+<li><a href="https://github.com/lzxb/react-cnode" title="基于webpack + react + react-router + redux + less + flex.css + ES6 的" target="_blank" rel="external">React版cnode社区</a></li>
+<li><a href="&quot;基于 react + react-router + redux + webpack + ES6/7 + les&quot;">销售录入</a></li>
+<li><a href="https://github.com/luckykun/About-React" title="关于React的各种学习实例。" target="_blank" rel="external">About-React</a></li>
+<li><a href="https://github.com/kenberkeley/react-demo" title="Webpack / ES6 + Babel / Redux / React Router —— An Excellent React Starter" target="_blank" rel="external">简易留言板</a></li>
+<li><a href="https://github.com/daydayupsnail/react-practice-gallery/" target="_blank" rel="external">react 随机画廊</a></li>
+<li><a href="https://segmentfault.com/a/1190000007134000" target="_blank" rel="external">基于 React.js + redux + bootstrap 的 RubyChina 示例</a></li>
+<li><a href="https://github.com/liuzhenangel/react-ruby-china" title="react react-dom react-router redux redux-thunk react-md-editor isomorphic-fetch react-paginate react-redux marked es6-promise classnames" target="_blank" rel="external">RubyChina demo</a></li>
+<li><a href="https://segmentfault.com/a/1190000007908006" target="_blank" rel="external">React-Redux小应用（一）-React_Redux_Appointment</a></li>
+<li><a href="https://github.com/liliang-cn/react_redux_appointment" target="_blank" rel="external">小应用：预约</a></li>
+<li><a href="http://react-china.org/t/react/2091" target="_blank" rel="external">一个完整的React项目下来后的总结</a></li>
+<li><a href="&quot;&quot;"></a></li>
+<li><a href="&quot;&quot;"></a></li>
+<li><a href="https://github.com/theJian/build-a-hn-front-page" target="_blank" rel="external">Learn React &amp; Webpack by building the Hacker News front page</a></li>
+<li><a href="https://www.zhihu.com/question/51064553?sort=created" target="_blank" rel="external">用webpack+react+redux搭建的前端框架，构建后如何运行？</a></li>
+<li><a href="https://github.com/minooo/React-Study/tree/master/step-04" target="_blank" rel="external">渐进式学习React生态圈</a></li>
+<li><a href="&quot;&quot;"></a></li>
+</ul>
+<h2 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h2><p>学习React之前，我们先了解一下它的设计思想，它与如今其他热门的前端框架有什么不同？它能为我们的开发解决哪些痛点？</p>
+<ul>
+<li><a href="https://github.com/react-guide/react-basic" target="_blank" rel="external">React 设计思想</a></li>
+<li><a href="http://www.infoq.com/cn/articles/react-art-of-simplity/" target="_blank" rel="external">React的设计哲学 - 简单之美</a> </li>
+<li><a href="http://www.infoq.com/cn/articles/subversion-front-end-ui-development-framework-react/" target="_blank" rel="external">颠覆式前端UI开发框架:React</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/15/FrontFrame/React/create-react-app/" rel="next" title="React单页面应用环境">
+                <i class="fa fa-chevron-left"></i> React单页面应用环境
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/15/FrontFrame/React/ReactDemo/" rel="prev" title="React Demo">
+                React Demo <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">226</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#学习社区"><span class="nav-number">1.</span> <span class="nav-text">学习社区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初探"><span class="nav-number"></span> <span class="nav-text">初探</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初学Demo"><span class="nav-number">1.</span> <span class="nav-text">初学Demo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#入门-demo"><span class="nav-number">2.</span> <span class="nav-text">入门 demo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#入门视频教程"><span class="nav-number">3.</span> <span class="nav-text">入门视频教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#入门实战视频"><span class="nav-number">4.</span> <span class="nav-text">入门实战视频</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发文档"><span class="nav-number"></span> <span class="nav-text">开发文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习网站"><span class="nav-number"></span> <span class="nav-text">学习网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React技术栈"><span class="nav-number"></span> <span class="nav-text">React技术栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack"><span class="nav-number">1.</span> <span class="nav-text">Webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#router"><span class="nav-number">2.</span> <span class="nav-text">router</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redux"><span class="nav-number">3.</span> <span class="nav-text">redux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发工具"><span class="nav-number">4.</span> <span class="nav-text">开发工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redux-常用中间件或工具"><span class="nav-number">5.</span> <span class="nav-text">redux 常用中间件或工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-开源项目"><span class="nav-number"></span> <span class="nav-text">React 开源项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#国内："><span class="nav-number">1.</span> <span class="nav-text">国内：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#国外："><span class="nav-number">2.</span> <span class="nav-text">国外：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github"><span class="nav-number">3.</span> <span class="nav-text">Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计思想"><span class="nav-number"></span> <span class="nav-text">设计思想</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

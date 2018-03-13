@@ -1,0 +1,772 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="对于web应用，掉线不能使用是理所当然的，绝不会有哪个开发人员会因为网页在没网的时候打不开被测试MM提bug，或者被用户投诉，所以，我们的web页面不支持离线完全不会有什么影响。但如果我们希望支持离线，会发现，我投入的精力和成本啊还真不小，就说一点，html5 manifest缓存技术需要服务端配合直接就让成本蹭蹭蹭的上去了，因为已经不仅仅是前端这一个工种的工作了，很可能就需要跨团队协作，这事情立">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 借助Service Worker和cacheStorage缓存及离线开发">
+<meta property="og:url" content="http://luuman.github.io/2017/12/25/Induce/JavaScript/Base/cacheStorage/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="对于web应用，掉线不能使用是理所当然的，绝不会有哪个开发人员会因为网页在没网的时候打不开被测试MM提bug，或者被用户投诉，所以，我们的web页面不支持离线完全不会有什么影响。但如果我们希望支持离线，会发现，我投入的精力和成本啊还真不小，就说一点，html5 manifest缓存技术需要服务端配合直接就让成本蹭蹭蹭的上去了，因为已经不仅仅是前端这一个工种的工作了，很可能就需要跨团队协作，这事情立">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-04T02:25:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 借助Service Worker和cacheStorage缓存及离线开发">
+<meta name="twitter:description" content="对于web应用，掉线不能使用是理所当然的，绝不会有哪个开发人员会因为网页在没网的时候打不开被测试MM提bug，或者被用户投诉，所以，我们的web页面不支持离线完全不会有什么影响。但如果我们希望支持离线，会发现，我投入的精力和成本啊还真不小，就说一点，html5 manifest缓存技术需要服务端配合直接就让成本蹭蹭蹭的上去了，因为已经不仅仅是前端这一个工种的工作了，很可能就需要跨团队协作，这事情立">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2017/12/25/Induce/JavaScript/Base/cacheStorage/"/>
+
+
+
+
+
+  <title> JavaScript 借助Service Worker和cacheStorage缓存及离线开发 | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2017/12/25/Induce/JavaScript/Base/cacheStorage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript 借助Service Worker和cacheStorage缓存及离线开发
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T18:29:00+08:00">
+                2017-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>对于web应用，掉线不能使用是理所当然的，绝不会有哪个开发人员会因为网页在没网的时候打不开被测试MM提bug，或者被用户投诉，所以，我们的web页面不支持离线完全不会有什么影响。但如果我们希望支持离线，会发现，我投入的精力和成本啊还真不小，就说一点，html5 manifest缓存技术需要服务端配合直接就让成本蹭蹭蹭的上去了，因为已经不仅仅是前端这一个工种的工作了，很可能就需要跨团队协作，这事情立马一下子就啰嗦了，开发时候啰嗦，以后维护也啰嗦。<br>而支持离线的收益，我估算了下，比支持无障碍访问收益还要低。所以，站在商业的角度讲，如果一项技术成本比较高，收益比较小，是并不建议实际应用的。开发人员喜欢在重要的项目中玩些时髦的酷酷的新技术自嗨是可以理解的，但前提是收益明显。如果只是自嗨，留下烂摊，有必要警惕了，业务意识和职业素养说明还有待提高。<br><a id="more"></a></p>
+<h1 id="应用缓存（已废弃）"><a href="#应用缓存（已废弃）" class="headerlink" title="应用缓存（已废弃）"></a>应用缓存（已废弃）</h1><p>HTML5的应用缓存（<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Using_the_application_cache" target="_blank" rel="external">application cache</a>）<br>AppCache就是从浏览器的缓存中分出一块缓存区，使用描述文件（manifest file），列出要下载和缓存的资源。</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol>
+<li>html5 manifest也可以纯前端！</li>
+<li>投入产出比有些低，</li>
+</ol>
+<h2 id="name-manifest"><a href="#name-manifest" class="headerlink" title="name.manifest"></a>name.manifest</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">CACHE MANIFEST </div><div class="line">&lt;!-- 文件标识  --&gt;</div><div class="line"></div><div class="line">#VERSION 1.0  </div><div class="line">&lt;!-- 版本号，只是一行注释，但改变可以更新缓存 --&gt;</div><div class="line">  </div><div class="line">CACHE:</div><div class="line">&lt;!-- 表示要缓存的文件 --&gt;</div><div class="line">index.html  </div><div class="line">./js/jquery.js  </div><div class="line">./css/style.css  </div><div class="line">  </div><div class="line">NETWORK:</div><div class="line">&lt;!-- 表示需要连接服务器的文件 --&gt;</div><div class="line">./upload/  </div><div class="line">  </div><div class="line">FAILBACK:</div><div class="line">&lt;!-- 表示当没有响应时的替代方案 --&gt;</div><div class="line">./proxy/ proxy.html</div></pre></td></tr></table></figure>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;html manifest=<span class="string">"name.appcache"</span>&gt;</div></pre></td></tr></table></figure>
+<h2 id="status属性"><a href="#status属性" class="headerlink" title="status属性"></a>status属性</h2><ol>
+<li>0：无缓存</li>
+<li>1：限制</li>
+<li>2：检查中</li>
+<li>3：下载中</li>
+<li>4：更新完成</li>
+<li>5：废弃</li>
+</ol>
+<p>window.applicationCache.UNCACHED =&gt; 0<br>window.applicationCache.IDLE =&gt; 1<br>window.applicationCache.CHECKING =&gt; 2<br>window.applicationCache.DOWNLOADING =&gt; 3<br>window.applicationCache.UPDATEREADY =&gt; 4<br>window.applicationCache.OBSOLETE =&gt; 5</p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ol>
+<li>checking：在浏览器应用缓存查找更新时触发</li>
+<li>error：在检查更新或下载资源期间发生错误触发</li>
+<li>noupdate：在检查描述文件发现文件变化时触发</li>
+<li>downloading：在开始下载应用荤菜资源时触发</li>
+<li>progress：在文件下载应用缓存的过程中持续不断的触发</li>
+<li>updateready：在页面新的应用缓存下载完毕，并且可以通过swapCache()使用时触发</li>
+<li>cached：在应用缓存完整可用时触发</li>
+</ol>
+<h3 id="updateready"><a href="#updateready" class="headerlink" title="updateready"></a>updateready</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">EventUtil.addHandler(applicationCache, <span class="string">"updateready"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	applicationCache.swapCache();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">window</span>.applicationCache.addEventListener(<span class="string">'updateready'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.applicationCache.status == <span class="built_in">window</span>.applicationCache.UPDATEREADY) &#123;</div><div class="line">        <span class="built_in">window</span>.applicationCache.swapCache();</div><div class="line">        <span class="keyword">if</span> (confirm(<span class="string">'A new version of this site is available. Load it?'</span>)) &#123;</div><div class="line">                <span class="built_in">window</span>.location.reload();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>window.applicationCache.update();<br>浏览器还会尝试去请求 /app.manifest 文件，如果请求成功，就会拿新旧两个版本的 manifest 去对比，如果发现文件内容有更改，则会按照新版 manifest 中列出的文件重新请求一遍资源，并更新到 HAC 里。如果这时有一个文件访问出错，就会导致 HAC 停止更新。但是默认 chrome 会限制 5MB 的缓存大小，如果是 chrome 应用，并想要更多缓存空间的话，则需要声明 unlimitedStorage。<br>在浏览器内也可以手动的运行 applicationCache.update() 去触发检查。然后通过 applicationCache.status 去判断是否需要更新 HAC。</p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000005370294" target="_blank" rel="external">HTML Application Cache 离线应用</a></li>
+<li><a href="https://www.cnblogs.com/blackbird/archive/2012/06/12/2546751.html" target="_blank" rel="external">什么是Application Cache  API？</a></li>
+</ul>
+<h2 id="兼容"><a href="#兼容" class="headerlink" title="兼容"></a>兼容</h2><p>支持HTML5应用缓存的浏览器有Firefox3+、Safari4+、Opera10.6、Chrome、iOS3.2+版Safari、Android版WebKit。Firefox4之前版本中调用swapCache()会抛出错误。</p>
+<h1 id="Service-Worker"><a href="#Service-Worker" class="headerlink" title="Service Worker"></a>Service Worker</h1><p>## </p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>桌面端Chrome和Firefox可用，IE不可用。移动端Chrome可用，以后估计会快速支持。</p>
+<h2 id="和PWA技术的关系"><a href="#和PWA技术的关系" class="headerlink" title="和PWA技术的关系"></a>和PWA技术的关系</h2><p>PWA全称为“Progressive Web Apps”，渐进式网页应用。功效显著，收益明显，</p>
+<h3 id="PWA的核心技术包括"><a href="#PWA的核心技术包括" class="headerlink" title="PWA的核心技术包括"></a>PWA的核心技术包括</h3><ol>
+<li>Web App Manifest – 在主屏幕添加app图标，定义手机标题栏颜色之类</li>
+<li>Service Worker – 缓存，离线开发，以及地理位置信息处理等</li>
+<li>App Shell – 先显示APP的主结构，再填充主数据，更快显示更好体验</li>
+<li>Push Notification – 消息推送，之前有写过“简单了解HTML5中的Web Notification桌面通知”</li>
+</ol>
+<p>有此可见，Service Worker仅仅是PWA技术中的一部分，但是又独立于PWA。也就是虽然PWA技术面向移动端，但是并不影响我们在桌面端渐进使用Service Worker，考虑到自己厂子用户70%~80%都是Chrome内核，收益或许会比预期的要高。</p>
+<h2 id="Service-Worker更多的应用场景"><a href="#Service-Worker更多的应用场景" class="headerlink" title="Service Worker更多的应用场景"></a>Service Worker更多的应用场景</h2><p>Service Worker除了可以缓存和离线开发，其可以应用的场景还有很多，举几个例子（参考自<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="external">MDN</a>）</p>
+<ol>
+<li>后台数据同步</li>
+<li>响应来自其它源的资源请求，</li>
+<li>集中接收计算成本高的数据更新，比如地理位置和陀螺仪信息，这样多个页面就可以利用同一组数据</li>
+<li>在客户端进行CoffeeScript，LESS，CJS/AMD等模块编译和依赖管理（用于开发目的）</li>
+<li>后台服务钩子</li>
+<li>自定义模板用于特定URL模式</li>
+<li>性能增强，比如预取用户可能需要的资源，比如相册中的后面数张图片</li>
+</ol>
+<ul>
+<li><a href="http://www.zhangxinxu.com/wordpress/2017/07/service-worker-cachestorage-offline-develop/comment-page-1/#comment-362906" target="_blank" rel="external">借助Service Worker和cacheStorage缓存及离线开发</a></li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="external">Service Worker API</a></p>
+</li>
+<li><p><a href="&quot;&quot;"></a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/25/Induce/JavaScript/Base/Storage/" rel="next" title="JavaScript 本地存储">
+                <i class="fa fa-chevron-left"></i> JavaScript 本地存储
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/25/Induce/JavaScript/Base/HTTP/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">226</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#应用缓存（已废弃）"><span class="nav-number">1.</span> <span class="nav-text">应用缓存（已废弃）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">1.1.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#name-manifest"><span class="nav-number">1.2.</span> <span class="nav-text">name.manifest</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html"><span class="nav-number">1.3.</span> <span class="nav-text">html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#status属性"><span class="nav-number">1.4.</span> <span class="nav-text">status属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">1.5.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#updateready"><span class="nav-number">1.5.1.</span> <span class="nav-text">updateready</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容"><span class="nav-number">1.6.</span> <span class="nav-text">兼容</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Service-Worker"><span class="nav-number">2.</span> <span class="nav-text">Service Worker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容性"><span class="nav-number">2.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和PWA技术的关系"><span class="nav-number">2.2.</span> <span class="nav-text">和PWA技术的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PWA的核心技术包括"><span class="nav-number">2.2.1.</span> <span class="nav-text">PWA的核心技术包括</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-Worker更多的应用场景"><span class="nav-number">2.3.</span> <span class="nav-text">Service Worker更多的应用场景</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

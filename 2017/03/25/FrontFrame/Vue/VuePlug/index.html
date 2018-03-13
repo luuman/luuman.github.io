@@ -1,0 +1,741 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Vue," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="自用笔记：Vue.js通过简洁的API提供高效的数据绑定和灵活的组件系统。最近在Github上看到了不少Vue的项目，很好奇，决定尝试尝试。">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue Plug">
+<meta property="og:url" content="http://luuman.github.io/2017/03/25/FrontFrame/Vue/VuePlug/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="自用笔记：Vue.js通过简洁的API提供高效的数据绑定和灵活的组件系统。最近在Github上看到了不少Vue的项目，很好奇，决定尝试尝试。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue Plug">
+<meta name="twitter:description" content="自用笔记：Vue.js通过简洁的API提供高效的数据绑定和灵活的组件系统。最近在Github上看到了不少Vue的项目，很好奇，决定尝试尝试。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2017/03/25/FrontFrame/Vue/VuePlug/"/>
+
+
+
+
+
+  <title> Vue Plug | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2017/03/25/FrontFrame/Vue/VuePlug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Vue Plug
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T18:29:00+08:00">
+                2017-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FrontFrame/" itemprop="url" rel="index">
+                    <span itemprop="name">FrontFrame</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　<strong>自用笔记：</strong>Vue.js通过简洁的API提供高效的数据绑定和灵活的组件系统。最近在Github上看到了不少Vue的项目，很好奇，决定尝试尝试。<br><a id="more"></a></p>
+<h1 id="v-tap"><a href="#v-tap" class="headerlink" title="v-tap"></a><a href="https://github.com/MeCKodo/vue-tap" target="_blank" rel="external">v-tap</a></h1><h2 id="To-use"><a href="#To-use" class="headerlink" title="To use"></a>To use</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> v-tap <span class="comment">--save-dev</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> vueTap <span class="keyword">from</span> <span class="string">'v-tap'</span></div><div class="line">Vue.use(vueTap)</div></pre></td></tr></table></figure>
+<h2 id="To"><a href="#To" class="headerlink" title="To"></a>To</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">v-tap=&#123; methods : xxx , paramA : a,paramB:b&#125;</div><div class="line">// 链接跳转</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">v-tap</span>&gt;</span>链接跳转<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line">注释：现在有个bug，只要配置了函数对象，就会不可以跳转。</div><div class="line">// 无法滑动页面</div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-tap.prevent</span>=<span class="string">"&#123; methods : scroll &#125;"</span>&gt;</span>无法滑动页面<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line">// 事件处理</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-tap.prevent</span>=<span class="string">"&#123; methods : cant &#125;"</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span>&gt;</span>无法跳转的<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-tap.prevent</span>=<span class="string">"&#123; methods : Link, path: 'http://www.baidu.com'&#125;"</span>&gt;</span>传递参数<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line">Link (params) &#123;</div><div class="line">	// params 可获取绑定时候带的参数</div><div class="line">	console.log(params.event); // 原生事件</div><div class="line">	console.log(params.tapObj); // 手指触摸的一些参数</div><div class="line">	console.log(params.paramA); // 绑定时候传入的paramA</div><div class="line">	console.log(params.paramB); // 绑定时候传入的paramB</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 跳转不处理</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"aaa"</span> <span class="attr">v-tap</span>=<span class="string">"&#123; methods : cant &#125;"</span>&gt;</span>can't<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- &lt;a v-tap="a++"&gt;v-tap="a++" 直接执行表达式在2.0里无法使用&lt;/a&gt; --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:window.history.go(-1);"</span> <span class="attr">v-tap</span>&gt;</span>我可以直接在href里写js代码 如history.go(-1)<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="axios"><a href="#axios" class="headerlink" title="axios"></a><a href="https://github.com/mzabriskie/axios" target="_blank" rel="external">axios</a></h1><h2 id="To-use-1"><a href="#To-use-1" class="headerlink" title="To use"></a>To use</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> axios <span class="comment">--save-dev</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></div></pre></td></tr></table></figure>
+<h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">axios.get(<span class="string">'https://api.github.com/search/rpositories?q=javascript&amp;sort=stars'</span>).<span class="keyword">then</span>(<span class="function"><span class="params">(response)</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(response.data)</div><div class="line">&#125;, <span class="function"><span class="params">(response)</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(response)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="vue-axios"><a href="#vue-axios" class="headerlink" title="vue-axios"></a><a href="https://github.com/imcvampire/vue-axios" target="_blank" rel="external">vue-axios</a></h1><h2 id="To-use-2"><a href="#To-use-2" class="headerlink" title="To use"></a>To use</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> axios vue-axios <span class="comment">--save-dev</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></div><div class="line"><span class="keyword">import</span> VueAxios <span class="keyword">from</span> <span class="string">'vue-axios'</span></div><div class="line"></div><div class="line">Vue.use(VueAxios, axios)</div></pre></td></tr></table></figure>
+<h2 id="get-1"><a href="#get-1" class="headerlink" title="get"></a>get</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.axios.get(api).<span class="keyword">then</span>(<span class="function"><span class="params">(response)</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(response.data)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">this</span>.$http.get(api).<span class="keyword">then</span>(<span class="function"><span class="params">(response)</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(response.body)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="vue-resource"><a href="#vue-resource" class="headerlink" title="vue-resource"></a><a href="https://github.com/pagekit/vue-resource" target="_blank" rel="external">vue-resource</a></h1><h2 id="To-use-3"><a href="#To-use-3" class="headerlink" title="To use"></a>To use</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> vue-<span class="keyword">resource</span> <span class="comment">--save-dev</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> VueResource <span class="keyword">from</span> <span class="string">'vue-resource'</span></div><div class="line">Vue.use(VueResource)</div></pre></td></tr></table></figure>
+<h2 id="get-2"><a href="#get-2" class="headerlink" title="get"></a>get</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.get(api).<span class="keyword">then</span>(<span class="function"><span class="params">(response)</span> =&gt;</span> &#123;</div><div class="line"> <span class="built_in">console</span>.log(response.body)</div><div class="line">&#125;, <span class="function"><span class="params">(response)</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(response)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="post"><a href="#post" class="headerlink" title="post"></a>post</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.post(api, &#123;<span class="string">'cityId'</span>: <span class="number">1</span>, <span class="string">'cityId'</span>: <span class="number">1</span>&#125;, &#123;emulateJSON: <span class="literal">true</span>&#125;).<span class="keyword">then</span>(<span class="function"><span class="params">(response)</span> =&gt;</span> &#123;</div><div class="line"> <span class="built_in">console</span>.log(response.body)</div><div class="line">&#125;, <span class="function"><span class="params">(response)</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(response)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id=""><a href="#" class="headerlink" title=""></a><a href="&quot;&quot;"></a></h1><h2 id="To-use-4"><a href="#To-use-4" class="headerlink" title="To use"></a>To use</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> progressive-image <span class="comment">--save</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> progressive <span class="keyword">from</span> <span class="string">'progressive-image/dist/vue'</span></div><div class="line">Vue.use(progressive, &#123;</div><div class="line">  removePreview: <span class="literal">true</span></div><div class="line">&#125;)</div><div class="line">Vue.config.productionTip = <span class="literal">false</span></div></pre></td></tr></table></figure>
+<h2 id="To-1"><a href="#To-1" class="headerlink" title="To"></a>To</h2><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;img class=<span class="string">"preview"</span> <span class="symbol">:data-srcset=<span class="string">"dVote.owner['avatar_url']"</span></span> v-progressive=<span class="string">"dVote.owner['avatar_url'] + '&amp;s=10'"</span> <span class="symbol">:src=<span class="string">"dVote.owner['avatar_url']"</span>&gt;</span></div><div class="line"></div><div class="line">data-src</div><div class="line">src</div></pre></td></tr></table></figure>
+<h1 id="script-loader"><a href="#script-loader" class="headerlink" title="script-loader"></a><a href="https://github.com/webpack-contrib/script-loader" target="_blank" rel="external">script-loader</a></h1><h2 id="To-use-5"><a href="#To-use-5" class="headerlink" title="To use"></a>To use</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install script-loader --save-dev</div><div class="line"></div><div class="line"><span class="function"><span class="title">require</span><span class="params">(<span class="string">'!!script-loader!../static/plugins/flexible'</span>)</span></span></div></pre></td></tr></table></figure>
+<h1 id="proxy代理配置"><a href="#proxy代理配置" class="headerlink" title="proxy代理配置"></a><a href="https://vuejs-templates.github.io/webpack/proxy.html" target="_blank" rel="external">proxy代理配置</a></h1><h2 id="To-use-6"><a href="#To-use-6" class="headerlink" title="To use"></a>To use</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// config/index.js</span></div><div class="line"></div><div class="line"><span class="attribute">proxyTable</span>: &#123;</div><div class="line">  <span class="string">'/users'</span>: &#123;</div><div class="line">    <span class="attribute">target</span>: <span class="string">'https://api.github.com'</span>,</div><div class="line">    <span class="attribute">changeOrigin</span>: true,</div><div class="line">    <span class="attribute">pathRewrite</span>: &#123;</div><div class="line">      <span class="string">'^/users'</span>: <span class="string">'/users'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h1 id="mock-伪数据"><a href="#mock-伪数据" class="headerlink" title="mock 伪数据"></a><a href="&quot;&quot;">mock 伪数据</a></h1><ul>
+<li><a href="https://segmentfault.com/a/1190000008279215" target="_blank" rel="external">搭建vue+webpack+mock脚手架（一）</a></li>
+<li><a href="http://www.jianshu.com/p/ccd53488a61b" target="_blank" rel="external">vue-cli 本地开发mock数据使用方法</a></li>
+<li><a href="&quot;&quot;"></a></li>
+<li><a href="&quot;&quot;"></a></li>
+<li><a href="&quot;&quot;"></a><h2 id="To-use-7"><a href="#To-use-7" class="headerlink" title="To use"></a>To use</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> v-tap <span class="comment">--save-dev</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> vueTap <span class="keyword">from</span> <span class="string">'v-tap'</span></div><div class="line">Vue.use(vueTap)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="To-2"><a href="#To-2" class="headerlink" title="To"></a>To</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h1 id="vue-images"><a href="#vue-images" class="headerlink" title="vue images"></a><a href="http://littlewin.info/vue-images/example/" target="_blank" rel="external">vue images</a></h1><h2 id="To-use-8"><a href="#To-use-8" class="headerlink" title="To use"></a>To use</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// <span class="keyword">Install</span> <span class="keyword">using</span> npm</div><div class="line">npm <span class="keyword">install</span> vue-images <span class="comment">--save</span></div><div class="line"></div><div class="line">// <span class="keyword">In</span> ES6 <span class="keyword">module</span></div><div class="line"><span class="keyword">import</span> vueImages <span class="keyword">from</span> <span class="string">'vue-images'</span></div></pre></td></tr></table></figure>
+<h2 id="To-3"><a href="#To-3" class="headerlink" title="To"></a>To</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">vue-images</span> <span class="attr">:imgs</span>=<span class="string">"images"</span></span></div><div class="line">  <span class="attr">:modalclose</span>=<span class="string">"modalclose"</span></div><div class="line">  <span class="attr">:keyinput</span>=<span class="string">"keyinput"</span></div><div class="line">  <span class="attr">:mousescroll</span>=<span class="string">"mousescroll"</span></div><div class="line">  <span class="attr">:showclosebutton</span>=<span class="string">"showclosebutton"</span></div><div class="line">  <span class="attr">:showcaption</span>=<span class="string">"showcaption"</span></div><div class="line">  <span class="attr">:imagecountseparator</span>=<span class="string">"imagecountseparator"</span></div><div class="line">  <span class="attr">:showimagecount</span>=<span class="string">"showimagecount"</span></div><div class="line">  <span class="attr">:showthumbnails</span>=<span class="string">"showthumbnails"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">vue-images</span>&gt;</span></div><div class="line"></div><div class="line">images: [</div><div class="line">  &#123;</div><div class="line">    imageUrl: 'http://image.yktour.com.cn/g1/M00/04/C2/CgAMClkQTPeAG9kDAAFQJRBoAkw230.jpg',</div><div class="line">    caption: '<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Photo by 1<span class="tag">&lt;/<span class="name">a</span>&gt;</span>'</div><div class="line">  &#125;</div><div class="line">],</div></pre></td></tr></table></figure>
+<h1 id="vue-core-image-upload"><a href="#vue-core-image-upload" class="headerlink" title="vue-core-image-upload"></a><a href="http://vanthink-ued.github.io/vue-core-image-upload/index.html#/cn/home" target="_blank" rel="external">vue-core-image-upload</a></h1><h2 id="To-use-9"><a href="#To-use-9" class="headerlink" title="To use"></a>To use</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> v-tap <span class="comment">--save-dev</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> vueTap <span class="keyword">from</span> <span class="string">'v-tap'</span></div><div class="line">Vue.use(vueTap)</div></pre></td></tr></table></figure>
+<h2 id="To-4"><a href="#To-4" class="headerlink" title="To"></a>To</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h1 id="-1"><a href="#-1" class="headerlink" title=""></a><a href="&quot;&quot;"></a></h1><h2 id="To-use-10"><a href="#To-use-10" class="headerlink" title="To use"></a>To use</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> v-tap <span class="comment">--save-dev</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> vueTap <span class="keyword">from</span> <span class="string">'v-tap'</span></div><div class="line">Vue.use(vueTap)</div></pre></td></tr></table></figure>
+<h2 id="To-5"><a href="#To-5" class="headerlink" title="To"></a>To</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/25/FrontFrame/Vue/VueListView/" rel="next" title="Vue  资源整理">
+                <i class="fa fa-chevron-left"></i> Vue  资源整理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/25/FrontFrame/Vue/VueAll/" rel="prev" title="Vue  资源整理">
+                Vue  资源整理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">226</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#v-tap"><span class="nav-number">1.</span> <span class="nav-text">v-tap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use"><span class="nav-number">1.1.</span> <span class="nav-text">To use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#To"><span class="nav-number">1.2.</span> <span class="nav-text">To</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#axios"><span class="nav-number">2.</span> <span class="nav-text">axios</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use-1"><span class="nav-number">2.1.</span> <span class="nav-text">To use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get"><span class="nav-number">2.2.</span> <span class="nav-text">get</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-axios"><span class="nav-number">3.</span> <span class="nav-text">vue-axios</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use-2"><span class="nav-number">3.1.</span> <span class="nav-text">To use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-1"><span class="nav-number">3.2.</span> <span class="nav-text">get</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-resource"><span class="nav-number">4.</span> <span class="nav-text">vue-resource</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use-3"><span class="nav-number">4.1.</span> <span class="nav-text">To use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-2"><span class="nav-number">4.2.</span> <span class="nav-text">get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#post"><span class="nav-number">4.3.</span> <span class="nav-text">post</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">5.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use-4"><span class="nav-number">5.1.</span> <span class="nav-text">To use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#To-1"><span class="nav-number">5.2.</span> <span class="nav-text">To</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#script-loader"><span class="nav-number">6.</span> <span class="nav-text">script-loader</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use-5"><span class="nav-number">6.1.</span> <span class="nav-text">To use</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#proxy代理配置"><span class="nav-number">7.</span> <span class="nav-text">proxy代理配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use-6"><span class="nav-number">7.1.</span> <span class="nav-text">To use</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mock-伪数据"><span class="nav-number">8.</span> <span class="nav-text">mock 伪数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use-7"><span class="nav-number">8.1.</span> <span class="nav-text">To use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#To-2"><span class="nav-number">8.2.</span> <span class="nav-text">To</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-images"><span class="nav-number">9.</span> <span class="nav-text">vue images</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use-8"><span class="nav-number">9.1.</span> <span class="nav-text">To use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#To-3"><span class="nav-number">9.2.</span> <span class="nav-text">To</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-core-image-upload"><span class="nav-number">10.</span> <span class="nav-text">vue-core-image-upload</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use-9"><span class="nav-number">10.1.</span> <span class="nav-text">To use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#To-4"><span class="nav-number">10.2.</span> <span class="nav-text">To</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#-1"><span class="nav-number">11.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#To-use-10"><span class="nav-number">11.1.</span> <span class="nav-text">To use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#To-5"><span class="nav-number">11.2.</span> <span class="nav-text">To</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

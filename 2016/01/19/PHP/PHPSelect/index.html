@@ -1,0 +1,741 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="select," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="：">
+<meta name="keywords" content="select">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP">
+<meta property="og:url" content="http://luuman.github.io/2016/01/19/PHP/PHPSelect/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP">
+<meta name="twitter:description" content="：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2016/01/19/PHP/PHPSelect/"/>
+
+
+
+
+
+  <title> PHP | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2016/01/19/PHP/PHPSelect/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-19T14:11:20+08:00">
+                2016-01-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　<strong> ：</strong><br><a id="more"></a></p>
+<h2 id="一、简单查询语句"><a href="#一、简单查询语句" class="headerlink" title="一、简单查询语句"></a>一、简单查询语句</h2><h3 id="1-查看表结构"><a href="#1-查看表结构" class="headerlink" title="1. 查看表结构"></a>1. 查看表结构</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">SQL&gt;</span><span class="bash"> DESC emp;（emp 表名）</span></div></pre></td></tr></table></figure>
+<h3 id="2-查询所有列"><a href="#2-查询所有列" class="headerlink" title="2. 查询所有列"></a>2. 查询所有列</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp;</div></pre></td></tr></table></figure>
+<h3 id="3-查询指定列"><a href="#3-查询指定列" class="headerlink" title="3. 查询指定列"></a>3. 查询指定列</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> empmo, ename, mgr <span class="keyword">FROM</span> emp;</div><div class="line"></div><div class="line">SQL&gt; <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> mgr <span class="keyword">FROM</span> emp; 只显示结果不同的项</div></pre></td></tr></table></figure>
+<h3 id="4-查询指定行"><a href="#4-查询指定行" class="headerlink" title="4. 查询指定行"></a>4. 查询指定行</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> job=<span class="string">'CLERK'</span>;</div></pre></td></tr></table></figure>
+<h3 id="5-使用算术表达式"><a href="#5-使用算术表达式" class="headerlink" title="5. 使用算术表达式"></a>5. 使用算术表达式</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SQL&gt; SELECT ename, sal*<span class="number">13</span>+nvl(comm,<span class="number">0</span>)  FROM emp; </div><div class="line">nvl(comm,<span class="number">1</span>)的意思是，如果comm中有值，则nvl(comm,<span class="number">1</span>)=comm; comm中无值，则nvl(comm,<span class="number">1</span>)=<span class="number">0</span>。</div><div class="line"></div><div class="line">SQL&gt; SELECT ename, sal*<span class="number">13</span>+nvl(comm,<span class="number">0</span>) year_sal FROM emp; （year_sal为别名，可按别名排序）</div><div class="line"></div><div class="line">SQL&gt; SELECT * FROM emp WHERE hiredate&gt;'<span class="number">01</span><span class="number">-1</span>月<span class="number">-82</span>';</div></pre></td></tr></table></figure>
+<h3 id="6-使用like操作符（-，-）"><a href="#6-使用like操作符（-，-）" class="headerlink" title="6. 使用like操作符（%，_）"></a>6. 使用like操作符（%，_）</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">%表示一个或多个字符，_表示一个字符，[charlist]表示字符列中的任何单一字符，[^charlist]或者[!charlist]不在字符列中的任何单一字符。</div><div class="line">SQL&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> ename <span class="keyword">like</span> <span class="string">'S__T%'</span>;</div></pre></td></tr></table></figure>
+<h3 id="7-在where条件中使用In"><a href="#7-在where条件中使用In" class="headerlink" title="7. 在where条件中使用In"></a>7. 在where条件中使用In</h3><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> job <span class="keyword">IN</span> (<span class="string">'CLERK'</span>,<span class="string">'ANALYST'</span>);</div></pre></td></tr></table></figure>
+<h3 id="8-查询字段内容为空-非空的语句"><a href="#8-查询字段内容为空-非空的语句" class="headerlink" title="8. 查询字段内容为空/非空的语句"></a>8. 查询字段内容为空/非空的语句</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> mgr <span class="keyword">IS</span>/<span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</div></pre></td></tr></table></figure>
+<h3 id="9-使用逻辑操作符号"><a href="#9-使用逻辑操作符号" class="headerlink" title="9. 使用逻辑操作符号"></a>9. 使用逻辑操作符号</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> (sal&gt;<span class="number">500</span> <span class="keyword">or</span> job=<span class="string">'MANAGE'</span>) <span class="keyword">and</span> ename <span class="keyword">like</span> <span class="string">'J%'</span>;</div></pre></td></tr></table></figure>
+<h3 id="10-将查询结果按字段的值进行排序"><a href="#10-将查询结果按字段的值进行排序" class="headerlink" title="10. 将查询结果按字段的值进行排序"></a>10. 将查询结果按字段的值进行排序</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">ORDER</span> <span class="keyword">BY</span> deptno, sal <span class="keyword">DESC</span>; (按部门升序，并按薪酬降序)</div></pre></td></tr></table></figure>
+<p>二、复杂查询</p>
+<h3 id="1-数据分组-max-min-avg-sum-count"><a href="#1-数据分组-max-min-avg-sum-count" class="headerlink" title="1. 数据分组(max,min,avg,sum,count)"></a>1. 数据分组(max,min,avg,sum,count)</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> <span class="built_in">MAX</span>(sal),<span class="built_in">MIN</span>(age),<span class="built_in">AVG</span>(sal),<span class="built_in">SUM</span>(sal) <span class="keyword">from</span> emp;</div><div class="line"></div><div class="line">SQL&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">where</span> sal=(<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(sal) <span class="keyword">from</span> emp));</div><div class="line"></div><div class="line">SQL&gt; SELEC COUNT(*) FROM emp;</div></pre></td></tr></table></figure>
+<h3 id="2-group-by（用于对查询结果的分组统计）-和-having子句（用于限制分组显示结果）"><a href="#2-group-by（用于对查询结果的分组统计）-和-having子句（用于限制分组显示结果）" class="headerlink" title="2. group by（用于对查询结果的分组统计） 和 having子句（用于限制分组显示结果）"></a>2. group by（用于对查询结果的分组统计） 和 having子句（用于限制分组显示结果）</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SQL&gt; SELECT deptno,MAX(sal),AVG(sal) <span class="keyword">FROM</span> emp<span class="built_in"> GROUP </span>BY deptno;</div><div class="line"></div><div class="line">SQL&gt; SELECT deptno, job, AVG(sal),MIN(sal) <span class="keyword">FROM</span> emp<span class="built_in"> group </span>by deptno,job having AVG(sal)&lt;2000;</div></pre></td></tr></table></figure>
+<p>对于数据分组的总结：</p>
+<h4 id="a-分组函数只能出现在选择列表、having、order-by子句中（不能出现在where中）"><a href="#a-分组函数只能出现在选择列表、having、order-by子句中（不能出现在where中）" class="headerlink" title="a. 分组函数只能出现在选择列表、having、order by子句中（不能出现在where中）"></a>a. 分组函数只能出现在选择列表、having、order by子句中（不能出现在where中）</h4><h4 id="b-如果select语句中同时包含有group-by-having-order-by，那么它们的顺序是group-by-having-order-by。"><a href="#b-如果select语句中同时包含有group-by-having-order-by，那么它们的顺序是group-by-having-order-by。" class="headerlink" title="b. 如果select语句中同时包含有group by, having, order by，那么它们的顺序是group by, having, order by。"></a>b. 如果select语句中同时包含有group by, having, order by，那么它们的顺序是group by, having, order by。</h4><h4 id="c-在选择列中如果有列、表达式和分组函数，那么这些列和表达式必须出现在group-by子句中，否则就是会出错。使用group-by不是使用having的前提条件。"><a href="#c-在选择列中如果有列、表达式和分组函数，那么这些列和表达式必须出现在group-by子句中，否则就是会出错。使用group-by不是使用having的前提条件。" class="headerlink" title="c. 在选择列中如果有列、表达式和分组函数，那么这些列和表达式必须出现在group by子句中，否则就是会出错。使用group by不是使用having的前提条件。"></a>c. 在选择列中如果有列、表达式和分组函数，那么这些列和表达式必须出现在group by子句中，否则就是会出错。使用group by不是使用having的前提条件。</h4><h3 id="3-多表查询"><a href="#3-多表查询" class="headerlink" title="3. 多表查询"></a>3. 多表查询</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> <span class="built_in">e</span>.name,<span class="built_in">e</span>.sal,d.dname <span class="keyword">FROM</span> emp <span class="built_in">e</span>, dept d <span class="keyword">WHERE</span> <span class="built_in">e</span>.deptno=d.deptno <span class="keyword">order</span> <span class="keyword">by</span> d.deptno;</div><div class="line"></div><div class="line">SQL&gt; <span class="keyword">SELECT</span> <span class="built_in">e</span>.ename,<span class="built_in">e</span>.sal,s.grade <span class="keyword">FROM</span> emp <span class="built_in">e</span>,salgrade s WHER <span class="built_in">e</span>.sal <span class="keyword">BETWEEN</span> s.losal <span class="keyword">AND</span> s.hisal;</div></pre></td></tr></table></figure>
+<h3 id="4-自连接（指同一张表的连接查询）"><a href="#4-自连接（指同一张表的连接查询）" class="headerlink" title="4. 自连接（指同一张表的连接查询）"></a>4. 自连接（指同一张表的连接查询）</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> er.ename, ee.ename mgr_name <span class="keyword">from</span> emp er, emp ee <span class="keyword">where</span> er.mgr=ee.empno;</div></pre></td></tr></table></figure>
+<h3 id="5-子查询（嵌入到其他sql语句中的select语句，也叫嵌套查询）"><a href="#5-子查询（嵌入到其他sql语句中的select语句，也叫嵌套查询）" class="headerlink" title="5. 子查询（嵌入到其他sql语句中的select语句，也叫嵌套查询）"></a>5. 子查询（嵌入到其他sql语句中的select语句，也叫嵌套查询）</h3><h4 id="5-1-单行子查询"><a href="#5-1-单行子查询" class="headerlink" title="5.1 单行子查询"></a>5.1 单行子查询</h4><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=(<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> emp <span class="keyword">where</span> ename=<span class="string">'SMITH'</span>);</div><div class="line">查询表中与smith同部门的人员名字。因为返回结果只有一行，所以用“=”连接子查询语句</div></pre></td></tr></table></figure>
+<h4 id="5-2-多行子查询"><a href="#5-2-多行子查询" class="headerlink" title="5.2 多行子查询"></a>5.2 多行子查询</h4><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> ename,job,sal,deptno <span class="keyword">from</span> emp <span class="keyword">WHERE</span> job <span class="keyword">IN</span> (<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> job <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">10</span>);</div><div class="line">查询表中与部门号为10的工作相同的员工的姓名、工作、薪水、部门号。因为返回结果有多行，所以用“<span class="keyword">IN</span>”连接子查询语句。</div><div class="line"></div><div class="line"><span class="keyword">in</span>与<span class="keyword">exists</span>的区别： <span class="keyword">exists</span>() 后面的子查询被称做相关子查询，它是不返回列表的值的。</div><div class="line">只是返回一个ture或<span class="literal">false</span>的结果，其运行方式是先运行主查询一次，再去子查询里查询与其对 应的结果。如果是ture则输出，反之则不输出。再根据主查询中的每一行去子查询里去查询。<span class="keyword">in</span>()后面的子查询，是返回结果集的，换句话说执行次序和 <span class="keyword">exists</span>()不一样。子查询先产生结果集，然后主查询再去结果集里去找符合要求的字段列表去。符合要求的输出，反之则不输出。</div></pre></td></tr></table></figure>
+<h4 id="5-3-使用ALL"><a href="#5-3-使用ALL" class="headerlink" title="5.3 使用ALL"></a>5.3 使用ALL</h4><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> ename,sal,deptno <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal&gt; <span class="keyword">ALL</span> (<span class="keyword">SELECT</span> sal <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">30</span>);或</div><div class="line">SQL&gt; <span class="keyword">SELECT</span> ename,sal,deptno <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal&gt; (<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">30</span>);查询工资比部门号为30号的所有员工工资都高的员工的姓名、薪水和部门号。以上两个语句在功能上是一样的，但执行效率上，函数会高 得多。</div></pre></td></tr></table></figure>
+<h4 id="5-4-使用ANY"><a href="#5-4-使用ANY" class="headerlink" title="5.4 使用ANY"></a>5.4 使用ANY</h4><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> ename,sal,deptno <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal&gt; (<span class="keyword">SELECT</span> <span class="built_in">MIN</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">30</span>);</div><div class="line">SQL&gt; <span class="keyword">SELECT</span> ename,sal,deptno <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal&gt; <span class="keyword">ANY</span> (<span class="keyword">SELECT</span> sal <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">30</span>);或</div><div class="line">查询工资比部门号为30号的任意一个员工工资高（只要比某一员工工资高即可）的员工的姓名、薪水和部门号。以上两个语句在功能上是 一样的，但执行效率上，函数会高得多。</div></pre></td></tr></table></figure>
+<h4 id="5-5-多列子查询"><a href="#5-5-多列子查询" class="headerlink" title="5.5 多列子查询"></a>5.5 多列子查询</h4><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> (job, deptno)=(<span class="keyword">SELECT</span> job, deptno <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> ename=<span class="string">'SMITH'</span>);</div></pre></td></tr></table></figure>
+<h4 id="5-6-在from子句中使用子查询"><a href="#5-6-在from子句中使用子查询" class="headerlink" title="5.6 在from子句中使用子查询"></a>5.6 在from子句中使用子查询</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SQL&gt; SELECT emp.deptno,emp.ename,emp.sal,t_avgsal.avgsal <span class="keyword">FROM</span> emp,</div><div class="line">(SELECT emp.deptno,avg(emp.sal) avgsal <span class="keyword">FROM</span> emp<span class="built_in"> GROUP </span>BY emp.deptno) t_avgsal </div><div class="line">where emp.<span class="attribute">deptno</span>=t_avgsal.deptno <span class="keyword">AND</span> emp.sal&gt;t_avgsal.avgsal ORDER BY emp.deptno;</div></pre></td></tr></table></figure>
+<h4 id="5-7-分页查询"><a href="#5-7-分页查询" class="headerlink" title="5.7 分页查询"></a>5.7 分页查询</h4><p>数据库的每行数据都有一个对应的行号，称为rownum.</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> a2.* <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> a1.*, ROWNUM rn <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">ORDER</span> <span class="keyword">BY</span> sal) a1 <span class="keyword">WHERE</span> ROWNUM&lt;=<span class="number">10</span>) a2 <span class="keyword">WHERE</span> rn&gt;=<span class="number">6</span>;</div><div class="line">指定查询列、查询结果排序等，都只需要修改最里层的子查询即可。</div></pre></td></tr></table></figure>
+<h4 id="5-8-用查询结果创建新表"><a href="#5-8-用查询结果创建新表" class="headerlink" title="5.8 用查询结果创建新表"></a>5.8 用查询结果创建新表</h4><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">CREATE</span> TABLE mytable (id,name,sal,job,deptno) <span class="keyword">AS</span> <span class="keyword">SELECT</span> empno,ename,sal,job,deptno <span class="keyword">FROM</span> emp;</div></pre></td></tr></table></figure>
+<h4 id="5-9-合并查询（union-并集-intersect-交集-union-all-并集-交集-minus差集"><a href="#5-9-合并查询（union-并集-intersect-交集-union-all-并集-交集-minus差集" class="headerlink" title="5.9 合并查询（union 并集, intersect 交集, union all 并集+交集, minus差集)"></a>5.9 合并查询（union 并集, intersect 交集, union all 并集+交集, minus差集)</h4><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">SELECT</span> ename, sal, job <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal&gt;<span class="number">2500</span> <span class="keyword">UNION</span>(<span class="keyword">INTERSECT</span>/<span class="keyword">UNION</span> <span class="keyword">ALL</span>/<span class="keyword">MINUS</span>) <span class="keyword">SELECT</span> ename, sal, job <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> job=<span class="string">'MANAGER'</span>;</div><div class="line">合并查询的执行效率远高于and,or等逻辑查询。</div></pre></td></tr></table></figure>
+<h4 id="5-10-使用子查询插入数据"><a href="#5-10-使用子查询插入数据" class="headerlink" title="5.10 使用子查询插入数据"></a>5.10 使用子查询插入数据</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SQL&gt; CREATE TABLE myEmp(empID number(<span class="number">4</span>), name varchar2(<span class="number">20</span>), sal number(<span class="number">6</span>), job varchar2(<span class="number">10</span>), dept number(<span class="number">2</span>));</div><div class="line">先建一张空表；</div></pre></td></tr></table></figure>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SQL&gt; <span class="keyword">INSERT</span> <span class="keyword">INTO</span> myEmp(empID, name, sal, job, dept) <span class="keyword">SELECT</span> empno, ename, sal, job, deptno <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">10</span>;</div><div class="line">再将emp表中部门号为10的数据插入到新表myEmp中，实现数据的批量查询。</div></pre></td></tr></table></figure>
+<h4 id="5-11-使用了查询更新表中的数据"><a href="#5-11-使用了查询更新表中的数据" class="headerlink" title="5.11 使用了查询更新表中的数据"></a>5.11 使用了查询更新表中的数据</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; UPDATE emp <span class="builtin-name">SET</span>(job, sal, comm)=(SELECT job, sal, comm <span class="keyword">FROM</span> emp where <span class="attribute">ename</span>=<span class="string">'SMITH'</span>) WHERE <span class="attribute">ename</span>=<span class="string">'SCOTT'</span>;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/select/" rel="tag"># select</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/19/Induce/JavaScript/JSTip/" rel="next" title="原生JS TitleTip">
+                <i class="fa fa-chevron-left"></i> 原生JS TitleTip
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/19/Skill/App/JSAppAPI/" rel="prev" title="公司app js接口V1">
+                公司app js接口V1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">226</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、简单查询语句"><span class="nav-number">1.</span> <span class="nav-text">一、简单查询语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查看表结构"><span class="nav-number">1.1.</span> <span class="nav-text">1. 查看表结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-查询所有列"><span class="nav-number">1.2.</span> <span class="nav-text">2. 查询所有列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-查询指定列"><span class="nav-number">1.3.</span> <span class="nav-text">3. 查询指定列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-查询指定行"><span class="nav-number">1.4.</span> <span class="nav-text">4. 查询指定行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-使用算术表达式"><span class="nav-number">1.5.</span> <span class="nav-text">5. 使用算术表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-使用like操作符（-，-）"><span class="nav-number">1.6.</span> <span class="nav-text">6. 使用like操作符（%，_）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-在where条件中使用In"><span class="nav-number">1.7.</span> <span class="nav-text">7. 在where条件中使用In</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-查询字段内容为空-非空的语句"><span class="nav-number">1.8.</span> <span class="nav-text">8. 查询字段内容为空/非空的语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-使用逻辑操作符号"><span class="nav-number">1.9.</span> <span class="nav-text">9. 使用逻辑操作符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-将查询结果按字段的值进行排序"><span class="nav-number">1.10.</span> <span class="nav-text">10. 将查询结果按字段的值进行排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数据分组-max-min-avg-sum-count"><span class="nav-number">1.11.</span> <span class="nav-text">1. 数据分组(max,min,avg,sum,count)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-group-by（用于对查询结果的分组统计）-和-having子句（用于限制分组显示结果）"><span class="nav-number">1.12.</span> <span class="nav-text">2. group by（用于对查询结果的分组统计） 和 having子句（用于限制分组显示结果）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-分组函数只能出现在选择列表、having、order-by子句中（不能出现在where中）"><span class="nav-number">1.12.1.</span> <span class="nav-text">a. 分组函数只能出现在选择列表、having、order by子句中（不能出现在where中）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-如果select语句中同时包含有group-by-having-order-by，那么它们的顺序是group-by-having-order-by。"><span class="nav-number">1.12.2.</span> <span class="nav-text">b. 如果select语句中同时包含有group by, having, order by，那么它们的顺序是group by, having, order by。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-在选择列中如果有列、表达式和分组函数，那么这些列和表达式必须出现在group-by子句中，否则就是会出错。使用group-by不是使用having的前提条件。"><span class="nav-number">1.12.3.</span> <span class="nav-text">c. 在选择列中如果有列、表达式和分组函数，那么这些列和表达式必须出现在group by子句中，否则就是会出错。使用group by不是使用having的前提条件。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-多表查询"><span class="nav-number">1.13.</span> <span class="nav-text">3. 多表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-自连接（指同一张表的连接查询）"><span class="nav-number">1.14.</span> <span class="nav-text">4. 自连接（指同一张表的连接查询）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-子查询（嵌入到其他sql语句中的select语句，也叫嵌套查询）"><span class="nav-number">1.15.</span> <span class="nav-text">5. 子查询（嵌入到其他sql语句中的select语句，也叫嵌套查询）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-单行子查询"><span class="nav-number">1.15.1.</span> <span class="nav-text">5.1 单行子查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-多行子查询"><span class="nav-number">1.15.2.</span> <span class="nav-text">5.2 多行子查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-使用ALL"><span class="nav-number">1.15.3.</span> <span class="nav-text">5.3 使用ALL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-使用ANY"><span class="nav-number">1.15.4.</span> <span class="nav-text">5.4 使用ANY</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-5-多列子查询"><span class="nav-number">1.15.5.</span> <span class="nav-text">5.5 多列子查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-6-在from子句中使用子查询"><span class="nav-number">1.15.6.</span> <span class="nav-text">5.6 在from子句中使用子查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-7-分页查询"><span class="nav-number">1.15.7.</span> <span class="nav-text">5.7 分页查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-8-用查询结果创建新表"><span class="nav-number">1.15.8.</span> <span class="nav-text">5.8 用查询结果创建新表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-9-合并查询（union-并集-intersect-交集-union-all-并集-交集-minus差集"><span class="nav-number">1.15.9.</span> <span class="nav-text">5.9 合并查询（union 并集, intersect 交集, union all 并集+交集, minus差集)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-10-使用子查询插入数据"><span class="nav-number">1.15.10.</span> <span class="nav-text">5.10 使用子查询插入数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-11-使用了查询更新表中的数据"><span class="nav-number">1.15.11.</span> <span class="nav-text">5.11 使用了查询更新表中的数据</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

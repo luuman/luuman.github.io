@@ -1,0 +1,731 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="App," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="：">
+<meta name="keywords" content="App">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HomeCDN">
+<meta property="og:url" content="http://luuman.github.io/2016/01/19/Skill/App/JSAppCdn/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HomeCDN">
+<meta name="twitter:description" content="：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2016/01/19/Skill/App/JSAppCdn/"/>
+
+
+
+
+
+  <title> HomeCDN | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2016/01/19/Skill/App/JSAppCdn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HomeCDN
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-19T14:11:20+08:00">
+                2016-01-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/App/" itemprop="url" rel="index">
+                    <span itemprop="name">App</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　<strong> ：</strong><br><a id="more"></a></p>
+<h1 id="Important-Tool"><a href="#Important-Tool" class="headerlink" title="Important Tool"></a>Important Tool</h1><h2 id="工作管理"><a href="#工作管理" class="headerlink" title="工作管理"></a>工作管理</h2><h3 id="禅道"><a href="#禅道" class="headerlink" title="禅道"></a>禅道</h3><p><a href="http://pms.jingqubao.com/" title="景区宝项目管理系统" target="_blank" rel="external">禅道</a></p>
+<p><a href="http://doc.jingqubao.com/" title="API Doc" target="_blank" rel="external">API文档</a></p>
+<p><a href="http://perf.jingqubao.com/" title="API Doc" target="_blank" rel="external">性能</a></p>
+<h3 id="GitLab"><a href="#GitLab" class="headerlink" title="GitLab"></a>GitLab</h3><p><a href="http://192.168.1.208/" title="Git版本" target="_blank" rel="external">GitLab</a></p>
+<h3 id="GitLab更新、测试："><a href="#GitLab更新、测试：" class="headerlink" title="GitLab更新、测试："></a>GitLab更新、测试：</h3><p><a href="http://192.168.1.203/h5/Activity/March/" title="Gitlab浏览" target="_blank" rel="external">测试</a></p>
+<p><a href="http://192.168.1.203/Empty/page/deploy.jsp" title="更新Pull" target="_blank" rel="external">更新</a></p>
+<h3 id="线上活动："><a href="#线上活动：" class="headerlink" title="线上活动："></a>线上活动：</h3><p><a href="http://v2test.jingqubao.com/w3g/Weixin/spring" title="用于上线的本地测试" target="_blank" rel="external">测试服务</a></p>
+<p><a href="http://v2.jingqubao.com/w3g/Weixin/spring" title="线上域名" target="_blank" rel="external">线上活动</a></p>
+<h3 id="公司后台"><a href="#公司后台" class="headerlink" title="公司后台"></a>公司后台</h3><p><a href="http://v2.jingqubao.com/admin/Index/index" target="_blank" rel="external">PHP后台</a></p>
+<h2 id="Images-data"><a href="#Images-data" class="headerlink" title="Images data"></a>Images data</h2><h3 id="七牛图片"><a href="#七牛图片" class="headerlink" title="七牛图片"></a>七牛图片</h3><p><a href="https://portal.qiniu.com/bucket/jing1/resource" title="七牛数据平台" target="_blank" rel="external">七牛图片</a></p>
+<p>使用：jing1，上传图片数据使用“目录”，进行图片的划分。</p>
+<h3 id="图片链接域名"><a href="#图片链接域名" class="headerlink" title="图片链接域名"></a>图片链接域名</h3><p><a href="http://pic.tipuyou.cn/" target="_blank" rel="external">http://pic.tipuyou.cn/</a></p>
+<p><a href="http://pic.jingqubao.com/" target="_blank" rel="external">http://pic.jingqubao.com/</a></p>
+<h2 id="PHP-Localhost"><a href="#PHP-Localhost" class="headerlink" title="PHP Localhost"></a>PHP Localhost</h2><h3 id="启动执行："><a href="#启动执行：" class="headerlink" title="启动执行："></a>启动执行：</h3><p>nginx、php、redis</p>
+<p><a href="http://www.jqb.com/cleancache.php" target="_blank" rel="external">清理浏览器文件节点</a></p>
+<h3 id="域名："><a href="#域名：" class="headerlink" title="域名："></a>域名：</h3><p><a href="http://www.jqb.com/" target="_blank" rel="external">http://www.jqb.com/</a></p>
+<h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">zepto</div><div class="line">&lt;script src=<span class="string">"http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></div><div class="line">zepto_touch</div><div class="line">&lt;script src="http:/<span class="regexp">/v2.jingqubao.com/apps</span><span class="regexp">/w3g/</span>_static/js/<span class="class"><span class="keyword">lib</span>/<span class="title">zepto</span>/<span class="title">zepto_touch_min</span>.<span class="title">js</span>"&gt;&lt;/<span class="title">script</span>&gt;</span></div><div class="line">lazyload</div><div class="line">&lt;script src=<span class="string">"http://v2.jingqubao.com/apps/w3g/_static/js/lib/LazyLoad/lazyload.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></div><div class="line">jquery</div><div class="line">&lt;script src="http:/<span class="regexp">/v2.jingqubao.com/apps</span><span class="regexp">/w3g/</span>_static/js/<span class="class"><span class="keyword">lib</span>/<span class="title">jquery</span>/<span class="title">jquery</span>.<span class="title">min</span>.<span class="title">js</span>"&gt;&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="&quot;&quot;"></a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/App/" rel="tag"># App</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/19/PHP/ThinkPHP/" rel="next" title="ThinkPHP">
+                <i class="fa fa-chevron-left"></i> ThinkPHP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/19/Skill/App/JsNewApp/" rel="prev" title="公司app js接口V2">
+                公司app js接口V2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">226</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Important-Tool"><span class="nav-number">1.</span> <span class="nav-text">Important Tool</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作管理"><span class="nav-number">1.1.</span> <span class="nav-text">工作管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#禅道"><span class="nav-number">1.1.1.</span> <span class="nav-text">禅道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitLab"><span class="nav-number">1.1.2.</span> <span class="nav-text">GitLab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitLab更新、测试："><span class="nav-number">1.1.3.</span> <span class="nav-text">GitLab更新、测试：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线上活动："><span class="nav-number">1.1.4.</span> <span class="nav-text">线上活动：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公司后台"><span class="nav-number">1.1.5.</span> <span class="nav-text">公司后台</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Images-data"><span class="nav-number">1.2.</span> <span class="nav-text">Images data</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#七牛图片"><span class="nav-number">1.2.1.</span> <span class="nav-text">七牛图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片链接域名"><span class="nav-number">1.2.2.</span> <span class="nav-text">图片链接域名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Localhost"><span class="nav-number">1.3.</span> <span class="nav-text">PHP Localhost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动执行："><span class="nav-number">1.3.1.</span> <span class="nav-text">启动执行：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名："><span class="nav-number">1.3.2.</span> <span class="nav-text">域名：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN"><span class="nav-number">1.4.</span> <span class="nav-text">CDN</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

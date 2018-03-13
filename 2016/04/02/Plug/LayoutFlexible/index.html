@@ -1,0 +1,690 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Flexible," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="：">
+<meta name="keywords" content="Flexible">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Flexible实现手淘H5页面的终端适配">
+<meta property="og:url" content="http://luuman.github.io/2016/04/02/Plug/LayoutFlexible/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Flexible实现手淘H5页面的终端适配">
+<meta name="twitter:description" content="：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2016/04/02/Plug/LayoutFlexible/"/>
+
+
+
+
+
+  <title> 使用Flexible实现手淘H5页面的终端适配 | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2016/04/02/Plug/LayoutFlexible/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用Flexible实现手淘H5页面的终端适配
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-02T14:11:20+08:00">
+                2016-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Plug/" itemprop="url" rel="index">
+                    <span itemprop="name">Plug</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　<strong>：</strong></p>
+<a id="more"></a>
+<p><a href="http://huodong.m.taobao.com/act/yibo.html" target="_blank" rel="external">再来一波DEMO页</a><br><figure class="highlight xl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div><div class="line">319</div><div class="line">320</div><div class="line">321</div><div class="line">322</div><div class="line">323</div><div class="line">324</div><div class="line">325</div><div class="line">326</div><div class="line">327</div><div class="line">328</div><div class="line">329</div><div class="line">330</div><div class="line">331</div><div class="line">332</div><div class="line">333</div><div class="line">334</div><div class="line">335</div><div class="line">336</div><div class="line">337</div><div class="line">338</div><div class="line">339</div><div class="line">340</div><div class="line">341</div><div class="line">342</div><div class="line">343</div><div class="line">344</div><div class="line">345</div><div class="line">346</div><div class="line">347</div><div class="line">348</div><div class="line">349</div><div class="line">350</div><div class="line">351</div><div class="line">352</div><div class="line">353</div><div class="line">354</div><div class="line">355</div><div class="line">356</div><div class="line">357</div><div class="line">358</div><div class="line">359</div><div class="line">360</div><div class="line">361</div><div class="line">362</div><div class="line">363</div><div class="line">364</div><div class="line">365</div><div class="line">366</div><div class="line">367</div><div class="line">368</div><div class="line">369</div><div class="line">370</div><div class="line">371</div><div class="line">372</div><div class="line">373</div><div class="line">374</div><div class="line">375</div><div class="line">376</div><div class="line">377</div><div class="line">378</div><div class="line">379</div><div class="line">380</div><div class="line">381</div><div class="line">382</div><div class="line">383</div><div class="line">384</div><div class="line">385</div><div class="line">386</div><div class="line">387</div><div class="line">388</div><div class="line">389</div><div class="line">390</div><div class="line">391</div><div class="line">392</div><div class="line">393</div><div class="line">394</div><div class="line">395</div><div class="line">396</div><div class="line">397</div><div class="line">398</div><div class="line">399</div><div class="line">400</div><div class="line">401</div><div class="line">402</div><div class="line">403</div><div class="line">404</div><div class="line">405</div><div class="line">406</div><div class="line">407</div><div class="line">408</div><div class="line">409</div><div class="line">410</div><div class="line">411</div><div class="line">412</div><div class="line">413</div><div class="line">414</div><div class="line">415</div><div class="line">416</div><div class="line">417</div><div class="line">418</div><div class="line">419</div><div class="line">420</div><div class="line">421</div><div class="line">422</div><div class="line">423</div><div class="line">424</div><div class="line">425</div><div class="line">426</div><div class="line">427</div><div class="line">428</div><div class="line">429</div><div class="line">430</div><div class="line">431</div><div class="line">432</div><div class="line">433</div><div class="line">434</div><div class="line">435</div><div class="line">436</div><div class="line">437</div><div class="line">438</div><div class="line">439</div><div class="line">440</div><div class="line">441</div><div class="line">442</div><div class="line">443</div><div class="line">444</div><div class="line">445</div><div class="line">446</div><div class="line">447</div><div class="line">448</div><div class="line">449</div><div class="line">450</div><div class="line">451</div><div class="line">452</div><div class="line">453</div><div class="line">454</div><div class="line">455</div><div class="line">456</div><div class="line">457</div><div class="line">458</div><div class="line">459</div><div class="line">460</div><div class="line">461</div><div class="line">462</div><div class="line">463</div><div class="line">464</div><div class="line">465</div><div class="line">466</div><div class="line">467</div><div class="line">468</div><div class="line">469</div><div class="line">470</div><div class="line">471</div><div class="line">472</div><div class="line">473</div><div class="line">474</div><div class="line">475</div><div class="line">476</div><div class="line">477</div><div class="line">478</div><div class="line">479</div><div class="line">480</div><div class="line">481</div><div class="line">482</div><div class="line">483</div><div class="line">484</div><div class="line">485</div><div class="line">486</div><div class="line">487</div><div class="line">488</div><div class="line">489</div><div class="line">490</div><div class="line">491</div><div class="line">492</div><div class="line">493</div><div class="line">494</div><div class="line">495</div><div class="line">496</div><div class="line">497</div><div class="line">498</div><div class="line">499</div><div class="line">500</div><div class="line">501</div><div class="line">502</div><div class="line">503</div><div class="line">504</div><div class="line">505</div><div class="line">506</div><div class="line">507</div><div class="line">508</div><div class="line">509</div><div class="line">510</div><div class="line">511</div><div class="line">512</div><div class="line">513</div><div class="line">514</div><div class="line">515</div><div class="line">516</div><div class="line">517</div><div class="line">518</div><div class="line">519</div><div class="line">520</div><div class="line">521</div><div class="line">522</div><div class="line">523</div><div class="line">524</div><div class="line">525</div><div class="line">526</div><div class="line">527</div><div class="line">528</div><div class="line">529</div><div class="line">530</div><div class="line">531</div><div class="line">532</div><div class="line">533</div><div class="line">534</div><div class="line">535</div><div class="line">536</div><div class="line">537</div><div class="line">538</div><div class="line">539</div><div class="line">540</div><div class="line">541</div><div class="line">542</div><div class="line">543</div><div class="line">544</div><div class="line">545</div><div class="line">546</div><div class="line">547</div><div class="line">548</div><div class="line">549</div><div class="line">550</div><div class="line">551</div><div class="line">552</div><div class="line">553</div><div class="line">554</div><div class="line">555</div><div class="line">556</div><div class="line">557</div><div class="line">558</div><div class="line">559</div><div class="line">560</div><div class="line">561</div><div class="line">562</div><div class="line">563</div><div class="line">564</div><div class="line">565</div><div class="line">566</div><div class="line">567</div><div class="line">568</div><div class="line">569</div><div class="line">570</div><div class="line">571</div><div class="line">572</div><div class="line">573</div><div class="line">574</div><div class="line">575</div><div class="line">576</div><div class="line">577</div><div class="line">578</div><div class="line">579</div><div class="line">580</div><div class="line">581</div><div class="line">582</div><div class="line">583</div><div class="line">584</div><div class="line">585</div><div class="line">586</div><div class="line">587</div><div class="line">588</div><div class="line">589</div><div class="line">590</div><div class="line">591</div><div class="line">592</div><div class="line">593</div><div class="line">594</div><div class="line">595</div><div class="line">596</div><div class="line">597</div><div class="line">598</div><div class="line">599</div><div class="line">600</div><div class="line">601</div><div class="line">602</div><div class="line">603</div><div class="line">604</div><div class="line">605</div><div class="line">606</div><div class="line">607</div><div class="line">608</div><div class="line">609</div><div class="line">610</div><div class="line">611</div><div class="line">612</div><div class="line">613</div><div class="line">614</div><div class="line">615</div><div class="line">616</div><div class="line">617</div><div class="line">618</div><div class="line">619</div><div class="line">620</div><div class="line">621</div><div class="line">622</div><div class="line">623</div><div class="line">624</div><div class="line">625</div><div class="line">626</div><div class="line">627</div><div class="line">628</div><div class="line">629</div><div class="line">630</div><div class="line">631</div><div class="line">632</div><div class="line">633</div><div class="line">634</div><div class="line">635</div><div class="line">636</div><div class="line">637</div><div class="line">638</div><div class="line">639</div><div class="line">640</div><div class="line">641</div><div class="line">642</div><div class="line">643</div><div class="line">644</div><div class="line">645</div><div class="line">646</div><div class="line">647</div><div class="line">648</div><div class="line">649</div><div class="line">650</div><div class="line">651</div><div class="line">652</div><div class="line">653</div><div class="line">654</div><div class="line">655</div><div class="line">656</div><div class="line">657</div><div class="line">658</div><div class="line">659</div><div class="line">660</div><div class="line">661</div><div class="line">662</div><div class="line">663</div><div class="line">664</div><div class="line">665</div><div class="line">666</div><div class="line">667</div><div class="line">668</div><div class="line">669</div><div class="line">670</div><div class="line">671</div><div class="line">672</div><div class="line">673</div><div class="line">674</div><div class="line">675</div><div class="line">676</div><div class="line">677</div><div class="line">678</div><div class="line">679</div><div class="line">680</div><div class="line">681</div><div class="line">682</div><div class="line">683</div><div class="line">684</div><div class="line">685</div><div class="line">686</div><div class="line">687</div><div class="line">688</div><div class="line">689</div><div class="line">690</div><div class="line">691</div><div class="line">692</div><div class="line">693</div><div class="line">694</div><div class="line">695</div><div class="line">696</div><div class="line">697</div><div class="line">698</div><div class="line">699</div><div class="line">700</div><div class="line">701</div><div class="line">702</div><div class="line">703</div><div class="line">704</div><div class="line">705</div><div class="line">706</div><div class="line">707</div><div class="line">708</div><div class="line">709</div><div class="line">710</div><div class="line">711</div><div class="line">712</div><div class="line">713</div><div class="line">714</div><div class="line">715</div><div class="line">716</div><div class="line">717</div><div class="line">718</div><div class="line">719</div><div class="line">720</div><div class="line">721</div><div class="line">722</div><div class="line">723</div><div class="line">724</div><div class="line">725</div><div class="line">726</div><div class="line">727</div><div class="line">728</div><div class="line">729</div><div class="line">730</div><div class="line">731</div><div class="line">732</div><div class="line">733</div><div class="line">734</div><div class="line">735</div><div class="line">736</div><div class="line">737</div><div class="line">738</div><div class="line">739</div><div class="line">740</div><div class="line">741</div><div class="line">742</div><div class="line">743</div><div class="line">744</div><div class="line">745</div><div class="line">746</div><div class="line">747</div><div class="line">748</div><div class="line">749</div><div class="line">750</div><div class="line">751</div><div class="line">752</div><div class="line">753</div><div class="line">754</div><div class="line">755</div><div class="line">756</div><div class="line">757</div><div class="line">758</div><div class="line">759</div><div class="line">760</div><div class="line">761</div><div class="line">762</div><div class="line">763</div><div class="line">764</div><div class="line">765</div><div class="line">766</div><div class="line">767</div><div class="line">768</div><div class="line">769</div><div class="line">770</div><div class="line">771</div><div class="line">772</div><div class="line">773</div><div class="line">774</div><div class="line">775</div><div class="line">776</div><div class="line">777</div><div class="line">778</div><div class="line">779</div><div class="line">780</div><div class="line">781</div><div class="line">782</div><div class="line">783</div><div class="line">784</div><div class="line">785</div><div class="line">786</div><div class="line">787</div><div class="line">788</div><div class="line">789</div><div class="line">790</div><div class="line">791</div><div class="line">792</div><div class="line">793</div><div class="line">794</div><div class="line">795</div><div class="line">796</div><div class="line">797</div><div class="line">798</div><div class="line">799</div><div class="line">800</div><div class="line">801</div><div class="line">802</div><div class="line">803</div><div class="line">804</div><div class="line">805</div><div class="line">806</div><div class="line">807</div><div class="line">808</div><div class="line">809</div><div class="line">810</div><div class="line">811</div><div class="line">812</div><div class="line">813</div><div class="line">814</div><div class="line">815</div><div class="line">816</div><div class="line">817</div><div class="line">818</div><div class="line">819</div><div class="line">820</div><div class="line">821</div><div class="line">822</div><div class="line">823</div><div class="line">824</div><div class="line">825</div><div class="line">826</div><div class="line">827</div><div class="line">828</div><div class="line">829</div><div class="line">830</div><div class="line">831</div><div class="line">832</div><div class="line">833</div><div class="line">834</div><div class="line">835</div><div class="line">836</div><div class="line">837</div><div class="line">838</div><div class="line">839</div><div class="line">840</div><div class="line">841</div><div class="line">842</div><div class="line">843</div><div class="line">844</div><div class="line">845</div><div class="line">846</div><div class="line">847</div><div class="line">848</div><div class="line">849</div><div class="line">850</div><div class="line">851</div><div class="line">852</div><div class="line">853</div><div class="line">854</div><div class="line">855</div><div class="line">856</div><div class="line">857</div><div class="line">858</div><div class="line">859</div><div class="line">860</div><div class="line">861</div><div class="line">862</div><div class="line">863</div><div class="line">864</div><div class="line">865</div><div class="line">866</div><div class="line">867</div><div class="line">868</div><div class="line">869</div><div class="line">870</div><div class="line">871</div><div class="line">872</div><div class="line">873</div><div class="line">874</div><div class="line">875</div><div class="line">876</div><div class="line">877</div><div class="line">878</div><div class="line">879</div><div class="line">880</div><div class="line">881</div><div class="line">882</div><div class="line">883</div><div class="line">884</div><div class="line">885</div><div class="line">886</div><div class="line">887</div><div class="line">888</div><div class="line">889</div><div class="line">890</div><div class="line">891</div><div class="line">892</div><div class="line">893</div><div class="line">894</div><div class="line">895</div><div class="line">896</div><div class="line">897</div><div class="line">898</div><div class="line">899</div><div class="line">900</div><div class="line">901</div><div class="line">902</div><div class="line">903</div><div class="line">904</div><div class="line">905</div><div class="line">906</div><div class="line">907</div><div class="line">908</div><div class="line">909</div><div class="line">910</div><div class="line">911</div><div class="line">912</div><div class="line">913</div><div class="line">914</div><div class="line">915</div><div class="line">916</div><div class="line">917</div><div class="line">918</div><div class="line">919</div><div class="line">920</div><div class="line">921</div><div class="line">922</div><div class="line">923</div><div class="line">924</div><div class="line">925</div><div class="line">926</div><div class="line">927</div><div class="line">928</div><div class="line">929</div><div class="line">930</div><div class="line">931</div><div class="line">932</div><div class="line">933</div><div class="line">934</div><div class="line">935</div><div class="line">936</div><div class="line">937</div><div class="line">938</div><div class="line">939</div><div class="line">940</div><div class="line">941</div><div class="line">942</div><div class="line">943</div><div class="line">944</div><div class="line">945</div><div class="line">946</div><div class="line">947</div><div class="line">948</div><div class="line">949</div><div class="line">950</div><div class="line">951</div><div class="line">952</div><div class="line">953</div><div class="line">954</div><div class="line">955</div><div class="line">956</div><div class="line">957</div><div class="line">958</div><div class="line">959</div><div class="line">960</div><div class="line">961</div><div class="line">962</div><div class="line">963</div><div class="line">964</div><div class="line">965</div><div class="line">966</div><div class="line">967</div><div class="line">968</div><div class="line">969</div><div class="line">970</div><div class="line">971</div><div class="line">972</div><div class="line">973</div><div class="line">974</div><div class="line">975</div><div class="line">976</div><div class="line">977</div><div class="line">978</div><div class="line">979</div><div class="line">980</div><div class="line">981</div><div class="line">982</div><div class="line">983</div><div class="line">984</div><div class="line">985</div><div class="line">986</div><div class="line">987</div><div class="line">988</div><div class="line">989</div><div class="line">990</div><div class="line">991</div><div class="line">992</div><div class="line">993</div><div class="line">994</div><div class="line">995</div><div class="line">996</div><div class="line">997</div><div class="line">998</div><div class="line">999</div><div class="line">1000</div><div class="line">1001</div><div class="line">1002</div><div class="line">1003</div><div class="line">1004</div><div class="line">1005</div><div class="line">1006</div><div class="line">1007</div><div class="line">1008</div><div class="line">1009</div><div class="line">1010</div><div class="line">1011</div><div class="line">1012</div><div class="line">1013</div><div class="line">1014</div><div class="line">1015</div><div class="line">1016</div><div class="line">1017</div><div class="line">1018</div><div class="line">1019</div><div class="line">1020</div><div class="line">1021</div><div class="line">1022</div><div class="line">1023</div><div class="line">1024</div><div class="line">1025</div><div class="line">1026</div><div class="line">1027</div><div class="line">1028</div><div class="line">1029</div><div class="line">1030</div><div class="line">1031</div><div class="line">1032</div><div class="line">1033</div><div class="line">1034</div><div class="line">1035</div><div class="line">1036</div><div class="line">1037</div><div class="line">1038</div><div class="line">1039</div><div class="line">1040</div><div class="line">1041</div><div class="line">1042</div><div class="line">1043</div><div class="line">1044</div><div class="line">1045</div><div class="line">1046</div><div class="line">1047</div><div class="line">1048</div><div class="line">1049</div><div class="line">1050</div><div class="line">1051</div><div class="line">1052</div><div class="line">1053</div><div class="line">1054</div><div class="line">1055</div><div class="line">1056</div><div class="line">1057</div><div class="line">1058</div><div class="line">1059</div><div class="line">1060</div><div class="line">1061</div><div class="line">1062</div><div class="line">1063</div><div class="line">1064</div><div class="line">1065</div><div class="line">1066</div><div class="line">1067</div><div class="line">1068</div><div class="line">1069</div><div class="line">1070</div><div class="line">1071</div><div class="line">1072</div><div class="line">1073</div><div class="line">1074</div><div class="line">1075</div><div class="line">1076</div><div class="line">1077</div><div class="line">1078</div><div class="line">1079</div><div class="line">1080</div><div class="line">1081</div><div class="line">1082</div><div class="line">1083</div><div class="line">1084</div><div class="line">1085</div><div class="line">1086</div><div class="line">1087</div><div class="line">1088</div><div class="line">1089</div><div class="line">1090</div><div class="line">1091</div><div class="line">1092</div><div class="line">1093</div><div class="line">1094</div><div class="line">1095</div><div class="line">1096</div><div class="line">1097</div><div class="line">1098</div><div class="line">1099</div><div class="line">1100</div><div class="line">1101</div><div class="line">1102</div><div class="line">1103</div><div class="line">1104</div><div class="line">1105</div><div class="line">1106</div><div class="line">1107</div><div class="line">1108</div><div class="line">1109</div><div class="line">1110</div><div class="line">1111</div><div class="line">1112</div><div class="line">1113</div><div class="line">1114</div><div class="line">1115</div><div class="line">1116</div><div class="line">1117</div><div class="line">1118</div><div class="line">1119</div><div class="line">1120</div><div class="line">1121</div><div class="line">1122</div><div class="line">1123</div><div class="line">1124</div><div class="line">1125</div><div class="line">1126</div><div class="line">1127</div><div class="line">1128</div><div class="line">1129</div><div class="line">1130</div><div class="line">1131</div><div class="line">1132</div><div class="line">1133</div><div class="line">1134</div><div class="line">1135</div><div class="line">1136</div><div class="line">1137</div><div class="line">1138</div><div class="line">1139</div><div class="line">1140</div><div class="line">1141</div><div class="line">1142</div><div class="line">1143</div><div class="line">1144</div><div class="line">1145</div><div class="line">1146</div><div class="line">1147</div><div class="line">1148</div><div class="line">1149</div><div class="line">1150</div><div class="line">1151</div><div class="line">1152</div><div class="line">1153</div><div class="line">1154</div><div class="line">1155</div><div class="line">1156</div><div class="line">1157</div><div class="line">1158</div><div class="line">1159</div><div class="line">1160</div><div class="line">1161</div><div class="line">1162</div><div class="line">1163</div><div class="line">1164</div><div class="line">1165</div><div class="line">1166</div><div class="line">1167</div><div class="line">1168</div><div class="line">1169</div><div class="line">1170</div><div class="line">1171</div><div class="line">1172</div><div class="line">1173</div><div class="line">1174</div><div class="line">1175</div><div class="line">1176</div><div class="line">1177</div><div class="line">1178</div><div class="line">1179</div><div class="line">1180</div><div class="line">1181</div><div class="line">1182</div><div class="line">1183</div><div class="line">1184</div><div class="line">1185</div><div class="line">1186</div><div class="line">1187</div><div class="line">1188</div><div class="line">1189</div><div class="line">1190</div><div class="line">1191</div><div class="line">1192</div><div class="line">1193</div><div class="line">1194</div><div class="line">1195</div><div class="line">1196</div><div class="line">1197</div><div class="line">1198</div><div class="line">1199</div><div class="line">1200</div><div class="line">1201</div><div class="line">1202</div><div class="line">1203</div><div class="line">1204</div><div class="line">1205</div><div class="line">1206</div><div class="line">1207</div><div class="line">1208</div><div class="line">1209</div><div class="line">1210</div><div class="line">1211</div><div class="line">1212</div><div class="line">1213</div><div class="line">1214</div><div class="line">1215</div><div class="line">1216</div><div class="line">1217</div><div class="line">1218</div><div class="line">1219</div><div class="line">1220</div><div class="line">1221</div><div class="line">1222</div><div class="line">1223</div><div class="line">1224</div><div class="line">1225</div><div class="line">1226</div><div class="line">1227</div><div class="line">1228</div><div class="line">1229</div><div class="line">1230</div><div class="line">1231</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">跳转到主要内容</div><div class="line">w3cplus</div><div class="line">CSS3MobileSassJavaScriptResponsive译文SVG工具标签云</div><div class="line"></div><div class="line"></div><div class="line">你在这里</div><div class="line">首页 » 博客 » Airen的博客</div><div class="line">使用Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">作者：大漠 日期：<span class="number">2015</span>-<span class="number">11</span>-<span class="number">19</span> 点击：<span class="number">48225</span></div><div class="line">双<span class="number">11</span>前端技术连载Layoutmobile</div><div class="line"></div><div class="line">小编推荐：掘金是一个高质量的技术社区，从 ECMAScript <span class="number">6</span> 到 Vue.js，性能优化到开源类库，让你不错过前端开发的每一个技术干货。各大应用市场搜索「掘金」即可下载APP，技术干货尽在掌握中。</div><div class="line">曾几何时为了兼容IE低版本浏览器而头痛，以为到Mobile时代可以跟这些麻烦说拜拜。可没想到到了移动时代，为了处理各终端的适配而乱了手脚。对于混迹各社区的偶，时常发现大家拿手机淘宝的H5页面做讨论——手淘的H5页面是如何实现多终端的适配？</div><div class="line"></div><div class="line">那么趁此Amfe阿里无线前端团队双<span class="number">11</span>技术连载之际，用一个实战案例来告诉大家，手淘的H5页面是如何实现多终端适配的，希望这篇文章对大家在Mobile的世界中能过得更轻松。</div><div class="line"></div><div class="line">目标</div><div class="line"></div><div class="line">拿一个双<span class="number">11</span>的Mobile页面来做案例，比如你实现一个类似下图的一个H5页面：</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">目标很清晰，就是做一个这样的H5页面。</div><div class="line"></div><div class="line">DEMO</div><div class="line"></div><div class="line">请用手机扫下面的二维码</div><div class="line"></div><div class="line">DEMO</div><div class="line"></div><div class="line">痛点</div><div class="line"></div><div class="line">虽然H5的页面与PC的Web页面相比简单了不少，但让我们头痛的事情是要想尽办法让页面能适配众多不同的终端设备。看看下图你就会知道，这是多么痛苦的一件事情：</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">点击这里查看更多终端设备的参数。</div><div class="line"></div><div class="line">再来看看手淘H5要适配的终端设备数据：</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">看到这些数据，是否死的心都有了，或者说为此捏了一把汗出来。</div><div class="line"></div><div class="line">手淘团队适配协作模式</div><div class="line"></div><div class="line">早期移动端开发，对于终端设备适配问题只属于Android系列，只不过很多设计师常常忽略Android适配问题，只出一套iOS平台设计稿。但随着iPhone6，iPhone6+的出现，从此终端适配问题不再是Android系列了，也从这个时候让移动端适配全面进入到“杂屏”时代。</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">上图来自于paintcodeapp.com</div><div class="line"></div><div class="line">为了应对这多么的终端设备，设计师和前端开发之间又应该采用什么协作模式？或许大家对此也非常感兴趣。</div><div class="line"></div><div class="line">而整个手淘设计师和前端开发的适配协作基本思路是：</div><div class="line"></div><div class="line">选择一种尺寸作为设计和开发基准</div><div class="line">定义一套适配规则，自动适配剩下的两种尺寸(其实不仅这两种，你懂的)</div><div class="line">特殊适配效果给出设计效果</div><div class="line">还是上一张图吧，因为一图胜过千言万语：</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">在此也不做更多的阐述。在手淘的设计师和前端开发协作过程中：手淘设计师常选择iPhone6作为基准设计尺寸，交付给前端的设计尺寸是按<span class="number">750</span>px * <span class="number">1334</span>px为准(高度会随着内容多少而改变)。前端开发人员通过一套适配规则自动适配到其他的尺寸。</div><div class="line"></div><div class="line">根据上面所说的，设计师给我们的设计图是一个<span class="number">750</span>px * <span class="number">1600</span>px的页面：</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">前端开发完成终端适配方案</div><div class="line"></div><div class="line">拿到设计师给的设计图之后，剩下的事情是前端开发人员的事了。而手淘经过多年的摸索和实战，总结了一套移动端适配的方案——flexible方案。</div><div class="line"></div><div class="line">这种方案具体在实际开发中如何使用，暂时先卖个关子，在继续详细的开发实施之前，我们要先了解一些基本概念。</div><div class="line"></div><div class="line">一些基本概念</div><div class="line"></div><div class="line">在进行具体实战之前，首先得了解下面这些基本概念(术语)：</div><div class="line"></div><div class="line">视窗 viewport</div><div class="line"></div><div class="line">简单的理解，viewport是严格等于浏览器的窗口。在桌面浏览器中，viewport就是浏览器窗口的宽度高度。但在移动端设备上就有点复杂。</div><div class="line"></div><div class="line">移动端的viewport太窄，为了能更好为CSS布局服务，所以提供了两个viewport:虚拟的viewportvisualviewport和布局的viewportlayoutviewport。</div><div class="line"></div><div class="line">George Cummins在Stack Overflow上对这两个基本概念做了详细的解释。</div><div class="line"></div><div class="line">而事实上viewport是一个很复杂的知识点，上面的简单描述可能无法帮助你更好的理解viewport，而你又想对此做更深的了解，可以阅读PPK写的相关教程。</div><div class="line"></div><div class="line">物理像素(physical pixel)</div><div class="line"></div><div class="line">物理像素又被称为设备像素，他是显示设备中一个最微小的物理部件。每个像素可以根据操作系统设置自己的颜色和亮度。正是这些设备像素的微小距离欺骗了我们肉眼看到的图像效果。</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">设备独立像素(density-independent pixel)</div><div class="line"></div><div class="line">设备独立像素也称为密度无关像素，可以认为是计算机坐标系统中的一个点，这个点代表一个可以由程序使用的虚拟像素(比如说CSS像素)，然后由相关系统转换为物理像素。</div><div class="line"></div><div class="line">CSS像素</div><div class="line"></div><div class="line">CSS像素是一个抽像的单位，主要使用在浏览器上，用来精确度量Web页面上的内容。一般情况之下，CSS像素称为与设备无关的像素(device-independent pixel)，简称DIPs。</div><div class="line"></div><div class="line">屏幕密度</div><div class="line"></div><div class="line">屏幕密度是指一个设备表面上存在的像素数量，它通常以每英寸有多少像素来计算(PPI)。</div><div class="line"></div><div class="line">设备像素比(device pixel ratio)</div><div class="line"></div><div class="line">设备像素比简称为dpr，其定义了物理像素和设备独立像素的对应关系。它的值可以按下面的公式计算得到：</div><div class="line"></div><div class="line">设备像素比 ＝ 物理像素 / 设备独立像素</div><div class="line">在JavaScript中，可以通过window.devicePixelRatio获取到当前设备的dpr。而在CSS中，可以通过-webkit-device-pixel-ratio，-webkit-min-device-pixel-ratio和 -webkit-max-device-pixel-ratio进行媒体查询，对不同dpr的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)。</div><div class="line"></div><div class="line">dip或dp,（device independent pixels，设备独立像素）与屏幕密度有关。dip可以用来辅助区分视网膜设备还是非视网膜设备。</div><div class="line"></div><div class="line">缩合上述的几个概念，用一张图来解释：</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">众所周知，iPhone6的设备宽度和高度为<span class="number">375</span>pt * <span class="number">667</span>pt,可以理解为设备的独立像素；而其dpr为<span class="number">2</span>，根据上面公式，我们可以很轻松得知其物理像素为<span class="number">750</span>pt * <span class="number">1334</span>pt。</div><div class="line"></div><div class="line">如下图所示，某元素的CSS样式：</div><div class="line"></div><div class="line">width: <span class="number">2</span>px;</div><div class="line">height: <span class="number">2</span>px；</div><div class="line">在不同的屏幕上，CSS像素所呈现的物理尺寸是一致的，而不同的是CSS像素所对应的物理像素具数是不一致的。在普通屏幕下<span class="number">1</span>个CSS像素对应<span class="number">1</span>个物理像素，而在Retina屏幕下，<span class="number">1</span>个CSS像素对应的却是<span class="number">4</span>个物理像素。</div><div class="line"></div><div class="line">有关于更多的介绍可以点击这里详细了解。</div><div class="line"></div><div class="line">看到这里，你能感觉到，在移动端时代屏幕适配除了Layout之外，还要考虑到图片的适配，因为其直接影响到页面显示质量，对于如何实现图片适配，再此不做过多详细阐述。这里盗用了@南宮瑞揚根据mir.aculo.us翻译的一张信息图：</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">meta标签</div><div class="line"></div><div class="line">&lt;meta&gt;标签有很多种，而这里要着重说的是viewport的meta标签，其主要用来告诉浏览器如何规范的渲染Web页面，而你则需要告诉它视窗有多大。在开发移动端页面，我们需要设置meta标签如下：</div><div class="line"></div><div class="line">&lt;meta <span class="keyword">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1"</span>&gt;</div><div class="line">代码以显示网页的屏幕宽度定义了视窗宽度。网页的比例和最大比例被设置为<span class="number">100</span>%。</div><div class="line"></div><div class="line">留个悬念，因为后面的解决方案中需要重度依赖meta标签。</div><div class="line"></div><div class="line">CSS单位<span class="built_in">rem</span></div><div class="line"></div><div class="line">在W3C规范中是这样描述<span class="built_in">rem</span>的:</div><div class="line"></div><div class="line">font size of the root element.</div><div class="line">简单的理解，<span class="built_in">rem</span>就是相对于根元素&lt;html&gt;的font-size来做计算。而我们的方案中使用<span class="built_in">rem</span>单位，是能轻易的根据&lt;html&gt;的font-size计算出元素的盒模型大小。而这个特色对我们来说是特别的有益处。</div><div class="line"></div><div class="line">前端实现方案</div><div class="line"></div><div class="line">了解了前面一些相关概念之后，接下来我们来看实际解决方案。在整个手淘团队，我们有一个名叫lib-flexible的库，而这个库就是用来解决H5页面终端适配的。</div><div class="line"></div><div class="line">lib-flexible是什么？</div><div class="line"></div><div class="line">lib-flexible是一个制作H5适配的开源库，可以点击这里下载相关文件，获取需要的JavaScript和CSS文件。</div><div class="line"></div><div class="line">当然你可以直接使用阿里CDN：</div><div class="line"></div><div class="line">&lt;script src=<span class="string">"http://g.tbcdn.cn/mtb/lib-flexible/&#123;&#123;version&#125;&#125;/??flexible_css.js,flexible.js"</span>&gt;&lt;/script&gt;</div><div class="line">将代码中的&#123;&#123;version&#125;&#125;换成对应的版本号<span class="number">0.3</span>.<span class="number">4</span>。</div><div class="line"></div><div class="line">使用方法</div><div class="line"></div><div class="line">lib-flexible库的使用方法非常的简单，只需要在Web页面的&lt;head&gt;&lt;/head&gt;中添加对应的flexible_css.js,flexible.js文件：</div><div class="line"></div><div class="line">第一种方法是将文件下载到你的项目中，然后通过相对路径添加:</div><div class="line"></div><div class="line">&lt;script src=<span class="string">"build/flexible_css.debug.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script src=<span class="string">"build/flexible.debug.js"</span>&gt;&lt;/script&gt;</div><div class="line">或者直接加载阿里CDN的文件：</div><div class="line"></div><div class="line">&lt;script src=<span class="string">"http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"</span>&gt;&lt;/script&gt;</div><div class="line">另外强烈建议对JS做内联处理，在所有资源加载之前执行这个JS。执行这个JS后，会在&lt;html&gt;元素上增加一个<span class="keyword">data</span>-dpr属性，以及一个font-size样式。JS会根据不同的设备添加不同的<span class="keyword">data</span>-dpr值，比如说<span class="number">2</span>或者<span class="number">3</span>，同时会给html加上对应的font-size的值，比如说<span class="number">75</span>px。</div><div class="line"></div><div class="line">如此一来，页面中的元素，都可以通过<span class="built_in">rem</span>单位来设置。他们会根据html元素的font-size值做相应的计算，从而实现屏幕的适配效果。</div><div class="line"></div><div class="line">除此之外，在引入lib-flexible需要执行的JS之前，可以手动设置meta来控制dpr值，如：</div><div class="line"></div><div class="line">&lt;meta <span class="keyword">name</span>=<span class="string">"flexible"</span> content=<span class="string">"initial-dpr=2"</span> /&gt;</div><div class="line">其中initial-dpr会把dpr强制设置为给定的值。如果手动设置了dpr之后，不管设备是多少的dpr，都会强制认为其dpr是你设置的值。在此不建议手动强制设置dpr，因为在Flexible中，只对iOS设备进行dpr的判断，对于Android系列，始终认为其dpr为<span class="number">1</span>。</div><div class="line"></div><div class="line"><span class="keyword">if</span> (!dpr &amp;&amp; !scale) &#123;</div><div class="line">    var isAndroid = win.navigator.appVersion.match(/android/gi);</div><div class="line">    var isIPhone = win.navigator.appVersion.match(/iphone/gi);</div><div class="line">    var devicePixelRatio = win.devicePixelRatio;</div><div class="line">    <span class="keyword">if</span> (isIPhone) &#123;</div><div class="line">        <span class="comment">// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案</span></div><div class="line">        <span class="keyword">if</span> (devicePixelRatio &gt;= <span class="number">3</span> &amp;&amp; (!dpr || dpr &gt;= <span class="number">3</span>)) &#123;                </div><div class="line">            dpr = <span class="number">3</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (devicePixelRatio &gt;= <span class="number">2</span> &amp;&amp; (!dpr || dpr &gt;= <span class="number">2</span>))&#123;</div><div class="line">            dpr = <span class="number">2</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            dpr = <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// 其他设备下，仍旧使用1倍的方案</span></div><div class="line">        dpr = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    scale = <span class="number">1</span> / dpr;</div><div class="line">&#125;</div><div class="line">flexible的实质</div><div class="line"></div><div class="line">flexible实际上就是能过JS来动态改写meta标签，代码类似这样：</div><div class="line"></div><div class="line">var metaEl = doc.createElement(<span class="string">'meta'</span>);</div><div class="line">var scale = isRetina ? <span class="number">0.5</span>:<span class="number">1</span>;</div><div class="line">metaEl.setAttribute(<span class="string">'name'</span>, <span class="string">'viewport'</span>);</div><div class="line">metaEl.setAttribute(<span class="string">'content'</span>, <span class="string">'initial-scale='</span> + scale + <span class="string">', maximum-scale='</span> + scale + <span class="string">', minimum-scale='</span> + scale + <span class="string">', user-scalable=no'</span>);</div><div class="line"><span class="keyword">if</span> (docEl.firstElementChild) &#123;</div><div class="line">    document.documentElement.firstElementChild.appendChild(metaEl);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    var wrap = doc.createElement(<span class="string">'div'</span>);</div><div class="line">    wrap.appendChild(metaEl);</div><div class="line">    documen.write(wrap.innerHTML);</div><div class="line">&#125;</div><div class="line">事实上他做了这几样事情：</div><div class="line"></div><div class="line">动态改写&lt;meta&gt;标签</div><div class="line">给&lt;html&gt;元素添加<span class="keyword">data</span>-dpr属性，并且动态改写<span class="keyword">data</span>-dpr的值</div><div class="line">给&lt;html&gt;元素添加font-size属性，并且动态改写font-size的值</div><div class="line">案例实战</div><div class="line"></div><div class="line">了解Flexible相关的知识之后，咱们回到文章开头。我们的目标是制作一个适配各终端的H5页面。别的不多说，动手才能丰衣足食。</div><div class="line"></div><div class="line">创建HTML模板</div><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">        &lt;meta content=<span class="string">"yes"</span> <span class="keyword">name</span>=<span class="string">"apple-mobile-web-app-capable"</span>&gt;</div><div class="line">        &lt;meta content=<span class="string">"yes"</span> <span class="keyword">name</span>=<span class="string">"apple-touch-fullscreen"</span>&gt;</div><div class="line">        &lt;meta content=<span class="string">"telephone=no,email=no"</span> <span class="keyword">name</span>=<span class="string">"format-detection"</span>&gt;</div><div class="line">        &lt;script src=<span class="string">"http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"</span>&gt;&lt;/script&gt;</div><div class="line">        &lt;link rel=<span class="string">"apple-touch-icon"</span> href=<span class="string">"favicon.png"</span>&gt;</div><div class="line">        &lt;link rel=<span class="string">"Shortcut Icon"</span> href=<span class="string">"favicon.png"</span> type=<span class="string">"image/x-icon"</span>&gt;</div><div class="line">        &lt;<span class="built_in">title</span>&gt;再来一波&lt;/<span class="built_in">title</span>&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;!-- 页面结构写在这里 --&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">正如前面所介绍的一样，首先加载了Flexible所需的配置：</div><div class="line"></div><div class="line">&lt;script src=<span class="string">"http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"</span>&gt;&lt;/script&gt;</div><div class="line">这个时候可以根据设计的图需求，在HTML文档的&lt;body&gt;&lt;/body&gt;中添加对应的HTML结构，比如：</div><div class="line"></div><div class="line">&lt;div class=<span class="string">"item-section"</span> <span class="keyword">data</span>-repeat=<span class="string">"sections"</span>&gt;</div><div class="line">    &lt;div class=<span class="string">"item-section_header"</span>&gt;</div><div class="line">        &lt;h2&gt;&lt;img src=<span class="string">"&#123;brannerImag&#125;"</span> alt=<span class="string">""</span>&gt;&lt;/h2&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li <span class="keyword">data</span>-repeat=<span class="string">"items"</span> class=<span class="string">"flag"</span> role=<span class="string">"link"</span> href=<span class="string">"&#123;itemLink&#125;"</span>&gt;</div><div class="line">            &lt;a class=<span class="string">"figure flag-item"</span> href=<span class="string">"&#123;itemLink&#125;"</span>&gt;</div><div class="line">                &lt;img src=<span class="string">"&#123;imgSrc&#125;"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">            &lt;div class=<span class="string">"figcaption flag-item"</span>&gt;</div><div class="line">                &lt;div class=<span class="string">"flag-title"</span>&gt;&lt;a href=<span class="string">"&#123;itemLink&#125;"</span> <span class="built_in">title</span>=<span class="string">""</span>&gt;&#123;poductName&#125;&lt;/a&gt;&lt;/div&gt;</div><div class="line">                &lt;div class=<span class="string">"flag-price"</span>&gt;&lt;span&gt;双<span class="number">11</span>价&lt;/span&gt;&lt;strong&gt;¥&#123;price&#125;&lt;/strong&gt;&lt;small&gt;(&#123;preferential&#125;)&lt;/small&gt;&lt;/div&gt;</div><div class="line">                &lt;div class=<span class="string">"flag-type"</span>&gt;&#123;activityType&#125;&lt;/div&gt;</div><div class="line">                &lt;a class=<span class="string">"flag-btn"</span> href=<span class="string">"&#123;shopLink&#125;"</span>&gt;&#123;activeName&#125;&lt;/a&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">这仅是一个示例文档，大家可以根据自己风格写模板。</div><div class="line"></div><div class="line">为了能更好的测试页面，给其配置一点假数据：</div><div class="line"></div><div class="line"><span class="comment">//define data</span></div><div class="line">var pageData = &#123;</div><div class="line">    sections:[&#123;</div><div class="line">        <span class="string">"brannerImag"</span>:<span class="string">"http://xxx.cdn.com/B1PNLZKXXXXXaTXXXXXXXXXXXX-750-481.jpg"</span>,</div><div class="line">        items:[&#123;</div><div class="line">            <span class="string">"itemLink"</span>: <span class="string">"##"</span>,</div><div class="line">            <span class="string">"imgSrc"</span>: <span class="string">"https://placeimg.com/350/350/people/grayscale"</span>,</div><div class="line">            <span class="string">"poductName"</span>:<span class="string">"Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093"</span>,</div><div class="line">            <span class="string">"price"</span>: <span class="string">"299.06"</span>,</div><div class="line">            <span class="string">"preferential"</span>: <span class="string">"满400减100"</span>,</div><div class="line">            <span class="string">"activityType"</span>: <span class="string">"1小时内热卖5885件"</span>,</div><div class="line">            <span class="string">"shopLink"</span>:<span class="string">"##"</span>,</div><div class="line">            <span class="string">"activeName"</span>: <span class="string">"马上抢！"</span></div><div class="line">        &#125;</div><div class="line">            ....</div><div class="line">        &#125;]</div><div class="line">    &#125;]</div><div class="line">&#125;</div><div class="line">接下来的工作就是美化工作了。在写具体样式之前，有几个点需要先了解一下。</div><div class="line"></div><div class="line">把视觉稿中的px转换成<span class="built_in">rem</span></div><div class="line"></div><div class="line">读到这里，大家应该都知道，我们接下来要做的事情，就是如何把视觉稿中的px转换成<span class="built_in">rem</span>。在此花点时间解释一下。</div><div class="line"></div><div class="line">首先，目前日常工作当中，视觉设计师给到前端开发人员手中的视觉稿尺寸一般是基于<span class="number">640</span>px、<span class="number">750</span>px以及<span class="number">1125</span>px宽度为准。甚至为什么？大家应该懂的（考虑Retina屏）。</div><div class="line"></div><div class="line">正如文章开头显示的示例设计稿，他就是一张以<span class="number">750</span>px为基础设计的。那么问题来了，我们如何将设计稿中的各元素的px转换成<span class="built_in">rem</span>。</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">我厂的视觉设计师想得还是很周到的，会帮你把相关的信息在视觉稿上标注出来。</div><div class="line"></div><div class="line">目前Flexible会将视觉稿分成<span class="number">100</span>份（主要为了以后能更好的兼容vh和vw），而每一份被称为一个单位a。同时<span class="number">1</span><span class="built_in">rem</span>单位被认定为<span class="number">10</span>a。针对我们这份视觉稿可以计算出：</div><div class="line"></div><div class="line"><span class="number">1</span>a   = <span class="number">7.5</span>px</div><div class="line"><span class="number">1</span><span class="built_in">rem</span> = <span class="number">75</span>px </div><div class="line">那么我们这个示例的稿子就分成了<span class="number">10</span>a，也就是整个宽度为<span class="number">10</span><span class="built_in">rem</span>，&lt;html&gt;对应的font-size为<span class="number">75</span>px：</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">这样一来，对于视觉稿上的元素尺寸换算，只需要原始的px值除以<span class="built_in">rem</span>基准值即可。例如此例视觉稿中的图片，其尺寸是<span class="number">176</span>px * <span class="number">176</span>px,转换成为<span class="number">2.346667</span><span class="built_in">rem</span> * <span class="number">2.346667</span><span class="built_in">rem</span>。</div><div class="line"></div><div class="line">如何快速计算</div><div class="line"></div><div class="line">在实际生产当中，如果每一次计算px转换<span class="built_in">rem</span>，或许会觉得非常麻烦，或许直接影响大家平时的开发效率。为了能让大家更快进行转换，我们团队内的同学各施所长，为px转换<span class="built_in">rem</span>写了各式各样的小工具。</div><div class="line"></div><div class="line">CSSREM</div><div class="line"></div><div class="line">CSSREM是一个CSS的px值转<span class="built_in">rem</span>值的Sublime Text3自动完成插件。这个插件是由@正霖编写。先来看看插件的效果：</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">有关于CSSREM如何安装、配置教程可以点击这里查阅。</div><div class="line"></div><div class="line">CSS处理器</div><div class="line"></div><div class="line">除了使用编辑器的插件之外，还可以使用CSS的处理器来帮助大家处理。比如说Sass、LESS以及PostCSS这样的处理器。我们简单来看两个示例。</div><div class="line"></div><div class="line">Sass</div><div class="line"></div><div class="line">使用Sass的同学，可以使用Sass的函数、混合宏这些功能来实现：</div><div class="line"></div><div class="line">@function px2em($px, $base-font-size: <span class="number">16</span>px) &#123;</div><div class="line">    @<span class="keyword">if</span> (unitless($px)) &#123;</div><div class="line">        @warn <span class="string">"Assuming #&#123;$px&#125; to be in pixels, attempting to convert it into pixels for you"</span>;</div><div class="line">        @return px2em($px + <span class="number">0</span>px); <span class="comment">// That may fail.</span></div><div class="line">    &#125; @<span class="keyword">else</span> <span class="keyword">if</span> (unit($px) == em) &#123;</div><div class="line">        @return $px;</div><div class="line">    &#125;</div><div class="line">    @return ($px / $base-font-size) * <span class="number">1</span>em;</div><div class="line">&#125;</div><div class="line">除了使用Sass函数外，还可以使用Sass的混合宏：</div><div class="line"></div><div class="line">@mixin px2rem($property,$px-values,$baseline-px:<span class="number">16</span>px,$support-<span class="keyword">for</span>-ie:<span class="literal">false</span>)&#123;</div><div class="line">    <span class="comment">//Conver the baseline into rems</span></div><div class="line">    $baseline-<span class="built_in">rem</span>: $baseline-px / <span class="number">1</span><span class="built_in">rem</span> * <span class="number">1</span>;</div><div class="line">    <span class="comment">//Print the first line in pixel values</span></div><div class="line">    @<span class="keyword">if</span> $support-<span class="keyword">for</span>-ie &#123;</div><div class="line">        #&#123;$property&#125;: $px-values;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//if there is only one (numeric) value, return the property/value line for it.</span></div><div class="line">    @<span class="keyword">if</span> type-of($px-values) == <span class="string">"number"</span>&#123;</div><div class="line">        #&#123;$property&#125;: $px-values / $baseline-<span class="built_in">rem</span>;</div><div class="line">    &#125;</div><div class="line">    @<span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//Create an empty list that we can dump values into</span></div><div class="line">        $<span class="built_in">rem</span>-values:();</div><div class="line">        @each $value <span class="built_in">in</span> $px-values&#123;</div><div class="line">            <span class="comment">// If the value is zero or not a number, return it</span></div><div class="line">            @<span class="keyword">if</span> $value == <span class="number">0</span> <span class="built_in">or</span> type-of($value) != <span class="string">"number"</span>&#123;</div><div class="line">                $<span class="built_in">rem</span>-values: append($<span class="built_in">rem</span>-values, $value / $baseline-<span class="built_in">rem</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// Return the property and its list of converted values</span></div><div class="line">        #&#123;$property&#125;: $<span class="built_in">rem</span>-values;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">有关于更多的介绍，可以点击这里进行了解。</div><div class="line"></div><div class="line">PostCSS(px2rem)</div><div class="line"></div><div class="line">除了Sass这样的CSS处理器这外，我们团队的@颂奇同学还开发了一款npm的工具px2rem。安装好px2rem之后，可以在项目中直接使用。也可以使用PostCSS。使用PostCSS插件postcss-px2rem：</div><div class="line"></div><div class="line">var gulp = require(<span class="string">'gulp'</span>);</div><div class="line">var postcss = require(<span class="string">'gulp-postcss'</span>);</div><div class="line">var px2rem = require(<span class="string">'postcss-px2rem'</span>);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'default'</span>, function() &#123;</div><div class="line">    var processors = [px2rem(&#123;remUnit: <span class="number">75</span>&#125;)];</div><div class="line">    return gulp.src(<span class="string">'./src/*.css'</span>)</div><div class="line">        .pipe(postcss(processors))</div><div class="line">        .pipe(gulp.dest(<span class="string">'./dest'</span>));</div><div class="line">&#125;);</div><div class="line">除了在Gulp中配置外，还可以使用其他的配置方式，详细的介绍可以点击这里进行了解。</div><div class="line"></div><div class="line">配置完成之后，在实际使用时，你只要像下面这样使用：</div><div class="line"></div><div class="line">.selector &#123;</div><div class="line">    width: <span class="number">150</span>px;</div><div class="line">    height: <span class="number">64</span>px; <span class="comment">/*px*/</span></div><div class="line">    font-size: <span class="number">28</span>px; <span class="comment">/*px*/</span></div><div class="line">    border: <span class="number">1</span>px solid #ddd; <span class="comment">/*no*/</span></div><div class="line">&#125;</div><div class="line">px2rem处理之后将会变成：</div><div class="line"></div><div class="line">.selector &#123;</div><div class="line">    width: <span class="number">2</span><span class="built_in">rem</span>;</div><div class="line">    border: <span class="number">1</span>px solid #ddd;</div><div class="line">&#125;</div><div class="line">[<span class="keyword">data</span>-dpr=<span class="string">"1"</span>] .selector &#123;</div><div class="line">    height: <span class="number">32</span>px;</div><div class="line">    font-size: <span class="number">14</span>px;</div><div class="line">&#125;</div><div class="line">[<span class="keyword">data</span>-dpr=<span class="string">"2"</span>] .selector &#123;</div><div class="line">    height: <span class="number">64</span>px;</div><div class="line">    font-size: <span class="number">28</span>px;</div><div class="line">&#125;</div><div class="line">[<span class="keyword">data</span>-dpr=<span class="string">"3"</span>] .selector &#123;</div><div class="line">    height: <span class="number">96</span>px;</div><div class="line">    font-size: <span class="number">42</span>px;</div><div class="line">&#125;</div><div class="line">在整个开发中有了这些工具之后，完全不用担心px值转<span class="built_in">rem</span>值影响开发效率。</div><div class="line"></div><div class="line">字号不使用<span class="built_in">rem</span></div><div class="line"></div><div class="line">前面大家都见证了如何使用<span class="built_in">rem</span>来完成H5适配。那么文本又将如何处理适配。是不是也通过<span class="built_in">rem</span>来做自动适配。</div><div class="line"></div><div class="line">显然，我们在iPhone3G和iPhone4的Retina屏下面，希望看到的文本字号是相同的。也就是说，我们不希望文本在Retina屏幕下变小，另外，我们希望在大屏手机上看到更多文本，以及，现在绝大多数的字体文件都自带一些点阵尺寸，通常是<span class="number">16</span>px和<span class="number">24</span>px，所以我们不希望出现<span class="number">13</span>px和<span class="number">15</span>px这样的奇葩尺寸。</div><div class="line"></div><div class="line">如此一来，就决定了在制作H5的页面中，<span class="built_in">rem</span>并不适合用到段落文本上。所以在Flexible整个适配方案中，考虑文本还是使用px作为单位。只不过使用[<span class="keyword">data</span>-dpr]属性来区分不同dpr下的文本字号大小。</div><div class="line"></div><div class="line">div &#123;</div><div class="line">    width: <span class="number">1</span><span class="built_in">rem</span>; </div><div class="line">    height: <span class="number">0.4</span><span class="built_in">rem</span>;</div><div class="line">    font-size: <span class="number">12</span>px; <span class="comment">// 默认写上dpr为1的fontSize</span></div><div class="line">&#125;</div><div class="line">[<span class="keyword">data</span>-dpr=<span class="string">"2"</span>] div &#123;</div><div class="line">    font-size: <span class="number">24</span>px;</div><div class="line">&#125;</div><div class="line">[<span class="keyword">data</span>-dpr=<span class="string">"3"</span>] div &#123;</div><div class="line">    font-size: <span class="number">36</span>px;</div><div class="line">&#125;</div><div class="line">为了能更好的利于开发，在实际开发中，我们可以定制一个font-dpr()这样的Sass混合宏：</div><div class="line"></div><div class="line">@mixin font-dpr($font-size)&#123;</div><div class="line">    font-size: $font-size;</div><div class="line"></div><div class="line">    [<span class="keyword">data</span>-dpr=<span class="string">"2"</span>] &amp; &#123;</div><div class="line">        font-size: $font-size * <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    [<span class="keyword">data</span>-dpr=<span class="string">"3"</span>] &amp; &#123;</div><div class="line">        font-size: $font-size * <span class="number">3</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">有了这样的混合宏之后，在开发中可以直接这样使用：</div><div class="line"></div><div class="line">@include font-dpr(<span class="number">16</span>px);</div><div class="line">当然这只是针对于描述性的文本，比如说段落文本。但有的时候文本的字号也需要分场景的，比如在项目中有一个slogan,业务方希望这个slogan能根据不同的终端适配。针对这样的场景，完全可以使用<span class="built_in">rem</span>给slogan做计量单位。</div><div class="line"></div><div class="line">CSS</div><div class="line"></div><div class="line">本来想把这个页面的用到的CSS(或SCSS)贴出来，但考虑篇幅过长，而且这么简单的页面，我想大家也能轻而易举搞定。所以就省略了。权当是给大家留的一个作业吧，感兴趣的可以试试Flexible能否帮你快速完成H5页面终端适配。</div><div class="line"></div><div class="line">效果</div><div class="line"></div><div class="line">最后来看看真机上显示的效果吧。我截了两种设备下的效果：</div><div class="line"></div><div class="line">iPhone4</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">iPhone6+</div><div class="line"></div><div class="line">Flexible实现手淘H5页面的终端适配</div><div class="line"></div><div class="line">总结</div><div class="line"></div><div class="line">其实H5适配的方案有很多种，网上有关于这方面的教程也非常的多。不管哪种方法，都有其自己的优势和劣势。而本文主要介绍的是如何使用Flexible这样的一库来完成H5页面的终端适配。为什么推荐使用Flexible库来做H5页面的终端设备适配呢？主要因为这个库在手淘已经使用了近一年，而且已达到了较为稳定的状态。除此之外，你不需要考虑如何对元素进行折算，可以根据对应的视觉稿，直接切入。</div><div class="line"></div><div class="line">当然，如果您有更好的H5页面终端适配方案，欢迎在下面的评论中与我们一起分享。如果您在使用这个库时，碰到任何问题，都可以在Github给我们提Issue。我们团队会努力解决相关需Issues。</div><div class="line"></div><div class="line">更新</div><div class="line"></div><div class="line">同学们反馈需要一个在线演示的DEMO。那么花了点时间写了个demo，希望对有需要的同学有所帮助。友情提示：DEMO未经过所有设备测试，可能在部分设备上有细节上的差异</div><div class="line"></div><div class="line">DEMO</div><div class="line"></div><div class="line">请用手机扫下面的二维码</div><div class="line"></div><div class="line">DEMO</div><div class="line"></div><div class="line">更新【<span class="number">2016</span>年<span class="number">01</span>月<span class="number">13</span>日】</div><div class="line"></div><div class="line">首先，由衷的感谢@完颜 帮忙踩了这个坑，回想起iOS从<span class="number">7</span>~<span class="number">8</span>，从<span class="number">8</span>~<span class="number">9</span>，都踩过只至少一个坑，真的也是醉了。</div><div class="line"></div><div class="line">手淘这边的flexible方案临时升级如下：</div><div class="line"></div><div class="line">针对OS <span class="number">9</span>_3的UA，做临时处理，强制dpr为<span class="number">1</span>，即scale也为<span class="number">1</span>，虽然牺牲了这些版本上的高清方案，但是也只能这么处理了</div><div class="line">这个版本不打算发布到CDN（也不发不到tnpm），所以大家更新的方式，最好手动复制代码内联到html中，具体代码可以点击这里下载</div><div class="line"></div><div class="line">大漠</div><div class="line">常用昵称“大漠”，W3CPlus创始人，目前就职于手淘。中国Drupal社区核心成员之一。对HTML5、CSS3和Sass等前端脚本语言有非常深入的认识和丰富的实践经验，尤其专注对CSS3的研究，是国内最早研究和使用CSS3技术的一批人。CSS3、Sass和Drupal中国布道者。<span class="number">2014</span>年出版《图解CSS3：核心技术与案例实战》。</div><div class="line">如需转载，烦请注明出处：http:<span class="comment">//www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html</span></div><div class="line"></div><div class="line">上一篇: SVG图案:通过图片、属性和嵌套构建更复杂的图案 | 下一篇: 如何创建SVG箭头和polymarker——`marker`元素</div><div class="line">(^_^)打个赏喝个咖啡(^_^) (^_^)如果您觉得此文对您有帮助，打个赏喝个咖啡(^_^) (^_^)欢迎关注我们(^_^) 欢迎关注我们</div><div class="line"> 已喜欢<span class="number">16</span> 人喜欢</div><div class="line">被顶起来的评论</div><div class="line">y</div><div class="line">y</div><div class="line">受益良多，大漠辛苦~写了个demo，大家可以参考下：http:<span class="comment">//www.cnblogs.com/jiujiaoyangkang/p/4998518.html</span></div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">26</span>日回复顶(<span class="number">5</span>)转发</div><div class="line">张三</div><div class="line">张三</div><div class="line">现在的在<span class="number">750</span>分辨率是<span class="number">54</span>px，我应该除以<span class="number">54</span>还是<span class="number">75</span>啊，搞糊涂了</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶(<span class="number">1</span>)转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">回复 张三: 你不需要在意他是多少，你做的时候只需要根据你的设计图尺寸去做，其他的事情交给客户端处理就OK了</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶(<span class="number">1</span>)转发</div><div class="line">最新最早最热</div><div class="line"><span class="number">241</span>条评论 <span class="number">42</span>条新浪微博</div><div class="line">树上有云</div><div class="line">树上有云</div><div class="line">顶，一直用的这个库，非常感谢。有的机型会遇到 计算出来的 html上的 font-size 出现误差 是不是 webView 设置的页面宽度的问题</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">22</span>日回复顶转发</div><div class="line">黑白头像的悲哀</div><div class="line">黑白头像的悲哀</div><div class="line">传世好文 收了！</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">22</span>日回复顶转发</div><div class="line">Jeremy</div><div class="line">Jeremy</div><div class="line">这是不是一维这在切图的时候设计图是多大的我切的图就是大的的？比如给我的container定宽<span class="number">750</span>px?</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">23</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">并不要给容器定宽的，原理时把<span class="number">750</span>px分成<span class="number">10</span>等份，每个等份为<span class="number">1</span><span class="built_in">rem</span>，也就是<span class="number">75</span>px.那么其他元素按这个比例进行计算。</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">23</span>日回复顶转发</div><div class="line">Jeremy</div><div class="line">Jeremy</div><div class="line">也就是我每个元素设置宽度XXrem是吧？也就是相当于外层容器宽度为<span class="number">10</span><span class="built_in">rem</span>？ flexible.js会自动计算来确定这个基数是<span class="number">75</span>px还是别的XXpx是吧？</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">23</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">制作的时候根据你的设计图，打个比方，你的设计图是<span class="number">750</span>px的，那么html的font-size默认情况下是<span class="number">75</span>px,这个时候也是你的制作时候的基数。比如页面上某个元素的大小是<span class="number">150</span>px * <span class="number">150</span>px，那么它就width: <span class="number">2</span><span class="built_in">rem</span>;height:<span class="number">2</span><span class="built_in">rem</span>。其他终端是多少，你不需要去管，flxeible.js会帮你解决。你只要制作的时候注意别换算错。当然元素高度根据实际情况，决定要不要显式的指定值。</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">24</span>日回复顶转发</div><div class="line">ll</div><div class="line">ll</div><div class="line">那flexible.js怎么知道你设计稿大小，从而判断html的font-size大小</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">25</span>日回复顶转发</div><div class="line">故事与你</div><div class="line">故事与你</div><div class="line">那请问我怎么才能设置字体的大小默认是<span class="number">75</span>px呢</div><div class="line"><span class="number">8</span>月<span class="number">16</span>日回复顶转发</div><div class="line">Bonnie</div><div class="line">Bonnie</div><div class="line">能不能给一个完整的demo？文章里面的demo运行起来看不到效果（只能看出这个库做的三件事）。用了这个库，意思是不是单位都用<span class="built_in">rem</span>, 比如图片<span class="number">176</span>px <span class="number">176</span>px, 那么在<span class="string">"px_to_rem"</span>: <span class="number">40</span> 的情况下css是这样的： width：(<span class="number">176</span>/<span class="number">40</span>)<span class="number">4.4</span><span class="built_in">rem</span>; height:<span class="number">4.4</span><span class="built_in">rem</span> ?</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">23</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">如无特殊情况，width/height/padding/margin都使用`<span class="built_in">rem</span>`，border-width和font-size使用px</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">24</span>日回复顶转发</div><div class="line">黑白头像的悲哀</div><div class="line">黑白头像的悲哀</div><div class="line">哈哈 豁然开朗</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">25</span>日回复顶转发</div><div class="line">黑白头像的悲哀</div><div class="line">黑白头像的悲哀</div><div class="line">不准啊 那个第一个转换px=》的插件计算有很大偏差啊</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">25</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">你确认你使用方法是正确的吗？这个插件我们团队已使用一年多时间了，并没有碰到你所说的计算有误差。</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">25</span>日回复顶转发</div><div class="line">黑白头像的悲哀</div><div class="line">黑白头像的悲哀</div><div class="line">是我姿势不对，默认是<span class="number">750</span>px的设计稿，<span class="number">1</span><span class="built_in">rem</span>默认就是<span class="number">75</span>px，我是拿了一张<span class="number">640</span>宽度的设计稿来写，所以没对上，后来知道要改配置问价，把<span class="number">75</span>改成<span class="number">64</span></div><div class="line"><span class="number">1</span>月<span class="number">7</span>日回复顶转发</div><div class="line">黑白头像的悲哀</div><div class="line">黑白头像的悲哀</div><div class="line">是我姿势不对，默认是<span class="number">750</span>px的设计稿，<span class="number">1</span><span class="built_in">rem</span>默认就是<span class="number">75</span>px，我是拿了一张<span class="number">640</span>宽度的设计稿来写，所以没对上，后来知道要改配置文件，把<span class="number">75</span>改成<span class="number">64</span></div><div class="line"><span class="number">1</span>月<span class="number">7</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">DEMO: http:<span class="comment">//huodong.m.taobao.com/act/yibo.html</span></div><div class="line"></div><div class="line">yiboqr.png</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">子墨</div><div class="line">子墨</div><div class="line">谢谢大漠大神，这里简直就是前端技术的殿堂，打算买《图解CSS3：核心技术与案例实战》拜读啦。 [嘻嘻]</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">随意_</div><div class="line">随意_</div><div class="line">我有一点不懂 为什么除了ios设备外的dpr都为<span class="number">1</span> ~ 是因为安卓设备兼容问题? 我用了几款市场主流安卓机器看了没问题 并且去谷歌找了关于安卓这个的bug问题也找不到。求解</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">25</span>日回复顶转发</div><div class="line">东方</div><div class="line">东方</div><div class="line">字体大小已设置成<span class="number">24</span>px或者<span class="number">30</span>px在谷歌浏览器测试没有问题，但是在真机测试发现会很大，这是为什么？具体怎么做可以教一下吗，谢谢了</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">25</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">你应该没有仔细看文章，文章都介绍了字号怎么设置</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">25</span>日回复顶转发</div><div class="line">东方</div><div class="line">东方</div><div class="line">还是想问一下，如果设计图标题的文字大小是<span class="number">28</span>px,段落的字体大小是<span class="number">20</span>px,那我直接div &#123;</div><div class="line">font-size: <span class="number">12</span>px; <span class="comment">// 默认写上dpr为1的fontSize</span></div><div class="line">&#125;</div><div class="line">[<span class="keyword">data</span>-dpr=<span class="string">"2"</span>] div &#123;</div><div class="line">font-size: <span class="number">24</span>px;</div><div class="line">&#125;</div><div class="line">[<span class="keyword">data</span>-dpr=<span class="string">"3"</span>] div &#123;</div><div class="line">font-size: <span class="number">36</span>px;</div><div class="line">&#125;这样写吗？ 还是写<span class="number">28</span>px、<span class="number">26</span>px 我太笨了，没理解到你的意思，希望和我再说说好吗？</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">25</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">根据你的设计稿的尺寸来。假设你的设计稿是<span class="number">2</span>倍尺寸的，那么你的段落在设计稿中的字号是<span class="number">20</span>px，在实际应用中应该是这样：</div><div class="line"></div><div class="line">p &#123;font-size: <span class="number">10</span>px;&#125;</div><div class="line"></div><div class="line">[<span class="keyword">data</span>-dpr=<span class="string">"2"</span>] p &#123;font-size: <span class="number">20</span>px;&#125;</div><div class="line"></div><div class="line">[<span class="keyword">data</span>-dpr=<span class="string">"3"</span>] p &#123;font-size: <span class="number">30</span>px;&#125;</div><div class="line"></div><div class="line">如果你是使用Sass这样的处理器，你完全可以这样使用：</div><div class="line"></div><div class="line">p &#123;@include font-dpr(<span class="number">10</span>px)&#125;</div><div class="line"></div><div class="line">其实在文章中都有介绍，不知道是我介绍的不清楚呢？还是读者没有仔细阅读。</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">25</span>日回复顶转发</div><div class="line">李金鹏</div><div class="line">李金鹏</div><div class="line">大漠老师，对于字体的问题我有两个疑问。</div><div class="line"><span class="number">1</span>.对于iphone <span class="number">3</span>G和<span class="number">4</span>来说，<span class="number">3</span>G中，<span class="number">1</span><span class="built_in">rem</span>=<span class="number">32</span>px，<span class="number">4</span>中，<span class="number">1</span><span class="built_in">rem</span>=<span class="number">64</span>px，只不过<span class="number">4</span>的初始缩放比例是<span class="number">0.5</span>。在字体尺寸相同的情况（比如说<span class="number">0.24</span><span class="built_in">rem</span>）下，（抛开字体最小尺寸的限制以及<span class="built_in">rem</span>换算导致的奇葩尺寸问题），在<span class="number">4</span>和在<span class="number">3</span>G上边显示的字体应该是一样大的吧？</div><div class="line"><span class="number">2</span>.在相同dpr的情况下（例如大部分安卓），字体使用像素设置，例如 p&#123;font-size:<span class="number">10</span>px&#125;，在不同屏幕大小的设备上字体显示的大小是一致的，但是页面其他部分的布局是<span class="built_in">rem</span>来布局的，这样子字体部分的布局不会破坏掉其他的部分的布局吗？还有不同设备上采用相同大小的文字是合适的吗？</div><div class="line"><span class="number">2</span>月<span class="number">29</span>日回复顶转发</div><div class="line">Jay</div><div class="line">Jay</div><div class="line">你好,大漠大神。我在使用《Flexible实现手淘H5页面的终端适配 》时在小米的浏览器不能适配,请问是什么原因</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">26</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">你确认你使用的方法是对的？无码无真相。我们在小米手机上跑一切正常</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">26</span>日回复顶转发</div><div class="line">冰宇</div><div class="line">冰宇</div><div class="line">跑着正常是因为小米默认的浏览器标识是iphone.调到其他标识就不太好用了。这个有没有好的解决办法</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">10</span>日回复顶转发</div><div class="line">y</div><div class="line">y</div><div class="line">受益良多，大漠辛苦~写了个demo，大家可以参考下：http:<span class="comment">//www.cnblogs.com/jiujiaoyangkang/p/4998518.html</span></div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">26</span>日回复顶(<span class="number">5</span>)转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">谢谢分享</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">26</span>日回复顶转发</div><div class="line">jnxag493</div><div class="line">jnxag493</div><div class="line">请问这个<span class="built_in">rem</span>的计算插件怎么弄不会设置</div><div class="line"><span class="number">1</span>月<span class="number">4</span>日回复顶转发</div><div class="line">liu</div><div class="line">liu</div><div class="line">你的demo在IPAD上面有问题啊</div><div class="line"><span class="number">3</span>月<span class="number">15</span>日回复顶转发</div><div class="line">一瓶珍情</div><div class="line">一瓶珍情</div><div class="line">分析了下网易移动端的做法，他的设计稿应该是<span class="number">640</span>x1136，然后font-size设为<span class="number">50</span>px，这样px和<span class="built_in">rem</span>就是<span class="number">1</span>:<span class="number">1</span>的关系，开发的时候转换就简单了。大漠老师，能评论下这种做法吗？</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">Andy</div><div class="line">Andy</div><div class="line">html的font-sze设置为<span class="number">640</span>px，这样写的时候才能px和<span class="built_in">rem</span>为<span class="number">1</span>:<span class="number">1</span>的吧？</div><div class="line"><span class="number">4</span>月<span class="number">6</span>日回复顶转发</div><div class="line">故事与你</div><div class="line">故事与你</div><div class="line">怎么才能设置字体默认是多少呀</div><div class="line"><span class="number">8</span>月<span class="number">16</span>日回复顶转发</div><div class="line">oldfu</div><div class="line">oldfu</div><div class="line">值得借鉴，这个周末好好研究一下</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">csywweb</div><div class="line">csywweb</div><div class="line">大漠老师，我有个问题，在字体适配的时候，使用根据dpr使用不同px的字体，那么我也可以根据dpr使用不同<span class="built_in">rem</span>的字体是不是也可以呢</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">没有尝试过。按理说是可以，但不知道会不会影响。你可以测试一下。</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">虞</div><div class="line">虞</div><div class="line">用这种<span class="built_in">rem</span>的布局，就不好用css sprites了吧，有什么好的解决方案吗</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">从我们团队的经验来说，我们的建议是请不要再使用CSS Sprites。有关于相关的介绍，可以看看下面两篇文章中有关于CSS Sprites的介绍：</div><div class="line"></div><div class="line">https:<span class="comment">//github.com/amfe/article/issues/21</span></div><div class="line">http:<span class="comment">//www.w3cplus.com/css/web-icons.html</span></div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">jiaojiao085</div><div class="line">jiaojiao085</div><div class="line">大漠老师，我也碰到过这种问题，用flexible布局不好再用sprites.有什么解决办法么</div><div class="line"><span class="number">3</span>月<span class="number">23</span>日回复顶转发</div><div class="line">杨潮奔</div><div class="line">杨潮奔</div><div class="line">谢谢分享，就是字体设置的时候要注意，貌似一次只能针对一个元素设置，如[<span class="keyword">data</span>-dpr=<span class="string">"3"</span>] p，写成[<span class="keyword">data</span>-dpr=<span class="string">"3"</span>] p，div的话就不行了</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">你选择器的用法都没用对。这怎么说好呢？建议看看CSS选择器怎么用吧。</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">杨潮奔</div><div class="line">杨潮奔</div><div class="line">这个……，只是回复的时候输入的中文逗号。我实测真的会有问题。我用chrome调试测过了，dpr2的情况下，dpr3样式依旧会覆盖</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">杨潮奔</div><div class="line">杨潮奔</div><div class="line">不好意思，我知道错在哪了，让前辈见笑了。</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">杨潮奔</div><div class="line">杨潮奔</div><div class="line">不好意思，刚刚才发现到，应该写成[<span class="keyword">data</span>-dpr=<span class="string">"3"</span>] p，[<span class="keyword">data</span>-dpr=<span class="string">"3"</span>]div，让前辈见笑了</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">钟玲玉</div><div class="line">钟玲玉</div><div class="line">膝盖送上！大神！上班随便看了一遍，觉得受益匪浅，收藏了，准备细细研读！</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">天涯</div><div class="line">天涯</div><div class="line">请教一个问题：如果一个页面在PC下和移动端下的布局不同，该怎么弄，因为用了这个JS后，不能用这句了，否则<span class="keyword">data</span>-dpr总是<span class="number">1</span>，那这样的话，就没办法用media query了，像这种问题该怎么解决？</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">天涯</div><div class="line">天涯</div><div class="line">不能插代码吗？好吧，再发一次，网管把上面那个删掉吧。</div><div class="line">请教一个问题：如果一个页面在PC下和移动端下的布局不同，该怎么弄，因为用了这个JS后，不能用meta content=<span class="string">"width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0"</span> <span class="keyword">name</span>=<span class="string">"viewport"</span>’这句了，否则<span class="keyword">data</span>-dpr总是<span class="number">1</span>，那这样的话，就没办法用media query了，像这种问题该怎么解决？’</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">我要是没估计错，你是想整Responsive Design吧。那样的话这个库就不能用了，这个是针对于移动端的布局。</div><div class="line"><span class="number">2015</span>年<span class="number">11</span>月<span class="number">27</span>日回复顶转发</div><div class="line">轰轰轰</div><div class="line">轰轰轰</div><div class="line">大神 请问下我看手淘的网站 他们的div里有一个<span class="keyword">data</span>-dpr的属性 修改谷歌测试工具的dpr刷新他会跟着变 这个是什么来的？</div><div class="line">还有就是px2rem 和 PostCSS 这两个是不是用来转换<span class="built_in">rem</span>的 具体怎么使用 我一直没做对</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">2</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line"><span class="keyword">data</span>-dpr是用下设置设备dpr值，这个值是flexible.js根据设备判断出来的。px2rem和PostCSS的关系，PostCSS有一个插件叫px2rem，那么你的环境中有PostCSS的话，你可以按照px2rem的api写你的代码，编译之后会自动转译出来需要的<span class="built_in">rem</span>。</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">2</span>日回复顶转发</div><div class="line">轰轰轰</div><div class="line">轰轰轰</div><div class="line">px2rem 是要通过npm来安装吗 我在项目中始终用不上这个插件</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">2</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">对应的链接都讲的非常清楚。这种操作按作官方提供的api，不是很好的操作吗？</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">2</span>日回复顶转发</div><div class="line">段亮自媒体博客</div><div class="line">段亮自媒体博客</div><div class="line">大漠老师，请教个问题。如果我的设计稿是<span class="number">640</span>的话，那么兑换比例，是不是还是按照原有的宽度/<span class="number">75</span>就可以了？JS可以自动计算匹配吗？</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">2</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">你作的时候把html的font-size:<span class="number">64</span>px就行了，flexible.js会根据设备自动匹配的。</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">2</span>日回复顶转发</div><div class="line">段亮自媒体博客</div><div class="line">段亮自媒体博客</div><div class="line">flexible.js难道不是根据设备进行自动匹配的么？我先说下我的理解：按照您文章说的，假设效果图是<span class="number">750</span>的标准来的话，我有一张banner图的实际宽度为<span class="number">581</span>px居中显示。那么，按照兑换比例的话，大约就是<span class="number">7.7466</span><span class="built_in">rem</span>.那么在iphone6确实能正常匹配，在iphone5、<span class="number">4</span>以及<span class="number">6</span>plus却不能正常匹配。求解释下。</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">2</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">你确认要加载的都加载了，我至今没有碰到你所说的这种现象。flexible.js是会根据设备自动匹配的。</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">2</span>日回复顶转发</div><div class="line">段亮自媒体博客</div><div class="line">段亮自媒体博客</div><div class="line">嗯，原因找到了，谢谢，是因为样式没控制到图片的原因，造成的！</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">2</span>日回复顶转发</div><div class="line">随便吧</div><div class="line">随便吧</div><div class="line">请问下这个<span class="number">750</span>的设计稿和flexible， 只为手机端设计的么？ipad端可以用么？</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">4</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">iPad不适用这个库</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">5</span>日回复顶转发</div><div class="line">黑眼圈</div><div class="line">黑眼圈</div><div class="line">我也发现了，ipad上都很小，明显不够，那么请问对于ipad你们是怎么适配的呢？单独写么还是有另外的库？</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">10</span>日回复顶转发</div><div class="line">Leon</div><div class="line">Leon</div><div class="line">大神，这个库怎么看起来就是通过<span class="built_in">rem</span>和css把距离，字体等放大了若干倍（<span class="number">2</span>倍，<span class="number">3</span>倍），然后再通过viewport把页面缩小相应的倍数？怎么再我看来什么都没做呢？这里没理解清楚，被绕进去了，能帮忙解释下么？</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">11</span>日回复顶(<span class="number">1</span>)转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">文章中已附实例，自己动手做两个试试</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">11</span>日回复顶转发</div><div class="line">Leon</div><div class="line">Leon</div><div class="line">我好像明白了，字体放大是按屏幕尺寸来的，各个设备的viewport是不一样的，所以放大是按viewport比例放大的，缩小是按dpr缩小的。所以是不一样的</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">11</span>日回复顶转发</div><div class="line">unclefeng</div><div class="line">unclefeng</div><div class="line">第一，我觉得通过viewport的scale的意义是虽然页面缩小，但呈现的内容增大的。事实这参数，让我们看到的范围增加，就像放大镜一样。</div><div class="line">第二，那么放大宽度范围的原因是为什么了？因为要文档宽度和物理像素对等，这样才能有更好的图片显示效果</div><div class="line">第三，当文档宽度增加，最好适配，使所有的内容跟随文档内容一起放缩，<span class="built_in">rem</span>就是实现这样的功能，他是一个相对单位，所有的值是相对于font-size计算的，所以动态计算即可。</div><div class="line">第四，以上纯属游客的浅显的想法，希望对你有用。</div><div class="line"><span class="number">1</span>月<span class="number">5</span>日回复顶转发</div><div class="line">光明领域<span class="number">2012</span></div><div class="line">光明领域<span class="number">2012</span></div><div class="line">大漠老师,使用chrome模拟iphone ,dpr=<span class="number">2</span>的时候,同样大小的字体,同一个页面上表现出来的大小不一致是个什么情况....</div><div class="line">模拟android,dpr=<span class="number">1</span>的时候是正常的</div><div class="line"></div><div class="line"><span class="number">64</span>cfe490gw1eyvk7en7jrj20qe07w0uy.jpg64cfe490gw1eyvk7drgv3j20qu0fwaey.jpg64cfe490gw1eyvk7eenkfj20uw0inafh.jpg</div><div class="line"></div><div class="line">dpr=<span class="number">2</span>, initial-scale=<span class="number">0.5</span> 有 [<span class="keyword">data</span>-dpr=<span class="string">"2"</span>] .info &#123;font-size: <span class="number">24</span>px;&#125;实际显示是不是应该还是<span class="number">12</span>px的大小吧,但是这里这里 <span class="number">24</span>px的比<span class="number">28</span>px的还要大......</div><div class="line"></div><div class="line"><span class="number">64</span>cfe490gw1eyvk7e15glj20ph0gwdl3.jpg</div><div class="line"></div><div class="line">同一个地方的,我把 display: inline-<span class="keyword">block</span>; 去掉之后字体也变大了.......</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">11</span>日回复顶转发</div><div class="line">麽麽<span class="number">12345</span></div><div class="line">麽麽<span class="number">12345</span></div><div class="line">我也遇到这个问题了，非得写上display:inline-<span class="keyword">block</span>;去掉之后字体打下就显示不正常了</div><div class="line"><span class="number">2</span>月<span class="number">3</span>日回复顶转发</div><div class="line">camo</div><div class="line">camo</div><div class="line">我也遇到这个问题了，你是如何解决的？</div><div class="line"><span class="number">3</span>月<span class="number">22</span>日回复顶转发</div><div class="line">yler</div><div class="line">yler</div><div class="line">我也遇到这个问题了，你的解决方法是什么啊</div><div class="line"><span class="number">6</span>月<span class="number">1</span>日回复顶转发</div><div class="line">崩坏的信仰</div><div class="line">崩坏的信仰</div><div class="line">= = 我遇到这个问题，但是我用盆友的iphone实际测试了一下 发现没有这个问题</div><div class="line"><span class="number">8</span>月<span class="number">8</span>日回复顶转发</div><div class="line">四月</div><div class="line">四月</div><div class="line">我也碰到这个问题了，好像新版本的android系统和IOS他这个方法都不适用、</div><div class="line"><span class="number">8</span>月<span class="number">18</span>日回复顶转发</div><div class="line">Leon</div><div class="line">Leon</div><div class="line">请问如果是android的高分别率的屏，比如某个android设备的dpr为<span class="number">2</span>. 这种情况下flexible对viewport进行处理，岂不是用<span class="built_in">rem</span>写的size会变得很大。这个这面会变形啊。这个是怎么处理的？</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">11</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">所有android设备都强制设置了dpr值为<span class="number">1</span>，font-size设置了一个最佳实验值<span class="number">54</span>px</div><div class="line"><span class="number">3</span>月<span class="number">1</span>日回复顶转发</div><div class="line">自由人</div><div class="line">自由人</div><div class="line">为什么Android要强制设置dpr值为<span class="number">1</span></div><div class="line"><span class="number">3</span>月<span class="number">2</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">可以先自己了解一下Android下的dpr，他不只是有<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>还有<span class="number">1.5</span>之类的</div><div class="line"><span class="number">3</span>月<span class="number">2</span>日回复顶转发</div><div class="line">yler</div><div class="line">yler</div><div class="line">大漠老师，android上强制dpr为<span class="number">1</span>后，那么在dpr大于<span class="number">1</span>的机器上，<span class="number">1</span>px的边框就会显示的比较粗了，这个有什么好的解决方法吗</div><div class="line"><span class="number">6</span>月<span class="number">13</span>日回复顶转发</div><div class="line">江潮</div><div class="line">江潮</div><div class="line">终端适配</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">14</span>日回复顶转发</div><div class="line">jnxag493</div><div class="line">jnxag493</div><div class="line">CSSREM怎么下载这个插件，全是英文看不懂啊、、、、</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">22</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">那我也帮不了你了</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">22</span>日回复顶转发</div><div class="line">jnxag493</div><div class="line">jnxag493</div><div class="line">额。。。。能不能善良点。。求指导！！！</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">24</span>日回复顶转发</div><div class="line">jnxag493</div><div class="line">jnxag493</div><div class="line">下载这个插件是不是需要注册交钱啊？？？</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">24</span>日回复顶转发</div><div class="line">jnxag493</div><div class="line">jnxag493</div><div class="line">我弄好啦，谢啦</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">24</span>日回复顶转发</div><div class="line">liu</div><div class="line">liu</div><div class="line">大漠老师为什么我下载好了却没有反应呢？A3F13PL(]IOL)MG(BK]M_3H.png</div><div class="line"><span class="number">3</span>月<span class="number">16</span>日回复顶转发</div><div class="line">Bug</div><div class="line">Bug</div><div class="line">cssRem是 sublime <span class="keyword">text</span> 的一个插件，你先看看怎么sublime 插件安装教程，安装成功后在配置文件里设置默认的基准值，之后就是爽歪歪的编码了！</div><div class="line"><span class="number">1</span>月<span class="number">11</span>日回复顶转发</div><div class="line">晏丽君</div><div class="line">晏丽君</div><div class="line">请问下：在三星GalaxyS5下 宽度设置成<span class="number">10</span><span class="built_in">rem</span>时页面会左右移动是什么原因？其他机型没有这个问题。</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">24</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">你在最外面设置了width: <span class="number">10</span><span class="built_in">rem</span>的容器上加上一个margin-left: auto; margin-right: auto看看</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">24</span>日回复顶转发</div><div class="line">四月</div><div class="line">四月</div><div class="line">三星的我也碰到这个问题，凡是通过缩放来处理的页面，都有这种问题，其它要做精细一些，最好不要用这种缩放的方式来处理</div><div class="line">PNG图片也是，会呈现变化的锯齿状</div><div class="line"><span class="number">8</span>月<span class="number">17</span>日回复顶转发</div><div class="line">晏丽君</div><div class="line">晏丽君</div><div class="line">请问下：在三星GalaxyS5下设置了宽度<span class="number">10</span><span class="built_in">rem</span>后会出现页面左右移动的问题，怎么解决好呢？其他机型没有这个问题。</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">24</span>日回复顶转发</div><div class="line">jnxag493</div><div class="line">jnxag493</div><div class="line">请问大漠老师这个计算的px2rem-master是直接加这个代码么？（）我不会用这个插件？？不知道该写什么才能用。下载下来之后里面有好多文件的js</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">24</span>日回复顶转发</div><div class="line">许大伟</div><div class="line">许大伟</div><div class="line">漠大大，移动端使用图片 你的建议是像列子中的img标签写入 还是通过<span class="built_in">background</span>呢</div><div class="line"><span class="number">2015</span>年<span class="number">12</span>月<span class="number">31</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">这得根据实际情况呀，并不是所有图片都是用<span class="built_in">background</span>。</div><div class="line"><span class="number">1</span>月<span class="number">1</span>日回复顶转发</div><div class="line">蓝格调</div><div class="line">蓝格调</div><div class="line">很好用 安卓和IOS 唯一不同的是 li 上面的 margin-bottom: <span class="number">1</span>px; 不知道淘宝对于<span class="number">1</span>像素的边框有什么更好的解决方案 [嘻嘻]</div><div class="line"><span class="number">1</span>月<span class="number">4</span>日回复顶转发</div><div class="line">秋明的思念</div><div class="line">秋明的思念</div><div class="line">想问下，那个cssrem怎么支持scss文件呢?刚修改了配置，貌似没生效</div><div class="line"><span class="number">1</span>月<span class="number">6</span>日回复顶转发</div><div class="line">秋明的思念</div><div class="line">秋明的思念</div><div class="line">scss怎么使用cssrem那个插件呢？安装之后，发现用不了哦，有办法解决吗</div><div class="line"><span class="number">1</span>月<span class="number">6</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">那个是sublime text3的插件，在SCSS中使用，你可以直接使用SCSS的function或者mixin</div><div class="line"><span class="number">1</span>月<span class="number">7</span>日回复顶转发</div><div class="line">波波</div><div class="line">波波</div><div class="line">又是一个坑，。简单问题复杂化</div><div class="line"><span class="number">1</span>月<span class="number">7</span>日回复顶转发</div><div class="line">allen</div><div class="line">allen</div><div class="line">https:<span class="comment">//www.npmjs.com/package/postcss-px2rem</span></div><div class="line">现在最新版本会把border也转成<span class="built_in">rem</span>？<span class="number">1</span>px 会转成很小的<span class="built_in">rem</span>，android上都看不到</div><div class="line"><span class="number">1</span>月<span class="number">9</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">这个插件在编码时，你可以后面加一个注释，让border的px不转换成<span class="built_in">rem</span>。请君仔细看看他的使用文档。</div><div class="line"><span class="number">1</span>月<span class="number">9</span>日回复顶转发</div><div class="line">allen</div><div class="line">allen</div><div class="line">大哥每个地方都要写上 <span class="comment">/*no*/</span>吗，这样好麻烦阿 而且我引入了一些css框架，有没有方便的方式，能够直接把所有border不进行<span class="built_in">rem</span>转换</div><div class="line"><span class="number">1</span>月<span class="number">9</span>日回复顶转发</div><div class="line">allen</div><div class="line">allen</div><div class="line">我的留言消失咯，我想全局的使border不转换怎么办呢</div><div class="line"><span class="number">1</span>月<span class="number">9</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">不用px2rem的插件，这样就可以不转换了，你可以用CSSREM（sublime <span class="keyword">text</span>插件）或者你使用Sass的function。方法好多种呀</div><div class="line"><span class="number">1</span>月<span class="number">9</span>日回复顶转发</div><div class="line">Allen丶Dong</div><div class="line">Allen丶Dong</div><div class="line">额 其实这样要改的地方感觉更多，好的 我知道拉!</div><div class="line"><span class="number">1</span>月<span class="number">9</span>日回复顶转发</div><div class="line">Allen丶Dong</div><div class="line">Allen丶Dong</div><div class="line">大神 子留言老是被删掉不知道怎么了，我想全局的使border不转换有办法吗</div><div class="line"><span class="number">1</span>月<span class="number">9</span>日回复顶转发</div><div class="line">秋明的思念</div><div class="line">秋明的思念</div><div class="line">目前Flexible会将视觉稿分成<span class="number">100</span>份（主要为了以后能更好的兼容vh和vw） 能具体解释下这里的原因吗？</div><div class="line"><span class="number">1</span>月<span class="number">11</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">因为<span class="number">1</span>vw 就是viewport宽度除以<span class="number">100</span></div><div class="line"><span class="number">3</span>月<span class="number">1</span>日回复顶转发</div><div class="line">轰轰轰</div><div class="line">轰轰轰</div><div class="line">请问下brackets这个编辑器有没有类似cssrem这个自动换算的插件?</div><div class="line"><span class="number">1</span>月<span class="number">12</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">没有，只有sublime text3</div><div class="line"><span class="number">1</span>月<span class="number">12</span>日回复顶转发</div><div class="line">张三</div><div class="line">张三</div><div class="line">为什么我调用后在<span class="number">750</span>下面是<span class="number">54</span>px而不是<span class="number">75</span>px呢</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶(<span class="number">1</span>)转发</div><div class="line">ulove</div><div class="line">ulove</div><div class="line">肯定是哪个基准设错了。</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶(<span class="number">1</span>)转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">你不需要在意他是多少，你做的时候只需要根据你的设计图尺寸去做，其他的事情交给客户端处理就OK了</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶(<span class="number">1</span>)转发</div><div class="line">张三</div><div class="line">张三</div><div class="line">按你上面说的<span class="number">750</span>px的稿应该html设置的是<span class="number">75</span>px，现在变成<span class="number">54</span>px了，那转px的时候应该除以<span class="number">75</span>还是<span class="number">54</span>呀</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">你在编码时，你根据你的设计图来定，如果你的设计图是<span class="number">750</span>px的，那按<span class="number">75</span>px来计算；如果你的设计是<span class="number">640</span>的，你按<span class="number">64</span>px来计算。其他的你就可以不理会了。</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶转发</div><div class="line">张三</div><div class="line">张三</div><div class="line">那应该除以<span class="number">75</span>还是<span class="number">54</span></div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶转发</div><div class="line">故事与你</div><div class="line">故事与你</div><div class="line">我是不是引用JS少了什么，为什么不会自己转换成REM单位的？</div><div class="line"><span class="number">8</span>月<span class="number">16</span>日回复顶转发</div><div class="line">ulove</div><div class="line">ulove</div><div class="line">大漠哥，这个列表右边的宽度是否有问题呀？我自己写出来的却是<span class="number">6.9</span><span class="built_in">rem</span>，而不是<span class="number">133.3</span><span class="built_in">rem</span>，求解~</div><div class="line"><span class="number">602</span>cf753jw1ezxwdzvfdvj20x40mfjz0.jpg</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶转发</div><div class="line">ulove</div><div class="line">ulove</div><div class="line">图上半部分为你的demo</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">右边其实你没有必要定宽度的。就算定宽度，你按你编码中的定了，浏览器或者说js是不会对你的代码做处理的。</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶转发</div><div class="line">麽麽<span class="number">12345</span></div><div class="line">麽麽<span class="number">12345</span></div><div class="line">我也遇到这个问题了，非得写上display:inline-<span class="keyword">block</span>;去掉之后字体打下就显示不正常了</div><div class="line"><span class="number">2</span>月<span class="number">3</span>日回复顶转发</div><div class="line">yler</div><div class="line">yler</div><div class="line">我也遇到字体变大这个问题了，还有别的解决方法吗</div><div class="line"><span class="number">6</span>月<span class="number">1</span>日回复顶转发</div><div class="line">y y</div><div class="line">y y</div><div class="line">Font Boosting 搜索下</div><div class="line">字体设置max-height: <span class="number">9999</span>px;可以解决此问题</div><div class="line"><span class="number">6</span>月<span class="number">2</span>日回复顶转发</div><div class="line">yler</div><div class="line">yler</div><div class="line">嗯嗯，在后面的评论中找到了原因和答案，写了max-height:<span class="number">100</span>%解决了该问题</div><div class="line"><span class="number">6</span>月<span class="number">13</span>日回复顶转发</div><div class="line">小呗就是我</div><div class="line">小呗就是我</div><div class="line">这个叼，学习了</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶转发</div><div class="line">张三</div><div class="line">张三</div><div class="line">现在的在<span class="number">750</span>分辨率是<span class="number">54</span>px，我应该除以<span class="number">54</span>还是<span class="number">75</span>啊，搞糊涂了</div><div class="line"><span class="number">1</span>月<span class="number">13</span>日回复顶(<span class="number">1</span>)转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">你计算是按<span class="number">75</span>计算呀，教程都说得很清楚的。</div><div class="line"><span class="number">3</span>月<span class="number">1</span>日回复顶转发</div><div class="line"><span class="number">11111</span></div><div class="line"><span class="number">11111</span></div><div class="line">应该是<span class="number">54</span></div><div class="line"><span class="number">4</span>月<span class="number">27</span>日回复顶转发</div><div class="line">FreeRide_Joe</div><div class="line">FreeRide_Joe</div><div class="line"><span class="number">10</span><span class="built_in">rem</span>=<span class="number">750</span>px，<span class="number">1</span>px=<span class="number">10</span>/<span class="number">750</span><span class="built_in">rem</span>，<span class="number">54</span>px=<span class="number">10</span>/<span class="number">750</span>*<span class="number">54</span><span class="built_in">rem</span> 。</div><div class="line"><span class="number">6</span>月<span class="number">15</span>日回复顶转发</div><div class="line">孙莎莎</div><div class="line">孙莎莎</div><div class="line">mark，受益匪浅</div><div class="line"><span class="number">1</span>月<span class="number">15</span>日回复顶转发</div><div class="line">僦讓莪執蒾吥誨</div><div class="line">僦讓莪執蒾吥誨</div><div class="line">大神，<span class="number">1</span><span class="built_in">rem</span>=<span class="number">75</span>px; 这个值是不变的么？宽度为<span class="number">750</span>px时 <span class="number">1</span><span class="built_in">rem</span>=<span class="number">75</span>px;如果页面宽度为<span class="number">900</span>px 这个比例也是<span class="number">1</span><span class="built_in">rem</span>=<span class="number">75</span>px吗？</div><div class="line"><span class="number">1</span>月<span class="number">18</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">移动端的设计稿一般是<span class="number">640</span>px/<span class="number">750</span>px/<span class="number">1125</span>px,那么转换对应的基数是<span class="number">64</span>px/<span class="number">75</span>px/<span class="number">112.5</span>px,建议先将<span class="number">1125</span>转换成<span class="number">750</span></div><div class="line"><span class="number">1</span>月<span class="number">18</span>日回复顶转发</div><div class="line">尼古拉斯~颜鸿飞</div><div class="line">尼古拉斯~颜鸿飞</div><div class="line">这个js也会根据 dpr 给 body设置字体大小，这个是所有默认的<span class="number">12</span>px？今天做的东西有张<span class="number">640</span>的设计稿里段落字体是<span class="number">18</span>px，难道我写成p&#123;font-size：<span class="number">9</span>px&#125; ？不是最小不能小于<span class="number">12</span>px吗？</div><div class="line"><span class="number">1</span>月<span class="number">18</span>日回复顶转发</div><div class="line">僦讓莪執蒾吥誨</div><div class="line">僦讓莪執蒾吥誨</div><div class="line">Flexible会将视觉稿分成<span class="number">100</span>份，可不可以这么理解，宽度为<span class="number">1125</span>px，比例就是<span class="number">1</span><span class="built_in">rem</span>=<span class="number">112.5</span>px？</div><div class="line">Fexible是否使用pc端的网站？也需要转换成<span class="number">750</span>吗？</div><div class="line"><span class="number">1</span>月<span class="number">19</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">是这种意思，但不适合PC端网站。</div><div class="line"><span class="number">1</span>月<span class="number">19</span>日回复顶转发</div><div class="line">僦讓莪執蒾吥誨</div><div class="line">僦讓莪執蒾吥誨</div><div class="line">谢谢大漠老是，我去试过了，确实不太理想的</div><div class="line"><span class="number">1</span>月<span class="number">19</span>日回复顶转发</div><div class="line">僦讓莪執蒾吥誨</div><div class="line">僦讓莪執蒾吥誨</div><div class="line">mark,已经在用了，感谢楼主</div><div class="line"><span class="number">1</span>月<span class="number">18</span>日回复顶转发</div><div class="line">四次方_产品设计</div><div class="line">四次方_产品设计</div><div class="line">是不是引入这个框架媒体查询就没有用了？@media screen <span class="built_in">and</span> (width:<span class="number">320</span>px) <span class="built_in">and</span> (height:<span class="number">480</span>px) &#123;</div><div class="line"><span class="number">1</span>月<span class="number">26</span>日回复顶转发</div><div class="line">Azhun</div><div class="line">Azhun</div><div class="line">mark</div><div class="line"><span class="number">1</span>月<span class="number">27</span>日回复顶转发</div><div class="line">ヤ一枚夲蛋o○</div><div class="line">ヤ一枚夲蛋o○</div><div class="line">我的是<span class="function"><span class="title">win7</span>系统，安装了sublime <span class="keyword">text</span> 3后安装cssrem时发现并没有介绍的Sublime Text -&gt;</span> P<span class="function"><span class="title">references</span> -&gt;</span> Browse Packages..文件路径，我换了好几个版本安装都是这样，像这样的是不是就没法安装cssrem了？</div><div class="line"><span class="number">1</span>月<span class="number">29</span>日回复顶转发</div><div class="line">w3cplus</div><div class="line">w3cplus</div><div class="line">看看这个吧：http:<span class="comment">//www.w3cplus.com/blog/692.html 不过sublime text3的package control安装不太一样，你可以先搜索一下如何安装sublime text3的package control先。这些操作都是最基本的，而且在网上相关的资料也很多。建议先google一下</span></div><div class="line"><span class="number">1</span>月<span class="number">29</span>日回复顶转发</div><div class="line">梦想</div><div class="line">梦想</div><div class="line">大神，我把安装包丢进去了，重启了，还是没有提示啊，帮帮忙，谢谢</div><div class="line"><span class="number">3</span>月<span class="number">3</span>日回复顶转发</div><div class="line">一紧张就流汗</div><div class="line">一紧张就流汗</div><div class="line">S<span class="function"><span class="title">ublime</span> Text -&gt;</span> P<span class="function"><span class="title">references</span> -&gt;</span> Browse Packages..这个文件路径在sublime软件里面打开，在上面的菜单栏目里面，你把下载好的cssrem文件丢进去就行了。</div><div class="line"><span class="number">1</span>月<span class="number">30</span>日回复顶转发</div><div class="line">梦想</div><div class="line">梦想</div><div class="line">丢进去了没反应啊，怎么样才会有提示</div><div class="line"><span class="number">3</span>月<span class="number">3</span>日回复顶转发</div><div class="line">htne</div><div class="line">htne</div><div class="line">大神 把下载的包丢进去了啊 还是没有提示 是怎么回事呀？</div><div class="line"><span class="number">5</span>月<span class="number">6</span>日回复顶转发</div><div class="line">喵咪控</div><div class="line">喵咪控</div><div class="line">[阴险]</div><div class="line"><span class="number">1</span>月<span class="number">30</span>日回复顶转发</div><div class="line">喵咪控</div><div class="line">喵咪控</div><div class="line">我做适配的时候就用的css3的媒体查询做的适配 感觉也没出现过大问题呢。 [思考]</div><div class="line"><span class="number">1</span>月<span class="number">30</span>日回复顶转发</div><div class="line">只修电脑</div><div class="line">只修电脑</div><div class="line">说句不合时宜的话 直接用vw不就行了 什么 你不会兼容 自己去想吧 滑稽</div><div class="line"><span class="number">1</span>月<span class="number">31</span>日回复顶转发</div><div class="line">发的身份</div><div class="line">发的身份</div><div class="line">不知道我理解对不对，既然已经用了<span class="built_in">rem</span> 为什么不直接按<span class="number">1</span>倍的算，<span class="number">2</span>倍<span class="number">3</span>倍 变换的只是跟字体的大小。最终还是要缩小 <span class="number">0.5</span> <span class="number">0.3</span></div><div class="line"><span class="number">2</span>月<span class="number">3</span>日回复顶转发</div><div class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></div><div class="line">帐号管理世平阜康</div><div class="line">世平阜康</div><div class="line"></div><div class="line">说点什么吧…</div><div class="line"> 分享到:</div><div class="line">发布</div><div class="line">W3CPLUS正在使用多说</div><div class="line"></div><div class="line">请输入关键字</div><div class="line">搜索</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">GitHub</div><div class="line"></div><div class="line"></div><div class="line">Airen</div><div class="line">@W3cplus</div><div class="line">⚲ China</div><div class="line"><span class="number">807</span></div><div class="line">Followers</div><div class="line"><span class="number">113</span></div><div class="line">Following</div><div class="line"><span class="number">3</span></div><div class="line">Repositories</div><div class="line">Top repositories</div><div class="line">jsStudy</div><div class="line">HTML</div><div class="line">★<span class="number">46</span></div><div class="line">article</div><div class="line">Unknown</div><div class="line">★<span class="number">2</span></div><div class="line">mobileTech</div><div class="line">Unknown</div><div class="line">★<span class="number">0</span></div><div class="line"></div><div class="line">Follow</div><div class="line">Last active: <span class="number">15</span> day(s) ago</div><div class="line">关注我们</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">合作网站</div><div class="line"></div><div class="line">JavaScript学习案例</div><div class="line">墨鱼前端培训</div><div class="line">HTML5梦工场</div><div class="line">Sass入门指南</div><div class="line">CSS解决方案</div><div class="line">W3ctech</div><div class="line">Drupal中国</div><div class="line">友情链接</div><div class="line"></div><div class="line">在线图片压缩</div><div class="line">java源代码学习</div><div class="line">墨鱼前端开发培训</div><div class="line">猪八戒网</div><div class="line">HTML5梦工场</div><div class="line">PHP教程</div><div class="line">程序员客栈</div><div class="line">imweb 前端社区</div><div class="line">前端笔记</div><div class="line">Drupal大学</div><div class="line">关于我们</div><div class="line"></div><div class="line">W3cplus</div><div class="line">W3cplus是一个致力于推广国内前端行业的技术博客。它以探索为己任，不断活跃在行业技术最前沿，努力提供高质量前端技术博文；其文章范围广泛，主要以CSS3、HTML5、Sass、Mobile和各类DEMO为主。</div><div class="line"></div><div class="line">W3cplus具有一支强大的团队，提供长期的前端项目外包，Drupal建站，Drupal主题制作服务，以及提供企业广告展示与招聘发布，有需要的请联系：QQ:<span class="number">81059347</span>，E-mail:w3cplus@hotmail.com</div><div class="line"></div><div class="line">关于站长</div><div class="line"></div><div class="line">大漠</div><div class="line"></div><div class="line">常用昵称“大漠”，W3CPlus创始人，目前就职于淘宝。中国Drupal社区核心成员之一。对HTML5、CSS3和Sass等前端脚本语言有非常深入的认识和丰富的实践经验，尤其专注对CSS3、Sass和Mobile的研究，是国内最早研究和使用CSS3和Sass技术的一批人。CSS3、Sass和Drupal中国布道者。<span class="number">2014</span>年出版《图解CSS3：核心技术与案例实战》。</div><div class="line"></div><div class="line">github weibo facebook google twitter linkedin</div><div class="line"> </div><div class="line"></div><div class="line">我的作品</div><div class="line"></div><div class="line">图解CSS3</div><div class="line">本书是国内著名的Web前端专家历时<span class="number">2</span>载的心血之作，根据最新的CSS3撰写，融入了作者在CSS领域多年的使用经验，旨在将本书打造成为CSS3领域最权威和实用的专业著作，供没有经验的读者系统学习，供有经验的读者参考备查。</div><div class="line"></div><div class="line">本书理论知识系统全面，详细讲解了选择器、伸缩布局盒模型、渐变、过渡、动画等主题下涵盖的所有CSS3新特性。</div><div class="line"></div><div class="line">湘ICP备<span class="number">13003850</span>号-<span class="number">12</span>，版权所有 衡阳瑞思信息技术有限公司 © <span class="number">2011</span>-<span class="number">2016</span> W3CPLUS，感谢Drupal开源技术。感谢七牛云存储提供静态资源空间。</div><div class="line">返回顶部</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Flexible/" rel="tag"># Flexible</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/02/Demo/TextShow/" rel="next" title="BOOS信息展示与收缩">
+                <i class="fa fa-chevron-left"></i> BOOS信息展示与收缩
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/02/Plug/optimization/" rel="prev" title="【转】前端工程化">
+                【转】前端工程化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">226</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

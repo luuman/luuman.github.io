@@ -1,0 +1,723 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="React Demo">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Demo">
+<meta property="og:url" content="http://luuman.github.io/2017/02/15/FrontFrame/React/ReactDemo/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="React Demo">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-28T10:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Demo">
+<meta name="twitter:description" content="React Demo">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2017/02/15/FrontFrame/React/ReactDemo/"/>
+
+
+
+
+
+  <title> React Demo | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2017/02/15/FrontFrame/React/ReactDemo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React Demo
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-15T18:29:00+08:00">
+                2017-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>  React Demo<br><a id="more"></a></p>
+<h4 id="TimeList"><a href="#TimeList" class="headerlink" title="TimeList"></a>TimeList</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//app.js</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">const</span> mountNode = <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>);</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.state = &#123;<span class="attr">secondsElapsed</span>: <span class="number">0</span>&#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    tick() &#123;</div><div class="line">        <span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> (&#123;</div><div class="line">            <span class="attr">secondsElapsed</span>: prevState.secondsElapsed + <span class="number">1</span></div><div class="line">        &#125;));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentDidMount() &#123;</div><div class="line">        <span class="keyword">this</span>.interval = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.tick(), <span class="number">1000</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentWillUnmount() &#123;</div><div class="line">        clearInterval(<span class="keyword">this</span>.interval);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Seconds Elapsed: &#123;this.state.secondsElapsed&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Timer</span> /&gt;</span>, mountNode);</span></div></pre></td></tr></table></figure>
+<h4 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h4><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//app.js</span></div><div class="line"><span class="keyword">import</span> <span class="type">React</span> from <span class="symbol">'reac</span>t';</div><div class="line"><span class="keyword">import</span> <span class="type">ReactDOM</span> from <span class="symbol">'react</span>-dom';</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoApp</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.handleChange = <span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">this</span>.handleSubmit = <span class="keyword">this</span>.handleSubmit.bind(<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">this</span>.state = &#123;items: [], text: ''&#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;div&gt;</div><div class="line">                &lt;h3&gt;<span class="type">TODO</span>&lt;/h3&gt;</div><div class="line">                &lt;<span class="type">TodoList</span> items=&#123;<span class="keyword">this</span>.state.items&#125; /&gt;</div><div class="line">                &lt;form onSubmit=&#123;<span class="keyword">this</span>.handleSubmit&#125;&gt;</div><div class="line">                    &lt;input onChange=&#123;<span class="keyword">this</span>.handleChange&#125; value=&#123;<span class="keyword">this</span>.state.text&#125; /&gt;</div><div class="line">                    &lt;button&gt;&#123;<span class="symbol">'Add</span> #' + (<span class="keyword">this</span>.state.items.length + <span class="number">1</span>)&#125;&lt;/button&gt;</div><div class="line">                &lt;/form&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    handleChange(e) &#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;text: e.target.value&#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    handleSubmit(e) &#123;</div><div class="line">        e.preventDefault();</div><div class="line">        <span class="keyword">var</span> newItem = &#123;</div><div class="line">            text: <span class="keyword">this</span>.state.text,</div><div class="line">            id: <span class="type">Date</span>.now()</div><div class="line">        &#125;;</div><div class="line">        <span class="keyword">this</span>.setState((prevState) =&gt; (&#123;</div><div class="line">            items: prevState.items.concat(newItem),</div><div class="line">            text: ''</div><div class="line">        &#125;));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;ul&gt;</div><div class="line">                &#123;<span class="keyword">this</span>.props.items.map(item =&gt; (</div><div class="line">                    &lt;li key=&#123;item.id&#125;&gt;&#123;item.text&#125;&lt;/li&gt;</div><div class="line">                ))&#125;</div><div class="line">            &lt;/ul&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="type">ReactDOM</span>.render(&lt;<span class="type">TodoApp</span> /&gt;, document.getElementById(<span class="symbol">'exampl</span>e'));</div></pre></td></tr></table></figure>
+<h4 id="MarkdownEditor"><a href="#MarkdownEditor" class="headerlink" title="MarkdownEditor"></a>MarkdownEditor</h4><p><a href="https://github.com/jonschlinkert/remarkable" title="Markdown解析器" target="_blank" rel="external">remarkable</a><br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//app.js</span></div><div class="line"><span class="keyword">import</span> React from <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM from <span class="string">'react-dom'</span>;</div><div class="line">const Remarkable = require(<span class="string">'remarkable'</span>);</div><div class="line">const mountNode = document.getElementById(<span class="string">'example'</span>);</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MarkdownEditor</span> <span class="title">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.handleChange = <span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">this</span>.state = &#123;value: <span class="string">'Type some *markdown* here!'</span>&#125;;</div><div class="line">    &#125;</div><div class="line">    handleChange() &#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;value: <span class="keyword">this</span>.refs.textarea.value&#125;);</div><div class="line">    &#125;</div><div class="line">    getRawMarkup() &#123;</div><div class="line">        <span class="keyword">var</span> md = new Remarkable();</div><div class="line">        <span class="keyword">return</span> &#123; __html: md.render(<span class="keyword">this</span>.state.value) &#125;;</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;div className=<span class="string">"MarkdownEditor"</span>&gt;</div><div class="line">                &lt;h3&gt;Input&lt;/h3&gt;</div><div class="line">                &lt;textarea</div><div class="line">                    onChange=&#123;<span class="keyword">this</span>.handleChange&#125;</div><div class="line">                    ref=<span class="string">"textarea"</span></div><div class="line">                    defaultValue=&#123;<span class="keyword">this</span>.state.value&#125; /&gt;</div><div class="line">                &lt;h3&gt;Output&lt;/h3&gt;</div><div class="line">                &lt;div</div><div class="line">                    className=<span class="string">"content"</span></div><div class="line">                    dangerouslySetInnerHTML=&#123;<span class="keyword">this</span>.getRawMarkup()&#125;</div><div class="line">                /&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDOM.render(&lt;MarkdownEditor /&gt;, mountNode);</div></pre></td></tr></table></figure></p>
+<h4 id="ReCharts"><a href="#ReCharts" class="headerlink" title="ReCharts"></a>ReCharts</h4><p><a href="http://recharts.org/#/en-US" target="_blank" rel="external">Recharts</a><br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">//app.js</div><div class="line"><span class="keyword">import</span> React from <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM from <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> &#123;LineChart, Line, XAxis, YAxis, CartesianGrid&#125; from <span class="string">'recharts'</span>;</div><div class="line">const mountNode = document.getElementById(<span class="string">'example'</span>);</div><div class="line">const data = [</div><div class="line">    &#123;name: <span class="string">'Page A'</span>, uv: <span class="number">4000</span>, pv: <span class="number">2400</span>, amt: <span class="number">2400</span>&#125;,</div><div class="line">    &#123;name: <span class="string">'Page B'</span>, uv: <span class="number">3000</span>, pv: <span class="number">1398</span>, amt: <span class="number">2210</span>&#125;,</div><div class="line">    &#123;name: <span class="string">'Page C'</span>, uv: <span class="number">2000</span>, pv: <span class="number">9800</span>, amt: <span class="number">2290</span>&#125;,</div><div class="line">    &#123;name: <span class="string">'Page D'</span>, uv: <span class="number">2780</span>, pv: <span class="number">3908</span>, amt: <span class="number">2000</span>&#125;,</div><div class="line">    &#123;name: <span class="string">'Page E'</span>, uv: <span class="number">1890</span>, pv: <span class="number">4800</span>, amt: <span class="number">2181</span>&#125;,</div><div class="line">    &#123;name: <span class="string">'Page F'</span>, uv: <span class="number">2390</span>, pv: <span class="number">3800</span>, amt: <span class="number">2500</span>&#125;,</div><div class="line">    &#123;name: <span class="string">'Page G'</span>, uv: <span class="number">3490</span>, pv: <span class="number">4300</span>, amt: <span class="number">2100</span>&#125;,</div><div class="line">];</div><div class="line"></div><div class="line">const TinyLineChart = React.createClass(&#123;</div><div class="line">    render () &#123;</div><div class="line">        return (</div><div class="line">    &lt;LineChart width=&#123;<span class="number">1000</span>&#125; height=&#123;<span class="number">400</span>&#125; data=&#123;data&#125;&gt;</div><div class="line">        &lt;XAxis dataKey=<span class="string">"name"</span>/&gt;</div><div class="line">        &lt;YAxis/&gt;</div><div class="line">        &lt;CartesianGrid stroke=<span class="string">"#eee"</span> strokeDasharray=<span class="string">"5 5"</span>/&gt;</div><div class="line">        &lt;Line type=<span class="string">"monotone"</span> dataKey=<span class="string">"uv"</span> stroke=<span class="string">"#8884d8"</span> /&gt;</div><div class="line">        &lt;Line type=<span class="string">"monotone"</span> dataKey=<span class="string">"pv"</span> stroke=<span class="string">"#82ca9d"</span> /&gt;</div><div class="line">    &lt;/LineChart&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">ReactDOM.render(&lt;TinyLineChart /&gt;,mountNode);</div></pre></td></tr></table></figure></p>
+<h4 id="实例：数组列表"><a href="#实例：数组列表" class="headerlink" title="实例：数组列表"></a>实例：数组列表</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">const names = ['Alice', 'Emily', 'Kate'];</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">    &lt;<span class="keyword">div</span>&gt;&#123;names.map(</div><div class="line">        function (<span class="built_in">name</span>) &#123;</div><div class="line">            console.<span class="built_in">log</span>(<span class="built_in">name</span>);</div><div class="line"><span class="built_in">            return</span> &lt;<span class="keyword">div</span>&gt;Hello, &#123;<span class="built_in">name</span>&#125;!&lt;/<span class="keyword">div</span>&gt;</div><div class="line">        &#125;</div><div class="line">    )&#125;&lt;/<span class="keyword">div</span>&gt;,</div><div class="line">    mountNode</div><div class="line">);</div></pre></td></tr></table></figure>
+<h4 id="实例：文字列表"><a href="#实例：文字列表" class="headerlink" title="实例：文字列表"></a>实例：文字列表</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NotesList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            <span class="xml"><span class="tag">&lt;<span class="name">ol</span>&gt;</span>&#123;</span></div><div class="line">                React.Children.map(this.props.children,function(child)&#123;</div><div class="line">                    console.log(child);</div><div class="line">                    return <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;child&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">                &#125;)</div><div class="line">            &#125;<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">NotesList</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">NotesList</span>&gt;</span>,</div><div class="line">    mountNode</div><div class="line">);</div></pre></td></tr></table></figure>
+<h4 id="实例：鼠标划过”My-Website”，下拉即会展现"><a href="#实例：鼠标划过”My-Website”，下拉即会展现" class="headerlink" title="实例：鼠标划过”My Website”，下拉即会展现"></a>实例：鼠标划过”My Website”，下拉即会展现</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">.navigation__dropdown&#123;</div><div class="line">    <span class="attr">display</span>: none;</div><div class="line">&#125;</div><div class="line">.navigation__dropdown--open&#123;</div><div class="line">    <span class="attr">display</span>: block;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> navigationConfig = [</div><div class="line">    &#123;</div><div class="line">        <span class="attr">href</span>: <span class="string">'http://ryanclark.me'</span>,</div><div class="line">        <span class="attr">text</span>: <span class="string">'My Website'</span>,</div><div class="line">        <span class="attr">children</span>: [</div><div class="line">            &#123;</div><div class="line">                <span class="attr">href</span>: <span class="string">'http://ryanclark.me/how-angularjs-implements-dirty-checking/'</span>,</div><div class="line">                <span class="attr">text</span>: <span class="string">'Angular Dirty Checking'</span></div><div class="line">            &#125;,</div><div class="line">            &#123;</div><div class="line">                <span class="attr">href</span>: <span class="string">'http://ryanclark.me/getting-started-with-react/'</span>,</div><div class="line">                <span class="attr">text</span>: <span class="string">'React'</span></div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">];</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Navigation</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        <span class="keyword">this</span>.state = &#123;</div><div class="line">            <span class="attr">openDropdown</span>: <span class="number">-1</span></div><div class="line">        &#125;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'constructor'</span>);</div><div class="line">    &#125;</div><div class="line">    openDropdown(id)&#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;</div><div class="line">            <span class="attr">openDropdown</span>: id</div><div class="line">        &#125;);</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'openDropdown'</span>);</div><div class="line">        <span class="built_in">console</span>.log(id);</div><div class="line">    &#125;</div><div class="line">    closeDropdown()&#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;</div><div class="line">            <span class="attr">openDropdown</span>: <span class="number">-1</span></div><div class="line">        &#125;)</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'closeDropdown'</span>);</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state);</div><div class="line">        <span class="keyword">let</span> config = <span class="keyword">this</span>.props.config;</div><div class="line">        <span class="keyword">let</span> items = config.map(<span class="function">(<span class="params">item,keys</span>) =&gt;</span> &#123;</div><div class="line">            <span class="keyword">let</span> children, dropdown;</div><div class="line">            <span class="keyword">if</span>(item.children)&#123;</div><div class="line">                children = item.children.map(<span class="function">(<span class="params">child,keyss</span>) =&gt;</span> &#123;</div><div class="line">                    <span class="keyword">return</span>(</div><div class="line">                        <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;keyss&#125;</span> <span class="attr">className</span>=<span class="string">'navigation_dropdown_item'</span>&gt;</span></span></div><div class="line">                            <span class="tag">&lt;<span class="name">a</span> <span class="attr">className</span>=<span class="string">'navigation_dropdown_line'</span> <span class="attr">href</span>=<span class="string">&#123;child.href&#125;</span> &gt;</span>&#123;child.text&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">                    )</div><div class="line">                &#125;);</div><div class="line">                <span class="keyword">let</span> dropdownClass = <span class="string">'navigation_dropdown'</span>;</div><div class="line">                <span class="keyword">if</span>(<span class="keyword">this</span>.state.openDropdown === keys)&#123;</div><div class="line">                    dropdownClass += <span class="string">' navigation_dropdown--open'</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.openDropdown,keys);</div><div class="line">                dropdown = <span class="xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">className</span>=<span class="string">&#123;dropdownClass&#125;</span>&gt;</span>&#123;children&#125;<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span>(</div><div class="line">                <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;keys&#125;</span> <span class="attr">className</span>=<span class="string">'navigation_item'</span> <span class="attr">onMouseOut</span>=<span class="string">&#123;this.closeDropdown.bind(this)&#125;</span> <span class="attr">onMouseOver</span>=<span class="string">&#123;this.openDropdown.bind(this,keys)&#125;</span>&gt;</span></span></div><div class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">className</span>=<span class="string">'navigation_link'</span> <span class="attr">href</span>=<span class="string">&#123;item.href&#125;</span>&gt;</span></div><div class="line">                        &#123;item.text&#125;</div><div class="line">                    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                    &#123;dropdown&#125;</div><div class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            )</div><div class="line">        &#125;,<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">'navigation'</span>&gt;</span>&#123;items&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Navigation.DefaultProps = &#123;</div><div class="line">    <span class="attr">config</span>: []</div><div class="line">&#125;</div><div class="line">Navigation.propTypes = &#123;</div><div class="line">    <span class="attr">config</span>: React.PropTypes.array</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Navigation</span> <span class="attr">config</span>=<span class="string">&#123;navigationConfig&#125;</span> /&gt;</span>,mountNode);</span></div></pre></td></tr></table></figure>
+<h4 id="实例：点击显示内容"><a href="#实例：点击显示内容" class="headerlink" title="实例：点击显示内容"></a>实例：点击显示内容</h4><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bend</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    constructor()&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        <span class="keyword">this</span>.state = &#123;</div><div class="line">            isShowContent: <span class="keyword">false</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    handleClick(event)&#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;</div><div class="line">            isShowContent: !<span class="keyword">this</span>.state.isShowContent</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">    dateToString(<span class="keyword">date</span>)&#123;</div><div class="line">        <span class="keyword">date</span> = <span class="keyword">date</span> || (<span class="keyword">new</span> Date());</div><div class="line">        <span class="keyword">return</span> <span class="string">'Date: '</span> + [<span class="keyword">date</span>.getFullYear(),<span class="keyword">date</span>.getMonth()+<span class="number">1</span>,<span class="keyword">date</span>.getDate()].join(<span class="string">'-'</span>)</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.state.isShowContent)&#123;</div><div class="line">            let options = &lt;<span class="keyword">div</span> onClick=&#123;<span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>)&#125;&gt;state modified&lt;/<span class="keyword">div</span>&gt;</div><div class="line">            <span class="keyword">return</span> options</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            &lt;<span class="keyword">div</span> onClick=&#123;<span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>)&#125;&gt;</div><div class="line">                &lt;h1 className=<span class="string">'title'</span>&gt;React,hello.&lt;/h1&gt;</div><div class="line">                &lt;<span class="keyword">div</span>&gt;&#123;<span class="keyword">this</span>.props.children&#125;&lt;/<span class="keyword">div</span>&gt;</div><div class="line">                &lt;p&gt;&#123;<span class="keyword">this</span>.dateToString(<span class="keyword">new</span> Date())&#125;&lt;/p&gt;</div><div class="line">            &lt;/<span class="keyword">div</span>&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDOM.render(React.createElement(Bend,<span class="keyword">null</span>,<span class="string">'This is a people!'</span>),mountNode);</div></pre></td></tr></table></figure>
+<h4 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListTime</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        <span class="keyword">this</span>.state = &#123;</div><div class="line">            <span class="attr">cur_time</span>: <span class="number">0</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    GetJson()&#123;</div><div class="line">        $.ajax(&#123;</div><div class="line">            <span class="attr">type</span>: <span class="string">'GET'</span>,</div><div class="line">            <span class="attr">url</span>: <span class="string">'http://xxx'</span>,</div><div class="line">            <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">date</span>)</span>&#123;</div><div class="line">                <span class="keyword">this</span>.setState(&#123;</div><div class="line">                    <span class="attr">cur_time</span>: date.timestamp</div><div class="line">                &#125;)</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">complete</span>: <span class="function"><span class="keyword">function</span>(<span class="params">date</span>)</span>&#123;</div><div class="line">                <span class="keyword">this</span>.setState(&#123;</div><div class="line">                    <span class="attr">cur_time</span>: date.parse(<span class="keyword">new</span> <span class="built_in">Date</span>())/<span class="number">1000</span></div><div class="line">                &#125;)</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">    componentDidMount()&#123;</div><div class="line">        setInterval(<span class="keyword">this</span>.GetJson,<span class="number">1000</span>)</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>(</div><div class="line">            <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">'col-xs-12'</span>&gt;</span>当前时间&#123;this.state.cur_time&#125;</span></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#123;this.state.cur_time</span> % <span class="attr">2</span> == <span class="string">0</span> ? '<span class="attr">hidden</span>' <span class="attr">:</span> '<span class="attr">col-xs-6</span> <span class="attr">alert</span> <span class="attr">alert-success</span>'&#125;&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">span</span>&gt;</span>最后一位奇数<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#123;this.state.cur_time</span> % <span class="attr">2</span> &gt;</span>= 0 ? 'hidden' : 'col-xs-6 alert alert-danger'&#125;&gt;</div><div class="line">                    <span class="tag">&lt;<span class="name">span</span>&gt;</span>最后一位偶数<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">ListTime</span> /&gt;</span>,mountNode);</span></div></pre></td></tr></table></figure>
+<h4 id="实例：-1"><a href="#实例：-1" class="headerlink" title="实例："></a>实例：</h4><pre><code>
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/15/FrontFrame/React/ReactAll/" rel="next" title="React资源">
+                <i class="fa fa-chevron-left"></i> React资源
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/15/Plug/Webpack/Webpack/" rel="prev" title="Webpack初探">
+                Webpack初探 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">226</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#TimeList"><span class="nav-number">1.</span> <span class="nav-text">TimeList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TODO"><span class="nav-number">2.</span> <span class="nav-text">TODO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MarkdownEditor"><span class="nav-number">3.</span> <span class="nav-text">MarkdownEditor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ReCharts"><span class="nav-number">4.</span> <span class="nav-text">ReCharts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例：数组列表"><span class="nav-number">5.</span> <span class="nav-text">实例：数组列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例：文字列表"><span class="nav-number">6.</span> <span class="nav-text">实例：文字列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例：鼠标划过”My-Website”，下拉即会展现"><span class="nav-number">7.</span> <span class="nav-text">实例：鼠标划过”My Website”，下拉即会展现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例：点击显示内容"><span class="nav-number">8.</span> <span class="nav-text">实例：点击显示内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例："><span class="nav-number">9.</span> <span class="nav-text">实例：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例：-1"><span class="nav-number">10.</span> <span class="nav-text">实例：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

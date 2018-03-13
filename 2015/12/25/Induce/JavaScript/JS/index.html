@@ -1,0 +1,751 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript修行">
+<meta property="og:url" content="http://luuman.github.io/2015/12/25/Induce/JavaScript/JS/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-05T08:48:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript修行">
+<meta name="twitter:description" content="自用笔记：本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2015/12/25/Induce/JavaScript/JS/"/>
+
+
+
+
+
+  <title> JavaScript修行 | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2015/12/25/Induce/JavaScript/JS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript修行
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-25T18:29:00+08:00">
+                2015-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　<strong>自用笔记：</strong>本文属于自用笔记，不做详解，仅供参考。在此记录自己已理解并开始遵循的前端代码规范。What How Why<br><a id="more"></a></p>
+<h3 id="script元素"><a href="#script元素" class="headerlink" title="script元素"></a>script元素</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line">## 二、语法结构</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">### <span class="number">5</span>、数据类型</div><div class="line"></div><div class="line">JavaScript是弱类型数据语言，定义无需关注类型。数据类型分为：原始类型Primitive type、对象类型Object type。</div><div class="line">注释：通过typeof可以看到变量的具体类型。 <span class="comment">//JS是动态语言；window.alert(“vi是”+typeof vi);</span></div><div class="line">原始类型：</div><div class="line"></div><div class="line">数值</div><div class="line">字符串</div><div class="line">布尔型Boolean</div><div class="line"></div><div class="line">对象类型：是一组数据和功能的集合，</div><div class="line"></div><div class="line">数组Array</div><div class="line">var colors = new Array();</div><div class="line">var colors = [];</div><div class="line">colors.push(<span class="string">'one'</span>,<span class="string">'first'</span>);<span class="comment">//推入两项</span></div><div class="line">colors.pop();<span class="comment">// 取得最后一项</span></div><div class="line">colors.shift();<span class="comment">//取得第一项</span></div><div class="line">colors.concat(<span class="string">"yellow"</span>, [<span class="string">"black"</span>, <span class="string">"brown"</span>]);</div><div class="line">concat()方法可以基于当前数组中的所有项创建一个新数组。</div><div class="line"></div><div class="line">位置方法</div><div class="line">indexOf();方法可返回某个指定的字符串值在字符串中首次出现的位置。</div><div class="line">lastIndexOf();方法可返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索。</div><div class="line"></div><div class="line"></div><div class="line">#### sort(compare)方法:</div></pre></td></tr></table></figure>
+<p>function compare(value1, value2) {<br>    if (value1 &lt; value2) {<br>        return 1;<br>    } else if (value1 &gt; value2) {<br>        return -1;<br>    } else {<br>        return 0;<br>    }<br>}<br>var values = [0, 1, 5, 10, 15];<br>values.sort(compare);<br>alert(values); // 15,10,5,1,0<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#### splice()方法:</div></pre></td></tr></table></figure></p>
+<p>这个方法恐怕要算是最强大的数组方法了，它有很多种用法。<br>splice()的主要用途是向数组的中部插入项，但使用这种方法的方式则有如下3 种。</p>
+<p> 删除：可以删除任意数量的项，只需指定2 个参数：要删除的第一项的位置和要删除的项数。<br>例如，splice(0,2)会删除数组中的前两项。</p>
+<p> 插入：可以向指定位置插入任意数量的项，只需提供3 个参数：起始位置、0（要删除的项数）<br>和要插入的项。如果要插入多个项，可以再传入第四、第五，以至任意多个项。例如，<br>splice(2,0,”red”,”green”)会从当前数组的位置2 开始插入字符串”red”和”green”。</p>
+<p> 替换：可以向指定位置插入任意数量的项，且同时删除任意数量的项，只需指定3 个参数：起<br>始位置、要删除的项数和要插入的任意数量的项。插入的项数不必与删除的项数相等。例如，<br>splice (2,1,”red”,”green”)会删除当前数组位置2 的项，然后再从位置2 开始插入字符串<br>“red”和”green”。<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">函数Function</div><div class="line">对象Object</div><div class="line">特殊原始类型：</div><div class="line"></div><div class="line">空null（var a=null；）</div><div class="line">未定义undefine</div><div class="line"></div><div class="line">数据类型判断：window.alert(tt);，报错 var aa; 弹出undefine</div><div class="line"></div><div class="line"><span class="comment">## 数据类型初探：</span></div><div class="line"></div><div class="line">&gt;1、数值number：</div><div class="line">整型常量：10、8、16进制，</div><div class="line">实型常量：12.23 5E7=5<span class="symbol">*</span>107，</div><div class="line">特殊数值：NaN不是数、Infinity无穷大、IsNaN不是数字、isFinite有穷大等，进行是否判断。</div><div class="line"></div><div class="line">&gt;2、布尔型Boolean：true真、false假。JS中非“0”的值，都是true，|<span class="string">0、’’、false、null、undefine、NaN等值。</span></div><div class="line"></div><div class="line">&gt;3、字符串String：使用双引号、单引号，”a”、’a’、’’，特殊字符：”a\”sk”</div><div class="line"></div><div class="line">&gt;5、运算符</div><div class="line">按功能分类：</div><div class="line">A=10，B=20</div><div class="line"></div><div class="line">### 算数运算符：</div><div class="line"></div><div class="line">运算符 |<span class="string"> 描述 </span>|<span class="string"> 例子</span></div><div class="line">-----|<span class="string">------</span>|<span class="string">----</span></div><div class="line">+	 |<span class="string"> 两个运算数相加               </span>|<span class="string">	A + B = 30</span></div><div class="line">-	 |<span class="string"> 第一个运算数减去第二个运算数               </span>|<span class="string">	A - B = -10</span></div><div class="line">*	 |<span class="string"> 运算数相乘               </span>|<span class="string">	A * B = 200</span></div><div class="line">/	 |<span class="string"> 分子除以分母               </span>|<span class="string">	B / A = 2</span></div><div class="line">%	 |<span class="string"> 模数运算符，整除后的余数               </span>|<span class="string">	B % A = 0</span></div><div class="line">++	 |<span class="string"> 增量运算符，整数值逐次加1               </span>|<span class="string">	A++ = 11</span></div><div class="line">--	 |<span class="string"> 减量运算符，整数值逐次减1               </span>|<span class="string">	--A=10，A=9</span></div><div class="line"></div><div class="line">注意 : + 运算符不仅可以用于数字相加，还可以用于把文本值或字符串变量加起来（连接起来）。例如，"a" + 10 = “a10”。</div><div class="line"></div><div class="line">### 比较运算符：</div><div class="line"></div><div class="line">运算符 |<span class="string"> 描述 </span>|<span class="string"> 例子</span></div><div class="line">-----|<span class="string">------</span>|<span class="string">----</span></div><div class="line">==	 |<span class="string"> 检查两个运算数的值是否相等，如果是，则结果为true	    </span>|<span class="string"> A == B 为false</span></div><div class="line">!=	 |<span class="string"> 检查两个运算数的值是否相等，如果不相等，则结果为true	    </span>|<span class="string"> A != B 为true</span></div><div class="line">&gt;	 |<span class="string"> 检查左边运算数是否大于右边运算数，如果是，则结果为true	    </span>|<span class="string"> A &gt; B 为false</span></div><div class="line">	 |<span class="string"> 检查左边运算数是否小于右边运算数，如果是，则结果为true	    </span>|<span class="string"> A</span></div><div class="line">&gt;=	 |<span class="string"> 检查左边运算数是否大于或者等于右边运算数，如果是，则结果为true	    </span>|<span class="string"> A &gt;= B 为false</span></div><div class="line">	 |<span class="string"> 检查左边运算数是否小于或者等于运算数，如果是，则结果为true	    </span>|<span class="string"> A</span></div><div class="line"></div><div class="line">### 逻辑运算符：</div><div class="line"></div><div class="line">运算符 |<span class="string"> 描述 </span>|<span class="string"> 例子</span></div><div class="line">-----|<span class="string">------</span>|<span class="string">----</span></div><div class="line">&amp;&amp;	 |<span class="string"> 称为逻辑与运算符。如果两个运算数都非零，则结果为true。  </span>|<span class="string">	A &amp;&amp; B 为true</span></div><div class="line">\\	 |<span class="string"> 称为逻辑或运算符。如果两个运算数中任何一个非零，则结果为true。  </span>|<span class="string">	A '\' B 为 true</span></div><div class="line">!	 |<span class="string"> 称为逻辑非运算符。用于改变运算数的逻辑状态。如果逻辑状态为true，则通过逻辑非运算符可以使逻辑状态变为false  </span>|<span class="string">	!(A &amp;&amp; B) 为false</span></div><div class="line"></div><div class="line">### 位运算符：</div><div class="line"></div><div class="line">运算符 |<span class="string"> 描述 </span>|<span class="string"> 例子</span></div><div class="line">-----|<span class="string">------</span>|<span class="string">----</span></div><div class="line">&amp;	 |<span class="string"> 称为按位与运算符。它对整型参数的每一个二进制位进行布尔与操作。	 </span>|<span class="string"> A &amp; B = 2 .</span></div><div class="line">\	 |<span class="string"> 称为按位或运算符。它对整型参数的每一个二进制位进行布尔或操作。	 </span>|<span class="string"> A </span>|<span class="string"> B = 3.</span></div><div class="line">^	 |<span class="string"> 称为按位异或运算符。它对整型参数的每一个二进制位进行布尔异或操作。异或运算是指第一个参数或者第二个参数为true，并且不包括两个参数都为true的情况，则结果为true。</span>|<span class="string">	(A ^ B) = 1.</span></div><div class="line">~	 |<span class="string"> 称为按位非运算符。它是一个单运算符，对运算数的所有二进制位进行取反操作。 </span>|<span class="string"> 	~B = -4 .</span></div><div class="line">	 |<span class="string"> 称为按位左移运算符。它把第一个运算数的所有二进制位向左移动第二个运算数指定的位数，而新的二进制位补0。将一个数向左移动一个二进制位相当于将该数乘以2，向左移动两个二进制位相当于将该数乘以4，以此类推。</span>|<span class="string">	A</span></div><div class="line">&gt;&gt;	 |<span class="string"> 称为按位右移运算符。它把第一个运算数的所有二进制位向右移动第二个运算数指定的位数。为了保持运算结果的符号不变，左边二进制位补0或1取决于原参数的符号位。如果第一个运算数是正的，运算结果最高位补0；如果第一个运算数是负的，运算结果最高位补1。将一个数向右移动一位相当于将该数乘以2，向右移动两位相当于将该数乘以4，以此类推。</span>|<span class="string">	A &gt;&gt; 1 = 1.</span></div><div class="line">&gt;&gt;&gt;	 |<span class="string"> 称为0补最高位无符号右移运算符。这个运算符与&gt;&gt;运算符相像，除了位移后左边总是补0.	 </span>|<span class="string"> A &gt;&gt;&gt; = 1.</span></div><div class="line"></div><div class="line">### 赋值运算符：</div><div class="line"></div><div class="line">运算符 |<span class="string"> 描述 </span>|<span class="string"> 例子</span></div><div class="line">-----|<span class="string">------</span>|<span class="string">----</span></div><div class="line">=	 |<span class="string"> 简单赋值运算符，将右边运算数的值赋给左边运算数 </span>|<span class="string">	C = A + B 将A+B的值赋给C</span></div><div class="line">+=	 |<span class="string"> 加等赋值运算符，将右边运算符与左边运算符相加并将运算结果赋给左边运算数 </span>|<span class="string">	C += A 相当于 C = C + A</span></div><div class="line">-=	 |<span class="string"> 减等赋值运算符，将左边运算数减去右边运算数并将运算结果赋给左边运算数 </span>|<span class="string">	C -= A 相当于C = C - A</span></div><div class="line">*=	 |<span class="string"> 乘等赋值运算符，将右边运算数乘以左边运算数并将运算结果赋给左边运算数 </span>|<span class="string">	C *= A 相当于C = C * A</span></div><div class="line">/=	 |<span class="string"> 除等赋值运算符，将左边运算数除以右边运算数并将运算结果赋值给左边运算数 </span>|<span class="string">	C /= A 相当于 C = C / A</span></div><div class="line">%=	 |<span class="string"> 模等赋值运算符，用两个运算数做取模运算并将运算结果赋值给左边运算数 </span>|<span class="string">	C %= A 相当于 C = C % A</span></div><div class="line"></div><div class="line">注意：同样的逻辑可以应用到位运算符，因此就有&lt;&lt;= , &gt;&gt;= , &gt;&gt;&gt;= , &amp;= , |<span class="string">= 以及 ^= 。</span></div><div class="line">### 特殊运算符：delete obj.x</div><div class="line"></div><div class="line">### 条件运算符：首先判断一个表达式是真或假，然后根据判断结果执行两个给定指令中的一个。（？：）如果条件为真 ? X值 : Y值。</div><div class="line"></div><div class="line">### 逗号运算符：表达式结果取最后一个。var val=(1,2,3); →//val=3</div><div class="line"></div><div class="line">### delete obj.x运算符：delete删除，删除后结果为undefined。</div><div class="line"></div><div class="line">### in运算符：判断对象中是否含有。window.x=1; →‘x’ in window;→//true。</div><div class="line"></div><div class="line">### new运算符：</div><div class="line"></div><div class="line">### this运算符：全局的this指向window。this; →//window。var obj&#123;func:function()&#123;return this;&#125;&#125;;obj.func();→//obj</div><div class="line"></div><div class="line">### void运算符：</div><div class="line"></div><div class="line">instanceof 判断的是对象的类型。</div><div class="line">### typeof 运算符：判断数据类型，返回值为字符串。window.alert(“vi是”+typeof vi);</div><div class="line"></div><div class="line"></div><div class="line">|<span class="string"> 类型 </span>|<span class="string"> Typeof返回字符串 </span>|</div><div class="line">|<span class="string"> -----</span>|<span class="string">:---- </span>|</div><div class="line">|<span class="string"> 数值   </span>|<span class="string"> "number" </span>|</div><div class="line">|<span class="string"> 字符串 </span>|<span class="string"> "string" </span>|</div><div class="line">|<span class="string"> 布尔   </span>|<span class="string"> "boolean" </span>|</div><div class="line">|<span class="string"> 对象   </span>|<span class="string"> "object" </span>|</div><div class="line">|<span class="string"> 函数   </span>|<span class="string"> "function" </span>|</div><div class="line">|<span class="string"> 未定义 </span>|<span class="string"> "undefined" </span>|</div><div class="line">|<span class="string"> 空     </span>|<span class="string"> "object" </span>|</div><div class="line"></div><div class="line"><span class="comment">### 优先级：递减</span></div><div class="line"></div><div class="line">|<span class="string"> 类型 </span>|<span class="string"> Typeof返回字符串 </span>|</div><div class="line">|<span class="string"> -----</span>|<span class="string">:---- </span>|</div><div class="line">|<span class="string"> 数组       </span>|<span class="string"> []</span></div><div class="line">|<span class="string"> 括号       </span>|<span class="string"> ( )</span></div><div class="line">|<span class="string"> 増減       </span>|<span class="string"> ++ --</span></div><div class="line">|<span class="string"> 负号       </span>|<span class="string"> -</span></div><div class="line">|<span class="string"> 取反       </span>|<span class="string"> ~</span></div><div class="line">|<span class="string"> NOT        </span>|<span class="string"> !</span></div><div class="line">|<span class="string"> 乘除余     </span>|<span class="string"> * / %</span></div><div class="line">|<span class="string"> 加减       </span>|<span class="string"> + -)</span></div><div class="line">|<span class="string"> 连接字符串 </span>|<span class="string"> +</span></div><div class="line">|<span class="string"> 位移       </span>|<span class="string"> &lt;&lt; &gt;&gt; &lt;&lt;&lt;</span></div><div class="line">|<span class="string"> 比较       </span>|<span class="string"> &lt; &lt;= &gt;= &gt;</span></div><div class="line">|<span class="string"> 比较       </span>|<span class="string"> == != === !==</span></div><div class="line">|<span class="string"> AND        </span>|<span class="string"> &amp;</span></div><div class="line">|<span class="string"> XOR        </span>|<span class="string"> ^</span></div><div class="line">|<span class="string"> OR         </span>|<span class="string"> </span>|</div><div class="line">|<span class="string"> 且         </span>|<span class="string"> &amp;&amp;</span></div><div class="line">|<span class="string"> 或         </span>|<span class="string"> </span>||</div><div class="line">|<span class="string"> 条件       </span>|<span class="string"> ? :</span></div><div class="line">|<span class="string"> 赋值       </span>|<span class="string"> =</span></div><div class="line">|<span class="string"> 扩展赋值   </span>|<span class="string"> +=等</span></div><div class="line">|<span class="string"> 逗号       </span>|<span class="string"> ,</span></div><div class="line"></div><div class="line">按数量来分类：一元（+num）、二元（a+b）、三元运算符（C?a:b）</div><div class="line"></div><div class="line">6、变量var</div><div class="line">var a=b=1；定义的变量b为全局变量，var a=1,b=1；</div><div class="line">语句：</div><div class="line">	块block：（没有块级作用域）var定义变量</div><div class="line"></div><div class="line"></div><div class="line">## 三大流程控制</div><div class="line"></div><div class="line">顺序控制：对编程而言，不控制其流程就是顺序执行。</div><div class="line"></div><div class="line">### if</div><div class="line">#### 单分支</div></pre></td></tr></table></figure></p>
+<p>if(条件表达式){<br>case 常量1:<br>语句;<br>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 双分支</div></pre></td></tr></table></figure></p>
+<p>if(条件表达式){<br>    语句;<br>}<br>else{<br>    语句;<br>}<br><figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="clean">#### 多分支</span></div></pre></td></tr></table></figure></p>
+<p>if(条件表达式1){<br>    语句;<br>}<br>else if(条件表达式2){<br>    语句;<br>}<br>else if(条件表达式3){<br>    语句;<br>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### switch</div><div class="line">#### 分支控制：</div></pre></td></tr></table></figure></p>
+<p>switch(表达式){<br>    case 常量1:<br>    语句;<br>    break;<br>    case 常量2:<br>    语句;<br>    break;<br>    defaule:<br>    语句;<br>    break;<br>}<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<p>强调：一且找到一个满足条件，进行执行后，直接结束整个。<br>案例：</p>
+<p>var sex=window.prompt(“请输入性别”);<br>window.alert(‘’);<br>document.write(‘’);<br>document.writeIn(‘结果是’);<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 循环控制：</div><div class="line"></div><div class="line">#### for循环</div></pre></td></tr></table></figure></p>
+<p>for(循环初值；循环条件；步长){<br>    语句；//循环体<br>}</p>
+<p>for(var i=0; i<10; i++){="" document.writein(“!<br="">”);<br>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#### for <span class="keyword">in</span>循环</div></pre></td></tr></table></figure></10;></p>
+<p>for(变量 in 对象){<br>    语句；<br>}</p>
+<p>var x;<br>var mybooks=new Array();<br>mybooks[0]= ‘亮剑’;<br>for(x in mybooks){<br>    console.log(mybooks[x]+ ‘<br>‘);<br>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### while循环</div></pre></td></tr></table></figure></p>
+<p>While(条件表达式){<br>    语句；//循环体<br>}</p>
+<p>var i=0;<br>while(i<10){ document.writein(“hello!<br="">”);<br>    i++;<br>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### do while循环</div></pre></td></tr></table></figure></10){></p>
+<p>do{<br>    语句；//循环体<br>} While(条件表达式);</p>
+<p>var i=0;<br>do{<br>    document.writeIn(“hello!<br>”);<br>    i++;<br>} while(i<10); <figure="" class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="http"></span></div><div class="line"></div><div class="line"><span class="dust"><span class="xml"></span></span></div><div class="line">八、函数</div><div class="line">定义：为完成某一功能的程序指令（语句）的集合。</div><div class="line"></div><div class="line"></div><div class="line">function函数名(参数列表)<span class="template-variable">&#123;</span></div><div class="line">语句；//函数（方法）</div><div class="line">return 返回值；</div><div class="line">&#125;<span class="xml">	function add(x1,x2)</span><span class="template-variable">&#123;</span></div><div class="line">var dx =x1+x2；//函数（方法）</div><div class="line">return <span class="keyword">Math</span>.sqrt(dx*dx)；</div><div class="line">&#125;<span class="xml"></span></div><div class="line"></div><div class="line">注意：1参数名不要带var，2返回值return，3输入值时，一定要进行强制转换。</div><div class="line">输出内容：document.write(); 输出文本使用引号包裹。</div><div class="line">输出引号内容：<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">”text/javascropt”</span>&gt;</span><span class="javascript"> <span class="built_in">document</span>.write(“I Love JavaScript!”);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">输出变量内容：<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">”text/javascropt”</span>&gt;</span><span class="javascript"> <span class="keyword">var</span> mystr=”hello world!”; <span class="built_in">document</span>.write(mystr);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">输出多项内容：<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">”text/javascropt”</span>&gt;</span><span class="javascript"> <span class="keyword">var</span> mystr=”hello”; <span class="built_in">document</span>.write(mystr+” I Love JavaScript”);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">输出标签可用：<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">”text/javascropt”</span>&gt;</span><span class="javascript"> <span class="keyword">var</span> mystr=”hello”; <span class="built_in">document</span>.write(mystr+”&lt;br&gt;”); <span class="built_in">document</span>.write(” JavaScript”);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">JS输出空格：查看WIKI中“JS如何输出空格”</div><div class="line">警告：alert(字符串或变量);</div><div class="line"></div><div class="line"></div><div class="line">## 扩展：</div><div class="line"></div><div class="line">### 隐式转换：</div><div class="line">#### 类型转换</div></pre></td></tr></table></10);></p>
+<p>var a = ‘The answer is’ + 42; =&gt; “The answer is 42”<br>var a = 42 + ‘is the answer’; =&gt; “42 is the answer”</p>
+<p>string - 0 转换为数字<br>num + ‘’ 转换为字符串</p>
+<p>var a = ‘32’ + 1; =&gt; “321”<br>var a = ‘32’ - 1; =&gt; 31</p>
+<p>var a = 32 + ‘’; =&gt; “32”<br>var a = 32 - ‘’; =&gt; 32<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 比较运算符</div><div class="line">如果两边的类型不同，则会进行类型转换在进行比较。</div><div class="line">如果比较有数字，则会转换为数字</div><div class="line"></div><div class="line">#### a == b 相等运算符（相等）</div></pre></td></tr></table></figure></p>
+<p>‘1.23’ == 1.23; =&gt; true<br>string == number; string =&gt; number</p>
+<p>0 == false; =&gt; true<br>‘0’ == false; =&gt; true<br>boolean == ?; boolean =&gt; number(0/1)</p>
+<p>new String(‘12’) == 12; =&gt; true<br>object == number|string;  尝试对象转换基本类型</p>
+<p>null == undefined; =&gt; true<br>NaN == NaN; =&gt; false<br>new Object() == new Object; =&gt; false<br>[1,2] == [1,2]; =&gt; false</p>
+<p>如果对象与数字、字符串比较，则会将对象转换为原始值进行比较。toString();valueOf();<br>首先尝试使用valueOf();（函数用于返回指定对象的原始值），除了日期类，只使用toString()（返回该对象的字符串表示）;。<br>[2] == 2; =&gt; true</p>
+<p>var a = [1,2];<br>console.log(a.toString());<br>console.log(a.valueOf());<br>console.log(a.valueOf().toString());<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">是否改变原有类型</div></pre></td></tr></table></figure></p>
+<p>var a = ‘2’;<br>if(a == 2){console.log(typeof a);}<br>if(2 == a){console.log(typeof a);}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### a === b 严格相等运算符（恒等）</div></pre></td></tr></table></figure></p>
+<p>比较两边，类型不同，直接返回false。类型相同，比较值。</p>
+<p>null === null; =&gt; true<br>undefined === undefined; =&gt; true<br>NaN === NaN; =&gt; false<br>x !== x;（可以判断是否为NaN）</p>
+<p>对象进行比较<br>如果两个引用值指向同一个对象、数组、函数，则它们是相等的。<br>new Object() === new Object; =&gt; false<br>[1,2] === [1,2]; =&gt; false<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">改变了原来的值</div></pre></td></tr></table></figure></p>
+<p>var x = 1;<br>var obj = {<br>    valueOf: function(){<br>        x = 2;<br>        return 0;<br>    }<br>}<br>console.log(obj == 0, x);</p>
+<p>=&gt; true, 2<br>```<br><a href="http://jsfiddle.net/26Lf0a0L/" target="_blank" rel="external">比较运算符</a></p>
+<h3 id="类型检测："><a href="#类型检测：" class="headerlink" title="类型检测："></a>类型检测：</h3><p>typeof</p>
+<p>instanceof<br>Object.prototype.toString<br>constructor<br>duck type</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/25/Interview/HTML/" rel="next" title="JavaScript修行">
+                <i class="fa fa-chevron-left"></i> JavaScript修行
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/25/FrontFrame/Angular/Angular/" rel="prev" title="H5性能优化">
+                H5性能优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">226</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#script元素"><span class="nav-number">1.</span> <span class="nav-text">script元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型检测："><span class="nav-number">2.</span> <span class="nav-text">类型检测：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,882 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Flex," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="传统布局：布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。　　缺点：缺少语义，不够灵活2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。　　Flex布局：是F">
+<meta name="keywords" content="Flex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flexbox指南">
+<meta property="og:url" content="http://luuman.github.io/2017/08/25/Induce/CSS/FlexGrammar/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="传统布局：布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。　　缺点：缺少语义，不够灵活2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。　　Flex布局：是F">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://cdn.scotch.io/scotchy-uploads/2015/04/A-Vusial-Guide-to-CSS3-Flexbox-Layout-and-Properties.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png">
+<meta property="og:updated_time" content="2017-08-07T05:37:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flexbox指南">
+<meta name="twitter:description" content="传统布局：布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。　　缺点：缺少语义，不够灵活2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。　　Flex布局：是F">
+<meta name="twitter:image" content="https://cdn.scotch.io/scotchy-uploads/2015/04/A-Vusial-Guide-to-CSS3-Flexbox-Layout-and-Properties.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2017/08/25/Induce/CSS/FlexGrammar/"/>
+
+
+
+
+
+  <title> Flexbox指南 | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2017/08/25/Induce/CSS/FlexGrammar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Flexbox指南
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T18:29:00+08:00">
+                2017-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://cdn.scotch.io/scotchy-uploads/2015/04/A-Vusial-Guide-to-CSS3-Flexbox-Layout-and-Properties.png" alt=""><br>　　<strong>传统布局：</strong>布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。<br>　　<strong>缺点：</strong>缺少语义，不够灵活<br>2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。<br>　　<strong>Flex布局：</strong>是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<ul>
+<li>[X] Add Frontend Roadmap</li>
+<li>[X] Add Backend Roadmap</li>
+<li>[X] Add DevOps Roadmap</li>
+<li>[ ] Add relevant resources for each<a id="more"></a>
+</li>
+</ul>
+<h1 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h1><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt=""><br>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。<br>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<div class="box"><br>  <div class="item"><span>1</span></div><br>  <div class="item"><span>2</span></div><br>  <div class="item"><span>3</span></div><br></div><br><style type="text/css"><br>    .box {<br>        width: 50%;<br>        margin: auto;<br>        height: 200px;<br>        background-color: #ffd550;<br>        border: 1px solid #aaa;<br>    }<br>    .box .item {<br>        width: 50px;<br>        height: 50px;<br>        background-color: #999;<br>        border: 1px solid #000;<br>        display: flex;<br>        justify-content: center;<br>        align-items: center;<br>    }<br>    .box .item span{<br>        width: 40px;<br>        height: 40px;<br>        margin: 5px;<br>        border-radius: 50%;<br>        text-align: center;<br>        line-height: 40px;<br>        display: inline-block;<br>        background: #ffd550;<br>    }<br>    .w3{<br>        height: 100px;<br>    }<br>    .w4{ height: 210px;font-size: 30px; }<br></style><br><br>## flex-direction<br>用于指定Flex主轴的方向，继而决定 Flex子项在Flex容器中的位置<br><br>取值：row | row-reverse | column | column-reverse<br><br>row：默认值，表示水平方向从左到右排列，此时水平方向轴线为主轴<br>row-reverse：与row相反<br>column：表示垂直方向从上到下排列，此时垂直方向轴线为主轴<br>column-reverse：与column相反<br><br>### row<br><br><div class="box div1"><br>  <div class="item"><span>1</span></div><br>  <div class="item"><span>2</span></div><br>  <div class="item"><span>3</span></div><br></div><br><style type="text/css"><br>    .box.div1 {<br>      display: flex;<br>    }<br>    .item {<br>    }<br></style><br><br>### row-reverse<br><br><div class="box div2"><br>  <div class="item"><span>1</span></div><br>  <div class="item"><span>2</span></div><br>  <div class="item"><span>3</span></div><br></div><br><style type="text/css"><br>    .box.div2{<br>      display: flex;<br>      flex-direction: row-reverse;<br>    }<br></style><br><br>### column<br><br><div class="box div3"><br>  <div class="item"><span>1</span></div><br>  <div class="item"><span>2</span></div><br>  <div class="item"><span>3</span></div><br></div><br><style type="text/css"><br>    .box.div3{<br>      display: flex;<br>      flex-direction: column;<br>    }<br></style><br><br>### column-reverse<br><br><div class="box div4"><br>  <div class="item"><span>1</span></div><br>  <div class="item"><span>2</span></div><br>  <div class="item"><span>3</span></div><br></div><br><style type="text/css"><br>    .box.div4{<br>      display: flex;<br>      flex-direction: column-reverse;<br>    }<br></style><br><br>## flex-wrap<br>用于指定Flex子项是否换行<br><br>取值：nowrap | wrap | wrap-reverse<br><br>nowrap：默认值，表示不换行，Flex子项可能会溢出<br>wrap：表示换行，溢出的Flex子项会被放到下一行<br>wrap-reverse：表示反方向换行<br><br>注：从示例图中不难发现，换行以后两行之间产生了很大的间距，这个问题，在后面介绍的 align-content 属性中可以得到很好的解决。<br><br>### nowrap<br><br><div class="box div5"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div5{<br>      display: flex;<br>    }<br></style><br><br>### wrap<br><br><div class="box div6"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div6{<br>      display: flex;<br>      flex-wrap: wrap;<br>    }<br></style><br><br>### wrap-reverse<br><br><div class="box div7"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div7{<br>      display: flex;<br>      flex-wrap: wrap-reverse;<br>    }<br></style><br><br>## flex-flow<br>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。<br>flex-flow: <flex-direction> || <flex-wrap>;<br><br>### column wrap<br><br><div class="box div0"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div0{<br>      display: flex;<br>      flex-flow: column wrap;<br>    }<br></style><br><br>## justify-content<br>用于指定主轴上Flex子项的对齐方式<br><br>取值：flex-start | flex-end | center | space-between | space-around<br><br>flex-start：默认值，表示与行的起始位置对齐<br>flex-end：表示与行的结束位置对齐<br>center：表示与行中间对其<br>space-between：表示两端对齐，中间间距相等。要注意特殊情况，当剩余空间为负数或者只有一个项时，效果等同于flex-start<br>space-around：表示间距相等，中间间距是两端间距的2倍。要注意特殊情况，当剩余空间为负数或者只有一个项时，效果等同于center<br><br>### flex-start<br><br><div class="box div8"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br></div><br><style type="text/css"><br>    .box.div8{<br>      display: flex;<br>      justify-content: flex-start;<br>    }<br></style><br><br>### flex-end<br><br><div class="box div9"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br></div><br><style type="text/css"><br>    .box.div9{<br>      display: flex;<br>      justify-content: flex-end;<br>    }<br></style><br><br>### center<br><br><div class="box div10"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br></div><br><style type="text/css"><br>    .box.div10{<br>      display: flex;<br>      justify-content: center;<br>    }<br></style><br><br>### space-between<br><br><div class="box div11"><br>    <div class="item"><span>1</span></div><br></div>
+
+<div class="box div11"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br></div>
+
+<div class="box div11"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div11{<br>      display: flex;<br>      justify-content: space-between;<br>    }<br></style><br><br>### space-around<br><br><div class="box div12"><br>    <div class="item"><span>1</span></div><br></div>
+
+<div class="box div12"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br></div>
+
+<div class="box div12"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div12{<br>      display: flex;<br>      justify-content: space-around;<br>    }<br></style><br><br>#### cross<br><br><div class="box div11s"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>2</span></div><br></div>
+
+<style type="text/css">
+    .box.div11s{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+</style>
+
+<div class="box div12s"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>2</span></div><br></div>
+
+<style type="text/css">
+    .box.div12s{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+</style>
+
+<h2 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h2><p>用于指定垂直方向上Flex子项的对齐方式</p>
+<p>取值：stretch | flex-start | flex-end | center | baseline</p>
+<p>stretch：默认值，当Flex子项未设置高度或者高度值为auto时，stretch起作用，将Flex子项高度设置为行高度。这里需要注意，在只有一行的情况下，行的高度为容器的高度，即Flex子项高度为容器的高度<br>flex-start：表示与侧轴开始位置对齐<br>flex-end：表示与侧轴的结束位置对齐<br>center：表示与侧轴中间对其<br>baseline：表示基线对齐，当行内轴与侧轴在同一线上，即所有Flex子项的基线在同一线上时，效果等同于flex-start</p>
+<h3 id="stretch"><a href="#stretch" class="headerlink" title="stretch"></a>stretch</h3><div class="box div13"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div><br><style type="text/css"><br>    .box.div13{<br>      display: flex;<br>      justify-content: space-around;<br>      align-items: stretch;<br>    }<br></style><br><br>### flex-start<br><br><div class="box div14"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div><br><style type="text/css"><br>    .box.div14{<br>      display: flex;<br>      justify-content: space-around;<br>      align-items: flex-start;<br>    }<br></style><br><br>### flex-end<br><br><div class="box div15"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div><br><style type="text/css"><br>    .box.div15{<br>      display: flex;<br>      justify-content: space-around;<br>      align-items: flex-end;<br>    }<br></style><br><br>### center<br><br><div class="box div16"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div><br><style type="text/css"><br>    .box.div16{<br>      display: flex;<br>      justify-content: space-around;<br>      align-items: center;<br>    }<br></style><br><br>### baseline<br><br><div class="box div17"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div><br><style type="text/css"><br>    .box.div17{<br>      display: flex;<br>      justify-content: space-around;<br>      align-items: baseline;<br>    }<br></style><br><br><div class="box div17s"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div><br><style type="text/css"><br>    .box.div17s{<br>      display: flex;<br>      flex-direction: column;<br>      justify-content: space-around;<br>      align-items: space-around;<br>    }<br></style><br><br>## align-content<br>该属性只作用于多行的情况下，用于多行的对齐方式<br><br>取值：stretch | flex-start | flex-end | center | space-between | space-around<br><br>stretch：默认值，当Flex子项未设置高度或者高度值为auto时，stretch起作用，将Flex子项高度设置为行高度。<br>flex-start：表示各行与侧轴开始位置对齐，第一行紧靠侧轴开始边界，之后的每一行都紧靠前面一行<br>flex-end：表示各行与侧轴的结束位置对齐，最后一行紧靠侧轴结束边界，之后的每一行都紧靠前面一行<br>center：表示各行与侧轴中间对其<br>space-between：表示两端对齐，中间间距相等。要注意特殊情况，当剩余空间为负数时，效果等同于flex-start<br>space-around：表示各行之间间距相等，中间间距是两端间距的2倍。要注意特殊情况，当剩余空间为负数时，效果等同于center<br><br>注：该属性只作用于多行的情况，在只有一行的Flex容器上无效，另外该属性可以很好的处理，换行以后相邻行之间产生的间距。<br><br>### stretch<br><br><div class="box div18"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div18{<br>      display: flex;<br>      flex-wrap: wrap;<br>      align-content: stretch;<br>    }<br></style><br><br>### flex-start<br><br><div class="box div19"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div19{<br>      display: flex;<br>      flex-wrap: wrap;<br>      align-content: flex-start;<br>    }<br></style><br><br>### flex-end<br><br><div class="box div20"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div20{<br>      display: flex;<br>      flex-wrap: wrap;<br>      align-content: flex-end;<br>    }<br></style><br><br>### center<br><br><div class="box div21"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div21{<br>      display: flex;<br>      flex-wrap: wrap;<br>      align-content: center;<br>    }<br></style><br><br>### space-between<br><br><div class="box div22"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div22{<br>      display: flex;<br>      flex-wrap: wrap;<br>      align-content: space-between;<br>    }<br></style><br><br>### space-around<br><br><div class="box div23"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div23{<br>      display: flex;<br>      flex-wrap: wrap;<br>      align-content: space-around;<br>    }<br></style><br><br>#### cross<br><br><br><div class="box div23s"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div23s{<br>      display: flex;<br>      flex-wrap: wrap;<br>      flex-direction: column;<br>      align-content: space-around;<br>    }<br></style><br><br># Flex 作用于子项<br><br>## order<br>该属性用来指定Flex子项的排列顺序，数值越小，越靠前，可以为负数<br>取值：数值，默认值为0<br><br><div class="box div24"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item o0"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item o0"><span>10</span></div><br>    <div class="item"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div24{<br>      display: flex;<br>      flex-wrap: wrap;<br>      align-content: space-around;<br>    }<br>    .div24 .o0{<br>        order: 1;<br>    }<br></style><br><br>## flex-grow<br>用来指定Flex子项的扩展比例，不可以为负数，Flex容器会根据Flex子项设置的扩展比例作为比率来分配剩余空间<br><br>取值：数值，默认值为0，表示即使存在剩余空间，Flex子项也不会扩展<br><br><div class="box div25"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>6</span></div><br>    <div class="item grow3"><span>7</span></div><br>    <div class="item"><span>8</span></div><br>    <div class="item"><span>9</span></div><br>    <div class="item"><span>10</span></div><br>    <div class="item grow3"><span>11</span></div><br>    <div class="item"><span>12</span></div><br>    <div class="item"><span>13</span></div><br>    <div class="item"><span>14</span></div><br>    <div class="item"><span>15</span></div><br></div><br><style type="text/css"><br>    .box.div25{<br>      display: flex;<br>      flex-wrap: wrap;<br>      align-content: space-around;<br>    }<br>    .div25 .grow3{<br>        flex-grow: 3;<br>    }<br></style><br><br>## flex-shrink<br><div class="box div26"><br>    <div class="item"><span>1</span></div><br>    <div class="item g3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item g3"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>15</span></div><br></div>
+
+<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
+<div class="box div26"><br>    <div class="item"><span>1</span></div><br>    <div class="item"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item"><span>4</span></div><br>    <div class="item"><span>5</span></div><br>    <div class="item"><span>15</span></div><br></div>
+
+<style type="text/css">
+    .box.div26{
+      display: flex;
+    }
+    .div26 .item{
+        width: 30%;
+    }
+    .div26 .g3{
+        flex-shrink: 0;
+    }
+</style>
+
+
+<h2 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h2><p>用来指定Flex子项的占据的空间，不可以为负数</p>
+<p>取值：auto | length | percentage | content</p>
+<p>auto：默认值，计算规则：检索Flex子项是否设置了width值（或者height值，取决于flex-direction），如果设置了非auto的值，则使用width值（或者height值），若没有则使用content<br>length：用长度值定义宽度，不可为负数<br>percentage：使用百分比定义宽度，不可为负数</p>
+<h3 id="length"><a href="#length" class="headerlink" title="length"></a>length</h3><p><div class="box div40"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br>    <!-- <div>5</div> --><br></div></p>
+<style type="text/css">
+    .box.div40{
+      display: flex;
+    }
+    .div40 .item{
+        width: 30%;
+    }
+    .div40 .w4{
+        flex-basis: 20px;
+    }
+</style>
+
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><p>复合属性，是flex-grow 、 flex-shrink 和 flex-basis 的简写属性，用来指定Flex子项如何分配空间</p>
+<p>取值：none | 各拆分项属性</p>
+<p>none：0 0 auto<br>auto：1 1 auto<br>1：1 1 0%<br>0 auto 或 initial：0 1 auto 即初始值<br>注意：</p>
+<p>flex-grow：默认值为0，若省略则被默认为1<br>flex-shrink：默认值为1，省略时默认为1<br>flex-basis：默认值为auto，省略时默认为0%</p>
+<h2 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h2><p>用来单独指定某Flex子项的对齐方式</p>
+<p>取值：auto | flex-start | flex-end | center | baseline | stretch</p>
+<p>auto：默认值，查找父元素的align-items值，如果没有则取值为stretch<br>其他值同align-items</p>
+<h3 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h3><p><div class="box div27"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div></p>
+<style type="text/css">
+    .box.div27{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .div27 .w3{
+        align-self: auto;
+    }
+</style>
+
+<h3 id="flex-start"><a href="#flex-start" class="headerlink" title="flex-start"></a>flex-start</h3><p><div class="box div28"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div></p>
+<style type="text/css">
+    .box.div28{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .div28 .w3{
+        align-self: flex-start;
+    }
+</style>
+
+<h3 id="flex-end"><a href="#flex-end" class="headerlink" title="flex-end"></a>flex-end</h3><p><div class="box div29"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div></p>
+<style type="text/css">
+    .box.div29{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .div29 .w3{
+        align-self: flex-end;
+    }
+</style>
+
+<h3 id="center"><a href="#center" class="headerlink" title="center"></a>center</h3><p><div class="box div30"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div></p>
+<style type="text/css">
+    .box.div30{
+      display: flex;
+      justify-content: space-around;
+      /*align-items: center;*/
+    }
+    .div30 .w3{
+        align-self: center;
+    }
+</style>
+
+<h3 id="baseline"><a href="#baseline" class="headerlink" title="baseline"></a>baseline</h3><p><div class="box div31"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div></p>
+<style type="text/css">
+    .box.div31{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .div31 .w3{
+        align-self: baseline;
+    }
+</style>
+
+<h3 id="stretch-1"><a href="#stretch-1" class="headerlink" title="stretch"></a>stretch</h3><p><div class="box div32"><br>    <div class="item"><span>1</span></div><br>    <div class="item w3"><span>2</span></div><br>    <div class="item"><span>3</span></div><br>    <div class="item w4"><span>4</span></div><br></div></p>
+<style type="text/css">
+    .box.div32{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .div32 .w3{
+        align-self: stretch;
+    }
+</style>
+
+<h1 id="拓展阅读"><a href="#拓展阅读" class="headerlink" title="拓展阅读"></a>拓展阅读</h1><ul>
+<li><a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" title="CSS3 Flexbox性能的视觉指南" target="_blank" rel="external">A Visual Guide to CSS3 Flexbox Properties</a></li>
+<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" title="Flexbox完整指南" target="_blank" rel="external">A Complete Guide to Flexbox</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout" title="灵活的盒子模型布局" target="_blank" rel="external">CSS Flexible Box Layout</a></li>
+<li><a href="https://github.com/junruchen/junruchen.github.io/wiki" target="_blank" rel="external">junruchen.github.io</a></li>
+<li><a href="https://github.com/philipwalton/flexbugs" target="_blank" rel="external">Flexbugs</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&amp;mid=2651552434&amp;idx=1&amp;sn=c166effbc0684c84c701448cc651577d&amp;chksm=8025ad73b7522465b496ac8115ad3d05c72e61e4e60be16a74959dd505c936724f1c660aabf4&amp;scene=0&amp;key=fde86b995a0aabaceda54aa4b4deeceafb3fa24830c15d8bf94a776d5c2c4660f6f0a3cccd46c15629bc9b202e11b5aaea746a942bbc3d29d97a123c8a88455a308a08f7cbe897984f1e9c1e2caa606a&amp;ascene=0&amp;uin=NjgwMDIxNzEw&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.3+build(16D32" target="_blank" rel="external">Flex布局新旧混合写法详解（兼容微信</a>&amp;version=12020810&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=jMmluuq565A%2BeoduVp2NKP%2BK1PjCoZPxWYfNis62G3CW7U%2Ba2liJVxczFHd0Dr81 “”)</li>
+<li><a href="&quot;&quot;"></a></li>
+<li><a href="&quot;&quot;"></a></li>
+<li><a href="&quot;&quot;"></a></li>
+<li><a href="&quot;&quot;"></a></li>
+<li><a href="&quot;&quot;"></a></li>
+<li><a href="&quot;&quot;"></a></li>
+</ul>
+</flex-wrap></flex-direction>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Flex/" rel="tag"># Flex</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/25/Induce/ES6/Generator/" rel="next" title="Generator">
+                <i class="fa fa-chevron-left"></i> Generator
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/25/FrontFrame/Vue/vue-bubble/" rel="prev" title="vue消息气泡">
+                vue消息气泡 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">226</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basics"><span class="nav-number">1.</span> <span class="nav-text">Basics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#align-items"><span class="nav-number">1.1.</span> <span class="nav-text">align-items</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stretch"><span class="nav-number">1.1.1.</span> <span class="nav-text">stretch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-basis"><span class="nav-number">1.2.</span> <span class="nav-text">flex-basis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#length"><span class="nav-number">1.2.1.</span> <span class="nav-text">length</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex"><span class="nav-number">1.3.</span> <span class="nav-text">flex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-self"><span class="nav-number">1.4.</span> <span class="nav-text">align-self</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#auto"><span class="nav-number">1.4.1.</span> <span class="nav-text">auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-start"><span class="nav-number">1.4.2.</span> <span class="nav-text">flex-start</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-end"><span class="nav-number">1.4.3.</span> <span class="nav-text">flex-end</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#center"><span class="nav-number">1.4.4.</span> <span class="nav-text">center</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#baseline"><span class="nav-number">1.4.5.</span> <span class="nav-text">baseline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stretch-1"><span class="nav-number">1.4.6.</span> <span class="nav-text">stretch</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拓展阅读"><span class="nav-number">2.</span> <span class="nav-text">拓展阅读</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
