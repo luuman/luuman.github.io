@@ -1,0 +1,727 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Nuxt," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Luuman's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="服务器端渲染(Server-Side Rendering)：Vue.js是构建客户端应用程序的框架。默认情况下，可以在浏览器中输出Vue组件，进行生成DOM和操作DOM。然而，也可以将同一个组件渲染为服务器端的HTML字符串，将它们直接发送到浏览器，最后将静态标记”混合”为客户端上完全交互的应用程序。服务器渲染的Vue.js应用程序也可以被认为是”同构”或”通用”，因为应用程序的大部分代码都可以在">
+<meta name="keywords" content="Nuxt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何将 Nuxt 应用部署至 Heroku？">
+<meta property="og:url" content="http://luuman.github.io/2018/08/25/FrontFrame/Vue/advanced/SSR/NuxtDeploy/index.html">
+<meta property="og:site_name" content="Luuman&#39;s Blog">
+<meta property="og:description" content="服务器端渲染(Server-Side Rendering)：Vue.js是构建客户端应用程序的框架。默认情况下，可以在浏览器中输出Vue组件，进行生成DOM和操作DOM。然而，也可以将同一个组件渲染为服务器端的HTML字符串，将它们直接发送到浏览器，最后将静态标记”混合”为客户端上完全交互的应用程序。服务器渲染的Vue.js应用程序也可以被认为是”同构”或”通用”，因为应用程序的大部分代码都可以在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-07T05:40:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何将 Nuxt 应用部署至 Heroku？">
+<meta name="twitter:description" content="服务器端渲染(Server-Side Rendering)：Vue.js是构建客户端应用程序的框架。默认情况下，可以在浏览器中输出Vue组件，进行生成DOM和操作DOM。然而，也可以将同一个组件渲染为服务器端的HTML字符串，将它们直接发送到浏览器，最后将静态标记”混合”为客户端上完全交互的应用程序。服务器渲染的Vue.js应用程序也可以被认为是”同构”或”通用”，因为应用程序的大部分代码都可以在">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luuman.github.io/2018/08/25/FrontFrame/Vue/advanced/SSR/NuxtDeploy/"/>
+
+
+
+
+
+  <title> 如何将 Nuxt 应用部署至 Heroku？ | Luuman's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Luuman's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">因为有了危机感，所以会义无反顾。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://luuman.github.io/2018/08/25/FrontFrame/Vue/advanced/SSR/NuxtDeploy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="世平阜康">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luuman's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何将 Nuxt 应用部署至 Heroku？
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-25T18:29:00+08:00">
+                2018-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FrontFrame/" itemprop="url" rel="index">
+                    <span itemprop="name">FrontFrame</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>服务器端渲染(Server-Side Rendering)：</strong>Vue.js是构建客户端应用程序的框架。默认情况下，可以在浏览器中输出Vue组件，进行生成DOM和操作DOM。然而，也可以将同一个组件渲染为服务器端的HTML字符串，将它们直接发送到浏览器，最后将静态标记”混合”为客户端上完全交互的应用程序。<br>服务器渲染的Vue.js应用程序也可以被认为是”同构”或”通用”，因为应用程序的大部分代码都可以在服务器和客户端上运行。<br><a id="more"></a></p>
+<h1 id="注册"><a href="#注册" class="headerlink" title="注册"></a><a href="https://signup.heroku.com/dc" target="_blank" rel="external">注册</a></h1><p>注意：注册不支持QQ邮箱</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up" target="_blank" rel="external">set-up</a></p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><h2 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install heroku/brew/heroku</div></pre></td></tr></table></figure>
+<h2 id="Ubuntu-16"><a href="#Ubuntu-16" class="headerlink" title="Ubuntu 16+"></a>Ubuntu 16+</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo snap install heroku --classic</div></pre></td></tr></table></figure>
+<h1 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ heroku login</div><div class="line">	Enter your Heroku credentials.</div><div class="line">	Email: &lt;user@example.com&gt;</div><div class="line">	Password: &lt;Password&gt;</div></pre></td></tr></table></figure>
+<h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node -v</div><div class="line">$ npm -v</div></pre></td></tr></table></figure>
+<h2 id="配置package-json"><a href="#配置package-json" class="headerlink" title="配置package.json"></a>配置package.json</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">  &quot;heroku-postbuild&quot;: &quot;npm run build&quot;</div><div class="line">&#125;,</div><div class="line">&quot;engines&quot;: &#123;</div><div class="line">  &quot;node&quot;: &quot;8.9.0&quot;,</div><div class="line">  &quot;npm&quot;: &quot;5.5.1&quot;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h2 id="部署应用程序"><a href="#部署应用程序" class="headerlink" title="部署应用程序"></a>部署应用程序</h2><h3 id="创建APP"><a href="#创建APP" class="headerlink" title="创建APP"></a>创建APP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ heroku create</div><div class="line">Creating sharp-rain-871... done, stack is cedar-14</div><div class="line">http://sharp-rain-871.herokuapp.com/ | https://git.heroku.com/sharp-rain-871.git</div><div class="line">Git remote heroku added</div></pre></td></tr></table></figure>
+<p>注意：默认会自动创建<code>sharp-rain-</code>开头的名称，也可以指定名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ heroku create &lt;name&gt;</div><div class="line">Creating &lt;name&gt;... done, stack is cedar-14</div><div class="line">http://&lt;name&gt;.herokuapp.com/ | https://git.heroku.com/&lt;name&gt;.git</div><div class="line">Git remote heroku added</div></pre></td></tr></table></figure>
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ heroku config:set NPM_CONFIG_PRODUCTION=false</div></pre></td></tr></table></figure>
+<h3 id="主机IP"><a href="#主机IP" class="headerlink" title="主机IP"></a>主机IP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ heroku config:set HOST=0.0.0.0</div><div class="line">$ heroku config:set NODE_ENV=production</div></pre></td></tr></table></figure>
+<h2 id="部署代码"><a href="#部署代码" class="headerlink" title="部署代码"></a>部署代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push heroku master</div></pre></td></tr></table></figure>
+<h2 id="打开部署页面"><a href="#打开部署页面" class="headerlink" title="打开部署页面"></a>打开部署页面</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ heroku open</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Nuxt/" rel="tag"># Nuxt</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/27/Induce/Skill/MobileDBUG/" rel="next" title="移动端调试">
+                <i class="fa fa-chevron-left"></i> 移动端调试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/25/FrontFrame/Vue/advanced/SSR/VueSRR/" rel="prev" title="Vue SSR">
+                Vue SSR <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="世平阜康" />
+          <p class="site-author-name" itemprop="name">世平阜康</p>
+           
+              <p class="site-description motion-element" itemprop="description">luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">80</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注册"><span class="nav-number">1.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows"><span class="nav-number">2.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#macOS"><span class="nav-number">2.2.</span> <span class="nav-text">macOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-16"><span class="nav-number">2.3.</span> <span class="nav-text">Ubuntu 16+</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#登录"><span class="nav-number">3.</span> <span class="nav-text">登录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看版本"><span class="nav-number">3.1.</span> <span class="nav-text">查看版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置package-json"><span class="nav-number">3.2.</span> <span class="nav-text">配置package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署应用程序"><span class="nav-number">3.3.</span> <span class="nav-text">部署应用程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建APP"><span class="nav-number">3.3.1.</span> <span class="nav-text">创建APP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置"><span class="nav-number">3.3.2.</span> <span class="nav-text">设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主机IP"><span class="nav-number">3.3.3.</span> <span class="nav-text">主机IP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署代码"><span class="nav-number">3.4.</span> <span class="nav-text">部署代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开部署页面"><span class="nav-number">3.5.</span> <span class="nav-text">打开部署页面</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">世平阜康</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
