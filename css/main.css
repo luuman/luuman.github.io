@@ -1895,7 +1895,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #08254e;
+  background: #f73c95;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2149,6 +2149,429 @@ pre .javascript .function {
 .powered-by,
 .theme-info {
   display: inline-block;
+}
+.gitment-container {
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.gitment-container * {
+  box-sizing: border-box;
+}
+.gitment-container *:disabled {
+  cursor: not-allowed;
+}
+.gitment-container a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.gitment-container a:visited {
+  cursor: pointer;
+  text-decoration: none;
+}
+.gitment-container a:hover {
+  text-decoration: underline;
+}
+.gitment-container .gitment-hidden {
+  display: none;
+}
+.gitment-container .gitment-spinner-icon {
+  fill: #fff;
+  -webkit-animation: gitment-spin 1s steps(12) infinite;
+  animation: gitment-spin 1s steps(12) infinite;
+}
+@-webkit-keyframes gitment-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.gitment-root-container,
+.gitment-header-container {
+  margin: 19px 40px;
+}
+.gitment-header-like-btn {
+  cursor: pointer;
+}
+.gitment-comment-like-btn {
+  cursor: pointer;
+  float: right;
+}
+.gitment-comment-like-btn.liked {
+  color: #f44336;
+}
+.gitment-header-like-btn svg {
+  vertical-align: middle;
+  height: 30px;
+  width: 30px;
+}
+.gitment-comment-like-btn svg {
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+}
+.gitment-header-like-btn.liked svg,
+.gitment-comment-like-btn.liked svg {
+  fill: #f44336;
+}
+a.gitment-header-issue-link {
+  float: right;
+  line-height: 30px;
+  color: #fff;
+}
+a.gitment-header-issue-link:visited {
+  float: right;
+  line-height: 30px;
+  color: #666;
+}
+a.gitment-header-issue-link:hover {
+  color: #666;
+}
+.gitment-comments-loading,
+.gitment-comments-error,
+.gitment-comments-empty {
+  text-align: center;
+  margin: 50px 0;
+}
+.gitment-comments-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 38px;
+}
+.gitment-comment,
+.gitment-editor-container {
+  position: relative;
+  min-height: 60px;
+  padding-left: 60px;
+  margin: 19px 0;
+}
+.gitment-comment-avatar,
+.gitment-editor-avatar {
+  float: left;
+  margin-left: -60px;
+}
+.gitment-comment-avatar,
+.gitment-comment-avatar-img,
+.gitment-editor-avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 3px;
+}
+.gitment-editor-avatar svg {
+  width: 44px;
+  height: 44px;
+  border-radius: 3px;
+}
+.gitment-editor-avatar .gitment-github-icon {
+  fill: #fff;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.gitment-comment-main {
+  position: relative;
+  border: 1px solid #262626;
+  border-radius: 0;
+}
+.gitment-editor-main {
+  position: relative;
+  border: 1px solid #262626;
+  border-radius: 0;
+}
+.gitment-editor-main::before,
+.gitment-editor-main::after {
+  position: absolute;
+  top: 11px;
+  left: -16px;
+  display: block;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  content: "";
+  border-color: transparent;
+  border-style: solid solid outset;
+}
+.gitment-comment-main::before,
+.gitment-comment-main::after {
+  position: absolute;
+  top: 11px;
+  left: -16px;
+  display: block;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  content: "";
+  border-color: transparent;
+  border-style: solid solid outset;
+}
+.gitment-editor-main::before,
+.gitment-comment-main::before {
+  border-width: 8px;
+  border-right-color: #262626;
+}
+.gitment-editor-main::after,
+.gitment-comment-main::after {
+  margin-top: 1px;
+  margin-left: 2px;
+  border-width: 7px;
+  border-right-color: #262626;
+}
+.gitment-comment-header {
+  margin: 12px 15px;
+  color: #fff;
+  background-color: #3f3f3f;
+  border-radius: 3px;
+}
+.gitment-editor-header {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #262626;
+}
+a.gitment-comment-name {
+  font-weight: 600;
+  color: #666;
+}
+a.gitment-comment-name:visited {
+  font-weight: 600;
+  color: #666;
+}
+.gitment-editor-tabs {
+  margin-bottom: -1px;
+  margin-left: -1px;
+}
+.gitment-editor-tab {
+  display: inline-block;
+  padding: 11px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4094c7;
+  text-decoration: none;
+  background-color: transparent;
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+.gitment-editor-tab.gitment-selected {
+  color: #fff;
+  background-color: #3f3f3f;
+  border-color: #262626;
+}
+.gitment-editor-login {
+  float: right;
+  margin-top: -30px;
+  margin-right: 15px;
+}
+a.gitment-footer-project-link,
+a.gitment-editor-login-link {
+  color: #2196f3;
+}
+a.gitment-footer-project-link:visited,
+a.gitment-editor-login-link:visited {
+  color: #2196f3;
+}
+a.gitment-editor-logout-link {
+  color: #4094c7;
+}
+a.gitment-editor-logout-link:visited {
+  color: #666;
+}
+a.gitment-editor-logout-link:hover {
+  color: #2196f3;
+  text-decoration: none;
+}
+.gitment-comment-body {
+  position: relative;
+  margin: 12px 15px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.gitment-comment-body-folded {
+  cursor: pointer;
+}
+.gitment-comment-body-folded::before {
+  display: block !important;
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 50px;
+  pointer-events: none;
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(255,255,255,0.9));
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(47,47,47,0.9));
+}
+.gitment-comment-body-folded::after {
+  display: block !important;
+  content: "Click to Expand" !important;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: #3f3f3f;
+}
+.gitment-editor-body {
+  margin: 0;
+}
+.gitment-comment-body > *:first-child,
+.gitment-editor-preview > *:first-child {
+  margin-top: 0 !important;
+}
+.gitment-comment-body > *:last-child,
+.gitment-editor-preview > *:last-child {
+  margin-bottom: 0 !important;
+}
+.gitment-editor-body textarea {
+  display: block;
+  width: 100%;
+  min-height: 150px;
+  max-height: 500px;
+  padding: 16px;
+  resize: vertical;
+  max-width: 100%;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: #3f3f3f;
+  color: #fff;
+  vertical-align: middle;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  overflow: visible;
+}
+.gitment-editor-body textarea:focus {
+  background-color: #3f3f3f;
+}
+.gitment-editor-preview {
+  min-height: 150px;
+  padding: 16px;
+  background-color: transparent;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.gitment-editor-footer {
+  padding: 0;
+  margin-top: 10px;
+}
+.gitment-editor-footer::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+a.gitment-editor-footer-tip {
+  display: inline-block;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #666;
+}
+a.gitment-editor-footer-tip:hover {
+  color: #2196f3;
+  text-decoration: none;
+}
+.gitment-comments-pagination {
+  list-style: none;
+  text-align: right;
+  border-radius: 0;
+  margin: -19px 0 19px 0;
+}
+.gitment-comments-page-item {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #262626;
+  margin-left: -1px;
+  padding: 0.25rem 0.5rem;
+}
+.gitment-comments-page-item:hover,
+.gitment-comments-page-item.gitment-selected {
+  background-color: #f5f5f5;
+}
+.gitment-editor-submit,
+.gitment-comments-init-btn {
+  color: #fff;
+  background-color: #00bcd4;
+  position: relative;
+  display: inline-block;
+  padding: 7px 13px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-size: 110% 110%;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.gitment-editor-submit:hover {
+  background-color: #4094c7;
+}
+.gitment-comments-init-btn:hover {
+  background-color: #4094c7;
+}
+.gitment-comments-init-btn:disabled {
+  color: rgba(255,255,255,0.75);
+  background-color: #4094c7;
+  box-shadow: none;
+}
+.gitment-editor-submit {
+  float: right;
+}
+.gitment-editor-submit:disabled {
+  color: rgba(255,255,255,0.75);
+  background-color: #4094c7;
+  box-shadow: none;
+}
+.gitment-footer-container {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: right;
+  font-size: 12px;
+}
+@-moz-keyframes gitment-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes gitment-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes gitment-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes gitment-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 @-moz-keyframes iconAnimate {
   0%, 100% {
