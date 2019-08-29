@@ -1895,7 +1895,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #c4467e;
+  background: #864781;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3459,6 +3459,7 @@ a.gitment-editor-footer-tip:hover {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
+  color: #fff;
   min-height: 5.125em;
   max-height: 15em;
   border-radius: 5px;
@@ -3471,9 +3472,6 @@ a.gitment-editor-footer-tip:hover {
   outline: none;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
-}
-.gt-container .gt-header-textarea:hover {
-  background-color: #fbfbfb;
 }
 .gt-container .gt-header-preview {
   padding: 0.75em;
